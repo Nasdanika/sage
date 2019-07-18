@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated sage -->
+      <category
+            id="org.nasdanika"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.nasdanika.sage.presentation.SageModelWizardID"
+            name="%_UI_SageModelWizard_label"
+            class="org.nasdanika.sage.presentation.SageModelWizard"
+            category="org.nasdanika"
+            icon="icons/full/obj16/SageModelFile.gif">
+         <description>%_UI_SageModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.nasdanika.sage.presentation.SageFormsEditorID"
+            name="%_UI_SageFormsEditor_label"
+            icon="icons/full/obj16/SageModelFile.gif"
+            extensions="sage"
+            default="true"
+            class="org.nasdanika.sage.presentation.SageFormsEditor">
+      </editor>
+      
+
+      <!-- @generated sage -->
+      <editor
+            id="org.nasdanika.sage.presentation.SageEditorID"
+            name="%_UI_SageEditor_label"
+            icon="icons/full/obj16/SageModelFile.gif"
+            extensions="sage"
+            class="org.nasdanika.sage.presentation.SageEditor"
+            contributorClass="org.nasdanika.sage.presentation.SageActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

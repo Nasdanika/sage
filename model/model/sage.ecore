@@ -1,3 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    name="sage" nsURI="urn:org.nasdanika.sage" nsPrefix="org.nasdanika.sage"/>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sage" nsURI="urn:org.nasdanika.sage" nsPrefix="org.nasdanika.sage">
+  <eClassifiers xsi:type="ecore:EClass" name="ModelElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="configuration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComparableModelElement" abstract="true"
+      eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="1.0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HierarchicalModelElement" abstract="true"
+      eSuperTypes="#//ModelElement">
+    <eTypeParameters name="T"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+        containment="true">
+      <eGenericType eTypeParameter="#//HierarchicalModelElement/T"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HierarchicalComparableModelElement"
+      abstract="true">
+    <eTypeParameters name="T"/>
+    <eGenericSuperTypes eClassifier="#//HierarchicalModelElement">
+      <eTypeArguments eTypeParameter="#//HierarchicalComparableModelElement/T"/>
+    </eGenericSuperTypes>
+    <eGenericSuperTypes eClassifier="#//ComparableModelElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Organization" eSuperTypes="#//ModelElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Root of the Sage analytical model."/>
+    </eAnnotations>
+  </eClassifiers>
+</ecore:EPackage>
