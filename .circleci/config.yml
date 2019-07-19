@@ -32,7 +32,7 @@ jobs:
             no_output_timeout: 120m
 
       # Executing tests
-      - run: cd repository/target/products/org.nasdanika.rigel.tests.product/linux/gtk/x86_64;./eclipse
+      - run: cd repository/target/products/org.nasdanika.sage.tests.product/linux/gtk/x86_64;./eclipse
 
       # Deploying sites
       - run: cd repository;mvn -f site-pom.xml -s ../.circleci/settings.xml site-deploy
