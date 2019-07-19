@@ -57,6 +57,18 @@ public class SageFactoryImpl extends EFactoryImpl implements SageFactory {
 		switch (eClass.getClassifierID()) {
 		case SagePackage.ORGANIZATION:
 			return createOrganization();
+		case SagePackage.PERSONA:
+			return createPersona();
+		case SagePackage.NEED:
+			return createNeed();
+		case SagePackage.STRATEGY:
+			return createStrategy();
+		case SagePackage.PORTFOLIO:
+			return createPortfolio();
+		case SagePackage.PRODUCT:
+			return createProduct();
+		case SagePackage.FEATURE:
+			return createFeature();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -70,6 +82,66 @@ public class SageFactoryImpl extends EFactoryImpl implements SageFactory {
 	public Organization createOrganization() {
 		OrganizationImpl organization = new OrganizationImpl();
 		return organization;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Persona createPersona() {
+		PersonaImpl persona = new PersonaImpl();
+		return persona;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Need createNeed() {
+		NeedImpl need = new NeedImpl();
+		return need;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Strategy createStrategy() {
+		StrategyImpl strategy = new StrategyImpl();
+		return strategy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Portfolio createPortfolio() {
+		PortfolioImpl portfolio = new PortfolioImpl();
+		return portfolio;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Product createProduct() {
+		ProductImpl product = new ProductImpl();
+		return product;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Feature createFeature() {
+		FeatureImpl feature = new FeatureImpl();
+		return feature;
 	}
 
 	/**

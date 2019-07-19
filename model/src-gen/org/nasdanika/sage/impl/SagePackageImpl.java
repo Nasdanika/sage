@@ -11,13 +11,20 @@ import org.eclipse.emf.ecore.ETypeParameter;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.nasdanika.sage.AbstractProduct;
 import org.nasdanika.sage.ComparableModelElement;
+import org.nasdanika.sage.Feature;
 import org.nasdanika.sage.HierarchicalComparableModelElement;
 import org.nasdanika.sage.HierarchicalModelElement;
 import org.nasdanika.sage.ModelElement;
+import org.nasdanika.sage.Need;
 import org.nasdanika.sage.Organization;
+import org.nasdanika.sage.Persona;
+import org.nasdanika.sage.Portfolio;
+import org.nasdanika.sage.Product;
 import org.nasdanika.sage.SageFactory;
 import org.nasdanika.sage.SagePackage;
+import org.nasdanika.sage.Strategy;
 
 /**
  * <!-- begin-user-doc -->
@@ -60,6 +67,55 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * @generated
 	 */
 	private EClass organizationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass personaEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass needEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass strategyEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass abstractProductEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass portfolioEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass productEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass featureEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -220,6 +276,96 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getOrganization_Personas() {
+		return (EReference) organizationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPersona() {
+		return personaEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPersona_Needs() {
+		return (EReference) personaEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getNeed() {
+		return needEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getStrategy() {
+		return strategyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAbstractProduct() {
+		return abstractProductEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPortfolio() {
+		return portfolioEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getProduct() {
+		return productEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getProduct_Features() {
+		return (EReference) productEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFeature() {
+		return featureEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SageFactory getSageFactory() {
 		return (SageFactory) getEFactoryInstance();
 	}
@@ -258,6 +404,23 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		hierarchicalComparableModelElementEClass = createEClass(HIERARCHICAL_COMPARABLE_MODEL_ELEMENT);
 
 		organizationEClass = createEClass(ORGANIZATION);
+		createEReference(organizationEClass, ORGANIZATION__PERSONAS);
+
+		personaEClass = createEClass(PERSONA);
+		createEReference(personaEClass, PERSONA__NEEDS);
+
+		needEClass = createEClass(NEED);
+
+		strategyEClass = createEClass(STRATEGY);
+
+		abstractProductEClass = createEClass(ABSTRACT_PRODUCT);
+
+		portfolioEClass = createEClass(PORTFOLIO);
+
+		productEClass = createEClass(PRODUCT);
+		createEReference(productEClass, PRODUCT__FEATURES);
+
+		featureEClass = createEClass(FEATURE);
 	}
 
 	/**
@@ -301,6 +464,25 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		g1 = createEGenericType(this.getComparableModelElement());
 		hierarchicalComparableModelElementEClass.getEGenericSuperTypes().add(g1);
 		organizationEClass.getESuperTypes().add(this.getModelElement());
+		personaEClass.getESuperTypes().add(this.getComparableModelElement());
+		g1 = createEGenericType(this.getHierarchicalComparableModelElement());
+		g2 = createEGenericType(this.getNeed());
+		g1.getETypeArguments().add(g2);
+		needEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getHierarchicalComparableModelElement());
+		g2 = createEGenericType(this.getStrategy());
+		g1.getETypeArguments().add(g2);
+		strategyEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getHierarchicalModelElement());
+		g2 = createEGenericType(this.getAbstractProduct());
+		g1.getETypeArguments().add(g2);
+		abstractProductEClass.getEGenericSuperTypes().add(g1);
+		portfolioEClass.getESuperTypes().add(this.getAbstractProduct());
+		productEClass.getESuperTypes().add(this.getAbstractProduct());
+		g1 = createEGenericType(this.getHierarchicalModelElement());
+		g2 = createEGenericType(this.getFeature());
+		g1.getETypeArguments().add(g2);
+		featureEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(modelElementEClass, ModelElement.class, "ModelElement", IS_ABSTRACT, !IS_INTERFACE,
@@ -332,6 +514,32 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 
 		initEClass(organizationEClass, Organization.class, "Organization", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOrganization_Personas(), this.getPersona(), null, "personas", null, 0, -1, Organization.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(personaEClass, Persona.class, "Persona", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPersona_Needs(), this.getNeed(), null, "needs", null, 0, -1, Persona.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(needEClass, Need.class, "Need", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(strategyEClass, Strategy.class, "Strategy", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(abstractProductEClass, AbstractProduct.class, "AbstractProduct", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(portfolioEClass, Portfolio.class, "Portfolio", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(productEClass, Product.class, "Product", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getProduct_Features(), this.getFeature(), null, "features", null, 0, -1, Product.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(featureEClass, Feature.class, "Feature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

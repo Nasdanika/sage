@@ -9,27 +9,28 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.nasdanika.sage.Organization;
+
+import org.nasdanika.sage.Product;
 import org.nasdanika.sage.SageFactory;
 import org.nasdanika.sage.SagePackage;
 
 /**
- * This is the item provider adapter for a {@link org.nasdanika.sage.Organization} object.
+ * This is the item provider adapter for a {@link org.nasdanika.sage.Product} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class OrganizationItemProvider extends ModelElementItemProvider {
+public class ProductItemProvider extends AbstractProductItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OrganizationItemProvider(AdapterFactory adapterFactory) {
+	public ProductItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,7 +61,7 @@ public class OrganizationItemProvider extends ModelElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(SagePackage.Literals.ORGANIZATION__PERSONAS);
+			childrenFeatures.add(SagePackage.Literals.PRODUCT__FEATURES);
 		}
 		return childrenFeatures;
 	}
@@ -79,14 +80,14 @@ public class OrganizationItemProvider extends ModelElementItemProvider {
 	}
 
 	/**
-	 * This returns Organization.gif.
+	 * This returns Product.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Organization"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Product"));
 	}
 
 	/**
@@ -107,9 +108,9 @@ public class OrganizationItemProvider extends ModelElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Organization) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Organization_type")
-				: getString("_UI_Organization_type") + " " + label;
+		String label = ((Product) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Product_type")
+				: getString("_UI_Product_type") + " " + label;
 	}
 
 	/**
@@ -123,8 +124,8 @@ public class OrganizationItemProvider extends ModelElementItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Organization.class)) {
-		case SagePackage.ORGANIZATION__PERSONAS:
+		switch (notification.getFeatureID(Product.class)) {
+		case SagePackage.PRODUCT__FEATURES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -142,8 +143,29 @@ public class OrganizationItemProvider extends ModelElementItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(SagePackage.Literals.ORGANIZATION__PERSONAS,
-				SageFactory.eINSTANCE.createPersona()));
+		newChildDescriptors.add(
+				createChildParameter(SagePackage.Literals.PRODUCT__FEATURES, SageFactory.eINSTANCE.createFeature()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify = childFeature == SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN
+				|| childFeature == SagePackage.Literals.PRODUCT__FEATURES;
+
+		if (qualify) {
+			return getString("_UI_CreateChild_text2",
+					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

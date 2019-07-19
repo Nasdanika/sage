@@ -9,27 +9,28 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.nasdanika.sage.Organization;
+
+import org.nasdanika.sage.Persona;
 import org.nasdanika.sage.SageFactory;
 import org.nasdanika.sage.SagePackage;
 
 /**
- * This is the item provider adapter for a {@link org.nasdanika.sage.Organization} object.
+ * This is the item provider adapter for a {@link org.nasdanika.sage.Persona} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class OrganizationItemProvider extends ModelElementItemProvider {
+public class PersonaItemProvider extends ComparableModelElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OrganizationItemProvider(AdapterFactory adapterFactory) {
+	public PersonaItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,7 +61,7 @@ public class OrganizationItemProvider extends ModelElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(SagePackage.Literals.ORGANIZATION__PERSONAS);
+			childrenFeatures.add(SagePackage.Literals.PERSONA__NEEDS);
 		}
 		return childrenFeatures;
 	}
@@ -79,14 +80,14 @@ public class OrganizationItemProvider extends ModelElementItemProvider {
 	}
 
 	/**
-	 * This returns Organization.gif.
+	 * This returns Persona.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Organization"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Persona"));
 	}
 
 	/**
@@ -107,9 +108,9 @@ public class OrganizationItemProvider extends ModelElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Organization) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Organization_type")
-				: getString("_UI_Organization_type") + " " + label;
+		String label = ((Persona) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Persona_type")
+				: getString("_UI_Persona_type") + " " + label;
 	}
 
 	/**
@@ -123,8 +124,8 @@ public class OrganizationItemProvider extends ModelElementItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Organization.class)) {
-		case SagePackage.ORGANIZATION__PERSONAS:
+		switch (notification.getFeatureID(Persona.class)) {
+		case SagePackage.PERSONA__NEEDS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -142,8 +143,8 @@ public class OrganizationItemProvider extends ModelElementItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(SagePackage.Literals.ORGANIZATION__PERSONAS,
-				SageFactory.eINSTANCE.createPersona()));
+		newChildDescriptors
+				.add(createChildParameter(SagePackage.Literals.PERSONA__NEEDS, SageFactory.eINSTANCE.createNeed()));
 	}
 
 }

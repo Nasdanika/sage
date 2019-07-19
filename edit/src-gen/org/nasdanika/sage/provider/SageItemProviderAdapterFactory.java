@@ -96,6 +96,144 @@ public class SageItemProviderAdapterFactory extends SageAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.sage.Persona} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PersonaItemProvider personaItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.nasdanika.sage.Persona}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPersonaAdapter() {
+		if (personaItemProvider == null) {
+			personaItemProvider = new PersonaItemProvider(this);
+		}
+
+		return personaItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.sage.Need} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NeedItemProvider needItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.nasdanika.sage.Need}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNeedAdapter() {
+		if (needItemProvider == null) {
+			needItemProvider = new NeedItemProvider(this);
+		}
+
+		return needItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.sage.Strategy} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StrategyItemProvider strategyItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.nasdanika.sage.Strategy}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStrategyAdapter() {
+		if (strategyItemProvider == null) {
+			strategyItemProvider = new StrategyItemProvider(this);
+		}
+
+		return strategyItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.sage.Portfolio} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PortfolioItemProvider portfolioItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.nasdanika.sage.Portfolio}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPortfolioAdapter() {
+		if (portfolioItemProvider == null) {
+			portfolioItemProvider = new PortfolioItemProvider(this);
+		}
+
+		return portfolioItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.sage.Product} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ProductItemProvider productItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.nasdanika.sage.Product}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createProductAdapter() {
+		if (productItemProvider == null) {
+			productItemProvider = new ProductItemProvider(this);
+		}
+
+		return productItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.sage.Feature} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FeatureItemProvider featureItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.nasdanika.sage.Feature}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFeatureAdapter() {
+		if (featureItemProvider == null) {
+			featureItemProvider = new FeatureItemProvider(this);
+		}
+
+		return featureItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -196,6 +334,18 @@ public class SageItemProviderAdapterFactory extends SageAdapterFactory
 	public void dispose() {
 		if (organizationItemProvider != null)
 			organizationItemProvider.dispose();
+		if (personaItemProvider != null)
+			personaItemProvider.dispose();
+		if (needItemProvider != null)
+			needItemProvider.dispose();
+		if (strategyItemProvider != null)
+			strategyItemProvider.dispose();
+		if (portfolioItemProvider != null)
+			portfolioItemProvider.dispose();
+		if (productItemProvider != null)
+			productItemProvider.dispose();
+		if (featureItemProvider != null)
+			featureItemProvider.dispose();
 	}
 
 }

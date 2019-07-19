@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sage" nsURI="urn:org.nasdanika.sage" nsPrefix="org.nasdanika.sage">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="Nasdanika Sage helps organizations to manage and develop their product portfolios by establishing traceability from their target audiences (personas) needs to product features and their dependencies. &#xD;&#xA;It also allow to assign weights to personas and their needs and compute weight (impact) of features. Features can be sized in some units of development effort - money, story points, days. &#xD;&#xA;Using story sizes (including dependencies) and story weight/benefit a cost benefit analysis can be conducted to identify most valuable features, where value is benefit/size. It also allows to identify most valuable products in the portfolio."/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="ModelElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -31,5 +34,58 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Root of the Sage analytical model."/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="personas" upperBound="-1"
+        eType="#//Persona" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Persona" eSuperTypes="#//ComparableModelElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Personas representing organization's target audiences. It is generally recommended to focus on no more than 3 personas.&#xD;&#xA;Personas can be assigned relative importance which is used to calculate effective importance of persona needs and then product features fulfilling those needs. &#xD;&#xA;"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="needs" upperBound="-1"
+        eType="#//Need" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Need">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Persona need. Has a weight relative to &quot;peer&quot; needs. This weight is used to compute effective weight of a need to be used in computing feature and product weights (benefits) and values (benefit/investment|effort|size).&#xD;&#xA;Needs can be organized into a hierarchy.&#xD;&#xA;&#xD;&#xA;"/>
+    </eAnnotations>
+    <eGenericSuperTypes eClassifier="#//HierarchicalComparableModelElement">
+      <eTypeArguments eClassifier="#//Need"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Strategy">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Strategies capture the core guiding principles of an organization. They can be associated with products and features to compute strategic algnment which, in addition to the cost/benefit analysis, may help in feature prioritization. Strategies may also be used in identification of new features and decision making processes on how to implement those features."/>
+    </eAnnotations>
+    <eGenericSuperTypes eClassifier="#//HierarchicalComparableModelElement">
+      <eTypeArguments eClassifier="#//Strategy"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractProduct" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Base class for products and portfolios."/>
+    </eAnnotations>
+    <eGenericSuperTypes eClassifier="#//HierarchicalModelElement">
+      <eTypeArguments eClassifier="#//AbstractProduct"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Portfolio" eSuperTypes="#//AbstractProduct">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Portfolio is a container of products and other portfolios. "/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Product" eSuperTypes="#//AbstractProduct">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Product delivers value to customers (personas) by satisfying their needs via product features. A product may have multiple editions either tailored to different personas  and providing different levels of functionality at a different cost. E.g. there may be a community/free edition, a professional edition and an enterprise edition."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
+        eType="#//Feature" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Feature">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Product feature satisfies specific persona needs. Feature's relative importance is computed from the needs satisfied by the feature. "/>
+    </eAnnotations>
+    <eGenericSuperTypes eClassifier="#//HierarchicalModelElement">
+      <eTypeArguments eClassifier="#//Feature"/>
+    </eGenericSuperTypes>
   </eClassifiers>
 </ecore:EPackage>

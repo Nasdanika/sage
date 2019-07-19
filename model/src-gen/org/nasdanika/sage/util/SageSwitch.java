@@ -113,6 +113,95 @@ public class SageSwitch<T1> extends Switch<T1> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case SagePackage.PERSONA: {
+			Persona persona = (Persona) theEObject;
+			T1 result = casePersona(persona);
+			if (result == null)
+				result = caseComparableModelElement(persona);
+			if (result == null)
+				result = caseModelElement(persona);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SagePackage.NEED: {
+			Need need = (Need) theEObject;
+			T1 result = caseNeed(need);
+			if (result == null)
+				result = caseHierarchicalComparableModelElement(need);
+			if (result == null)
+				result = caseHierarchicalModelElement(need);
+			if (result == null)
+				result = caseComparableModelElement(need);
+			if (result == null)
+				result = caseModelElement(need);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SagePackage.STRATEGY: {
+			Strategy strategy = (Strategy) theEObject;
+			T1 result = caseStrategy(strategy);
+			if (result == null)
+				result = caseHierarchicalComparableModelElement(strategy);
+			if (result == null)
+				result = caseHierarchicalModelElement(strategy);
+			if (result == null)
+				result = caseComparableModelElement(strategy);
+			if (result == null)
+				result = caseModelElement(strategy);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SagePackage.ABSTRACT_PRODUCT: {
+			AbstractProduct abstractProduct = (AbstractProduct) theEObject;
+			T1 result = caseAbstractProduct(abstractProduct);
+			if (result == null)
+				result = caseHierarchicalModelElement(abstractProduct);
+			if (result == null)
+				result = caseModelElement(abstractProduct);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SagePackage.PORTFOLIO: {
+			Portfolio portfolio = (Portfolio) theEObject;
+			T1 result = casePortfolio(portfolio);
+			if (result == null)
+				result = caseAbstractProduct(portfolio);
+			if (result == null)
+				result = caseHierarchicalModelElement(portfolio);
+			if (result == null)
+				result = caseModelElement(portfolio);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SagePackage.PRODUCT: {
+			Product product = (Product) theEObject;
+			T1 result = caseProduct(product);
+			if (result == null)
+				result = caseAbstractProduct(product);
+			if (result == null)
+				result = caseHierarchicalModelElement(product);
+			if (result == null)
+				result = caseModelElement(product);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SagePackage.FEATURE: {
+			Feature feature = (Feature) theEObject;
+			T1 result = caseFeature(feature);
+			if (result == null)
+				result = caseHierarchicalModelElement(feature);
+			if (result == null)
+				result = caseModelElement(feature);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -190,6 +279,111 @@ public class SageSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	public T1 caseOrganization(Organization object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Persona</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Persona</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 casePersona(Persona object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Need</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Need</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseNeed(Need object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Strategy</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Strategy</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseStrategy(Strategy object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Product</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Product</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseAbstractProduct(AbstractProduct object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Portfolio</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Portfolio</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 casePortfolio(Portfolio object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Product</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Product</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseProduct(Product object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Feature</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Feature</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseFeature(Feature object) {
 		return null;
 	}
 

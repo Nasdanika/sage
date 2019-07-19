@@ -31,6 +31,60 @@ public interface SageFactory extends EFactory {
 	Organization createOrganization();
 
 	/**
+	 * Returns a new object of class '<em>Persona</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Persona</em>'.
+	 * @generated
+	 */
+	Persona createPersona();
+
+	/**
+	 * Returns a new object of class '<em>Need</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Need</em>'.
+	 * @generated
+	 */
+	Need createNeed();
+
+	/**
+	 * Returns a new object of class '<em>Strategy</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Strategy</em>'.
+	 * @generated
+	 */
+	Strategy createStrategy();
+
+	/**
+	 * Returns a new object of class '<em>Portfolio</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Portfolio</em>'.
+	 * @generated
+	 */
+	Portfolio createPortfolio();
+
+	/**
+	 * Returns a new object of class '<em>Product</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Product</em>'.
+	 * @generated
+	 */
+	Product createProduct();
+
+	/**
+	 * Returns a new object of class '<em>Feature</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Feature</em>'.
+	 * @generated
+	 */
+	Feature createFeature();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

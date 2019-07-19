@@ -3,36 +3,40 @@
 package org.nasdanika.sage.impl;
 
 import java.util.Collection;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.nasdanika.sage.Organization;
+
+import org.nasdanika.sage.Need;
 import org.nasdanika.sage.Persona;
 import org.nasdanika.sage.SagePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Organization</b></em>'.
+ * An implementation of the model object '<em><b>Persona</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.sage.impl.OrganizationImpl#getPersonas <em>Personas</em>}</li>
+ *   <li>{@link org.nasdanika.sage.impl.PersonaImpl#getNeeds <em>Needs</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class OrganizationImpl extends ModelElementImpl implements Organization {
+public class PersonaImpl extends ComparableModelElementImpl implements Persona {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected OrganizationImpl() {
+	protected PersonaImpl() {
 		super();
 	}
 
@@ -43,7 +47,7 @@ public class OrganizationImpl extends ModelElementImpl implements Organization {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SagePackage.Literals.ORGANIZATION;
+		return SagePackage.Literals.PERSONA;
 	}
 
 	/**
@@ -52,9 +56,8 @@ public class OrganizationImpl extends ModelElementImpl implements Organization {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<Persona> getPersonas() {
-		return (EList<Persona>) eDynamicGet(SagePackage.ORGANIZATION__PERSONAS,
-				SagePackage.Literals.ORGANIZATION__PERSONAS, true, true);
+	public EList<Need> getNeeds() {
+		return (EList<Need>) eDynamicGet(SagePackage.PERSONA__NEEDS, SagePackage.Literals.PERSONA__NEEDS, true, true);
 	}
 
 	/**
@@ -65,8 +68,8 @@ public class OrganizationImpl extends ModelElementImpl implements Organization {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case SagePackage.ORGANIZATION__PERSONAS:
-			return ((InternalEList<?>) getPersonas()).basicRemove(otherEnd, msgs);
+		case SagePackage.PERSONA__NEEDS:
+			return ((InternalEList<?>) getNeeds()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -79,8 +82,8 @@ public class OrganizationImpl extends ModelElementImpl implements Organization {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case SagePackage.ORGANIZATION__PERSONAS:
-			return getPersonas();
+		case SagePackage.PERSONA__NEEDS:
+			return getNeeds();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -94,9 +97,9 @@ public class OrganizationImpl extends ModelElementImpl implements Organization {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case SagePackage.ORGANIZATION__PERSONAS:
-			getPersonas().clear();
-			getPersonas().addAll((Collection<? extends Persona>) newValue);
+		case SagePackage.PERSONA__NEEDS:
+			getNeeds().clear();
+			getNeeds().addAll((Collection<? extends Need>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -110,8 +113,8 @@ public class OrganizationImpl extends ModelElementImpl implements Organization {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case SagePackage.ORGANIZATION__PERSONAS:
-			getPersonas().clear();
+		case SagePackage.PERSONA__NEEDS:
+			getNeeds().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -125,10 +128,10 @@ public class OrganizationImpl extends ModelElementImpl implements Organization {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case SagePackage.ORGANIZATION__PERSONAS:
-			return !getPersonas().isEmpty();
+		case SagePackage.PERSONA__NEEDS:
+			return !getNeeds().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //OrganizationImpl
+} //PersonaImpl

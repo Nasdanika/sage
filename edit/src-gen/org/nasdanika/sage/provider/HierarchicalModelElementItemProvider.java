@@ -134,6 +134,24 @@ public class HierarchicalModelElementItemProvider extends ModelElementItemProvid
 
 		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
 				SageFactory.eINSTANCE.createOrganization()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
+				SageFactory.eINSTANCE.createPersona()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
+				SageFactory.eINSTANCE.createNeed()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
+				SageFactory.eINSTANCE.createStrategy()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
+				SageFactory.eINSTANCE.createPortfolio()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
+				SageFactory.eINSTANCE.createProduct()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
+				SageFactory.eINSTANCE.createFeature()));
 	}
 
 }
