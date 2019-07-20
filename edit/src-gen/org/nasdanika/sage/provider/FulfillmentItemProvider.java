@@ -20,7 +20,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
+import org.nasdanika.sage.Feature;
 import org.nasdanika.sage.Fulfillment;
 import org.nasdanika.sage.SagePackage;
 
@@ -111,11 +111,11 @@ public class FulfillmentItemProvider extends ItemProviderAdapter implements IEdi
 	 * This returns Fulfillment.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Fulfillment"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Fulfillment.png"));
 	}
 
 	/**
@@ -132,12 +132,13 @@ public class FulfillmentItemProvider extends ItemProviderAdapter implements IEdi
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		Fulfillment fulfillment = (Fulfillment) object;
-		return getString("_UI_Fulfillment_type") + " " + fulfillment.getWeight();
+		Feature ff = fulfillment.getFeature();
+		return (ff == null ? getString("_UI_Fulfillment_type") : ff.getName()) + " (" + fulfillment.getWeight()+")";
 	}
 
 	/**

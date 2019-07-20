@@ -135,11 +135,11 @@ public class FeatureItemProvider extends HierarchicalModelElementItemProvider {
 	 * This returns Feature.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Feature"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Feature.png"));
 	}
 
 	/**
@@ -156,13 +156,12 @@ public class FeatureItemProvider extends HierarchicalModelElementItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((Feature) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Feature_type")
-				: getString("_UI_Feature_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_Feature_type") : label;
 	}
 
 	/**

@@ -100,11 +100,11 @@ public class PersonaItemProvider extends ComparableModelElementItemProvider {
 	 * This returns Persona.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Persona"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Persona.png"));
 	}
 
 	/**
@@ -121,13 +121,12 @@ public class PersonaItemProvider extends ComparableModelElementItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((Persona) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Persona_type")
-				: getString("_UI_Persona_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_Persona_type")	: label;
 	}
 
 	/**

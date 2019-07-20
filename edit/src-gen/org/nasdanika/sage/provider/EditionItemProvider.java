@@ -82,11 +82,11 @@ public class EditionItemProvider extends OfferingItemProvider {
 	 * This returns Edition.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Edition"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Edition.png"));
 	}
 
 	/**
@@ -103,13 +103,12 @@ public class EditionItemProvider extends OfferingItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((Edition) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Edition_type")
-				: getString("_UI_Edition_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_Edition_type")	: label;
 	}
 
 	/**

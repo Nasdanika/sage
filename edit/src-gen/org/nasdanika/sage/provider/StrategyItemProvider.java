@@ -48,11 +48,11 @@ public class StrategyItemProvider extends HierarchicalComparableModelElementItem
 	 * This returns Strategy.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Strategy"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Strategy.png"));
 	}
 
 	/**
@@ -69,13 +69,12 @@ public class StrategyItemProvider extends HierarchicalComparableModelElementItem
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((Strategy) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Strategy_type")
-				: getString("_UI_Strategy_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_Strategy_type") : label;
 	}
 
 	/**
