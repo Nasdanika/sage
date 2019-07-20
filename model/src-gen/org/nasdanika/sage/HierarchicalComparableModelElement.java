@@ -7,6 +7,10 @@ package org.nasdanika.sage;
  * A representation of the model object '<em><b>Hierarchical Comparable Model Element</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A model element which is both hierarchical and comparable.
+ * <!-- end-model-doc -->
+ *
  *
  * @see org.nasdanika.sage.SagePackage#getHierarchicalComparableModelElement()
  * @model abstract="true"

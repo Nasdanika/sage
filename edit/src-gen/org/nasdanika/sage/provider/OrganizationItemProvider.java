@@ -22,7 +22,7 @@ import org.nasdanika.sage.SagePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class OrganizationItemProvider extends ModelElementItemProvider {
+public class OrganizationItemProvider extends HierarchicalModelElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -61,6 +61,7 @@ public class OrganizationItemProvider extends ModelElementItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SagePackage.Literals.ORGANIZATION__PERSONAS);
+			childrenFeatures.add(SagePackage.Literals.ORGANIZATION__PRODUCTS);
 		}
 		return childrenFeatures;
 	}
@@ -125,6 +126,7 @@ public class OrganizationItemProvider extends ModelElementItemProvider {
 
 		switch (notification.getFeatureID(Organization.class)) {
 		case SagePackage.ORGANIZATION__PERSONAS:
+		case SagePackage.ORGANIZATION__PRODUCTS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -144,6 +146,34 @@ public class OrganizationItemProvider extends ModelElementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(SagePackage.Literals.ORGANIZATION__PERSONAS,
 				SageFactory.eINSTANCE.createPersona()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.ORGANIZATION__PRODUCTS,
+				SageFactory.eINSTANCE.createPortfolio()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.ORGANIZATION__PRODUCTS,
+				SageFactory.eINSTANCE.createProduct()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify = childFeature == SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN
+				|| childFeature == SagePackage.Literals.ORGANIZATION__PERSONAS
+				|| childFeature == SagePackage.Literals.ORGANIZATION__PRODUCTS;
+
+		if (qualify) {
+			return getString("_UI_CreateChild_text2",
+					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

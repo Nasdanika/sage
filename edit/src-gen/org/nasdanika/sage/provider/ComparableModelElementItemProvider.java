@@ -45,6 +45,7 @@ public class ComparableModelElementItemProvider extends ModelElementItemProvider
 			super.getPropertyDescriptors(object);
 
 			addWeightPropertyDescriptor(object);
+			addEffectiveWeightPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -62,6 +63,22 @@ public class ComparableModelElementItemProvider extends ModelElementItemProvider
 				getString("_UI_PropertyDescriptor_description", "_UI_ComparableModelElement_weight_feature",
 						"_UI_ComparableModelElement_type"),
 				SagePackage.Literals.COMPARABLE_MODEL_ELEMENT__WEIGHT, true, false, false,
+				ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Effective Weight feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEffectiveWeightPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_ComparableModelElement_effectiveWeight_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ComparableModelElement_effectiveWeight_feature",
+						"_UI_ComparableModelElement_type"),
+				SagePackage.Literals.COMPARABLE_MODEL_ELEMENT__EFFECTIVE_WEIGHT, false, false, false,
 				ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
@@ -101,6 +118,7 @@ public class ComparableModelElementItemProvider extends ModelElementItemProvider
 
 		switch (notification.getFeatureID(ComparableModelElement.class)) {
 		case SagePackage.COMPARABLE_MODEL_ELEMENT__WEIGHT:
+		case SagePackage.COMPARABLE_MODEL_ELEMENT__EFFECTIVE_WEIGHT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

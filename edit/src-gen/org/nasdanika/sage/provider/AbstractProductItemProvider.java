@@ -18,7 +18,7 @@ import org.nasdanika.sage.AbstractProduct;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AbstractProductItemProvider extends HierarchicalModelElementItemProvider {
+public class AbstractProductItemProvider extends ModelElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

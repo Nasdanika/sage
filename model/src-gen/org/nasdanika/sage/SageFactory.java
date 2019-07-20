@@ -85,6 +85,51 @@ public interface SageFactory extends EFactory {
 	Feature createFeature();
 
 	/**
+	 * Returns a new object of class '<em>Edition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Edition</em>'.
+	 * @generated
+	 */
+	Edition createEdition();
+
+	/**
+	 * Returns a new object of class '<em>Release</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Release</em>'.
+	 * @generated
+	 */
+	Release createRelease();
+
+	/**
+	 * Returns a new object of class '<em>Fulfillment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Fulfillment</em>'.
+	 * @generated
+	 */
+	Fulfillment createFulfillment();
+
+	/**
+	 * Returns a new object of class '<em>Dependency</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Dependency</em>'.
+	 * @generated
+	 */
+	Dependency createDependency();
+
+	/**
+	 * Returns a new object of class '<em>Enabler</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Enabler</em>'.
+	 * @generated
+	 */
+	Enabler createEnabler();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

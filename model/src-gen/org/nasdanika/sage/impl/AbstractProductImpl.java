@@ -14,8 +14,7 @@ import org.nasdanika.sage.SagePackage;
  *
  * @generated
  */
-public abstract class AbstractProductImpl extends HierarchicalModelElementImpl<AbstractProduct>
-		implements AbstractProduct {
+public abstract class AbstractProductImpl extends ModelElementImpl implements AbstractProduct {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

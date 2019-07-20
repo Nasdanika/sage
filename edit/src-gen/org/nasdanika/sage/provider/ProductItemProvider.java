@@ -10,7 +10,9 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.nasdanika.sage.Product;
@@ -45,8 +47,41 @@ public class ProductItemProvider extends AbstractProductItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addTargetAudiencesPropertyDescriptor(object);
+			addStagePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Target Audiences feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTargetAudiencesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Offering_targetAudiences_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Offering_targetAudiences_feature",
+								"_UI_Offering_type"),
+						SagePackage.Literals.OFFERING__TARGET_AUDIENCES, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Stage feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Product_stage_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Product_stage_feature",
+								"_UI_Product_type"),
+						SagePackage.Literals.PRODUCT__STAGE, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -62,6 +97,7 @@ public class ProductItemProvider extends AbstractProductItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SagePackage.Literals.PRODUCT__FEATURES);
+			childrenFeatures.add(SagePackage.Literals.PRODUCT__RELEASES);
 		}
 		return childrenFeatures;
 	}
@@ -125,7 +161,11 @@ public class ProductItemProvider extends AbstractProductItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Product.class)) {
+		case SagePackage.PRODUCT__STAGE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		case SagePackage.PRODUCT__FEATURES:
+		case SagePackage.PRODUCT__RELEASES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -145,27 +185,9 @@ public class ProductItemProvider extends AbstractProductItemProvider {
 
 		newChildDescriptors.add(
 				createChildParameter(SagePackage.Literals.PRODUCT__FEATURES, SageFactory.eINSTANCE.createFeature()));
-	}
 
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify = childFeature == SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN
-				|| childFeature == SagePackage.Literals.PRODUCT__FEATURES;
-
-		if (qualify) {
-			return getString("_UI_CreateChild_text2",
-					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
+		newChildDescriptors.add(
+				createChildParameter(SagePackage.Literals.PRODUCT__RELEASES, SageFactory.eINSTANCE.createRelease()));
 	}
 
 }

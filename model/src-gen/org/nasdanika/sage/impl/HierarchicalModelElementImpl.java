@@ -25,6 +25,7 @@ import org.nasdanika.sage.SagePackage;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.sage.impl.HierarchicalModelElementImpl#getChildren <em>Children</em>}</li>
+ *   <li>{@link org.nasdanika.sage.impl.HierarchicalModelElementImpl#getLinkedChildren <em>Linked Children</em>}</li>
  * </ul>
  *
  * @generated
@@ -65,6 +66,17 @@ public abstract class HierarchicalModelElementImpl<T> extends ModelElementImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	public EList<HierarchicalModelElement<T>> getLinkedChildren() {
+		return (EList<HierarchicalModelElement<T>>) eDynamicGet(SagePackage.HIERARCHICAL_MODEL_ELEMENT__LINKED_CHILDREN,
+				SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__LINKED_CHILDREN, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -84,6 +96,8 @@ public abstract class HierarchicalModelElementImpl<T> extends ModelElementImpl i
 		switch (featureID) {
 		case SagePackage.HIERARCHICAL_MODEL_ELEMENT__CHILDREN:
 			return getChildren();
+		case SagePackage.HIERARCHICAL_MODEL_ELEMENT__LINKED_CHILDREN:
+			return getLinkedChildren();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -101,6 +115,10 @@ public abstract class HierarchicalModelElementImpl<T> extends ModelElementImpl i
 			getChildren().clear();
 			getChildren().addAll((Collection<? extends T>) newValue);
 			return;
+		case SagePackage.HIERARCHICAL_MODEL_ELEMENT__LINKED_CHILDREN:
+			getLinkedChildren().clear();
+			getLinkedChildren().addAll((Collection<? extends HierarchicalModelElement<T>>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -116,6 +134,9 @@ public abstract class HierarchicalModelElementImpl<T> extends ModelElementImpl i
 		case SagePackage.HIERARCHICAL_MODEL_ELEMENT__CHILDREN:
 			getChildren().clear();
 			return;
+		case SagePackage.HIERARCHICAL_MODEL_ELEMENT__LINKED_CHILDREN:
+			getLinkedChildren().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -130,6 +151,8 @@ public abstract class HierarchicalModelElementImpl<T> extends ModelElementImpl i
 		switch (featureID) {
 		case SagePackage.HIERARCHICAL_MODEL_ELEMENT__CHILDREN:
 			return !getChildren().isEmpty();
+		case SagePackage.HIERARCHICAL_MODEL_ELEMENT__LINKED_CHILDREN:
+			return !getLinkedChildren().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

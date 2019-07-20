@@ -108,6 +108,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 			Organization organization = (Organization) theEObject;
 			T1 result = caseOrganization(organization);
 			if (result == null)
+				result = caseHierarchicalModelElement(organization);
+			if (result == null)
 				result = caseModelElement(organization);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -158,8 +160,6 @@ public class SageSwitch<T1> extends Switch<T1> {
 			AbstractProduct abstractProduct = (AbstractProduct) theEObject;
 			T1 result = caseAbstractProduct(abstractProduct);
 			if (result == null)
-				result = caseHierarchicalModelElement(abstractProduct);
-			if (result == null)
 				result = caseModelElement(abstractProduct);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -184,7 +184,7 @@ public class SageSwitch<T1> extends Switch<T1> {
 			if (result == null)
 				result = caseAbstractProduct(product);
 			if (result == null)
-				result = caseHierarchicalModelElement(product);
+				result = caseOffering(product);
 			if (result == null)
 				result = caseModelElement(product);
 			if (result == null)
@@ -198,6 +198,56 @@ public class SageSwitch<T1> extends Switch<T1> {
 				result = caseHierarchicalModelElement(feature);
 			if (result == null)
 				result = caseModelElement(feature);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SagePackage.OFFERING: {
+			Offering offering = (Offering) theEObject;
+			T1 result = caseOffering(offering);
+			if (result == null)
+				result = caseModelElement(offering);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SagePackage.EDITION: {
+			Edition edition = (Edition) theEObject;
+			T1 result = caseEdition(edition);
+			if (result == null)
+				result = caseOffering(edition);
+			if (result == null)
+				result = caseModelElement(edition);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SagePackage.RELEASE: {
+			Release release = (Release) theEObject;
+			T1 result = caseRelease(release);
+			if (result == null)
+				result = caseModelElement(release);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SagePackage.FULFILLMENT: {
+			Fulfillment fulfillment = (Fulfillment) theEObject;
+			T1 result = caseFulfillment(fulfillment);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SagePackage.DEPENDENCY: {
+			Dependency dependency = (Dependency) theEObject;
+			T1 result = caseDependency(dependency);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case SagePackage.ENABLER: {
+			Enabler enabler = (Enabler) theEObject;
+			T1 result = caseEnabler(enabler);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -384,6 +434,96 @@ public class SageSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	public T1 caseFeature(Feature object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Offering</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Offering</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseOffering(Offering object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Edition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Edition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseEdition(Edition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Release</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Release</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseRelease(Release object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Fulfillment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Fulfillment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseFulfillment(Fulfillment object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Dependency</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Dependency</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseDependency(Dependency object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Enabler</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Enabler</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseEnabler(Enabler object) {
 		return null;
 	}
 

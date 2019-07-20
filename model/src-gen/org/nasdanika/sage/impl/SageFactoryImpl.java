@@ -3,6 +3,7 @@
 package org.nasdanika.sage.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -69,8 +70,56 @@ public class SageFactoryImpl extends EFactoryImpl implements SageFactory {
 			return createProduct();
 		case SagePackage.FEATURE:
 			return createFeature();
+		case SagePackage.EDITION:
+			return createEdition();
+		case SagePackage.RELEASE:
+			return createRelease();
+		case SagePackage.FULFILLMENT:
+			return createFulfillment();
+		case SagePackage.DEPENDENCY:
+			return createDependency();
+		case SagePackage.ENABLER:
+			return createEnabler();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+		case SagePackage.NEED_CATEGORY:
+			return createNeedCategoryFromString(eDataType, initialValue);
+		case SagePackage.PRODUCT_STAGE:
+			return createProductStageFromString(eDataType, initialValue);
+		case SagePackage.FEATURE_STATE:
+			return createFeatureStateFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+		case SagePackage.NEED_CATEGORY:
+			return convertNeedCategoryToString(eDataType, instanceValue);
+		case SagePackage.PRODUCT_STAGE:
+			return convertProductStageToString(eDataType, instanceValue);
+		case SagePackage.FEATURE_STATE:
+			return convertFeatureStateToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -142,6 +191,122 @@ public class SageFactoryImpl extends EFactoryImpl implements SageFactory {
 	public Feature createFeature() {
 		FeatureImpl feature = new FeatureImpl();
 		return feature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Edition createEdition() {
+		EditionImpl edition = new EditionImpl();
+		return edition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Release createRelease() {
+		ReleaseImpl release = new ReleaseImpl();
+		return release;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Fulfillment createFulfillment() {
+		FulfillmentImpl fulfillment = new FulfillmentImpl();
+		return fulfillment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Dependency createDependency() {
+		DependencyImpl dependency = new DependencyImpl();
+		return dependency;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enabler createEnabler() {
+		EnablerImpl enabler = new EnablerImpl();
+		return enabler;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NeedCategory createNeedCategoryFromString(EDataType eDataType, String initialValue) {
+		NeedCategory result = NeedCategory.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertNeedCategoryToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProductStage createProductStageFromString(EDataType eDataType, String initialValue) {
+		ProductStage result = ProductStage.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertProductStageToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FeatureState createFeatureStateFromString(EDataType eDataType, String initialValue) {
+		FeatureState result = FeatureState.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertFeatureStateToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

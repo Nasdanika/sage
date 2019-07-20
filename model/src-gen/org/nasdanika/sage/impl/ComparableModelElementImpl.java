@@ -16,6 +16,7 @@ import org.nasdanika.sage.SagePackage;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.sage.impl.ComparableModelElementImpl#getWeight <em>Weight</em>}</li>
+ *   <li>{@link org.nasdanika.sage.impl.ComparableModelElementImpl#getEffectiveWeight <em>Effective Weight</em>}</li>
  * </ul>
  *
  * @generated
@@ -30,6 +31,16 @@ public abstract class ComparableModelElementImpl extends ModelElementImpl implem
 	 * @ordered
 	 */
 	protected static final double WEIGHT_EDEFAULT = 1.0;
+
+	/**
+	 * The default value of the '{@link #getEffectiveWeight() <em>Effective Weight</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEffectiveWeight()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double EFFECTIVE_WEIGHT_EDEFAULT = 1.0;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,11 +86,23 @@ public abstract class ComparableModelElementImpl extends ModelElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public double getEffectiveWeight() {
+		return (Double) eDynamicGet(SagePackage.COMPARABLE_MODEL_ELEMENT__EFFECTIVE_WEIGHT,
+				SagePackage.Literals.COMPARABLE_MODEL_ELEMENT__EFFECTIVE_WEIGHT, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case SagePackage.COMPARABLE_MODEL_ELEMENT__WEIGHT:
 			return getWeight();
+		case SagePackage.COMPARABLE_MODEL_ELEMENT__EFFECTIVE_WEIGHT:
+			return getEffectiveWeight();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -124,6 +147,8 @@ public abstract class ComparableModelElementImpl extends ModelElementImpl implem
 		switch (featureID) {
 		case SagePackage.COMPARABLE_MODEL_ELEMENT__WEIGHT:
 			return getWeight() != WEIGHT_EDEFAULT;
+		case SagePackage.COMPARABLE_MODEL_ELEMENT__EFFECTIVE_WEIGHT:
+			return getEffectiveWeight() != EFFECTIVE_WEIGHT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

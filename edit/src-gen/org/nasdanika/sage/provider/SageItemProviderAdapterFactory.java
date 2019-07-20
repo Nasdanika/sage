@@ -234,6 +234,121 @@ public class SageItemProviderAdapterFactory extends SageAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.sage.Edition} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EditionItemProvider editionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.nasdanika.sage.Edition}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEditionAdapter() {
+		if (editionItemProvider == null) {
+			editionItemProvider = new EditionItemProvider(this);
+		}
+
+		return editionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.sage.Release} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReleaseItemProvider releaseItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.nasdanika.sage.Release}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createReleaseAdapter() {
+		if (releaseItemProvider == null) {
+			releaseItemProvider = new ReleaseItemProvider(this);
+		}
+
+		return releaseItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.sage.Fulfillment} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FulfillmentItemProvider fulfillmentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.nasdanika.sage.Fulfillment}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFulfillmentAdapter() {
+		if (fulfillmentItemProvider == null) {
+			fulfillmentItemProvider = new FulfillmentItemProvider(this);
+		}
+
+		return fulfillmentItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.sage.Dependency} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DependencyItemProvider dependencyItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.nasdanika.sage.Dependency}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDependencyAdapter() {
+		if (dependencyItemProvider == null) {
+			dependencyItemProvider = new DependencyItemProvider(this);
+		}
+
+		return dependencyItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.sage.Enabler} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EnablerItemProvider enablerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.nasdanika.sage.Enabler}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEnablerAdapter() {
+		if (enablerItemProvider == null) {
+			enablerItemProvider = new EnablerItemProvider(this);
+		}
+
+		return enablerItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -346,6 +461,16 @@ public class SageItemProviderAdapterFactory extends SageAdapterFactory
 			productItemProvider.dispose();
 		if (featureItemProvider != null)
 			featureItemProvider.dispose();
+		if (editionItemProvider != null)
+			editionItemProvider.dispose();
+		if (releaseItemProvider != null)
+			releaseItemProvider.dispose();
+		if (fulfillmentItemProvider != null)
+			fulfillmentItemProvider.dispose();
+		if (dependencyItemProvider != null)
+			dependencyItemProvider.dispose();
+		if (enablerItemProvider != null)
+			enablerItemProvider.dispose();
 	}
 
 }

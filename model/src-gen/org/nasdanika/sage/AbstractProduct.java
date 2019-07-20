@@ -16,5 +16,5 @@ package org.nasdanika.sage;
  * @model abstract="true"
  * @generated
  */
-public interface AbstractProduct extends HierarchicalModelElement<AbstractProduct> {
+public interface AbstractProduct extends ModelElement {
 } // AbstractProduct

@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.nasdanika.sage.Need;
+import org.nasdanika.sage.Offering;
 import org.nasdanika.sage.Persona;
 import org.nasdanika.sage.SagePackage;
 
@@ -26,6 +27,7 @@ import org.nasdanika.sage.SagePackage;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.sage.impl.PersonaImpl#getNeeds <em>Needs</em>}</li>
+ *   <li>{@link org.nasdanika.sage.impl.PersonaImpl#getOfferings <em>Offerings</em>}</li>
  * </ul>
  *
  * @generated
@@ -65,11 +67,39 @@ public class PersonaImpl extends ComparableModelElementImpl implements Persona {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	public EList<Offering> getOfferings() {
+		return (EList<Offering>) eDynamicGet(SagePackage.PERSONA__OFFERINGS, SagePackage.Literals.PERSONA__OFFERINGS,
+				true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case SagePackage.PERSONA__OFFERINGS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOfferings()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case SagePackage.PERSONA__NEEDS:
 			return ((InternalEList<?>) getNeeds()).basicRemove(otherEnd, msgs);
+		case SagePackage.PERSONA__OFFERINGS:
+			return ((InternalEList<?>) getOfferings()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -84,6 +114,8 @@ public class PersonaImpl extends ComparableModelElementImpl implements Persona {
 		switch (featureID) {
 		case SagePackage.PERSONA__NEEDS:
 			return getNeeds();
+		case SagePackage.PERSONA__OFFERINGS:
+			return getOfferings();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -101,6 +133,10 @@ public class PersonaImpl extends ComparableModelElementImpl implements Persona {
 			getNeeds().clear();
 			getNeeds().addAll((Collection<? extends Need>) newValue);
 			return;
+		case SagePackage.PERSONA__OFFERINGS:
+			getOfferings().clear();
+			getOfferings().addAll((Collection<? extends Offering>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -116,6 +152,9 @@ public class PersonaImpl extends ComparableModelElementImpl implements Persona {
 		case SagePackage.PERSONA__NEEDS:
 			getNeeds().clear();
 			return;
+		case SagePackage.PERSONA__OFFERINGS:
+			getOfferings().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -130,6 +169,8 @@ public class PersonaImpl extends ComparableModelElementImpl implements Persona {
 		switch (featureID) {
 		case SagePackage.PERSONA__NEEDS:
 			return !getNeeds().isEmpty();
+		case SagePackage.PERSONA__OFFERINGS:
+			return !getOfferings().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

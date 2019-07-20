@@ -16,5 +16,5 @@ package org.nasdanika.sage;
  * @model
  * @generated
  */
-public interface Portfolio extends AbstractProduct {
+public interface Portfolio extends AbstractProduct, HierarchicalModelElement<AbstractProduct> {
 } // Portfolio

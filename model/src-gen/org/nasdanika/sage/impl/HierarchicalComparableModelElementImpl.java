@@ -17,6 +17,7 @@ import org.nasdanika.sage.SagePackage;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.sage.impl.HierarchicalComparableModelElementImpl#getWeight <em>Weight</em>}</li>
+ *   <li>{@link org.nasdanika.sage.impl.HierarchicalComparableModelElementImpl#getEffectiveWeight <em>Effective Weight</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,6 +33,16 @@ public abstract class HierarchicalComparableModelElementImpl<T> extends Hierarch
 	 * @ordered
 	 */
 	protected static final double WEIGHT_EDEFAULT = 1.0;
+
+	/**
+	 * The default value of the '{@link #getEffectiveWeight() <em>Effective Weight</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEffectiveWeight()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double EFFECTIVE_WEIGHT_EDEFAULT = 1.0;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,11 +88,23 @@ public abstract class HierarchicalComparableModelElementImpl<T> extends Hierarch
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public double getEffectiveWeight() {
+		return (Double) eDynamicGet(SagePackage.HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__EFFECTIVE_WEIGHT,
+				SagePackage.Literals.COMPARABLE_MODEL_ELEMENT__EFFECTIVE_WEIGHT, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case SagePackage.HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__WEIGHT:
 			return getWeight();
+		case SagePackage.HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__EFFECTIVE_WEIGHT:
+			return getEffectiveWeight();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -126,6 +149,8 @@ public abstract class HierarchicalComparableModelElementImpl<T> extends Hierarch
 		switch (featureID) {
 		case SagePackage.HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__WEIGHT:
 			return getWeight() != WEIGHT_EDEFAULT;
+		case SagePackage.HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__EFFECTIVE_WEIGHT:
+			return getEffectiveWeight() != EFFECTIVE_WEIGHT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -141,6 +166,8 @@ public abstract class HierarchicalComparableModelElementImpl<T> extends Hierarch
 			switch (derivedFeatureID) {
 			case SagePackage.HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__WEIGHT:
 				return SagePackage.COMPARABLE_MODEL_ELEMENT__WEIGHT;
+			case SagePackage.HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__EFFECTIVE_WEIGHT:
+				return SagePackage.COMPARABLE_MODEL_ELEMENT__EFFECTIVE_WEIGHT;
 			default:
 				return -1;
 			}
@@ -159,6 +186,8 @@ public abstract class HierarchicalComparableModelElementImpl<T> extends Hierarch
 			switch (baseFeatureID) {
 			case SagePackage.COMPARABLE_MODEL_ELEMENT__WEIGHT:
 				return SagePackage.HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__WEIGHT;
+			case SagePackage.COMPARABLE_MODEL_ELEMENT__EFFECTIVE_WEIGHT:
+				return SagePackage.HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__EFFECTIVE_WEIGHT;
 			default:
 				return -1;
 			}
