@@ -10,6 +10,22 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Sage" basePackage="org.nasdanika" disposableProviderFactory="true"
       ecorePackage="sage.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sage.ecore#//NeedCategory">
+      <genEnumLiterals ecoreEnumLiteral="sage.ecore#//NeedCategory/Basic"/>
+      <genEnumLiterals ecoreEnumLiteral="sage.ecore#//NeedCategory/Performance"/>
+      <genEnumLiterals ecoreEnumLiteral="sage.ecore#//NeedCategory/Delighter"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sage.ecore#//ProductStage">
+      <genEnumLiterals ecoreEnumLiteral="sage.ecore#//ProductStage/Planning"/>
+      <genEnumLiterals ecoreEnumLiteral="sage.ecore#//ProductStage/Development"/>
+      <genEnumLiterals ecoreEnumLiteral="sage.ecore#//ProductStage/Released"/>
+      <genEnumLiterals ecoreEnumLiteral="sage.ecore#//ProductStage/Retired"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sage.ecore#//FeatureState">
+      <genEnumLiterals ecoreEnumLiteral="sage.ecore#//FeatureState/New"/>
+      <genEnumLiterals ecoreEnumLiteral="sage.ecore#//FeatureState/InProgress"/>
+      <genEnumLiterals ecoreEnumLiteral="sage.ecore#//FeatureState/Done"/>
+    </genEnums>
     <genClasses image="false" ecoreClass="sage.ecore#//ModelElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//ModelElement/name"/>
       <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute sage.ecore#//ModelElement/description"/>
@@ -21,6 +37,7 @@
     <genClasses image="false" ecoreClass="sage.ecore#//HierarchicalModelElement">
       <genTypeParameters ecoreTypeParameter="sage.ecore#//HierarchicalModelElement/T"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sage.ecore#//HierarchicalModelElement/children"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sage.ecore#//HierarchicalModelElement/linkedChildren"/>
     </genClasses>
     <genClasses image="false" ecoreClass="sage.ecore#//HierarchicalComparableModelElement">
       <genTypeParameters ecoreTypeParameter="sage.ecore#//HierarchicalComparableModelElement/T"/>
@@ -30,14 +47,55 @@
     </genClasses>
     <genClasses ecoreClass="sage.ecore#//Persona">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sage.ecore#//Persona/needs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Persona/offerings"/>
     </genClasses>
-    <genClasses ecoreClass="sage.ecore#//Need"/>
+    <genClasses ecoreClass="sage.ecore#//Need">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Need/category"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sage.ecore#//Need/fulfillments"/>
+    </genClasses>
     <genClasses ecoreClass="sage.ecore#//Strategy"/>
     <genClasses image="false" ecoreClass="sage.ecore#//AbstractProduct"/>
     <genClasses ecoreClass="sage.ecore#//Portfolio"/>
     <genClasses ecoreClass="sage.ecore#//Product">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sage.ecore#//Product/features"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sage.ecore#//Product/releases"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Product/stage"/>
     </genClasses>
-    <genClasses ecoreClass="sage.ecore#//Feature"/>
+    <genClasses ecoreClass="sage.ecore#//Feature">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sage.ecore#//Feature/dependencies"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sage.ecore#//Feature/enablers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Feature/size"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Feature/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Feature/design"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sage.ecore#//Offering">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Offering/targetAudiences"/>
+    </genClasses>
+    <genClasses ecoreClass="sage.ecore#//Edition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Edition/bases"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Edition/features"/>
+    </genClasses>
+    <genClasses ecoreClass="sage.ecore#//Release">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Release/feature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Release/released"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Release/releaseDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Release/overhead"/>
+    </genClasses>
+    <genClasses ecoreClass="sage.ecore#//Fulfillment">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Fulfillment/feature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Fulfillment/weight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Fulfillment/description"/>
+    </genClasses>
+    <genClasses ecoreClass="sage.ecore#//Dependency">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Dependency/optional"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Dependency/dependency"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Dependency/impact"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Dependency/description"/>
+    </genClasses>
+    <genClasses ecoreClass="sage.ecore#//Enabler">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Enabler/boost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Enabler/description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Enabler/enabler"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
