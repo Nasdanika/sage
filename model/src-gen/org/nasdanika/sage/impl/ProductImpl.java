@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.nasdanika.sage.Component;
 import org.nasdanika.sage.Feature;
 import org.nasdanika.sage.Offering;
 import org.nasdanika.sage.Persona;
@@ -33,6 +34,7 @@ import org.nasdanika.sage.SagePackage;
  *   <li>{@link org.nasdanika.sage.impl.ProductImpl#getFeatures <em>Features</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ProductImpl#getReleases <em>Releases</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ProductImpl#getStage <em>Stage</em>}</li>
+ *   <li>{@link org.nasdanika.sage.impl.ProductImpl#getComponents <em>Components</em>}</li>
  * </ul>
  *
  * @generated
@@ -124,6 +126,17 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	public EList<Component> getComponents() {
+		return (EList<Component>) eDynamicGet(SagePackage.PRODUCT__COMPONENTS, SagePackage.Literals.PRODUCT__COMPONENTS,
+				true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -147,6 +160,8 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 			return ((InternalEList<?>) getFeatures()).basicRemove(otherEnd, msgs);
 		case SagePackage.PRODUCT__RELEASES:
 			return ((InternalEList<?>) getReleases()).basicRemove(otherEnd, msgs);
+		case SagePackage.PRODUCT__COMPONENTS:
+			return ((InternalEList<?>) getComponents()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -167,6 +182,8 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 			return getReleases();
 		case SagePackage.PRODUCT__STAGE:
 			return getStage();
+		case SagePackage.PRODUCT__COMPONENTS:
+			return getComponents();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -195,6 +212,10 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 		case SagePackage.PRODUCT__STAGE:
 			setStage((ProductStage) newValue);
 			return;
+		case SagePackage.PRODUCT__COMPONENTS:
+			getComponents().clear();
+			getComponents().addAll((Collection<? extends Component>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -219,6 +240,9 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 		case SagePackage.PRODUCT__STAGE:
 			setStage(STAGE_EDEFAULT);
 			return;
+		case SagePackage.PRODUCT__COMPONENTS:
+			getComponents().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -239,6 +263,8 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 			return !getReleases().isEmpty();
 		case SagePackage.PRODUCT__STAGE:
 			return getStage() != STAGE_EDEFAULT;
+		case SagePackage.PRODUCT__COMPONENTS:
+			return !getComponents().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -187,6 +187,12 @@
         <details key="documentation" value="Product lifecycle stage."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
+        eType="#//Component" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A product may consist of several interdependent components."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Feature">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -217,6 +223,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="design" eType="#//FeatureState">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Feature design in markdown. While the feature description explains what this feature does, the feature design explains how feature functionality shall be implemented. "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
+        eType="#//Component">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Components which need to be create/modified to deliver the feature."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eGenericSuperTypes eClassifier="#//HierarchicalModelElement">
@@ -409,5 +421,19 @@
         <details key="documentation" value="All feature work has been completed."/>
       </eAnnotations>
     </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Component">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Product component. Components may be developed independently by different teams, but are released all together as part of a product release."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependencies" upperBound="-1"
+        eType="#//Component">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A component may depend on other components in the same product or other products."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eGenericSuperTypes eClassifier="#//HierarchicalModelElement">
+      <eTypeArguments eClassifier="#//Component"/>
+    </eGenericSuperTypes>
   </eClassifiers>
 </ecore:EPackage>

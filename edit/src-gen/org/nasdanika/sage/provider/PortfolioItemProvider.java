@@ -193,6 +193,9 @@ public class PortfolioItemProvider extends AbstractProductItemProvider {
 
 		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
 				SageFactory.eINSTANCE.createEnabler()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
+				SageFactory.eINSTANCE.createComponent()));
 	}
 
 }

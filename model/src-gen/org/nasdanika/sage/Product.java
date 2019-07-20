@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.nasdanika.sage.Product#getFeatures <em>Features</em>}</li>
  *   <li>{@link org.nasdanika.sage.Product#getReleases <em>Releases</em>}</li>
  *   <li>{@link org.nasdanika.sage.Product#getStage <em>Stage</em>}</li>
+ *   <li>{@link org.nasdanika.sage.Product#getComponents <em>Components</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.sage.SagePackage#getProduct()
@@ -84,5 +85,20 @@ public interface Product extends AbstractProduct, Offering {
 	 * @generated
 	 */
 	void setStage(ProductStage value);
+
+	/**
+	 * Returns the value of the '<em><b>Components</b></em>' containment reference list.
+	 * The list contents are of type {@link org.nasdanika.sage.Component}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A product may consist of several interdependent components.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Components</em>' containment reference list.
+	 * @see org.nasdanika.sage.SagePackage#getProduct_Components()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Component> getComponents();
 
 } // Product

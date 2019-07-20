@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.nasdanika.sage.Component;
 import org.nasdanika.sage.Dependency;
 import org.nasdanika.sage.Enabler;
 import org.nasdanika.sage.Feature;
@@ -28,6 +29,7 @@ import org.nasdanika.sage.SagePackage;
  *   <li>{@link org.nasdanika.sage.impl.FeatureImpl#getSize <em>Size</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.FeatureImpl#getState <em>State</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.FeatureImpl#getDesign <em>Design</em>}</li>
+ *   <li>{@link org.nasdanika.sage.impl.FeatureImpl#getComponents <em>Components</em>}</li>
  * </ul>
  *
  * @generated
@@ -162,6 +164,17 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	public EList<Component> getComponents() {
+		return (EList<Component>) eDynamicGet(SagePackage.FEATURE__COMPONENTS, SagePackage.Literals.FEATURE__COMPONENTS,
+				true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -191,6 +204,8 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 			return getState();
 		case SagePackage.FEATURE__DESIGN:
 			return getDesign();
+		case SagePackage.FEATURE__COMPONENTS:
+			return getComponents();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -221,6 +236,10 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 		case SagePackage.FEATURE__DESIGN:
 			setDesign((FeatureState) newValue);
 			return;
+		case SagePackage.FEATURE__COMPONENTS:
+			getComponents().clear();
+			getComponents().addAll((Collection<? extends Component>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -248,6 +267,9 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 		case SagePackage.FEATURE__DESIGN:
 			setDesign(DESIGN_EDEFAULT);
 			return;
+		case SagePackage.FEATURE__COMPONENTS:
+			getComponents().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -270,6 +292,8 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 			return getState() != STATE_EDEFAULT;
 		case SagePackage.FEATURE__DESIGN:
 			return getDesign() != DESIGN_EDEFAULT;
+		case SagePackage.FEATURE__COMPONENTS:
+			return !getComponents().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

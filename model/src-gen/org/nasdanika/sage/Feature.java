@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.nasdanika.sage.Feature#getSize <em>Size</em>}</li>
  *   <li>{@link org.nasdanika.sage.Feature#getState <em>State</em>}</li>
  *   <li>{@link org.nasdanika.sage.Feature#getDesign <em>Design</em>}</li>
+ *   <li>{@link org.nasdanika.sage.Feature#getComponents <em>Components</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.sage.SagePackage#getFeature()
@@ -141,4 +142,19 @@ public interface Feature extends HierarchicalModelElement<Feature> {
 	 * @generated
 	 */
 	void setDesign(FeatureState value);
+
+	/**
+	 * Returns the value of the '<em><b>Components</b></em>' reference list.
+	 * The list contents are of type {@link org.nasdanika.sage.Component}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Components which need to be create/modified to deliver the feature.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Components</em>' reference list.
+	 * @see org.nasdanika.sage.SagePackage#getFeature_Components()
+	 * @model
+	 * @generated
+	 */
+	EList<Component> getComponents();
 } // Feature

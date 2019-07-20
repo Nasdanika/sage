@@ -1038,13 +1038,22 @@ public interface SagePackage extends EPackage {
 	int PRODUCT__STAGE = ABSTRACT_PRODUCT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Components</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT__COMPONENTS = ABSTRACT_PRODUCT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Product</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_FEATURE_COUNT = ABSTRACT_PRODUCT_FEATURE_COUNT + 4;
+	int PRODUCT_FEATURE_COUNT = ABSTRACT_PRODUCT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Product</em>' class.
@@ -1165,13 +1174,22 @@ public interface SagePackage extends EPackage {
 	int FEATURE__DESIGN = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Components</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__COMPONENTS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Feature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_FEATURE_COUNT = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 5;
+	int FEATURE_FEATURE_COUNT = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Feature</em>' class.
@@ -1621,6 +1639,97 @@ public interface SagePackage extends EPackage {
 	int ENABLER_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.nasdanika.sage.impl.ComponentImpl <em>Component</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.sage.impl.ComponentImpl
+	 * @see org.nasdanika.sage.impl.SagePackageImpl#getComponent()
+	 * @generated
+	 */
+	int COMPONENT = 18;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__NAME = HIERARCHICAL_MODEL_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__URL = HIERARCHICAL_MODEL_ELEMENT__URL;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__DESCRIPTION = HIERARCHICAL_MODEL_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__CONFIGURATION = HIERARCHICAL_MODEL_ELEMENT__CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__CHILDREN = HIERARCHICAL_MODEL_ELEMENT__CHILDREN;
+
+	/**
+	 * The feature id for the '<em><b>Linked Children</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__LINKED_CHILDREN = HIERARCHICAL_MODEL_ELEMENT__LINKED_CHILDREN;
+
+	/**
+	 * The feature id for the '<em><b>Dependencies</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__DEPENDENCIES = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Component</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_FEATURE_COUNT = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Component</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_OPERATION_COUNT = HIERARCHICAL_MODEL_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.nasdanika.sage.NeedCategory <em>Need Category</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1628,7 +1737,7 @@ public interface SagePackage extends EPackage {
 	 * @see org.nasdanika.sage.impl.SagePackageImpl#getNeedCategory()
 	 * @generated
 	 */
-	int NEED_CATEGORY = 18;
+	int NEED_CATEGORY = 19;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.sage.ProductStage <em>Product Stage</em>}' enum.
@@ -1638,7 +1747,7 @@ public interface SagePackage extends EPackage {
 	 * @see org.nasdanika.sage.impl.SagePackageImpl#getProductStage()
 	 * @generated
 	 */
-	int PRODUCT_STAGE = 19;
+	int PRODUCT_STAGE = 20;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.sage.FeatureState <em>Feature State</em>}' enum.
@@ -1648,7 +1757,7 @@ public interface SagePackage extends EPackage {
 	 * @see org.nasdanika.sage.impl.SagePackageImpl#getFeatureState()
 	 * @generated
 	 */
-	int FEATURE_STATE = 20;
+	int FEATURE_STATE = 21;
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.sage.ModelElement <em>Model Element</em>}'.
@@ -1948,6 +2057,17 @@ public interface SagePackage extends EPackage {
 	EAttribute getProduct_Stage();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.nasdanika.sage.Product#getComponents <em>Components</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Components</em>'.
+	 * @see org.nasdanika.sage.Product#getComponents()
+	 * @see #getProduct()
+	 * @generated
+	 */
+	EReference getProduct_Components();
+
+	/**
 	 * Returns the meta object for class '{@link org.nasdanika.sage.Feature <em>Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2011,6 +2131,17 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFeature_Design();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.sage.Feature#getComponents <em>Components</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Components</em>'.
+	 * @see org.nasdanika.sage.Feature#getComponents()
+	 * @see #getFeature()
+	 * @generated
+	 */
+	EReference getFeature_Components();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.sage.Offering <em>Offering</em>}'.
@@ -2258,6 +2389,27 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEnabler_Enabler();
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.sage.Component <em>Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Component</em>'.
+	 * @see org.nasdanika.sage.Component
+	 * @generated
+	 */
+	EClass getComponent();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.sage.Component#getDependencies <em>Dependencies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Dependencies</em>'.
+	 * @see org.nasdanika.sage.Component#getDependencies()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EReference getComponent_Dependencies();
 
 	/**
 	 * Returns the meta object for enum '{@link org.nasdanika.sage.NeedCategory <em>Need Category</em>}'.
@@ -2559,6 +2711,14 @@ public interface SagePackage extends EPackage {
 		EAttribute PRODUCT__STAGE = eINSTANCE.getProduct_Stage();
 
 		/**
+		 * The meta object literal for the '<em><b>Components</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PRODUCT__COMPONENTS = eINSTANCE.getProduct_Components();
+
+		/**
 		 * The meta object literal for the '{@link org.nasdanika.sage.impl.FeatureImpl <em>Feature</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2607,6 +2767,14 @@ public interface SagePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FEATURE__DESIGN = eINSTANCE.getFeature_Design();
+
+		/**
+		 * The meta object literal for the '<em><b>Components</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE__COMPONENTS = eINSTANCE.getFeature_Components();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.sage.impl.OfferingImpl <em>Offering</em>}' class.
@@ -2803,6 +2971,24 @@ public interface SagePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENABLER__ENABLER = eINSTANCE.getEnabler_Enabler();
+
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.sage.impl.ComponentImpl <em>Component</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.sage.impl.ComponentImpl
+		 * @see org.nasdanika.sage.impl.SagePackageImpl#getComponent()
+		 * @generated
+		 */
+		EClass COMPONENT = eINSTANCE.getComponent();
+
+		/**
+		 * The meta object literal for the '<em><b>Dependencies</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT__DEPENDENCIES = eINSTANCE.getComponent_Dependencies();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.sage.NeedCategory <em>Need Category</em>}' enum.

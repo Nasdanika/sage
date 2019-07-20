@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.nasdanika.sage.AbstractProduct;
 import org.nasdanika.sage.ComparableModelElement;
+import org.nasdanika.sage.Component;
 import org.nasdanika.sage.Dependency;
 import org.nasdanika.sage.Edition;
 import org.nasdanika.sage.Enabler;
@@ -168,6 +169,13 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * @generated
 	 */
 	private EClass enablerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass componentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -511,6 +519,15 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getProduct_Components() {
+		return (EReference) productEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getFeature() {
 		return featureEClass;
 	}
@@ -558,6 +575,15 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 */
 	public EAttribute getFeature_Design() {
 		return (EAttribute) featureEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFeature_Components() {
+		return (EReference) featureEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -772,6 +798,24 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getComponent() {
+		return componentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getComponent_Dependencies() {
+		return (EReference) componentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getNeedCategory() {
 		return needCategoryEEnum;
 	}
@@ -861,6 +905,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		createEReference(productEClass, PRODUCT__FEATURES);
 		createEReference(productEClass, PRODUCT__RELEASES);
 		createEAttribute(productEClass, PRODUCT__STAGE);
+		createEReference(productEClass, PRODUCT__COMPONENTS);
 
 		featureEClass = createEClass(FEATURE);
 		createEReference(featureEClass, FEATURE__DEPENDENCIES);
@@ -868,6 +913,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		createEAttribute(featureEClass, FEATURE__SIZE);
 		createEAttribute(featureEClass, FEATURE__STATE);
 		createEAttribute(featureEClass, FEATURE__DESIGN);
+		createEReference(featureEClass, FEATURE__COMPONENTS);
 
 		offeringEClass = createEClass(OFFERING);
 		createEReference(offeringEClass, OFFERING__TARGET_AUDIENCES);
@@ -897,6 +943,9 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		createEAttribute(enablerEClass, ENABLER__BOOST);
 		createEAttribute(enablerEClass, ENABLER__DESCRIPTION);
 		createEReference(enablerEClass, ENABLER__ENABLER);
+
+		componentEClass = createEClass(COMPONENT);
+		createEReference(componentEClass, COMPONENT__DEPENDENCIES);
 
 		// Create enums
 		needCategoryEEnum = createEEnum(NEED_CATEGORY);
@@ -973,6 +1022,10 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		offeringEClass.getESuperTypes().add(this.getModelElement());
 		editionEClass.getESuperTypes().add(this.getOffering());
 		releaseEClass.getESuperTypes().add(this.getModelElement());
+		g1 = createEGenericType(this.getHierarchicalModelElement());
+		g2 = createEGenericType(this.getComponent());
+		g1.getETypeArguments().add(g2);
+		componentEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(modelElementEClass, ModelElement.class, "ModelElement", IS_ABSTRACT, !IS_INTERFACE,
@@ -1055,6 +1108,9 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProduct_Stage(), this.getProductStage(), "stage", null, 0, 1, Product.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProduct_Components(), this.getComponent(), null, "components", null, 0, -1, Product.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(featureEClass, Feature.class, "Feature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFeature_Dependencies(), this.getDependency(), null, "dependencies", null, 0, -1,
@@ -1069,6 +1125,9 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeature_Design(), this.getFeatureState(), "design", null, 0, 1, Feature.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeature_Components(), this.getComponent(), null, "components", null, 0, -1, Feature.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(offeringEClass, Offering.class, "Offering", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOffering_TargetAudiences(), this.getPersona(), this.getPersona_Offerings(), "targetAudiences",
@@ -1126,6 +1185,12 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		initEReference(getEnabler_Enabler(), this.getFeature(), null, "enabler", null, 1, 1, Enabler.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getComponent_Dependencies(), this.getComponent(), null, "dependencies", null, 0, -1,
+				Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(needCategoryEEnum, NeedCategory.class, "NeedCategory");

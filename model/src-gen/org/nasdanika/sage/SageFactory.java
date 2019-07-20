@@ -130,6 +130,15 @@ public interface SageFactory extends EFactory {
 	Enabler createEnabler();
 
 	/**
+	 * Returns a new object of class '<em>Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Component</em>'.
+	 * @generated
+	 */
+	Component createComponent();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -80,6 +80,8 @@ public class SageFactoryImpl extends EFactoryImpl implements SageFactory {
 			return createDependency();
 		case SagePackage.ENABLER:
 			return createEnabler();
+		case SagePackage.COMPONENT:
+			return createComponent();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -241,6 +243,16 @@ public class SageFactoryImpl extends EFactoryImpl implements SageFactory {
 	public Enabler createEnabler() {
 		EnablerImpl enabler = new EnablerImpl();
 		return enabler;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Component createComponent() {
+		ComponentImpl component = new ComponentImpl();
+		return component;
 	}
 
 	/**

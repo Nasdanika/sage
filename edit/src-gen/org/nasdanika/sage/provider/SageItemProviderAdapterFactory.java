@@ -349,6 +349,29 @@ public class SageItemProviderAdapterFactory extends SageAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.sage.Component} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComponentItemProvider componentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.nasdanika.sage.Component}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createComponentAdapter() {
+		if (componentItemProvider == null) {
+			componentItemProvider = new ComponentItemProvider(this);
+		}
+
+		return componentItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -471,6 +494,8 @@ public class SageItemProviderAdapterFactory extends SageAdapterFactory
 			dependencyItemProvider.dispose();
 		if (enablerItemProvider != null)
 			enablerItemProvider.dispose();
+		if (componentItemProvider != null)
+			componentItemProvider.dispose();
 	}
 
 }

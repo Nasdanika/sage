@@ -252,6 +252,17 @@ public class SageSwitch<T1> extends Switch<T1> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case SagePackage.COMPONENT: {
+			Component component = (Component) theEObject;
+			T1 result = caseComponent(component);
+			if (result == null)
+				result = caseHierarchicalModelElement(component);
+			if (result == null)
+				result = caseModelElement(component);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -524,6 +535,21 @@ public class SageSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	public T1 caseEnabler(Enabler object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Component</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseComponent(Component object) {
 		return null;
 	}
 

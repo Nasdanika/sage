@@ -98,6 +98,7 @@ public class ProductItemProvider extends AbstractProductItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SagePackage.Literals.PRODUCT__FEATURES);
 			childrenFeatures.add(SagePackage.Literals.PRODUCT__RELEASES);
+			childrenFeatures.add(SagePackage.Literals.PRODUCT__COMPONENTS);
 		}
 		return childrenFeatures;
 	}
@@ -165,6 +166,7 @@ public class ProductItemProvider extends AbstractProductItemProvider {
 			return;
 		case SagePackage.PRODUCT__FEATURES:
 		case SagePackage.PRODUCT__RELEASES:
+		case SagePackage.PRODUCT__COMPONENTS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -187,6 +189,9 @@ public class ProductItemProvider extends AbstractProductItemProvider {
 
 		newChildDescriptors.add(
 				createChildParameter(SagePackage.Literals.PRODUCT__RELEASES, SageFactory.eINSTANCE.createRelease()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.PRODUCT__COMPONENTS,
+				SageFactory.eINSTANCE.createComponent()));
 	}
 
 }

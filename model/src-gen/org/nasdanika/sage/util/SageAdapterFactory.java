@@ -157,6 +157,11 @@ public class SageAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseComponent(Component object) {
+			return createComponentAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -424,6 +429,20 @@ public class SageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEnablerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.sage.Component <em>Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.sage.Component
+	 * @generated
+	 */
+	public Adapter createComponentAdapter() {
 		return null;
 	}
 
