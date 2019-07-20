@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see org.nasdanika.sage.SagePackage#getNeed()
- * @model
+ * @model annotation="urn:org.nasdanika label_ru='\u041f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u044c' documentation_ru='\u041f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u044c \u043f\u0435\u0440\u0441\u043e\u043d\u044b... '"
  * @generated
  */
 public interface Need extends HierarchicalComparableModelElement<Need> {

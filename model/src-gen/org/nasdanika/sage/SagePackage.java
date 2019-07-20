@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-model-doc -->
  * @see org.nasdanika.sage.SageFactory
  * @model kind="package"
+ *        annotation="urn:org.nasdanika label_ru='\u041c\u0443\u0434\u0440\u0435\u0446' documentation_ru='Nasdanika Sage \u043f\u043e\u043c\u043e\u0433\u0430\u0435\u0442 \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u044f\u043c \u0443\u043f\u0440\u0430\u0432\u043b\u044f\u0442\u044c \u0438 \u0440\u0430\u0437\u0440\u0430\u0431\u0430\u0442\u044b\u0432\u0430\u0442\u044c...\n\nhelps organizations to manage and develop their product portfolios by establishing traceability from their target audiences (personas) needs to product features and their dependencies. \nIt also allow to assign weights to personas and their needs and compute weight (impact) of features. Features can be sized in some units of development effort - money, story points, days. \nUsing story sizes (including dependencies) and story weight/benefit a cost benefit analysis can be conducted to identify most valuable features, where value is benefit/size. It also allows to identify most valuable products in the portfolio.'"
  * @generated
  */
 public interface SagePackage extends EPackage {

@@ -5,8 +5,8 @@
     <details key="documentation" value="Nasdanika Sage helps organizations to manage and develop their product portfolios by establishing traceability from their target audiences (personas) needs to product features and their dependencies. &#xD;&#xA;It also allow to assign weights to personas and their needs and compute weight (impact) of features. Features can be sized in some units of development effort - money, story points, days. &#xD;&#xA;Using story sizes (including dependencies) and story weight/benefit a cost benefit analysis can be conducted to identify most valuable features, where value is benefit/size. It also allows to identify most valuable products in the portfolio."/>
   </eAnnotations>
   <eAnnotations source="urn:org.nasdanika">
-    <details key="label" value="Мудрец"/>
-    <details key="documentation" value="Nasdanika Sage помогает организациям управлять и разрабатывать...&#xA;&#xA;helps organizations to manage and develop their product portfolios by establishing traceability from their target audiences (personas) needs to product features and their dependencies. &#xA;It also allow to assign weights to personas and their needs and compute weight (impact) of features. Features can be sized in some units of development effort - money, story points, days. &#xA;Using story sizes (including dependencies) and story weight/benefit a cost benefit analysis can be conducted to identify most valuable features, where value is benefit/size. It also allows to identify most valuable products in the portfolio."/>
+    <details key="label_ru" value="Мудрец"/>
+    <details key="documentation_ru" value="Nasdanika Sage помогает организациям управлять и разрабатывать...&#xA;&#xA;helps organizations to manage and develop their product portfolios by establishing traceability from their target audiences (personas) needs to product features and their dependencies. &#xA;It also allow to assign weights to personas and their needs and compute weight (impact) of features. Features can be sized in some units of development effort - money, story points, days. &#xA;Using story sizes (including dependencies) and story weight/benefit a cost benefit analysis can be conducted to identify most valuable features, where value is benefit/size. It also allows to identify most valuable products in the portfolio."/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="ModelElement" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -121,8 +121,8 @@
       <details key="documentation" value="Persona need. Has a weight relative to &quot;peer&quot; needs. This weight is used to compute effective weight of a need to be used in computing feature and product weights (benefits) and values (benefit/investment|effort|size).&#xD;&#xA;Needs can be organized into a hierarchy.&#xD;&#xA;&#xD;&#xA;"/>
     </eAnnotations>
     <eAnnotations source="urn:org.nasdanika">
-      <details key="label" value="Потребность"/>
-      <details key="documentation" value="Nasdanika Sage помогает организациям управлять и разрабатывать...&#xA;&#xA;helps organizations to manage and develop their product portfolios by establishing traceability from their target audiences (personas) needs to product features and their dependencies. &#xA;It also allow to assign weights to personas and their needs and compute weight (impact) of features. Features can be sized in some units of development effort - money, story points, days. &#xA;Using story sizes (including dependencies) and story weight/benefit a cost benefit analysis can be conducted to identify most valuable features, where value is benefit/size. It also allows to identify most valuable products in the portfolio."/>
+      <details key="label_ru" value="Потребность"/>
+      <details key="documentation_ru" value="Потребность персоны... "/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="#//NeedCategory">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
