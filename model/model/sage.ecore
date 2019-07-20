@@ -20,26 +20,32 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="configuration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Custom element configuration in YAML. It can be used for deep analysis. For example features may specify requirements such as skills or third-party tools."/>
+        <details key="documentation" value="Custom element configuration in YAML. It can be used for specialized analysis or reporting. For example features may specify requirements such as skills, organizational capabilities, or third-party services or tools."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComparableModelElement" abstract="true"
       eSuperTypes="#//ModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value=""/>
+      <details key="documentation" value="Model element which can be assigned a weight/importance. The weight is used for comparing the element with its siblings in the containing reference."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="weight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
         defaultValueLiteral="1.0">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Model element weight which is used to compare the importance of this element with its siblings. It may be any positive value."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="effectiveWeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        changeable="false" transient="true" defaultValueLiteral="1.0" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Effective weight is calculated by computing the element's normalized weight and multiplying it by the container's effective weight if the container is also a comparable element. &#xA;The normalized weight is calculated by dividing the element's weight by the sum of weights of all elements in its containing reference. As such the normalized weight is a number &#xA;between zero and one and the sum of normalized weights of elements in a containing references is one. &#xA;The effective weight is also a number between zero and one and the sum of effective weights in a hierarchy of comparables is one.&#xA;"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HierarchicalModelElement" abstract="true"
       eSuperTypes="#//ModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value=""/>
+      <details key="documentation" value="A model element which can form a hierarchy."/>
     </eAnnotations>
     <eTypeParameters name="T"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
@@ -50,16 +56,19 @@
       <eGenericType eTypeParameter="#//HierarchicalModelElement/T"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkedChildren" upperBound="-1"
-        eType="#//HierarchicalModelElement" containment="true">
+        containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Linked children, not contained by the element. Links allow to build logical hierarchies with elements residing in different resources (files). Breaking a model into multiple resources simplifies collaborativve work on the model."/>
+        <details key="documentation" value="Linked children, not contained by the element. Links allow to build logical hierarchies with elements residing in different resources (files). Breaking a model into multiple resources simplifies collaborative work on the model."/>
       </eAnnotations>
+      <eGenericType eClassifier="#//HierarchicalModelElement">
+        <eTypeArguments eTypeParameter="#//HierarchicalModelElement/T"/>
+      </eGenericType>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="HierarchicalComparableModelElement"
       abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value=""/>
+      <details key="documentation" value="A model element which is both hierarchical and comparable."/>
     </eAnnotations>
     <eTypeParameters name="T"/>
     <eGenericSuperTypes eClassifier="#//HierarchicalModelElement">
@@ -69,12 +78,18 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Organization">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="Root of the Sage analytical model."/>
+      <details key="documentation" value="Organization it the root of the Sage model. Organizations can be nested. Different products in organization's portfolio may be produced by different child organizations."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="personas" upperBound="-1"
         eType="#//Persona" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Personas which represent the organization's target audiences. Typically shall be defined at the root organization, although child organizations may define internal personas."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="products" upperBound="-1"
+        eType="#//AbstractProduct" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Products manufactured by the organization. Products can be grouped into portfolios."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eGenericSuperTypes eClassifier="#//HierarchicalModelElement">
@@ -83,18 +98,18 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Persona" eSuperTypes="#//ComparableModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="Personas representing organization's target audiences. Personas can be assigned relative importance which is used to calculate effective importance of persona needs and then product features fulfilling those needs. &#xD;&#xA;"/>
+      <details key="documentation" value="Personas represent target audiences of products manufactured by the organization. &#xA;&#xA;Personas can be assigned relative weight/importance which is used to calculate effective weight of persona needs and then product features fulfilling those needs. &#xA;"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="needs" upperBound="-1"
         eType="#//Need" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Personas have needs which can be organized into a hierarchy. &#xA;Product features are mapped to the needs they fulfill."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="offerings" upperBound="-1"
         eType="#//Offering" eOpposite="#//Offering/targetAudiences">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="A list of products and product editions (for products with editions) which are offered to a particular persona to fulfill their needs."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -104,13 +119,13 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="#//NeedCategory">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Need category - basic, performance, or delighter."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fulfillments" upperBound="-1"
         eType="#//Fulfillment" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Mappings to features fulfilling this need."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eGenericSuperTypes eClassifier="#//HierarchicalComparableModelElement">
@@ -146,24 +161,24 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
         eType="#//Feature" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="A product provides multiple features which can be organized into editons."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="releases" upperBound="-1"
         eType="#//Release" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Product features are delivered incrementally in a series of releases."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stage" eType="#//ProductStage">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Product lifecycle stage."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Feature">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="Product feature satisfies specific persona needs. Feature's relative importance is computed from the needs satisfied by the feature. "/>
+      <details key="documentation" value="Feature is a unit of product functionality which satisfies specific persona needs. Feature's relative importance is computed from the needs satisfied by the feature. "/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dependencies" upperBound="-1"
         eType="#//Dependency" containment="true">
@@ -179,12 +194,17 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The amount of effort required to implement the feature in some units agreed upon across the organization - money, story points, person hours, ...&#xD;&#xA;"/>
+        <details key="documentation" value="The amount of effort or expenditure required to implement the feature in some units agreed upon across the organization - money, story points, person hours, ...&#xD;&#xA;"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="#//FeatureState">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Feature design in YAML. While the feature description explains what this feature does, the feature design explains how feature functionality shall be implemented. "/>
+        <details key="documentation" value="Feature state in the development process."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="design" eType="#//FeatureState">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Feature design in markdown. While the feature description explains what this feature does, the feature design explains how feature functionality shall be implemented. "/>
       </eAnnotations>
     </eStructuralFeatures>
     <eGenericSuperTypes eClassifier="#//HierarchicalModelElement">
@@ -198,13 +218,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetAudiences" upperBound="-1"
         eType="#//Persona" eOpposite="#//Persona/offerings">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Personas to which this offering - product or edition - is offered. "/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Edition" eSuperTypes="#//Offering">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value=""/>
+      <details key="documentation" value="Product edition is a grouping of features which fulfill needs of a specific target audience. For example, a community edition may target customer with basic needs, and a professional edition would include additional features fulfilling the needs of customers who use the product extensively."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bases" upperBound="-1"
         eType="#//Edition">
@@ -230,7 +250,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="released" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="True if the release was made available to the product's target audiences, false otherwise - it it is still in planning/development."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="releaseDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
@@ -276,28 +296,28 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="weight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
         defaultValueLiteral="1.0">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Fulfillment weight represents how much this particular feature participates in fulfilling the need comparing to other features fulfilling the same need."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Markdown description of how the feature fulfills the need."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Dependency">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value=""/>
+      <details key="documentation" value="Dependency entry. See Feature.dependency documentation for details."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Indicated that the dependency is optional and its effective weight shall be computed using &quot;impact&quot; value."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dependency" lowerBound="1"
         eType="#//Feature">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Dependency feature."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="impact" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
@@ -308,13 +328,13 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Description of the dependency in markdown."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Enabler">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value=""/>
+      <details key="documentation" value="See Feature.enabler documentation for details."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="boost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -323,58 +343,58 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Markdown description of the enabler."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="enabler" lowerBound="1"
         eType="#//Feature">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Enabling feature."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ProductStage">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value=""/>
+      <details key="documentation" value="Product lifecycle stage."/>
     </eAnnotations>
     <eLiterals name="Planning">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Initial product stage from the idea to the start of development. This stage includes proofs of concepts and prototyping."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="Development" value="1">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="A stage at which the organization has committed resources to producing the first release of the product, but the product hasn't been released yet."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="Released" value="2">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="At least one release was made availale to the product target audiences."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="Retired" value="3">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="A product has reached the end of its useful life. There is no investment in new product features anymore. The organization may still spend some resources on product maintenance."/>
       </eAnnotations>
     </eLiterals>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="FeatureState">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value=""/>
+      <details key="documentation" value="Feature state reflects level of &quot;donness&quot;."/>
     </eAnnotations>
     <eLiterals name="New">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Initial feature state from creation through grooming."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="InProgress" value="1">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="The feature is actively worked on."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="Done" value="2">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="All feature work has been completed."/>
       </eAnnotations>
     </eLiterals>
   </eClassifiers>
