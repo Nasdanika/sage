@@ -28,6 +28,7 @@
     </genEnums>
     <genClasses image="false" ecoreClass="sage.ecore#//ModelElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//ModelElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//ModelElement/url"/>
       <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute sage.ecore#//ModelElement/description"/>
       <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute sage.ecore#//ModelElement/configuration"/>
     </genClasses>

@@ -145,7 +145,7 @@ public class ReleaseItemProvider extends ModelElementItemProvider {
 	@Override
 	public String getText(Object object) {
 		String label = ((Release) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Release_type")	: label;
+		return label == null || label.length() == 0 ? getString("_UI_Release_type") : label;
 	}
 
 	/**

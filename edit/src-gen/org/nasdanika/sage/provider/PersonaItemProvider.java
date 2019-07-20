@@ -126,7 +126,7 @@ public class PersonaItemProvider extends ComparableModelElementItemProvider {
 	@Override
 	public String getText(Object object) {
 		String label = ((Persona) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Persona_type")	: label;
+		return label == null || label.length() == 0 ? getString("_UI_Persona_type") : label;
 	}
 
 	/**

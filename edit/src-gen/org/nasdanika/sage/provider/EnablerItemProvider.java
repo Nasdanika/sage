@@ -139,7 +139,7 @@ public class EnablerItemProvider extends ItemProviderAdapter implements IEditing
 	public String getText(Object object) {
 		Enabler enabler = (Enabler) object;
 		Feature ef = enabler.getEnabler();
-		return (ef == null ? getString("_UI_Enabler_type")  : ef.getName()) + " (" + enabler.getBoost()+")";
+		return (ef == null ? getString("_UI_Enabler_type") : ef.getName()) + " (" + enabler.getBoost() + ")";
 	}
 
 	/**

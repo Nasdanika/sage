@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.sage.ModelElement#getName <em>Name</em>}</li>
+ *   <li>{@link org.nasdanika.sage.ModelElement#getUrl <em>Url</em>}</li>
  *   <li>{@link org.nasdanika.sage.ModelElement#getDescription <em>Description</em>}</li>
  *   <li>{@link org.nasdanika.sage.ModelElement#getConfiguration <em>Configuration</em>}</li>
  * </ul>
@@ -51,6 +52,31 @@ public interface ModelElement extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Element URL if applicable. E.g. organization or product web site.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Url</em>' attribute.
+	 * @see #setUrl(String)
+	 * @see org.nasdanika.sage.SagePackage#getModelElement_Url()
+	 * @model
+	 * @generated
+	 */
+	String getUrl();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.sage.ModelElement#getUrl <em>Url</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Url</em>' attribute.
+	 * @see #getUrl()
+	 * @generated
+	 */
+	void setUrl(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.

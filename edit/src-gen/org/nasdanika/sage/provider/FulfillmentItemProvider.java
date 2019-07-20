@@ -138,7 +138,7 @@ public class FulfillmentItemProvider extends ItemProviderAdapter implements IEdi
 	public String getText(Object object) {
 		Fulfillment fulfillment = (Fulfillment) object;
 		Feature ff = fulfillment.getFeature();
-		return (ff == null ? getString("_UI_Fulfillment_type") : ff.getName()) + " (" + fulfillment.getWeight()+")";
+		return (ff == null ? getString("_UI_Fulfillment_type") : ff.getName()) + " (" + fulfillment.getWeight() + ")";
 	}
 
 	/**

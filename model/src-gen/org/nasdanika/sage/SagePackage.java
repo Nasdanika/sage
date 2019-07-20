@@ -83,13 +83,22 @@ public interface SagePackage extends EPackage {
 	int MODEL_ELEMENT__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_ELEMENT__URL = 1;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ELEMENT__DESCRIPTION = 1;
+	int MODEL_ELEMENT__DESCRIPTION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
@@ -98,7 +107,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ELEMENT__CONFIGURATION = 2;
+	int MODEL_ELEMENT__CONFIGURATION = 3;
 
 	/**
 	 * The number of structural features of the '<em>Model Element</em>' class.
@@ -107,7 +116,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ELEMENT_FEATURE_COUNT = 3;
+	int MODEL_ELEMENT_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Model Element</em>' class.
@@ -136,6 +145,15 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPARABLE_MODEL_ELEMENT__NAME = MODEL_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPARABLE_MODEL_ELEMENT__URL = MODEL_ELEMENT__URL;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -211,6 +229,15 @@ public interface SagePackage extends EPackage {
 	int HIERARCHICAL_MODEL_ELEMENT__NAME = MODEL_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HIERARCHICAL_MODEL_ELEMENT__URL = MODEL_ELEMENT__URL;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -282,6 +309,15 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__NAME = HIERARCHICAL_MODEL_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__URL = HIERARCHICAL_MODEL_ELEMENT__URL;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -375,6 +411,15 @@ public interface SagePackage extends EPackage {
 	int ORGANIZATION__NAME = HIERARCHICAL_MODEL_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORGANIZATION__URL = HIERARCHICAL_MODEL_ELEMENT__URL;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -466,6 +511,15 @@ public interface SagePackage extends EPackage {
 	int PERSONA__NAME = COMPARABLE_MODEL_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSONA__URL = COMPARABLE_MODEL_ELEMENT__URL;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -555,6 +609,15 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int NEED__NAME = HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NEED__URL = HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__URL;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -666,6 +729,15 @@ public interface SagePackage extends EPackage {
 	int STRATEGY__NAME = HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRATEGY__URL = HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__URL;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -757,6 +829,15 @@ public interface SagePackage extends EPackage {
 	int ABSTRACT_PRODUCT__NAME = MODEL_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_PRODUCT__URL = MODEL_ELEMENT__URL;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -810,6 +891,15 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int PORTFOLIO__NAME = ABSTRACT_PRODUCT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORTFOLIO__URL = ABSTRACT_PRODUCT__URL;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -883,6 +973,15 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int PRODUCT__NAME = ABSTRACT_PRODUCT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT__URL = ABSTRACT_PRODUCT__URL;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -974,6 +1073,15 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int FEATURE__NAME = HIERARCHICAL_MODEL_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__URL = HIERARCHICAL_MODEL_ELEMENT__URL;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1094,6 +1202,15 @@ public interface SagePackage extends EPackage {
 	int OFFERING__NAME = MODEL_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OFFERING__URL = MODEL_ELEMENT__URL;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1156,6 +1273,15 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int EDITION__NAME = OFFERING__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDITION__URL = OFFERING__URL;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1238,6 +1364,15 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int RELEASE__NAME = MODEL_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELEASE__URL = MODEL_ELEMENT__URL;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1535,6 +1670,17 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getModelElement_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.sage.ModelElement#getUrl <em>Url</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Url</em>'.
+	 * @see org.nasdanika.sage.ModelElement#getUrl()
+	 * @see #getModelElement()
+	 * @generated
+	 */
+	EAttribute getModelElement_Url();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.nasdanika.sage.ModelElement#getDescription <em>Description</em>}'.
@@ -2183,6 +2329,14 @@ public interface SagePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MODEL_ELEMENT__NAME = eINSTANCE.getModelElement_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MODEL_ELEMENT__URL = eINSTANCE.getModelElement_Url();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.

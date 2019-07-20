@@ -18,6 +18,7 @@ import org.nasdanika.sage.SagePackage;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.sage.impl.ModelElementImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.nasdanika.sage.impl.ModelElementImpl#getUrl <em>Url</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ModelElementImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ModelElementImpl#getConfiguration <em>Configuration</em>}</li>
  * </ul>
@@ -34,6 +35,16 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The default value of the '{@link #getUrl() <em>Url</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUrl()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String URL_EDEFAULT = null;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -108,6 +119,25 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getUrl() {
+		return (String) eDynamicGet(SagePackage.MODEL_ELEMENT__URL, SagePackage.Literals.MODEL_ELEMENT__URL, true,
+				true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUrl(String newUrl) {
+		eDynamicSet(SagePackage.MODEL_ELEMENT__URL, SagePackage.Literals.MODEL_ELEMENT__URL, newUrl);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getDescription() {
 		return (String) eDynamicGet(SagePackage.MODEL_ELEMENT__DESCRIPTION,
 				SagePackage.Literals.MODEL_ELEMENT__DESCRIPTION, true, true);
@@ -153,6 +183,8 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 		switch (featureID) {
 		case SagePackage.MODEL_ELEMENT__NAME:
 			return getName();
+		case SagePackage.MODEL_ELEMENT__URL:
+			return getUrl();
 		case SagePackage.MODEL_ELEMENT__DESCRIPTION:
 			return getDescription();
 		case SagePackage.MODEL_ELEMENT__CONFIGURATION:
@@ -171,6 +203,9 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 		switch (featureID) {
 		case SagePackage.MODEL_ELEMENT__NAME:
 			setName((String) newValue);
+			return;
+		case SagePackage.MODEL_ELEMENT__URL:
+			setUrl((String) newValue);
 			return;
 		case SagePackage.MODEL_ELEMENT__DESCRIPTION:
 			setDescription((String) newValue);
@@ -193,6 +228,9 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 		case SagePackage.MODEL_ELEMENT__NAME:
 			setName(NAME_EDEFAULT);
 			return;
+		case SagePackage.MODEL_ELEMENT__URL:
+			setUrl(URL_EDEFAULT);
+			return;
 		case SagePackage.MODEL_ELEMENT__DESCRIPTION:
 			setDescription(DESCRIPTION_EDEFAULT);
 			return;
@@ -213,6 +251,8 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 		switch (featureID) {
 		case SagePackage.MODEL_ELEMENT__NAME:
 			return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
+		case SagePackage.MODEL_ELEMENT__URL:
+			return URL_EDEFAULT == null ? getUrl() != null : !URL_EDEFAULT.equals(getUrl());
 		case SagePackage.MODEL_ELEMENT__DESCRIPTION:
 			return DESCRIPTION_EDEFAULT == null ? getDescription() != null
 					: !DESCRIPTION_EDEFAULT.equals(getDescription());

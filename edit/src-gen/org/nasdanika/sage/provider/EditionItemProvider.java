@@ -108,7 +108,7 @@ public class EditionItemProvider extends OfferingItemProvider {
 	@Override
 	public String getText(Object object) {
 		String label = ((Edition) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Edition_type")	: label;
+		return label == null || label.length() == 0 ? getString("_UI_Edition_type") : label;
 	}
 
 	/**

@@ -145,7 +145,7 @@ public class ProductItemProvider extends AbstractProductItemProvider {
 	@Override
 	public String getText(Object object) {
 		String label = ((Product) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Product_type")	: label;
+		return label == null || label.length() == 0 ? getString("_UI_Product_type") : label;
 	}
 
 	/**

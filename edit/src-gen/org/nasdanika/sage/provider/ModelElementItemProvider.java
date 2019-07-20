@@ -54,6 +54,7 @@ public class ModelElementItemProvider extends ItemProviderAdapter implements IEd
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addUrlPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addConfigurationPropertyDescriptor(object);
 		}
@@ -73,6 +74,22 @@ public class ModelElementItemProvider extends ItemProviderAdapter implements IEd
 						getString("_UI_PropertyDescriptor_description", "_UI_ModelElement_name_feature",
 								"_UI_ModelElement_type"),
 						SagePackage.Literals.MODEL_ELEMENT__NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Url feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUrlPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ModelElement_url_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ModelElement_url_feature",
+								"_UI_ModelElement_type"),
+						SagePackage.Literals.MODEL_ELEMENT__URL, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -144,6 +161,7 @@ public class ModelElementItemProvider extends ItemProviderAdapter implements IEd
 
 		switch (notification.getFeatureID(ModelElement.class)) {
 		case SagePackage.MODEL_ELEMENT__NAME:
+		case SagePackage.MODEL_ELEMENT__URL:
 		case SagePackage.MODEL_ELEMENT__DESCRIPTION:
 		case SagePackage.MODEL_ELEMENT__CONFIGURATION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
