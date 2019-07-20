@@ -70,7 +70,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sage.ecore#//Feature/enablers"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Feature/size"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Feature/state"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Feature/design"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute sage.ecore#//Feature/design"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Feature/components"/>
     </genClasses>
     <genClasses image="false" ecoreClass="sage.ecore#//Offering">

@@ -220,7 +220,7 @@
         <details key="documentation" value="Feature state in the development process."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="design" eType="#//FeatureState">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="design" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Feature design in markdown. While the feature description explains what this feature does, the feature design explains how feature functionality shall be implemented. "/>
       </eAnnotations>

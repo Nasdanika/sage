@@ -61,7 +61,7 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	 * @generated
 	 * @ordered
 	 */
-	protected static final FeatureState DESIGN_EDEFAULT = FeatureState.NEW;
+	protected static final String DESIGN_EDEFAULT = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -145,9 +145,8 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeatureState getDesign() {
-		return (FeatureState) eDynamicGet(SagePackage.FEATURE__DESIGN, SagePackage.Literals.FEATURE__DESIGN, true,
-				true);
+	public String getDesign() {
+		return (String) eDynamicGet(SagePackage.FEATURE__DESIGN, SagePackage.Literals.FEATURE__DESIGN, true, true);
 	}
 
 	/**
@@ -155,7 +154,7 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDesign(FeatureState newDesign) {
+	public void setDesign(String newDesign) {
 		eDynamicSet(SagePackage.FEATURE__DESIGN, SagePackage.Literals.FEATURE__DESIGN, newDesign);
 	}
 
@@ -234,7 +233,7 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 			setState((FeatureState) newValue);
 			return;
 		case SagePackage.FEATURE__DESIGN:
-			setDesign((FeatureState) newValue);
+			setDesign((String) newValue);
 			return;
 		case SagePackage.FEATURE__COMPONENTS:
 			getComponents().clear();
@@ -291,7 +290,7 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 		case SagePackage.FEATURE__STATE:
 			return getState() != STATE_EDEFAULT;
 		case SagePackage.FEATURE__DESIGN:
-			return getDesign() != DESIGN_EDEFAULT;
+			return DESIGN_EDEFAULT == null ? getDesign() != null : !DESIGN_EDEFAULT.equals(getDesign());
 		case SagePackage.FEATURE__COMPONENTS:
 			return !getComponents().isEmpty();
 		}

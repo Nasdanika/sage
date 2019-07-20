@@ -117,31 +117,28 @@ public interface Feature extends HierarchicalModelElement<Feature> {
 
 	/**
 	 * Returns the value of the '<em><b>Design</b></em>' attribute.
-	 * The literals are from the enumeration {@link org.nasdanika.sage.FeatureState}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Feature design in markdown. While the feature description explains what this feature does, the feature design explains how feature functionality shall be implemented. 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Design</em>' attribute.
-	 * @see org.nasdanika.sage.FeatureState
-	 * @see #setDesign(FeatureState)
+	 * @see #setDesign(String)
 	 * @see org.nasdanika.sage.SagePackage#getFeature_Design()
 	 * @model
 	 * @generated
 	 */
-	FeatureState getDesign();
+	String getDesign();
 
 	/**
 	 * Sets the value of the '{@link org.nasdanika.sage.Feature#getDesign <em>Design</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Design</em>' attribute.
-	 * @see org.nasdanika.sage.FeatureState
 	 * @see #getDesign()
 	 * @generated
 	 */
-	void setDesign(FeatureState value);
+	void setDesign(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Components</b></em>' reference list.
