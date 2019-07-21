@@ -1192,13 +1192,22 @@ public interface SagePackage extends EPackage {
 	int FEATURE__COMPONENTS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Release</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__RELEASE = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Feature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_FEATURE_COUNT = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 6;
+	int FEATURE_FEATURE_COUNT = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Feature</em>' class.
@@ -1420,13 +1429,13 @@ public interface SagePackage extends EPackage {
 	int RELEASE__CONFIGURATION = MODEL_ELEMENT__CONFIGURATION;
 
 	/**
-	 * The feature id for the '<em><b>Feature</b></em>' reference.
+	 * The feature id for the '<em><b>Features</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELEASE__FEATURE = MODEL_ELEMENT_FEATURE_COUNT + 0;
+	int RELEASE__FEATURES = MODEL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Released</b></em>' attribute.
@@ -2164,6 +2173,17 @@ public interface SagePackage extends EPackage {
 	EReference getFeature_Components();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.nasdanika.sage.Feature#getRelease <em>Release</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Release</em>'.
+	 * @see org.nasdanika.sage.Feature#getRelease()
+	 * @see #getFeature()
+	 * @generated
+	 */
+	EReference getFeature_Release();
+
+	/**
 	 * Returns the meta object for class '{@link org.nasdanika.sage.Offering <em>Offering</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2227,15 +2247,15 @@ public interface SagePackage extends EPackage {
 	EClass getRelease();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.nasdanika.sage.Release#getFeature <em>Feature</em>}'.
+	 * Returns the meta object for the reference list '{@link org.nasdanika.sage.Release#getFeatures <em>Features</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Feature</em>'.
-	 * @see org.nasdanika.sage.Release#getFeature()
+	 * @return the meta object for the reference list '<em>Features</em>'.
+	 * @see org.nasdanika.sage.Release#getFeatures()
 	 * @see #getRelease()
 	 * @generated
 	 */
-	EReference getRelease_Feature();
+	EReference getRelease_Features();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.nasdanika.sage.Release#isReleased <em>Released</em>}'.
@@ -2805,6 +2825,14 @@ public interface SagePackage extends EPackage {
 		EReference FEATURE__COMPONENTS = eINSTANCE.getFeature_Components();
 
 		/**
+		 * The meta object literal for the '<em><b>Release</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE__RELEASE = eINSTANCE.getFeature_Release();
+
+		/**
 		 * The meta object literal for the '{@link org.nasdanika.sage.impl.OfferingImpl <em>Offering</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2859,12 +2887,12 @@ public interface SagePackage extends EPackage {
 		EClass RELEASE = eINSTANCE.getRelease();
 
 		/**
-		 * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Features</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RELEASE__FEATURE = eINSTANCE.getRelease_Feature();
+		EReference RELEASE__FEATURES = eINSTANCE.getRelease_Features();
 
 		/**
 		 * The meta object literal for the '<em><b>Released</b></em>' attribute feature.

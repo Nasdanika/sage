@@ -2,10 +2,15 @@
  */
 package org.nasdanika.sage.impl;
 
+import java.util.Collection;
 import java.util.Date;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.nasdanika.sage.Feature;
 import org.nasdanika.sage.Release;
 import org.nasdanika.sage.SagePackage;
@@ -18,7 +23,7 @@ import org.nasdanika.sage.SagePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.sage.impl.ReleaseImpl#getFeature <em>Feature</em>}</li>
+ *   <li>{@link org.nasdanika.sage.impl.ReleaseImpl#getFeatures <em>Features</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ReleaseImpl#isReleased <em>Released</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ReleaseImpl#getReleaseDate <em>Release Date</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ReleaseImpl#getOverhead <em>Overhead</em>}</li>
@@ -81,26 +86,10 @@ public class ReleaseImpl extends ModelElementImpl implements Release {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Feature getFeature() {
-		return (Feature) eDynamicGet(SagePackage.RELEASE__FEATURE, SagePackage.Literals.RELEASE__FEATURE, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Feature basicGetFeature() {
-		return (Feature) eDynamicGet(SagePackage.RELEASE__FEATURE, SagePackage.Literals.RELEASE__FEATURE, false, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setFeature(Feature newFeature) {
-		eDynamicSet(SagePackage.RELEASE__FEATURE, SagePackage.Literals.RELEASE__FEATURE, newFeature);
+	@SuppressWarnings("unchecked")
+	public EList<Feature> getFeatures() {
+		return (EList<Feature>) eDynamicGet(SagePackage.RELEASE__FEATURES, SagePackage.Literals.RELEASE__FEATURES, true,
+				true);
 	}
 
 	/**
@@ -163,13 +152,40 @@ public class ReleaseImpl extends ModelElementImpl implements Release {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case SagePackage.RELEASE__FEATURES:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFeatures()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case SagePackage.RELEASE__FEATURES:
+			return ((InternalEList<?>) getFeatures()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case SagePackage.RELEASE__FEATURE:
-			if (resolve)
-				return getFeature();
-			return basicGetFeature();
+		case SagePackage.RELEASE__FEATURES:
+			return getFeatures();
 		case SagePackage.RELEASE__RELEASED:
 			return isReleased();
 		case SagePackage.RELEASE__RELEASE_DATE:
@@ -185,11 +201,13 @@ public class ReleaseImpl extends ModelElementImpl implements Release {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case SagePackage.RELEASE__FEATURE:
-			setFeature((Feature) newValue);
+		case SagePackage.RELEASE__FEATURES:
+			getFeatures().clear();
+			getFeatures().addAll((Collection<? extends Feature>) newValue);
 			return;
 		case SagePackage.RELEASE__RELEASED:
 			setReleased((Boolean) newValue);
@@ -212,8 +230,8 @@ public class ReleaseImpl extends ModelElementImpl implements Release {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case SagePackage.RELEASE__FEATURE:
-			setFeature((Feature) null);
+		case SagePackage.RELEASE__FEATURES:
+			getFeatures().clear();
 			return;
 		case SagePackage.RELEASE__RELEASED:
 			setReleased(RELEASED_EDEFAULT);
@@ -236,8 +254,8 @@ public class ReleaseImpl extends ModelElementImpl implements Release {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case SagePackage.RELEASE__FEATURE:
-			return basicGetFeature() != null;
+		case SagePackage.RELEASE__FEATURES:
+			return !getFeatures().isEmpty();
 		case SagePackage.RELEASE__RELEASED:
 			return isReleased() != RELEASED_EDEFAULT;
 		case SagePackage.RELEASE__RELEASE_DATE:

@@ -3,6 +3,7 @@
 package org.nasdanika.sage;
 
 import java.util.Date;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,7 +18,7 @@ import java.util.Date;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.sage.Release#getFeature <em>Feature</em>}</li>
+ *   <li>{@link org.nasdanika.sage.Release#getFeatures <em>Features</em>}</li>
  *   <li>{@link org.nasdanika.sage.Release#isReleased <em>Released</em>}</li>
  *   <li>{@link org.nasdanika.sage.Release#getReleaseDate <em>Release Date</em>}</li>
  *   <li>{@link org.nasdanika.sage.Release#getOverhead <em>Overhead</em>}</li>
@@ -29,29 +30,21 @@ import java.util.Date;
  */
 public interface Release extends ModelElement {
 	/**
-	 * Returns the value of the '<em><b>Feature</b></em>' reference.
+	 * Returns the value of the '<em><b>Features</b></em>' reference list.
+	 * The list contents are of type {@link org.nasdanika.sage.Feature}.
+	 * It is bidirectional and its opposite is '{@link org.nasdanika.sage.Feature#getRelease <em>Release</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Features included in the release. 
+	 * New features included in the release. 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Feature</em>' reference.
-	 * @see #setFeature(Feature)
-	 * @see org.nasdanika.sage.SagePackage#getRelease_Feature()
-	 * @model
+	 * @return the value of the '<em>Features</em>' reference list.
+	 * @see org.nasdanika.sage.SagePackage#getRelease_Features()
+	 * @see org.nasdanika.sage.Feature#getRelease
+	 * @model opposite="release"
 	 * @generated
 	 */
-	Feature getFeature();
-
-	/**
-	 * Sets the value of the '{@link org.nasdanika.sage.Release#getFeature <em>Feature</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Feature</em>' reference.
-	 * @see #getFeature()
-	 * @generated
-	 */
-	void setFeature(Feature value);
+	EList<Feature> getFeatures();
 
 	/**
 	 * Returns the value of the '<em><b>Released</b></em>' attribute.

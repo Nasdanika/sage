@@ -23,6 +23,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.nasdanika.sage.Feature#getState <em>State</em>}</li>
  *   <li>{@link org.nasdanika.sage.Feature#getDesign <em>Design</em>}</li>
  *   <li>{@link org.nasdanika.sage.Feature#getComponents <em>Components</em>}</li>
+ *   <li>{@link org.nasdanika.sage.Feature#getRelease <em>Release</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.sage.SagePackage#getFeature()
@@ -154,4 +155,31 @@ public interface Feature extends HierarchicalModelElement<Feature> {
 	 * @generated
 	 */
 	EList<Component> getComponents();
+
+	/**
+	 * Returns the value of the '<em><b>Release</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link org.nasdanika.sage.Release#getFeatures <em>Features</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Feature release.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Release</em>' reference.
+	 * @see #setRelease(Release)
+	 * @see org.nasdanika.sage.SagePackage#getFeature_Release()
+	 * @see org.nasdanika.sage.Release#getFeatures
+	 * @model opposite="features"
+	 * @generated
+	 */
+	Release getRelease();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.sage.Feature#getRelease <em>Release</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Release</em>' reference.
+	 * @see #getRelease()
+	 * @generated
+	 */
+	void setRelease(Release value);
 } // Feature

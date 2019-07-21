@@ -600,6 +600,15 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getFeature_Release() {
+		return (EReference) featureEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getOffering() {
 		return offeringEClass;
 	}
@@ -654,7 +663,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRelease_Feature() {
+	public EReference getRelease_Features() {
 		return (EReference) releaseEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -924,6 +933,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		createEAttribute(featureEClass, FEATURE__STATE);
 		createEAttribute(featureEClass, FEATURE__DESIGN);
 		createEReference(featureEClass, FEATURE__COMPONENTS);
+		createEReference(featureEClass, FEATURE__RELEASE);
 
 		offeringEClass = createEClass(OFFERING);
 		createEReference(offeringEClass, OFFERING__TARGET_AUDIENCES);
@@ -933,7 +943,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		createEReference(editionEClass, EDITION__FEATURES);
 
 		releaseEClass = createEClass(RELEASE);
-		createEReference(releaseEClass, RELEASE__FEATURE);
+		createEReference(releaseEClass, RELEASE__FEATURES);
 		createEAttribute(releaseEClass, RELEASE__RELEASED);
 		createEAttribute(releaseEClass, RELEASE__RELEASE_DATE);
 		createEAttribute(releaseEClass, RELEASE__OVERHEAD);
@@ -1141,6 +1151,9 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		initEReference(getFeature_Components(), this.getComponent(), null, "components", null, 0, -1, Feature.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeature_Release(), this.getRelease(), this.getRelease_Features(), "release", null, 0, 1,
+				Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(offeringEClass, Offering.class, "Offering", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOffering_TargetAudiences(), this.getPersona(), this.getPersona_Offerings(), "targetAudiences",
@@ -1156,9 +1169,9 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(releaseEClass, Release.class, "Release", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRelease_Feature(), this.getFeature(), null, "feature", null, 0, 1, Release.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRelease_Features(), this.getFeature(), this.getFeature_Release(), "features", null, 0, -1,
+				Release.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRelease_Released(), ecorePackage.getEBoolean(), "released", null, 0, 1, Release.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRelease_ReleaseDate(), ecorePackage.getEDate(), "releaseDate", null, 0, 1, Release.class,

@@ -14,6 +14,7 @@ import org.nasdanika.sage.Dependency;
 import org.nasdanika.sage.Enabler;
 import org.nasdanika.sage.Feature;
 import org.nasdanika.sage.FeatureState;
+import org.nasdanika.sage.Release;
 import org.nasdanika.sage.SagePackage;
 
 /**
@@ -30,6 +31,7 @@ import org.nasdanika.sage.SagePackage;
  *   <li>{@link org.nasdanika.sage.impl.FeatureImpl#getState <em>State</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.FeatureImpl#getDesign <em>Design</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.FeatureImpl#getComponents <em>Components</em>}</li>
+ *   <li>{@link org.nasdanika.sage.impl.FeatureImpl#getRelease <em>Release</em>}</li>
  * </ul>
  *
  * @generated
@@ -174,6 +176,61 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Release getRelease() {
+		return (Release) eDynamicGet(SagePackage.FEATURE__RELEASE, SagePackage.Literals.FEATURE__RELEASE, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Release basicGetRelease() {
+		return (Release) eDynamicGet(SagePackage.FEATURE__RELEASE, SagePackage.Literals.FEATURE__RELEASE, false, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRelease(Release newRelease, NotificationChain msgs) {
+		msgs = eDynamicInverseAdd((InternalEObject) newRelease, SagePackage.FEATURE__RELEASE, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRelease(Release newRelease) {
+		eDynamicSet(SagePackage.FEATURE__RELEASE, SagePackage.Literals.FEATURE__RELEASE, newRelease);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case SagePackage.FEATURE__RELEASE:
+			Release release = basicGetRelease();
+			if (release != null)
+				msgs = ((InternalEObject) release).eInverseRemove(this, SagePackage.RELEASE__FEATURES, Release.class,
+						msgs);
+			return basicSetRelease((Release) otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -181,6 +238,8 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 			return ((InternalEList<?>) getDependencies()).basicRemove(otherEnd, msgs);
 		case SagePackage.FEATURE__ENABLERS:
 			return ((InternalEList<?>) getEnablers()).basicRemove(otherEnd, msgs);
+		case SagePackage.FEATURE__RELEASE:
+			return basicSetRelease(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -205,6 +264,10 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 			return getDesign();
 		case SagePackage.FEATURE__COMPONENTS:
 			return getComponents();
+		case SagePackage.FEATURE__RELEASE:
+			if (resolve)
+				return getRelease();
+			return basicGetRelease();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -239,6 +302,9 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 			getComponents().clear();
 			getComponents().addAll((Collection<? extends Component>) newValue);
 			return;
+		case SagePackage.FEATURE__RELEASE:
+			setRelease((Release) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -269,6 +335,9 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 		case SagePackage.FEATURE__COMPONENTS:
 			getComponents().clear();
 			return;
+		case SagePackage.FEATURE__RELEASE:
+			setRelease((Release) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -293,6 +362,8 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 			return DESIGN_EDEFAULT == null ? getDesign() != null : !DESIGN_EDEFAULT.equals(getDesign());
 		case SagePackage.FEATURE__COMPONENTS:
 			return !getComponents().isEmpty();
+		case SagePackage.FEATURE__RELEASE:
+			return basicGetRelease() != null;
 		}
 		return super.eIsSet(featureID);
 	}
