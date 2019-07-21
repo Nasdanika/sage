@@ -474,13 +474,22 @@ public interface SagePackage extends EPackage {
 	int ORGANIZATION__PRODUCTS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Strategies</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORGANIZATION__STRATEGIES = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Organization</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION_FEATURE_COUNT = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 2;
+	int ORGANIZATION_FEATURE_COUNT = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Organization</em>' class.
@@ -1920,6 +1929,17 @@ public interface SagePackage extends EPackage {
 	EReference getOrganization_Products();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.nasdanika.sage.Organization#getStrategies <em>Strategies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Strategies</em>'.
+	 * @see org.nasdanika.sage.Organization#getStrategies()
+	 * @see #getOrganization()
+	 * @generated
+	 */
+	EReference getOrganization_Strategies();
+
+	/**
 	 * Returns the meta object for class '{@link org.nasdanika.sage.Persona <em>Persona</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2593,6 +2613,14 @@ public interface SagePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ORGANIZATION__PRODUCTS = eINSTANCE.getOrganization_Products();
+
+		/**
+		 * The meta object literal for the '<em><b>Strategies</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORGANIZATION__STRATEGIES = eINSTANCE.getOrganization_Strategies();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.sage.impl.PersonaImpl <em>Persona</em>}' class.

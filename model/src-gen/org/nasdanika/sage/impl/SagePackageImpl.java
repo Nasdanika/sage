@@ -402,6 +402,15 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getOrganization_Strategies() {
+		return (EReference) organizationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPersona() {
 		return personaEClass;
 	}
@@ -886,6 +895,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		organizationEClass = createEClass(ORGANIZATION);
 		createEReference(organizationEClass, ORGANIZATION__PERSONAS);
 		createEReference(organizationEClass, ORGANIZATION__PRODUCTS);
+		createEReference(organizationEClass, ORGANIZATION__STRATEGIES);
 
 		personaEClass = createEClass(PERSONA);
 		createEReference(personaEClass, PERSONA__NEEDS);
@@ -1072,6 +1082,9 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOrganization_Products(), this.getAbstractProduct(), null, "products", null, 0, -1,
+				Organization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOrganization_Strategies(), this.getStrategy(), null, "strategies", null, 0, -1,
 				Organization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

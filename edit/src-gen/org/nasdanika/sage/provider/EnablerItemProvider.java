@@ -89,7 +89,7 @@ public class EnablerItemProvider extends ItemProviderAdapter implements IEditing
 						getResourceLocator(), getString("_UI_Enabler_description_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Enabler_description_feature",
 								"_UI_Enabler_type"),
-						SagePackage.Literals.ENABLER__DESCRIPTION, true, false, false,
+						SagePackage.Literals.ENABLER__DESCRIPTION, true, true, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 

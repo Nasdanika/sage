@@ -97,7 +97,7 @@ public class FeatureItemProvider extends HierarchicalModelElementItemProvider {
 						getResourceLocator(), getString("_UI_Feature_design_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Feature_design_feature",
 								"_UI_Feature_type"),
-						SagePackage.Literals.FEATURE__DESIGN, true, false, false,
+						SagePackage.Literals.FEATURE__DESIGN, true, true, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 

@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.nasdanika.sage.Organization#getPersonas <em>Personas</em>}</li>
  *   <li>{@link org.nasdanika.sage.Organization#getProducts <em>Products</em>}</li>
+ *   <li>{@link org.nasdanika.sage.Organization#getStrategies <em>Strategies</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.sage.SagePackage#getOrganization()
@@ -56,4 +57,16 @@ public interface Organization extends HierarchicalModelElement<Organization> {
 	 * @generated
 	 */
 	EList<AbstractProduct> getProducts();
+
+	/**
+	 * Returns the value of the '<em><b>Strategies</b></em>' containment reference list.
+	 * The list contents are of type {@link org.nasdanika.sage.Strategy}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Strategies</em>' containment reference list.
+	 * @see org.nasdanika.sage.SagePackage#getOrganization_Strategies()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Strategy> getStrategies();
 } // Organization

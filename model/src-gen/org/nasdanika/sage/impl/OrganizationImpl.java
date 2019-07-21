@@ -13,6 +13,7 @@ import org.nasdanika.sage.AbstractProduct;
 import org.nasdanika.sage.Organization;
 import org.nasdanika.sage.Persona;
 import org.nasdanika.sage.SagePackage;
+import org.nasdanika.sage.Strategy;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +25,7 @@ import org.nasdanika.sage.SagePackage;
  * <ul>
  *   <li>{@link org.nasdanika.sage.impl.OrganizationImpl#getPersonas <em>Personas</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.OrganizationImpl#getProducts <em>Products</em>}</li>
+ *   <li>{@link org.nasdanika.sage.impl.OrganizationImpl#getStrategies <em>Strategies</em>}</li>
  * </ul>
  *
  * @generated
@@ -75,6 +77,17 @@ public class OrganizationImpl extends HierarchicalModelElementImpl<Organization>
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	public EList<Strategy> getStrategies() {
+		return (EList<Strategy>) eDynamicGet(SagePackage.ORGANIZATION__STRATEGIES,
+				SagePackage.Literals.ORGANIZATION__STRATEGIES, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -82,6 +95,8 @@ public class OrganizationImpl extends HierarchicalModelElementImpl<Organization>
 			return ((InternalEList<?>) getPersonas()).basicRemove(otherEnd, msgs);
 		case SagePackage.ORGANIZATION__PRODUCTS:
 			return ((InternalEList<?>) getProducts()).basicRemove(otherEnd, msgs);
+		case SagePackage.ORGANIZATION__STRATEGIES:
+			return ((InternalEList<?>) getStrategies()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -98,6 +113,8 @@ public class OrganizationImpl extends HierarchicalModelElementImpl<Organization>
 			return getPersonas();
 		case SagePackage.ORGANIZATION__PRODUCTS:
 			return getProducts();
+		case SagePackage.ORGANIZATION__STRATEGIES:
+			return getStrategies();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -119,6 +136,10 @@ public class OrganizationImpl extends HierarchicalModelElementImpl<Organization>
 			getProducts().clear();
 			getProducts().addAll((Collection<? extends AbstractProduct>) newValue);
 			return;
+		case SagePackage.ORGANIZATION__STRATEGIES:
+			getStrategies().clear();
+			getStrategies().addAll((Collection<? extends Strategy>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -137,6 +158,9 @@ public class OrganizationImpl extends HierarchicalModelElementImpl<Organization>
 		case SagePackage.ORGANIZATION__PRODUCTS:
 			getProducts().clear();
 			return;
+		case SagePackage.ORGANIZATION__STRATEGIES:
+			getStrategies().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -153,6 +177,8 @@ public class OrganizationImpl extends HierarchicalModelElementImpl<Organization>
 			return !getPersonas().isEmpty();
 		case SagePackage.ORGANIZATION__PRODUCTS:
 			return !getProducts().isEmpty();
+		case SagePackage.ORGANIZATION__STRATEGIES:
+			return !getStrategies().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

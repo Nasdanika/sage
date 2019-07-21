@@ -120,7 +120,7 @@ public class DependencyItemProvider extends ItemProviderAdapter implements IEdit
 						getResourceLocator(), getString("_UI_Dependency_description_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Dependency_description_feature",
 								"_UI_Dependency_type"),
-						SagePackage.Literals.DEPENDENCY__DESCRIPTION, true, false, false,
+						SagePackage.Literals.DEPENDENCY__DESCRIPTION, true, true, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 

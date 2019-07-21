@@ -100,6 +100,8 @@
         <details key="documentation" value="Products manufactured by the organization. Products can be grouped into portfolios."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="strategies" upperBound="-1"
+        eType="#//Strategy" containment="true"/>
     <eGenericSuperTypes eClassifier="#//HierarchicalModelElement">
       <eTypeArguments eClassifier="#//Organization"/>
     </eGenericSuperTypes>

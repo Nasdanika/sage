@@ -103,7 +103,7 @@ public class FulfillmentItemProvider extends ItemProviderAdapter implements IEdi
 						getResourceLocator(), getString("_UI_Fulfillment_description_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Fulfillment_description_feature",
 								"_UI_Fulfillment_type"),
-						SagePackage.Literals.FULFILLMENT__DESCRIPTION, true, false, false,
+						SagePackage.Literals.FULFILLMENT__DESCRIPTION, true, true, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 

@@ -62,6 +62,7 @@ public class OrganizationItemProvider extends HierarchicalModelElementItemProvid
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SagePackage.Literals.ORGANIZATION__PERSONAS);
 			childrenFeatures.add(SagePackage.Literals.ORGANIZATION__PRODUCTS);
+			childrenFeatures.add(SagePackage.Literals.ORGANIZATION__STRATEGIES);
 		}
 		return childrenFeatures;
 	}
@@ -126,6 +127,7 @@ public class OrganizationItemProvider extends HierarchicalModelElementItemProvid
 		switch (notification.getFeatureID(Organization.class)) {
 		case SagePackage.ORGANIZATION__PERSONAS:
 		case SagePackage.ORGANIZATION__PRODUCTS:
+		case SagePackage.ORGANIZATION__STRATEGIES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -151,6 +153,9 @@ public class OrganizationItemProvider extends HierarchicalModelElementItemProvid
 
 		newChildDescriptors.add(createChildParameter(SagePackage.Literals.ORGANIZATION__PRODUCTS,
 				SageFactory.eINSTANCE.createProduct()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.ORGANIZATION__STRATEGIES,
+				SageFactory.eINSTANCE.createStrategy()));
 	}
 
 	/**
@@ -166,6 +171,7 @@ public class OrganizationItemProvider extends HierarchicalModelElementItemProvid
 
 		boolean qualify = childFeature == SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN
 				|| childFeature == SagePackage.Literals.ORGANIZATION__PERSONAS
+				|| childFeature == SagePackage.Literals.ORGANIZATION__STRATEGIES
 				|| childFeature == SagePackage.Literals.ORGANIZATION__PRODUCTS;
 
 		if (qualify) {
