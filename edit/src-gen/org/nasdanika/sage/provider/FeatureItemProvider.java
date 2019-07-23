@@ -51,6 +51,7 @@ public class FeatureItemProvider extends HierarchicalModelElementItemProvider {
 			addDesignPropertyDescriptor(object);
 			addComponentsPropertyDescriptor(object);
 			addReleasePropertyDescriptor(object);
+			addEditionsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -130,6 +131,21 @@ public class FeatureItemProvider extends HierarchicalModelElementItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Feature_release_feature",
 								"_UI_Feature_type"),
 						SagePackage.Literals.FEATURE__RELEASE, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Editions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEditionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Feature_editions_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Feature_editions_feature",
+								"_UI_Feature_type"),
+						SagePackage.Literals.FEATURE__EDITIONS, true, false, true, null, null, null));
 	}
 
 	/**

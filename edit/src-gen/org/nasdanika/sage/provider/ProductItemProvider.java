@@ -48,6 +48,7 @@ public class ProductItemProvider extends AbstractProductItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addTargetAudiencesPropertyDescriptor(object);
+			addIncludesPropertyDescriptor(object);
 			addStagePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -66,6 +67,21 @@ public class ProductItemProvider extends AbstractProductItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Offering_targetAudiences_feature",
 								"_UI_Offering_type"),
 						SagePackage.Literals.OFFERING__TARGET_AUDIENCES, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Includes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIncludesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Offering_includes_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Offering_includes_feature",
+								"_UI_Offering_type"),
+						SagePackage.Literals.OFFERING__INCLUDES, true, false, true, null, null, null));
 	}
 
 	/**
@@ -99,6 +115,7 @@ public class ProductItemProvider extends AbstractProductItemProvider {
 			childrenFeatures.add(SagePackage.Literals.PRODUCT__FEATURES);
 			childrenFeatures.add(SagePackage.Literals.PRODUCT__RELEASES);
 			childrenFeatures.add(SagePackage.Literals.PRODUCT__COMPONENTS);
+			childrenFeatures.add(SagePackage.Literals.PRODUCT__EDITIONS);
 		}
 		return childrenFeatures;
 	}
@@ -167,6 +184,7 @@ public class ProductItemProvider extends AbstractProductItemProvider {
 		case SagePackage.PRODUCT__FEATURES:
 		case SagePackage.PRODUCT__RELEASES:
 		case SagePackage.PRODUCT__COMPONENTS:
+		case SagePackage.PRODUCT__EDITIONS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -192,6 +210,9 @@ public class ProductItemProvider extends AbstractProductItemProvider {
 
 		newChildDescriptors.add(createChildParameter(SagePackage.Literals.PRODUCT__COMPONENTS,
 				SageFactory.eINSTANCE.createComponent()));
+
+		newChildDescriptors.add(
+				createChildParameter(SagePackage.Literals.PRODUCT__EDITIONS, SageFactory.eINSTANCE.createEdition()));
 	}
 
 }

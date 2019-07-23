@@ -56,6 +56,7 @@ public class OrganizationImpl extends HierarchicalModelElementImpl<Organization>
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Persona> getPersonas() {
 		return (EList<Persona>) eDynamicGet(SagePackage.ORGANIZATION__PERSONAS,
 				SagePackage.Literals.ORGANIZATION__PERSONAS, true, true);
@@ -67,6 +68,7 @@ public class OrganizationImpl extends HierarchicalModelElementImpl<Organization>
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<AbstractProduct> getProducts() {
 		return (EList<AbstractProduct>) eDynamicGet(SagePackage.ORGANIZATION__PRODUCTS,
 				SagePackage.Literals.ORGANIZATION__PRODUCTS, true, true);
@@ -78,6 +80,7 @@ public class OrganizationImpl extends HierarchicalModelElementImpl<Organization>
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Strategy> getStrategies() {
 		return (EList<Strategy>) eDynamicGet(SagePackage.ORGANIZATION__STRATEGIES,
 				SagePackage.Literals.ORGANIZATION__STRATEGIES, true, true);

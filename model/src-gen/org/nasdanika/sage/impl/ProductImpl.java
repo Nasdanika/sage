@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.nasdanika.sage.Component;
+import org.nasdanika.sage.Edition;
 import org.nasdanika.sage.Feature;
 import org.nasdanika.sage.Offering;
 import org.nasdanika.sage.Persona;
@@ -31,10 +32,12 @@ import org.nasdanika.sage.SagePackage;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.sage.impl.ProductImpl#getTargetAudiences <em>Target Audiences</em>}</li>
+ *   <li>{@link org.nasdanika.sage.impl.ProductImpl#getIncludes <em>Includes</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ProductImpl#getFeatures <em>Features</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ProductImpl#getReleases <em>Releases</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ProductImpl#getStage <em>Stage</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ProductImpl#getComponents <em>Components</em>}</li>
+ *   <li>{@link org.nasdanika.sage.impl.ProductImpl#getEditions <em>Editions</em>}</li>
  * </ul>
  *
  * @generated
@@ -75,6 +78,7 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Persona> getTargetAudiences() {
 		return (EList<Persona>) eDynamicGet(SagePackage.PRODUCT__TARGET_AUDIENCES,
 				SagePackage.Literals.OFFERING__TARGET_AUDIENCES, true, true);
@@ -86,6 +90,19 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Offering> getIncludes() {
+		return (EList<Offering>) eDynamicGet(SagePackage.PRODUCT__INCLUDES, SagePackage.Literals.OFFERING__INCLUDES,
+				true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Feature> getFeatures() {
 		return (EList<Feature>) eDynamicGet(SagePackage.PRODUCT__FEATURES, SagePackage.Literals.PRODUCT__FEATURES, true,
 				true);
@@ -97,6 +114,7 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Release> getReleases() {
 		return (EList<Release>) eDynamicGet(SagePackage.PRODUCT__RELEASES, SagePackage.Literals.PRODUCT__RELEASES, true,
 				true);
@@ -107,6 +125,7 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ProductStage getStage() {
 		return (ProductStage) eDynamicGet(SagePackage.PRODUCT__STAGE, SagePackage.Literals.PRODUCT__STAGE, true, true);
 	}
@@ -116,6 +135,7 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStage(ProductStage newStage) {
 		eDynamicSet(SagePackage.PRODUCT__STAGE, SagePackage.Literals.PRODUCT__STAGE, newStage);
 	}
@@ -126,9 +146,22 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Component> getComponents() {
 		return (EList<Component>) eDynamicGet(SagePackage.PRODUCT__COMPONENTS, SagePackage.Literals.PRODUCT__COMPONENTS,
 				true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Edition> getEditions() {
+		return (EList<Edition>) eDynamicGet(SagePackage.PRODUCT__EDITIONS, SagePackage.Literals.PRODUCT__EDITIONS, true,
+				true);
 	}
 
 	/**
@@ -162,6 +195,8 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 			return ((InternalEList<?>) getReleases()).basicRemove(otherEnd, msgs);
 		case SagePackage.PRODUCT__COMPONENTS:
 			return ((InternalEList<?>) getComponents()).basicRemove(otherEnd, msgs);
+		case SagePackage.PRODUCT__EDITIONS:
+			return ((InternalEList<?>) getEditions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -176,6 +211,8 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 		switch (featureID) {
 		case SagePackage.PRODUCT__TARGET_AUDIENCES:
 			return getTargetAudiences();
+		case SagePackage.PRODUCT__INCLUDES:
+			return getIncludes();
 		case SagePackage.PRODUCT__FEATURES:
 			return getFeatures();
 		case SagePackage.PRODUCT__RELEASES:
@@ -184,6 +221,8 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 			return getStage();
 		case SagePackage.PRODUCT__COMPONENTS:
 			return getComponents();
+		case SagePackage.PRODUCT__EDITIONS:
+			return getEditions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -201,6 +240,10 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 			getTargetAudiences().clear();
 			getTargetAudiences().addAll((Collection<? extends Persona>) newValue);
 			return;
+		case SagePackage.PRODUCT__INCLUDES:
+			getIncludes().clear();
+			getIncludes().addAll((Collection<? extends Offering>) newValue);
+			return;
 		case SagePackage.PRODUCT__FEATURES:
 			getFeatures().clear();
 			getFeatures().addAll((Collection<? extends Feature>) newValue);
@@ -215,6 +258,10 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 		case SagePackage.PRODUCT__COMPONENTS:
 			getComponents().clear();
 			getComponents().addAll((Collection<? extends Component>) newValue);
+			return;
+		case SagePackage.PRODUCT__EDITIONS:
+			getEditions().clear();
+			getEditions().addAll((Collection<? extends Edition>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -231,6 +278,9 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 		case SagePackage.PRODUCT__TARGET_AUDIENCES:
 			getTargetAudiences().clear();
 			return;
+		case SagePackage.PRODUCT__INCLUDES:
+			getIncludes().clear();
+			return;
 		case SagePackage.PRODUCT__FEATURES:
 			getFeatures().clear();
 			return;
@@ -242,6 +292,9 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 			return;
 		case SagePackage.PRODUCT__COMPONENTS:
 			getComponents().clear();
+			return;
+		case SagePackage.PRODUCT__EDITIONS:
+			getEditions().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -257,6 +310,8 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 		switch (featureID) {
 		case SagePackage.PRODUCT__TARGET_AUDIENCES:
 			return !getTargetAudiences().isEmpty();
+		case SagePackage.PRODUCT__INCLUDES:
+			return !getIncludes().isEmpty();
 		case SagePackage.PRODUCT__FEATURES:
 			return !getFeatures().isEmpty();
 		case SagePackage.PRODUCT__RELEASES:
@@ -265,6 +320,8 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 			return getStage() != STAGE_EDEFAULT;
 		case SagePackage.PRODUCT__COMPONENTS:
 			return !getComponents().isEmpty();
+		case SagePackage.PRODUCT__EDITIONS:
+			return !getEditions().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -280,6 +337,8 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 			switch (derivedFeatureID) {
 			case SagePackage.PRODUCT__TARGET_AUDIENCES:
 				return SagePackage.OFFERING__TARGET_AUDIENCES;
+			case SagePackage.PRODUCT__INCLUDES:
+				return SagePackage.OFFERING__INCLUDES;
 			default:
 				return -1;
 			}
@@ -298,6 +357,8 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 			switch (baseFeatureID) {
 			case SagePackage.OFFERING__TARGET_AUDIENCES:
 				return SagePackage.PRODUCT__TARGET_AUDIENCES;
+			case SagePackage.OFFERING__INCLUDES:
+				return SagePackage.PRODUCT__INCLUDES;
 			default:
 				return -1;
 			}

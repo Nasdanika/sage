@@ -43,6 +43,7 @@ public class OfferingItemProvider extends ModelElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addTargetAudiencesPropertyDescriptor(object);
+			addIncludesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -60,6 +61,21 @@ public class OfferingItemProvider extends ModelElementItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Offering_targetAudiences_feature",
 								"_UI_Offering_type"),
 						SagePackage.Literals.OFFERING__TARGET_AUDIENCES, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Includes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIncludesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Offering_includes_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Offering_includes_feature",
+								"_UI_Offering_type"),
+						SagePackage.Literals.OFFERING__INCLUDES, true, false, true, null, null, null));
 	}
 
 	/**
@@ -89,13 +105,25 @@ public class OfferingItemProvider extends ModelElementItemProvider {
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
+		 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
-		super.notifyChanged(notification);
+		updateChildren(notification);
 	}
+
+	//	/**
+	//	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	//	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	//	 * <!-- begin-user-doc -->
+	//	 * <!-- end-user-doc -->
+	//	 * @generated NOT
+	//	 */
+	//	@Override
+	//	public void notifyChanged(Notification notification) {
+	//		super.notifyChanged(notification);
+	//	}
 
 	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children

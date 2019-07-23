@@ -1020,13 +1020,22 @@ public interface SagePackage extends EPackage {
 	int PRODUCT__TARGET_AUDIENCES = ABSTRACT_PRODUCT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Includes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT__INCLUDES = ABSTRACT_PRODUCT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Features</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__FEATURES = ABSTRACT_PRODUCT_FEATURE_COUNT + 1;
+	int PRODUCT__FEATURES = ABSTRACT_PRODUCT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Releases</b></em>' containment reference list.
@@ -1035,7 +1044,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__RELEASES = ABSTRACT_PRODUCT_FEATURE_COUNT + 2;
+	int PRODUCT__RELEASES = ABSTRACT_PRODUCT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Stage</b></em>' attribute.
@@ -1044,7 +1053,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__STAGE = ABSTRACT_PRODUCT_FEATURE_COUNT + 3;
+	int PRODUCT__STAGE = ABSTRACT_PRODUCT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Components</b></em>' containment reference list.
@@ -1053,7 +1062,16 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__COMPONENTS = ABSTRACT_PRODUCT_FEATURE_COUNT + 4;
+	int PRODUCT__COMPONENTS = ABSTRACT_PRODUCT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Editions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT__EDITIONS = ABSTRACT_PRODUCT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Product</em>' class.
@@ -1062,7 +1080,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_FEATURE_COUNT = ABSTRACT_PRODUCT_FEATURE_COUNT + 5;
+	int PRODUCT_FEATURE_COUNT = ABSTRACT_PRODUCT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Product</em>' class.
@@ -1201,13 +1219,22 @@ public interface SagePackage extends EPackage {
 	int FEATURE__RELEASE = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Editions</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__EDITIONS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Feature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_FEATURE_COUNT = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 7;
+	int FEATURE_FEATURE_COUNT = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Feature</em>' class.
@@ -1274,13 +1301,22 @@ public interface SagePackage extends EPackage {
 	int OFFERING__TARGET_AUDIENCES = MODEL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Includes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OFFERING__INCLUDES = MODEL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Offering</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OFFERING_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 1;
+	int OFFERING_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Offering</em>' class.
@@ -1345,6 +1381,15 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int EDITION__TARGET_AUDIENCES = OFFERING__TARGET_AUDIENCES;
+
+	/**
+	 * The feature id for the '<em><b>Includes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDITION__INCLUDES = OFFERING__INCLUDES;
 
 	/**
 	 * The feature id for the '<em><b>Bases</b></em>' reference list.
@@ -2097,6 +2142,17 @@ public interface SagePackage extends EPackage {
 	EReference getProduct_Components();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.nasdanika.sage.Product#getEditions <em>Editions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Editions</em>'.
+	 * @see org.nasdanika.sage.Product#getEditions()
+	 * @see #getProduct()
+	 * @generated
+	 */
+	EReference getProduct_Editions();
+
+	/**
 	 * Returns the meta object for class '{@link org.nasdanika.sage.Feature <em>Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2184,6 +2240,17 @@ public interface SagePackage extends EPackage {
 	EReference getFeature_Release();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.sage.Feature#getEditions <em>Editions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Editions</em>'.
+	 * @see org.nasdanika.sage.Feature#getEditions()
+	 * @see #getFeature()
+	 * @generated
+	 */
+	EReference getFeature_Editions();
+
+	/**
 	 * Returns the meta object for class '{@link org.nasdanika.sage.Offering <em>Offering</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2203,6 +2270,17 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getOffering_TargetAudiences();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.sage.Offering#getIncludes <em>Includes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Includes</em>'.
+	 * @see org.nasdanika.sage.Offering#getIncludes()
+	 * @see #getOffering()
+	 * @generated
+	 */
+	EReference getOffering_Includes();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.sage.Edition <em>Edition</em>}'.
@@ -2767,6 +2845,14 @@ public interface SagePackage extends EPackage {
 		EReference PRODUCT__COMPONENTS = eINSTANCE.getProduct_Components();
 
 		/**
+		 * The meta object literal for the '<em><b>Editions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PRODUCT__EDITIONS = eINSTANCE.getProduct_Editions();
+
+		/**
 		 * The meta object literal for the '{@link org.nasdanika.sage.impl.FeatureImpl <em>Feature</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2833,6 +2919,14 @@ public interface SagePackage extends EPackage {
 		EReference FEATURE__RELEASE = eINSTANCE.getFeature_Release();
 
 		/**
+		 * The meta object literal for the '<em><b>Editions</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FEATURE__EDITIONS = eINSTANCE.getFeature_Editions();
+
+		/**
 		 * The meta object literal for the '{@link org.nasdanika.sage.impl.OfferingImpl <em>Offering</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2849,6 +2943,14 @@ public interface SagePackage extends EPackage {
 		 * @generated
 		 */
 		EReference OFFERING__TARGET_AUDIENCES = eINSTANCE.getOffering_TargetAudiences();
+
+		/**
+		 * The meta object literal for the '<em><b>Includes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OFFERING__INCLUDES = eINSTANCE.getOffering_Includes();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.sage.impl.EditionImpl <em>Edition</em>}' class.

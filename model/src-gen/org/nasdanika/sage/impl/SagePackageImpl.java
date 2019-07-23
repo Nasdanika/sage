@@ -267,6 +267,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getModelElement() {
 		return modelElementEClass;
 	}
@@ -276,6 +277,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getModelElement_Name() {
 		return (EAttribute) modelElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -285,6 +287,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getModelElement_Url() {
 		return (EAttribute) modelElementEClass.getEStructuralFeatures().get(1);
 	}
@@ -294,6 +297,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getModelElement_Description() {
 		return (EAttribute) modelElementEClass.getEStructuralFeatures().get(2);
 	}
@@ -303,6 +307,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getModelElement_Configuration() {
 		return (EAttribute) modelElementEClass.getEStructuralFeatures().get(3);
 	}
@@ -312,6 +317,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComparableModelElement() {
 		return comparableModelElementEClass;
 	}
@@ -321,6 +327,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComparableModelElement_Weight() {
 		return (EAttribute) comparableModelElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -330,6 +337,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComparableModelElement_EffectiveWeight() {
 		return (EAttribute) comparableModelElementEClass.getEStructuralFeatures().get(1);
 	}
@@ -339,6 +347,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getHierarchicalModelElement() {
 		return hierarchicalModelElementEClass;
 	}
@@ -348,6 +357,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getHierarchicalModelElement_Children() {
 		return (EReference) hierarchicalModelElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -357,6 +367,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getHierarchicalModelElement_LinkedChildren() {
 		return (EReference) hierarchicalModelElementEClass.getEStructuralFeatures().get(1);
 	}
@@ -366,6 +377,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getHierarchicalComparableModelElement() {
 		return hierarchicalComparableModelElementEClass;
 	}
@@ -375,6 +387,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOrganization() {
 		return organizationEClass;
 	}
@@ -384,6 +397,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getOrganization_Personas() {
 		return (EReference) organizationEClass.getEStructuralFeatures().get(0);
 	}
@@ -393,6 +407,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getOrganization_Products() {
 		return (EReference) organizationEClass.getEStructuralFeatures().get(1);
 	}
@@ -402,6 +417,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getOrganization_Strategies() {
 		return (EReference) organizationEClass.getEStructuralFeatures().get(2);
 	}
@@ -411,6 +427,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPersona() {
 		return personaEClass;
 	}
@@ -420,6 +437,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPersona_Needs() {
 		return (EReference) personaEClass.getEStructuralFeatures().get(0);
 	}
@@ -429,6 +447,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getPersona_Offerings() {
 		return (EReference) personaEClass.getEStructuralFeatures().get(1);
 	}
@@ -438,6 +457,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getNeed() {
 		return needEClass;
 	}
@@ -447,6 +467,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNeed_Category() {
 		return (EAttribute) needEClass.getEStructuralFeatures().get(0);
 	}
@@ -456,6 +477,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getNeed_Fulfillments() {
 		return (EReference) needEClass.getEStructuralFeatures().get(1);
 	}
@@ -465,6 +487,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getStrategy() {
 		return strategyEClass;
 	}
@@ -474,6 +497,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractProduct() {
 		return abstractProductEClass;
 	}
@@ -483,6 +507,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getPortfolio() {
 		return portfolioEClass;
 	}
@@ -492,6 +517,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getProduct() {
 		return productEClass;
 	}
@@ -501,6 +527,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProduct_Features() {
 		return (EReference) productEClass.getEStructuralFeatures().get(0);
 	}
@@ -510,6 +537,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProduct_Releases() {
 		return (EReference) productEClass.getEStructuralFeatures().get(1);
 	}
@@ -519,6 +547,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProduct_Stage() {
 		return (EAttribute) productEClass.getEStructuralFeatures().get(2);
 	}
@@ -528,6 +557,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProduct_Components() {
 		return (EReference) productEClass.getEStructuralFeatures().get(3);
 	}
@@ -537,6 +567,17 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EReference getProduct_Editions() {
+		return (EReference) productEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getFeature() {
 		return featureEClass;
 	}
@@ -546,6 +587,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getFeature_Dependencies() {
 		return (EReference) featureEClass.getEStructuralFeatures().get(0);
 	}
@@ -555,6 +597,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getFeature_Enablers() {
 		return (EReference) featureEClass.getEStructuralFeatures().get(1);
 	}
@@ -564,6 +607,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFeature_Size() {
 		return (EAttribute) featureEClass.getEStructuralFeatures().get(2);
 	}
@@ -573,6 +617,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFeature_State() {
 		return (EAttribute) featureEClass.getEStructuralFeatures().get(3);
 	}
@@ -582,6 +627,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFeature_Design() {
 		return (EAttribute) featureEClass.getEStructuralFeatures().get(4);
 	}
@@ -591,6 +637,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getFeature_Components() {
 		return (EReference) featureEClass.getEStructuralFeatures().get(5);
 	}
@@ -600,6 +647,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getFeature_Release() {
 		return (EReference) featureEClass.getEStructuralFeatures().get(6);
 	}
@@ -609,6 +657,17 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EReference getFeature_Editions() {
+		return (EReference) featureEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getOffering() {
 		return offeringEClass;
 	}
@@ -618,6 +677,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getOffering_TargetAudiences() {
 		return (EReference) offeringEClass.getEStructuralFeatures().get(0);
 	}
@@ -627,6 +687,17 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EReference getOffering_Includes() {
+		return (EReference) offeringEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getEdition() {
 		return editionEClass;
 	}
@@ -636,6 +707,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEdition_Bases() {
 		return (EReference) editionEClass.getEStructuralFeatures().get(0);
 	}
@@ -645,6 +717,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEdition_Features() {
 		return (EReference) editionEClass.getEStructuralFeatures().get(1);
 	}
@@ -654,6 +727,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRelease() {
 		return releaseEClass;
 	}
@@ -663,6 +737,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getRelease_Features() {
 		return (EReference) releaseEClass.getEStructuralFeatures().get(0);
 	}
@@ -672,6 +747,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRelease_Released() {
 		return (EAttribute) releaseEClass.getEStructuralFeatures().get(1);
 	}
@@ -681,6 +757,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRelease_ReleaseDate() {
 		return (EAttribute) releaseEClass.getEStructuralFeatures().get(2);
 	}
@@ -690,6 +767,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRelease_Overhead() {
 		return (EAttribute) releaseEClass.getEStructuralFeatures().get(3);
 	}
@@ -699,6 +777,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getFulfillment() {
 		return fulfillmentEClass;
 	}
@@ -708,6 +787,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getFulfillment_Feature() {
 		return (EReference) fulfillmentEClass.getEStructuralFeatures().get(0);
 	}
@@ -717,6 +797,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFulfillment_Weight() {
 		return (EAttribute) fulfillmentEClass.getEStructuralFeatures().get(1);
 	}
@@ -726,6 +807,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFulfillment_Description() {
 		return (EAttribute) fulfillmentEClass.getEStructuralFeatures().get(2);
 	}
@@ -735,6 +817,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDependency() {
 		return dependencyEClass;
 	}
@@ -744,6 +827,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDependency_Optional() {
 		return (EAttribute) dependencyEClass.getEStructuralFeatures().get(0);
 	}
@@ -753,6 +837,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDependency_Dependency() {
 		return (EReference) dependencyEClass.getEStructuralFeatures().get(1);
 	}
@@ -762,6 +847,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDependency_Impact() {
 		return (EAttribute) dependencyEClass.getEStructuralFeatures().get(2);
 	}
@@ -771,6 +857,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDependency_Description() {
 		return (EAttribute) dependencyEClass.getEStructuralFeatures().get(3);
 	}
@@ -780,6 +867,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEnabler() {
 		return enablerEClass;
 	}
@@ -789,6 +877,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEnabler_Boost() {
 		return (EAttribute) enablerEClass.getEStructuralFeatures().get(0);
 	}
@@ -798,6 +887,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEnabler_Description() {
 		return (EAttribute) enablerEClass.getEStructuralFeatures().get(1);
 	}
@@ -807,6 +897,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEnabler_Enabler() {
 		return (EReference) enablerEClass.getEStructuralFeatures().get(2);
 	}
@@ -816,6 +907,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponent() {
 		return componentEClass;
 	}
@@ -825,6 +917,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponent_Dependencies() {
 		return (EReference) componentEClass.getEStructuralFeatures().get(0);
 	}
@@ -834,6 +927,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getNeedCategory() {
 		return needCategoryEEnum;
 	}
@@ -843,6 +937,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getProductStage() {
 		return productStageEEnum;
 	}
@@ -852,6 +947,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getFeatureState() {
 		return featureStateEEnum;
 	}
@@ -861,6 +957,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SageFactory getSageFactory() {
 		return (SageFactory) getEFactoryInstance();
 	}
@@ -925,6 +1022,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		createEReference(productEClass, PRODUCT__RELEASES);
 		createEAttribute(productEClass, PRODUCT__STAGE);
 		createEReference(productEClass, PRODUCT__COMPONENTS);
+		createEReference(productEClass, PRODUCT__EDITIONS);
 
 		featureEClass = createEClass(FEATURE);
 		createEReference(featureEClass, FEATURE__DEPENDENCIES);
@@ -934,9 +1032,11 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		createEAttribute(featureEClass, FEATURE__DESIGN);
 		createEReference(featureEClass, FEATURE__COMPONENTS);
 		createEReference(featureEClass, FEATURE__RELEASE);
+		createEReference(featureEClass, FEATURE__EDITIONS);
 
 		offeringEClass = createEClass(OFFERING);
 		createEReference(offeringEClass, OFFERING__TARGET_AUDIENCES);
+		createEReference(offeringEClass, OFFERING__INCLUDES);
 
 		editionEClass = createEClass(EDITION);
 		createEReference(editionEClass, EDITION__BASES);
@@ -1134,6 +1234,9 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		initEReference(getProduct_Components(), this.getComponent(), null, "components", null, 0, -1, Product.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProduct_Editions(), this.getEdition(), null, "editions", null, 0, -1, Product.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(featureEClass, Feature.class, "Feature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFeature_Dependencies(), this.getDependency(), null, "dependencies", null, 0, -1,
@@ -1154,19 +1257,25 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		initEReference(getFeature_Release(), this.getRelease(), this.getRelease_Features(), "release", null, 0, 1,
 				Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeature_Editions(), this.getEdition(), this.getEdition_Features(), "editions", null, 0, -1,
+				Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(offeringEClass, Offering.class, "Offering", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOffering_TargetAudiences(), this.getPersona(), this.getPersona_Offerings(), "targetAudiences",
 				null, 0, -1, Offering.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOffering_Includes(), this.getOffering(), null, "includes", null, 0, -1, Offering.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(editionEClass, Edition.class, "Edition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEdition_Bases(), this.getEdition(), null, "bases", null, 0, -1, Edition.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getEdition_Features(), this.getFeature(), null, "features", null, 0, -1, Edition.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEdition_Features(), this.getFeature(), this.getFeature_Editions(), "features", null, 0, -1,
+				Edition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(releaseEClass, Release.class, "Release", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRelease_Features(), this.getFeature(), this.getFeature_Release(), "features", null, 0, -1,

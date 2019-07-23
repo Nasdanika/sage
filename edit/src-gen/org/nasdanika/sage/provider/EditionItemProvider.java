@@ -2,16 +2,20 @@
  */
 package org.nasdanika.sage.provider;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.nasdanika.sage.Edition;
+import org.nasdanika.sage.Feature;
+import org.nasdanika.sage.Product;
 import org.nasdanika.sage.SagePackage;
 
 /**
@@ -67,15 +71,34 @@ public class EditionItemProvider extends OfferingItemProvider {
 	 * This adds a property descriptor for the Features feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addFeaturesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Edition_features_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Edition_features_feature",
-								"_UI_Edition_type"),
-						SagePackage.Literals.EDITION__FEATURES, true, false, true, null, null, null));
+		ItemPropertyDescriptor itemPropertyDescriptor = new ItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Edition_features_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Edition_features_feature", "_UI_Edition_type"),
+				SagePackage.Literals.EDITION__FEATURES, true, false, true, null, null, null, null) {
+
+			/**
+			 * Features in the container project. 
+			 */
+			@Override
+			protected Collection<?> getComboBoxObjects(Object object) {
+				Product product = (Product) ((EObject) object).eContainer();
+				List<Feature> ret = new ArrayList<>();
+				TreeIterator<EObject> tit = product.eAllContents();
+				while (tit.hasNext()) {
+					EObject next = tit.next();
+					if (next instanceof Feature) {
+						ret.add((Feature) next);
+					}
+				}
+				return ret;
+			}
+		};
+
+		itemPropertyDescriptors.add(itemPropertyDescriptor);
 	}
 
 	/**
@@ -116,11 +139,11 @@ public class EditionItemProvider extends OfferingItemProvider {
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
-		updateChildren(notification);
+		super.notifyChanged(notification);
 	}
 
 	/**

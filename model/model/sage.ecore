@@ -195,6 +195,12 @@
         <details key="documentation" value="A product may consist of several interdependent components."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="editions" upperBound="-1"
+        eType="#//Edition" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Product editions."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Feature">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -239,6 +245,12 @@
         <details key="documentation" value="Feature release."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="editions" upperBound="-1"
+        eType="#//Edition" eOpposite="#//Edition/features">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Editions this feature is included into."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eGenericSuperTypes eClassifier="#//HierarchicalModelElement">
       <eTypeArguments eClassifier="#//Feature"/>
     </eGenericSuperTypes>
@@ -253,6 +265,12 @@
         <details key="documentation" value="Personas to which this offering - product or edition - is offered. "/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="includes" upperBound="-1"
+        eType="#//Offering">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="One offering may include (bundle) other offferings. For example, Nasdanika Tool Suite would include community editions of Nasdanika products."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Edition" eSuperTypes="#//Offering">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -265,7 +283,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
-        eType="#//Feature">
+        eType="#//Feature" eOpposite="#//Feature/editions">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Features included in this edition."/>
       </eAnnotations>

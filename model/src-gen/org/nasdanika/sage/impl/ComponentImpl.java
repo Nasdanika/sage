@@ -48,6 +48,7 @@ public class ComponentImpl extends HierarchicalModelElementImpl<Component> imple
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Component> getDependencies() {
 		return (EList<Component>) eDynamicGet(SagePackage.COMPONENT__DEPENDENCIES,
 				SagePackage.Literals.COMPONENT__DEPENDENCIES, true, true);

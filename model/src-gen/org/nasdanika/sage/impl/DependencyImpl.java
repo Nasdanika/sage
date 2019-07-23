@@ -91,6 +91,7 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isOptional() {
 		return (Boolean) eDynamicGet(SagePackage.DEPENDENCY__OPTIONAL, SagePackage.Literals.DEPENDENCY__OPTIONAL, true,
 				true);
@@ -101,6 +102,7 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOptional(boolean newOptional) {
 		eDynamicSet(SagePackage.DEPENDENCY__OPTIONAL, SagePackage.Literals.DEPENDENCY__OPTIONAL, newOptional);
 	}
@@ -110,6 +112,7 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Feature getDependency() {
 		return (Feature) eDynamicGet(SagePackage.DEPENDENCY__DEPENDENCY, SagePackage.Literals.DEPENDENCY__DEPENDENCY,
 				true, true);
@@ -130,6 +133,7 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDependency(Feature newDependency) {
 		eDynamicSet(SagePackage.DEPENDENCY__DEPENDENCY, SagePackage.Literals.DEPENDENCY__DEPENDENCY, newDependency);
 	}
@@ -139,6 +143,7 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public double getImpact() {
 		return (Double) eDynamicGet(SagePackage.DEPENDENCY__IMPACT, SagePackage.Literals.DEPENDENCY__IMPACT, true,
 				true);
@@ -149,6 +154,7 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setImpact(double newImpact) {
 		eDynamicSet(SagePackage.DEPENDENCY__IMPACT, SagePackage.Literals.DEPENDENCY__IMPACT, newImpact);
 	}
@@ -158,6 +164,7 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return (String) eDynamicGet(SagePackage.DEPENDENCY__DESCRIPTION, SagePackage.Literals.DEPENDENCY__DESCRIPTION,
 				true, true);
@@ -168,6 +175,7 @@ public class DependencyImpl extends MinimalEObjectImpl.Container implements Depe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		eDynamicSet(SagePackage.DEPENDENCY__DESCRIPTION, SagePackage.Literals.DEPENDENCY__DESCRIPTION, newDescription);
 	}

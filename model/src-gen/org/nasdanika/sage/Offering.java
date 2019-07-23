@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.sage.Offering#getTargetAudiences <em>Target Audiences</em>}</li>
+ *   <li>{@link org.nasdanika.sage.Offering#getIncludes <em>Includes</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.sage.SagePackage#getOffering()
@@ -41,5 +42,20 @@ public interface Offering extends ModelElement {
 	 * @generated
 	 */
 	EList<Persona> getTargetAudiences();
+
+	/**
+	 * Returns the value of the '<em><b>Includes</b></em>' reference list.
+	 * The list contents are of type {@link org.nasdanika.sage.Offering}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * One offering may include (bundle) other offferings. For example, Nasdanika Tool Suite would include community editions of Nasdanika products.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Includes</em>' reference list.
+	 * @see org.nasdanika.sage.SagePackage#getOffering_Includes()
+	 * @model
+	 * @generated
+	 */
+	EList<Offering> getIncludes();
 
 } // Offering

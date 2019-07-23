@@ -130,6 +130,7 @@ public class SageFactoryImpl extends EFactoryImpl implements SageFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Organization createOrganization() {
 		OrganizationImpl organization = new OrganizationImpl();
 		return organization;
@@ -140,6 +141,7 @@ public class SageFactoryImpl extends EFactoryImpl implements SageFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Persona createPersona() {
 		PersonaImpl persona = new PersonaImpl();
 		return persona;
@@ -150,6 +152,7 @@ public class SageFactoryImpl extends EFactoryImpl implements SageFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Need createNeed() {
 		NeedImpl need = new NeedImpl();
 		return need;
@@ -160,6 +163,7 @@ public class SageFactoryImpl extends EFactoryImpl implements SageFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Strategy createStrategy() {
 		StrategyImpl strategy = new StrategyImpl();
 		return strategy;
@@ -170,6 +174,7 @@ public class SageFactoryImpl extends EFactoryImpl implements SageFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Portfolio createPortfolio() {
 		PortfolioImpl portfolio = new PortfolioImpl();
 		return portfolio;
@@ -180,6 +185,7 @@ public class SageFactoryImpl extends EFactoryImpl implements SageFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Product createProduct() {
 		ProductImpl product = new ProductImpl();
 		return product;
@@ -190,6 +196,7 @@ public class SageFactoryImpl extends EFactoryImpl implements SageFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Feature createFeature() {
 		FeatureImpl feature = new FeatureImpl();
 		return feature;
@@ -200,6 +207,7 @@ public class SageFactoryImpl extends EFactoryImpl implements SageFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Edition createEdition() {
 		EditionImpl edition = new EditionImpl();
 		return edition;
@@ -210,6 +218,7 @@ public class SageFactoryImpl extends EFactoryImpl implements SageFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Release createRelease() {
 		ReleaseImpl release = new ReleaseImpl();
 		return release;
@@ -220,6 +229,7 @@ public class SageFactoryImpl extends EFactoryImpl implements SageFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Fulfillment createFulfillment() {
 		FulfillmentImpl fulfillment = new FulfillmentImpl();
 		return fulfillment;
@@ -230,6 +240,7 @@ public class SageFactoryImpl extends EFactoryImpl implements SageFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Dependency createDependency() {
 		DependencyImpl dependency = new DependencyImpl();
 		return dependency;
@@ -240,6 +251,7 @@ public class SageFactoryImpl extends EFactoryImpl implements SageFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Enabler createEnabler() {
 		EnablerImpl enabler = new EnablerImpl();
 		return enabler;
@@ -250,6 +262,7 @@ public class SageFactoryImpl extends EFactoryImpl implements SageFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Component createComponent() {
 		ComponentImpl component = new ComponentImpl();
 		return component;
@@ -326,6 +339,7 @@ public class SageFactoryImpl extends EFactoryImpl implements SageFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SagePackage getSagePackage() {
 		return (SagePackage) getEPackage();
 	}

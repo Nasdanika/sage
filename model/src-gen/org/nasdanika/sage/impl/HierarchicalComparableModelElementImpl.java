@@ -68,6 +68,7 @@ public abstract class HierarchicalComparableModelElementImpl<T> extends Hierarch
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public double getWeight() {
 		return (Double) eDynamicGet(SagePackage.HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__WEIGHT,
 				SagePackage.Literals.COMPARABLE_MODEL_ELEMENT__WEIGHT, true, true);
@@ -78,6 +79,7 @@ public abstract class HierarchicalComparableModelElementImpl<T> extends Hierarch
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setWeight(double newWeight) {
 		eDynamicSet(SagePackage.HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__WEIGHT,
 				SagePackage.Literals.COMPARABLE_MODEL_ELEMENT__WEIGHT, newWeight);
@@ -88,6 +90,7 @@ public abstract class HierarchicalComparableModelElementImpl<T> extends Hierarch
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public double getEffectiveWeight() {
 		return (Double) eDynamicGet(SagePackage.HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__EFFECTIVE_WEIGHT,
 				SagePackage.Literals.COMPARABLE_MODEL_ELEMENT__EFFECTIVE_WEIGHT, true, true);

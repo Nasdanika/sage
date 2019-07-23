@@ -63,6 +63,7 @@ public class NeedImpl extends HierarchicalComparableModelElementImpl<Need> imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NeedCategory getCategory() {
 		return (NeedCategory) eDynamicGet(SagePackage.NEED__CATEGORY, SagePackage.Literals.NEED__CATEGORY, true, true);
 	}
@@ -72,6 +73,7 @@ public class NeedImpl extends HierarchicalComparableModelElementImpl<Need> imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCategory(NeedCategory newCategory) {
 		eDynamicSet(SagePackage.NEED__CATEGORY, SagePackage.Literals.NEED__CATEGORY, newCategory);
 	}
@@ -82,6 +84,7 @@ public class NeedImpl extends HierarchicalComparableModelElementImpl<Need> imple
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Fulfillment> getFulfillments() {
 		return (EList<Fulfillment>) eDynamicGet(SagePackage.NEED__FULFILLMENTS, SagePackage.Literals.NEED__FULFILLMENTS,
 				true, true);

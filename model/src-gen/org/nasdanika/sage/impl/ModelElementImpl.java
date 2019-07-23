@@ -100,6 +100,7 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return (String) eDynamicGet(SagePackage.MODEL_ELEMENT__NAME, SagePackage.Literals.MODEL_ELEMENT__NAME, true,
 				true);
@@ -110,6 +111,7 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		eDynamicSet(SagePackage.MODEL_ELEMENT__NAME, SagePackage.Literals.MODEL_ELEMENT__NAME, newName);
 	}
@@ -119,6 +121,7 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getUrl() {
 		return (String) eDynamicGet(SagePackage.MODEL_ELEMENT__URL, SagePackage.Literals.MODEL_ELEMENT__URL, true,
 				true);
@@ -129,6 +132,7 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUrl(String newUrl) {
 		eDynamicSet(SagePackage.MODEL_ELEMENT__URL, SagePackage.Literals.MODEL_ELEMENT__URL, newUrl);
 	}
@@ -138,6 +142,7 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return (String) eDynamicGet(SagePackage.MODEL_ELEMENT__DESCRIPTION,
 				SagePackage.Literals.MODEL_ELEMENT__DESCRIPTION, true, true);
@@ -148,6 +153,7 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		eDynamicSet(SagePackage.MODEL_ELEMENT__DESCRIPTION, SagePackage.Literals.MODEL_ELEMENT__DESCRIPTION,
 				newDescription);
@@ -158,6 +164,7 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getConfiguration() {
 		return (String) eDynamicGet(SagePackage.MODEL_ELEMENT__CONFIGURATION,
 				SagePackage.Literals.MODEL_ELEMENT__CONFIGURATION, true, true);
@@ -168,6 +175,7 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setConfiguration(String newConfiguration) {
 		eDynamicSet(SagePackage.MODEL_ELEMENT__CONFIGURATION, SagePackage.Literals.MODEL_ELEMENT__CONFIGURATION,
 				newConfiguration);

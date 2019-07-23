@@ -56,6 +56,7 @@ public abstract class HierarchicalModelElementImpl<T> extends ModelElementImpl i
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<T> getChildren() {
 		return (EList<T>) eDynamicGet(SagePackage.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
 				SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN, true, true);
@@ -67,6 +68,7 @@ public abstract class HierarchicalModelElementImpl<T> extends ModelElementImpl i
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<HierarchicalModelElement<T>> getLinkedChildren() {
 		return (EList<HierarchicalModelElement<T>>) eDynamicGet(SagePackage.HIERARCHICAL_MODEL_ELEMENT__LINKED_CHILDREN,
 				SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__LINKED_CHILDREN, true, true);

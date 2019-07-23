@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.nasdanika.sage.Feature#getDesign <em>Design</em>}</li>
  *   <li>{@link org.nasdanika.sage.Feature#getComponents <em>Components</em>}</li>
  *   <li>{@link org.nasdanika.sage.Feature#getRelease <em>Release</em>}</li>
+ *   <li>{@link org.nasdanika.sage.Feature#getEditions <em>Editions</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.sage.SagePackage#getFeature()
@@ -182,4 +183,21 @@ public interface Feature extends HierarchicalModelElement<Feature> {
 	 * @generated
 	 */
 	void setRelease(Release value);
+
+	/**
+	 * Returns the value of the '<em><b>Editions</b></em>' reference list.
+	 * The list contents are of type {@link org.nasdanika.sage.Edition}.
+	 * It is bidirectional and its opposite is '{@link org.nasdanika.sage.Edition#getFeatures <em>Features</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Editions this feature is included into.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Editions</em>' reference list.
+	 * @see org.nasdanika.sage.SagePackage#getFeature_Editions()
+	 * @see org.nasdanika.sage.Edition#getFeatures
+	 * @model opposite="features"
+	 * @generated
+	 */
+	EList<Edition> getEditions();
 } // Feature

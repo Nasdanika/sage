@@ -87,6 +87,7 @@ public class ReleaseImpl extends ModelElementImpl implements Release {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Feature> getFeatures() {
 		return (EList<Feature>) eDynamicGet(SagePackage.RELEASE__FEATURES, SagePackage.Literals.RELEASE__FEATURES, true,
 				true);
@@ -97,6 +98,7 @@ public class ReleaseImpl extends ModelElementImpl implements Release {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isReleased() {
 		return (Boolean) eDynamicGet(SagePackage.RELEASE__RELEASED, SagePackage.Literals.RELEASE__RELEASED, true, true);
 	}
@@ -106,6 +108,7 @@ public class ReleaseImpl extends ModelElementImpl implements Release {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setReleased(boolean newReleased) {
 		eDynamicSet(SagePackage.RELEASE__RELEASED, SagePackage.Literals.RELEASE__RELEASED, newReleased);
 	}
@@ -115,6 +118,7 @@ public class ReleaseImpl extends ModelElementImpl implements Release {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Date getReleaseDate() {
 		return (Date) eDynamicGet(SagePackage.RELEASE__RELEASE_DATE, SagePackage.Literals.RELEASE__RELEASE_DATE, true,
 				true);
@@ -125,6 +129,7 @@ public class ReleaseImpl extends ModelElementImpl implements Release {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setReleaseDate(Date newReleaseDate) {
 		eDynamicSet(SagePackage.RELEASE__RELEASE_DATE, SagePackage.Literals.RELEASE__RELEASE_DATE, newReleaseDate);
 	}
@@ -134,6 +139,7 @@ public class ReleaseImpl extends ModelElementImpl implements Release {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public double getOverhead() {
 		return (Double) eDynamicGet(SagePackage.RELEASE__OVERHEAD, SagePackage.Literals.RELEASE__OVERHEAD, true, true);
 	}
@@ -143,6 +149,7 @@ public class ReleaseImpl extends ModelElementImpl implements Release {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOverhead(double newOverhead) {
 		eDynamicSet(SagePackage.RELEASE__OVERHEAD, SagePackage.Literals.RELEASE__OVERHEAD, newOverhead);
 	}

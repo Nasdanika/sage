@@ -58,6 +58,7 @@ public class PersonaImpl extends ComparableModelElementImpl implements Persona {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Need> getNeeds() {
 		return (EList<Need>) eDynamicGet(SagePackage.PERSONA__NEEDS, SagePackage.Literals.PERSONA__NEEDS, true, true);
 	}
@@ -68,6 +69,7 @@ public class PersonaImpl extends ComparableModelElementImpl implements Persona {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Offering> getOfferings() {
 		return (EList<Offering>) eDynamicGet(SagePackage.PERSONA__OFFERINGS, SagePackage.Literals.PERSONA__OFFERINGS,
 				true, true);

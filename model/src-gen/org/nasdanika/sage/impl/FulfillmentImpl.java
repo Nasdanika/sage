@@ -80,6 +80,7 @@ public class FulfillmentImpl extends MinimalEObjectImpl.Container implements Ful
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Feature getFeature() {
 		return (Feature) eDynamicGet(SagePackage.FULFILLMENT__FEATURE, SagePackage.Literals.FULFILLMENT__FEATURE, true,
 				true);
@@ -100,6 +101,7 @@ public class FulfillmentImpl extends MinimalEObjectImpl.Container implements Ful
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFeature(Feature newFeature) {
 		eDynamicSet(SagePackage.FULFILLMENT__FEATURE, SagePackage.Literals.FULFILLMENT__FEATURE, newFeature);
 	}
@@ -109,6 +111,7 @@ public class FulfillmentImpl extends MinimalEObjectImpl.Container implements Ful
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public double getWeight() {
 		return (Double) eDynamicGet(SagePackage.FULFILLMENT__WEIGHT, SagePackage.Literals.FULFILLMENT__WEIGHT, true,
 				true);
@@ -119,6 +122,7 @@ public class FulfillmentImpl extends MinimalEObjectImpl.Container implements Ful
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setWeight(double newWeight) {
 		eDynamicSet(SagePackage.FULFILLMENT__WEIGHT, SagePackage.Literals.FULFILLMENT__WEIGHT, newWeight);
 	}
@@ -128,6 +132,7 @@ public class FulfillmentImpl extends MinimalEObjectImpl.Container implements Ful
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return (String) eDynamicGet(SagePackage.FULFILLMENT__DESCRIPTION, SagePackage.Literals.FULFILLMENT__DESCRIPTION,
 				true, true);
@@ -138,6 +143,7 @@ public class FulfillmentImpl extends MinimalEObjectImpl.Container implements Ful
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		eDynamicSet(SagePackage.FULFILLMENT__DESCRIPTION, SagePackage.Literals.FULFILLMENT__DESCRIPTION,
 				newDescription);

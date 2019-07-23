@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.nasdanika.sage.Component;
 import org.nasdanika.sage.Dependency;
+import org.nasdanika.sage.Edition;
 import org.nasdanika.sage.Enabler;
 import org.nasdanika.sage.Feature;
 import org.nasdanika.sage.FeatureState;
@@ -32,6 +33,7 @@ import org.nasdanika.sage.SagePackage;
  *   <li>{@link org.nasdanika.sage.impl.FeatureImpl#getDesign <em>Design</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.FeatureImpl#getComponents <em>Components</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.FeatureImpl#getRelease <em>Release</em>}</li>
+ *   <li>{@link org.nasdanika.sage.impl.FeatureImpl#getEditions <em>Editions</em>}</li>
  * </ul>
  *
  * @generated
@@ -90,6 +92,7 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Dependency> getDependencies() {
 		return (EList<Dependency>) eDynamicGet(SagePackage.FEATURE__DEPENDENCIES,
 				SagePackage.Literals.FEATURE__DEPENDENCIES, true, true);
@@ -101,6 +104,7 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Enabler> getEnablers() {
 		return (EList<Enabler>) eDynamicGet(SagePackage.FEATURE__ENABLERS, SagePackage.Literals.FEATURE__ENABLERS, true,
 				true);
@@ -111,6 +115,7 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public double getSize() {
 		return (Double) eDynamicGet(SagePackage.FEATURE__SIZE, SagePackage.Literals.FEATURE__SIZE, true, true);
 	}
@@ -120,6 +125,7 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSize(double newSize) {
 		eDynamicSet(SagePackage.FEATURE__SIZE, SagePackage.Literals.FEATURE__SIZE, newSize);
 	}
@@ -129,6 +135,7 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FeatureState getState() {
 		return (FeatureState) eDynamicGet(SagePackage.FEATURE__STATE, SagePackage.Literals.FEATURE__STATE, true, true);
 	}
@@ -138,6 +145,7 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setState(FeatureState newState) {
 		eDynamicSet(SagePackage.FEATURE__STATE, SagePackage.Literals.FEATURE__STATE, newState);
 	}
@@ -147,6 +155,7 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDesign() {
 		return (String) eDynamicGet(SagePackage.FEATURE__DESIGN, SagePackage.Literals.FEATURE__DESIGN, true, true);
 	}
@@ -156,6 +165,7 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDesign(String newDesign) {
 		eDynamicSet(SagePackage.FEATURE__DESIGN, SagePackage.Literals.FEATURE__DESIGN, newDesign);
 	}
@@ -166,6 +176,7 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Component> getComponents() {
 		return (EList<Component>) eDynamicGet(SagePackage.FEATURE__COMPONENTS, SagePackage.Literals.FEATURE__COMPONENTS,
 				true, true);
@@ -176,6 +187,7 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Release getRelease() {
 		return (Release) eDynamicGet(SagePackage.FEATURE__RELEASE, SagePackage.Literals.FEATURE__RELEASE, true, true);
 	}
@@ -204,6 +216,7 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRelease(Release newRelease) {
 		eDynamicSet(SagePackage.FEATURE__RELEASE, SagePackage.Literals.FEATURE__RELEASE, newRelease);
 	}
@@ -213,6 +226,19 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Edition> getEditions() {
+		return (EList<Edition>) eDynamicGet(SagePackage.FEATURE__EDITIONS, SagePackage.Literals.FEATURE__EDITIONS, true,
+				true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -222,6 +248,8 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 				msgs = ((InternalEObject) release).eInverseRemove(this, SagePackage.RELEASE__FEATURES, Release.class,
 						msgs);
 			return basicSetRelease((Release) otherEnd, msgs);
+		case SagePackage.FEATURE__EDITIONS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getEditions()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -240,6 +268,8 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 			return ((InternalEList<?>) getEnablers()).basicRemove(otherEnd, msgs);
 		case SagePackage.FEATURE__RELEASE:
 			return basicSetRelease(null, msgs);
+		case SagePackage.FEATURE__EDITIONS:
+			return ((InternalEList<?>) getEditions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -268,6 +298,8 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 			if (resolve)
 				return getRelease();
 			return basicGetRelease();
+		case SagePackage.FEATURE__EDITIONS:
+			return getEditions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -305,6 +337,10 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 		case SagePackage.FEATURE__RELEASE:
 			setRelease((Release) newValue);
 			return;
+		case SagePackage.FEATURE__EDITIONS:
+			getEditions().clear();
+			getEditions().addAll((Collection<? extends Edition>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -338,6 +374,9 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 		case SagePackage.FEATURE__RELEASE:
 			setRelease((Release) null);
 			return;
+		case SagePackage.FEATURE__EDITIONS:
+			getEditions().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -364,6 +403,8 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 			return !getComponents().isEmpty();
 		case SagePackage.FEATURE__RELEASE:
 			return basicGetRelease() != null;
+		case SagePackage.FEATURE__EDITIONS:
+			return !getEditions().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

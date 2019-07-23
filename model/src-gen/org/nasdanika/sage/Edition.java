@@ -44,6 +44,7 @@ public interface Edition extends Offering {
 	/**
 	 * Returns the value of the '<em><b>Features</b></em>' reference list.
 	 * The list contents are of type {@link org.nasdanika.sage.Feature}.
+	 * It is bidirectional and its opposite is '{@link org.nasdanika.sage.Feature#getEditions <em>Editions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -51,7 +52,8 @@ public interface Edition extends Offering {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Features</em>' reference list.
 	 * @see org.nasdanika.sage.SagePackage#getEdition_Features()
-	 * @model
+	 * @see org.nasdanika.sage.Feature#getEditions
+	 * @model opposite="editions"
 	 * @generated
 	 */
 	EList<Feature> getFeatures();

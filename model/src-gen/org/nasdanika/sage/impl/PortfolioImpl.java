@@ -54,6 +54,7 @@ public class PortfolioImpl extends AbstractProductImpl implements Portfolio {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<AbstractProduct> getChildren() {
 		return (EList<AbstractProduct>) eDynamicGet(SagePackage.PORTFOLIO__CHILDREN,
 				SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN, true, true);
@@ -65,6 +66,7 @@ public class PortfolioImpl extends AbstractProductImpl implements Portfolio {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<HierarchicalModelElement<AbstractProduct>> getLinkedChildren() {
 		return (EList<HierarchicalModelElement<AbstractProduct>>) eDynamicGet(SagePackage.PORTFOLIO__LINKED_CHILDREN,
 				SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__LINKED_CHILDREN, true, true);

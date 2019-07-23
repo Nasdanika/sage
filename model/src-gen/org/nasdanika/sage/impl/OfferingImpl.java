@@ -26,6 +26,7 @@ import org.nasdanika.sage.SagePackage;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.sage.impl.OfferingImpl#getTargetAudiences <em>Target Audiences</em>}</li>
+ *   <li>{@link org.nasdanika.sage.impl.OfferingImpl#getIncludes <em>Includes</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,9 +57,22 @@ public abstract class OfferingImpl extends ModelElementImpl implements Offering 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Persona> getTargetAudiences() {
 		return (EList<Persona>) eDynamicGet(SagePackage.OFFERING__TARGET_AUDIENCES,
 				SagePackage.Literals.OFFERING__TARGET_AUDIENCES, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Offering> getIncludes() {
+		return (EList<Offering>) eDynamicGet(SagePackage.OFFERING__INCLUDES, SagePackage.Literals.OFFERING__INCLUDES,
+				true, true);
 	}
 
 	/**
@@ -100,6 +114,8 @@ public abstract class OfferingImpl extends ModelElementImpl implements Offering 
 		switch (featureID) {
 		case SagePackage.OFFERING__TARGET_AUDIENCES:
 			return getTargetAudiences();
+		case SagePackage.OFFERING__INCLUDES:
+			return getIncludes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -117,6 +133,10 @@ public abstract class OfferingImpl extends ModelElementImpl implements Offering 
 			getTargetAudiences().clear();
 			getTargetAudiences().addAll((Collection<? extends Persona>) newValue);
 			return;
+		case SagePackage.OFFERING__INCLUDES:
+			getIncludes().clear();
+			getIncludes().addAll((Collection<? extends Offering>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -132,6 +152,9 @@ public abstract class OfferingImpl extends ModelElementImpl implements Offering 
 		case SagePackage.OFFERING__TARGET_AUDIENCES:
 			getTargetAudiences().clear();
 			return;
+		case SagePackage.OFFERING__INCLUDES:
+			getIncludes().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -146,6 +169,8 @@ public abstract class OfferingImpl extends ModelElementImpl implements Offering 
 		switch (featureID) {
 		case SagePackage.OFFERING__TARGET_AUDIENCES:
 			return !getTargetAudiences().isEmpty();
+		case SagePackage.OFFERING__INCLUDES:
+			return !getIncludes().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

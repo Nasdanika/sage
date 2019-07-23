@@ -21,6 +21,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.nasdanika.sage.Product#getReleases <em>Releases</em>}</li>
  *   <li>{@link org.nasdanika.sage.Product#getStage <em>Stage</em>}</li>
  *   <li>{@link org.nasdanika.sage.Product#getComponents <em>Components</em>}</li>
+ *   <li>{@link org.nasdanika.sage.Product#getEditions <em>Editions</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.sage.SagePackage#getProduct()
@@ -100,5 +101,20 @@ public interface Product extends AbstractProduct, Offering {
 	 * @generated
 	 */
 	EList<Component> getComponents();
+
+	/**
+	 * Returns the value of the '<em><b>Editions</b></em>' containment reference list.
+	 * The list contents are of type {@link org.nasdanika.sage.Edition}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Product editions.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Editions</em>' containment reference list.
+	 * @see org.nasdanika.sage.SagePackage#getProduct_Editions()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Edition> getEditions();
 
 } // Product

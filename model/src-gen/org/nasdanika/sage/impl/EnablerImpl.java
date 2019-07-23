@@ -80,6 +80,7 @@ public class EnablerImpl extends MinimalEObjectImpl.Container implements Enabler
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public double getBoost() {
 		return (Double) eDynamicGet(SagePackage.ENABLER__BOOST, SagePackage.Literals.ENABLER__BOOST, true, true);
 	}
@@ -89,6 +90,7 @@ public class EnablerImpl extends MinimalEObjectImpl.Container implements Enabler
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBoost(double newBoost) {
 		eDynamicSet(SagePackage.ENABLER__BOOST, SagePackage.Literals.ENABLER__BOOST, newBoost);
 	}
@@ -98,6 +100,7 @@ public class EnablerImpl extends MinimalEObjectImpl.Container implements Enabler
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return (String) eDynamicGet(SagePackage.ENABLER__DESCRIPTION, SagePackage.Literals.ENABLER__DESCRIPTION, true,
 				true);
@@ -108,6 +111,7 @@ public class EnablerImpl extends MinimalEObjectImpl.Container implements Enabler
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		eDynamicSet(SagePackage.ENABLER__DESCRIPTION, SagePackage.Literals.ENABLER__DESCRIPTION, newDescription);
 	}
@@ -117,6 +121,7 @@ public class EnablerImpl extends MinimalEObjectImpl.Container implements Enabler
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Feature getEnabler() {
 		return (Feature) eDynamicGet(SagePackage.ENABLER__ENABLER, SagePackage.Literals.ENABLER__ENABLER, true, true);
 	}
@@ -135,6 +140,7 @@ public class EnablerImpl extends MinimalEObjectImpl.Container implements Enabler
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEnabler(Feature newEnabler) {
 		eDynamicSet(SagePackage.ENABLER__ENABLER, SagePackage.Literals.ENABLER__ENABLER, newEnabler);
 	}
