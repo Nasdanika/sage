@@ -56,6 +56,10 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A model element which can form a hierarchy."/>
     </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Иерархический элемент модели"/>
+      <details key="documentation_ru" value="Элемент модели который может являться частью иерархии, то есть иметь родительские и дочерние элементы"/>
+    </eAnnotations>
     <eTypeParameters name="T"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
         containment="true">
