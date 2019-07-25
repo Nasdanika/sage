@@ -2,15 +2,19 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sage" nsURI="urn:org.nasdanika.sage" nsPrefix="org.nasdanika.sage">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-    <details key="documentation" value="Nasdanika Sage helps organizations to manage and develop their product portfolios by establishing traceability from their target audiences (personas) needs to product features and their dependencies. &#xD;&#xA;It also allow to assign weights to personas and their needs and compute weight (impact) of features. Features can be sized in some units of development effort - money, story points, days. &#xD;&#xA;Using story sizes (including dependencies) and story weight/benefit a cost benefit analysis can be conducted to identify most valuable features, where value is benefit/size. It also allows to identify most valuable products in the portfolio."/>
+    <details key="documentation" value="Nasdanika Sage helps organizations to manage and develop their product portfolios by establishing traceability from their target audiences (personas) needs to product features and their dependencies. &#xA;It also allow to assign weights to personas and their needs and compute weight (impact) of features. Features can be sized in some units of development effort - money, story points, days. &#xA;Using story sizes (including dependencies) and story weight/benefit a cost benefit analysis can be conducted to identify most valuable features, where value is benefit/size. It also allows to identify most valuable products in the portfolio."/>
   </eAnnotations>
   <eAnnotations source="urn:org.nasdanika">
     <details key="label_ru" value="Мудрец"/>
-    <details key="documentation_ru" value="Nasdanika Sage помогает организациям управлять и разрабатывать...&#xA;&#xA;helps organizations to manage and develop their product portfolios by establishing traceability from their target audiences (personas) needs to product features and their dependencies. &#xA;It also allow to assign weights to personas and their needs and compute weight (impact) of features. Features can be sized in some units of development effort - money, story points, days. &#xA;Using story sizes (including dependencies) and story weight/benefit a cost benefit analysis can be conducted to identify most valuable features, where value is benefit/size. It also allows to identify most valuable products in the portfolio."/>
+    <details key="documentation_ru" value="Nasdanika Sage помогает организациям управлять портфелем используемого или разрабатываемого ПО. &#xA;А именно: &#xA;1. Отслеживать потребности заинтересованных лиц, являющихся целевой аудиторией программного продукта, то есть всегда иметь ответ на вопрос: что и кому было нужно от конкретного ПО или функционального элемента ПО. &#xA;2. Хранить информацию о взаимосвязях программных продуктов и прогнозировать последствия вносимых изменений.&#xA;3. Присваивать &quot;вес&quot; представителям целевой аудитории (заказчикам), оценивать потребности по степени их важности и рискованности, устанавливать приоритеты.  &#xA;4. Оценивать затраты на разработку и поддержание ПО в различных единицах: деньгах, трудочасах и др.&#xA;&#xA;На основании присвоенных оценок, информации о затратах и планируемом эффекте от внедрения разрабатываемого ПО можно планировать рентабельности продукта, определить наиболее ценные продукты в портфеле.&#xA;"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="ModelElement" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Base class for other model elements which feature name and description."/>
+    </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Базовый элемент модели"/>
+      <details key="documentation_ru" value="Базовый элемент модели, имеющий название и описание."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -38,6 +42,10 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Model element which can be assigned a weight/importance. The weight is used for comparing the element with its siblings in the containing reference."/>
     </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Сравнимый элемент модели"/>
+      <details key="documentation_ru" value="Элемент модели, которому может быть присвоен вес, оценка, приоритет для сравнения с аналогичными объектами. "/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="weight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
         defaultValueLiteral="1.0">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -58,7 +66,7 @@
     </eAnnotations>
     <eAnnotations source="urn:org.nasdanika">
       <details key="label_ru" value="Иерархический элемент модели"/>
-      <details key="documentation_ru" value="Элемент модели который может являться частью иерархии, то есть иметь родительские и дочерние элементы"/>
+      <details key="documentation_ru" value="Элемент модели, который может являться частью иерархии, то есть иметь родительские и дочерние элементы"/>
     </eAnnotations>
     <eTypeParameters name="T"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
@@ -82,6 +90,10 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A model element which is both hierarchical and comparable."/>
     </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="СравинимыйИерархический элемент модели"/>
+      <details key="documentation_ru" value="Элемент модели, который может являться частью иерархии, то есть иметь родительские и дочерние элементы. И, одновременно,  является сравнимым, то есть ему может быть присвоен вес, оценка, приоритет для сравнения с сопоставимыми объектами."/>
+    </eAnnotations>
     <eTypeParameters name="T"/>
     <eGenericSuperTypes eClassifier="#//HierarchicalModelElement">
       <eTypeArguments eTypeParameter="#//HierarchicalComparableModelElement/T"/>
@@ -91,6 +103,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Organization">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Organization it the root of the Sage model. Organizations can be nested. Different products in organization's portfolio may be produced by different child organizations."/>
+    </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Организация"/>
+      <details key="documentation_ru" value="Организация это корень модели Sage.  &#xA;Организации могут быть вложенными, то есть, иметь подразделения. &#xA;Различные продукты в портфеле организации могут разрабатываться разными подразделениями или командами  (дочерними организациями)."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="personas" upperBound="-1"
         eType="#//Persona" containment="true">
@@ -114,6 +130,10 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Personas represent target audiences of products manufactured by the organization. &#xA;&#xA;Personas can be assigned relative weight/importance which is used to calculate effective weight of persona needs and then product features fulfilling those needs. &#xA;"/>
     </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Персона"/>
+      <details key="documentation_ru" value="Персона - заказчик продукта, представитель целевой аудитории, в соответствии с требованиями которой разрабатывается продукт.&#xA;Персонам может быть назначен относительный вес или оценка важности требований. &#xA;Это позволит оценить, на сколько готовый продукт удовлетворяет требованиям персоны, а так же приоретизировать задачи в процессе разработки. "/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="needs" upperBound="-1"
         eType="#//Need" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -129,7 +149,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Need">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="Persona need. Has a weight relative to &quot;peer&quot; needs. This weight is used to compute effective weight of a need to be used in computing feature and product weights (benefits) and values (benefit/investment|effort|size).&#xD;&#xA;Needs can be organized into a hierarchy.&#xD;&#xA;&#xD;&#xA;"/>
+      <details key="documentation" value="Описание потребности, которая должна быть удовлетворена или  проблемы, которая должна быть решена при помощи разрабатываемого продукта.&#xA;Потребностям присваивается удельный вес, который позволяет выбрать наиболее значимые направления удовлетворения потребностей.&#xA;Удельный вес потребности используется для вычисления степени готовности продукта. &#xA; &#xA; This weight is used to compute effective weight of a need to be used in computing feature and product weights (benefits) and values (benefit/investment|effort|size).&#xA;Needs can be organized into a hierarchy.&#xA;&#xA;"/>
     </eAnnotations>
     <eAnnotations source="urn:org.nasdanika">
       <details key="label_ru" value="Потребность"/>
