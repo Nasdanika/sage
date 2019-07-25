@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see org.nasdanika.sage.SagePackage#getModelElement()
  * @model abstract="true"
+ *        annotation="urn:org.nasdanika label_ru='\u0411\u0430\u0437\u043e\u0432\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442 \u043c\u043e\u0434\u0435\u043b\u0438' documentation_ru='\u0411\u0430\u0437\u043e\u0432\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442 \u043c\u043e\u0434\u0435\u043b\u0438, \u0438\u043c\u0435\u044e\u0449\u0438\u0439 \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0438 \u043e\u043f\u0438\u0441\u0430\u043d\u0438\u0435.'"
  * @generated
  */
 public interface ModelElement extends EObject {

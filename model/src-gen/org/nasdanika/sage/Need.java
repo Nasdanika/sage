@@ -10,7 +10,11 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Persona need. Has a weight relative to "peer" needs. This weight is used to compute effective weight of a need to be used in computing feature and product weights (benefits) and values (benefit/investment|effort|size).
+ * Описание потребности, которая должна быть удовлетворена или  проблемы, которая должна быть решена при помощи разрабатываемого продукта.
+ * Потребностям присваивается удельный вес, который позволяет выбрать наиболее значимые направления удовлетворения потребностей.
+ * Удельный вес потребности используется для вычисления степени готовности продукта. 
+ *  
+ *  This weight is used to compute effective weight of a need to be used in computing feature and product weights (benefits) and values (benefit/investment|effort|size).
  * Needs can be organized into a hierarchy.
  * 
  * 
