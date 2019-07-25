@@ -1,23 +1,15 @@
 # Nasdanika Sage: 
 
-*Формулируйте потребности!*
-*Оценивайте возможности!* 
-*Принимайте оптимальные решения!*
+* Formulate needs! *
+
+* Evaluate the possibilities! *
+ 
+* Make the best decisions! *
 
 
-Nasdanika Sage - это система управления портфеоем программных продуктов используемых, или разрабатываемых организацией.
-
-NS позволяет:
-
-* систематезировать информацию о заинтересованных лицах и их ожиданиях от данного программного продукта;
-* хранить информацию пользователях, группах поддержки и разработки программного продукта или компонента;
-* хранить информацию о взаимном влиянии продуктов и компонентов друг на друга и оценивать риск внесения изменений в определенную компоненту;
-* планировать каскадное внесение изменений в связанные продукты, организовывать совместную работу комманд, поддерживающих различные продукты или проекты;
-* присваивать приоритеты и оценки важности требованиям заказчиков к функциональным модулям ПО;
-* на основе присвоенных оценок приоретизировать задачи разработки;
-* оценивать затраты денежных, трудовых и временных ресурсов на реализацию того или иного требования заказчиков;
-* определять экономический эффект на основе сравнения затрат и экономических выгод от использования разрабатываемого продукта;
-* определять наиболее ценные продукты/проекты в портфеле.
+Nasdanika Sage helps organizations to manage and develop their product portfolios by establishing traceability from their target audiences (personas) needs to product features and their dependencies. 
+It also allow to assign weights to personas and their needs and compute weight (impact) of features. Features can be sized in some units of development effort - money, story points, days. 
+Using story sizes (including dependencies) and story weight/benefit a cost benefit analysis can be conducted to identify most valuable features, where value is benefit/size. It also allows to identify most valuable products in the portfolio.
 
 ## Концепции? 
 
@@ -26,7 +18,8 @@ TODO - author, capbability tree, activity, organizations, ...
 ## Используемые инструменты
 
 * [Model documentation](model-doc/index.html)
-* JavaDoc
+
+* JavaDoc *Исправить ссылки*
     * [Model](apidocs/org.nasdanika.cv)
     * [Edit](apidocs/org.nasdanika.cv.edit)
     * [Editor](apidocs/org.nasdanika.cv.editor)
@@ -35,7 +28,7 @@ TODO - author, capbability tree, activity, organizations, ...
 
 ## P2 Repository
 
-* ``https://www.nasdanika.org/home/products/cv/repository``
+* ``https://www.nasdanika.org/home/products/sage/repository``
 * [Archived](org.nasdanika.cv.repository-0.1.0-SNAPSHOT.zip)
 
 ## How to use
