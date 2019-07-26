@@ -288,11 +288,18 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Feature release."/>
       </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="documentation_ru" value="Feature release."/>
+      </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="editions" upperBound="-1"
         eType="#//Edition" eOpposite="#//Edition/features">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Editions this feature is included into."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Редакция"/>
+        <details key="documentation_ru" value="Редакция в которую включена этот функциональный блок"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eGenericSuperTypes eClassifier="#//HierarchicalModelElement">
@@ -303,10 +310,18 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Offering is a base class for products and editions - something that is offered to personas, which are offering's target audiences."/>
     </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Решение"/>
+      <details key="documentation_ru" value="Решение - базовый класс для продуктов и редакций - совокупность функциональности, которая предлагается персонам, являющимся целевой аудиторией решения.&#xA;"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetAudiences" upperBound="-1"
         eType="#//Persona" eOpposite="#//Persona/offerings">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Personas to which this offering - product or edition - is offered. "/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Персона"/>
+        <details key="documentation_ru" value="Персоны которым предлагается этот продукт или редация продукта. "/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="includes" upperBound="-1"
@@ -320,10 +335,18 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Product edition is a grouping of features which fulfill needs of a specific target audience. For example, a community edition may target customer with basic needs, and a professional edition would include additional features fulfilling the needs of customers who use the product extensively."/>
     </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Редакция"/>
+      <details key="documentation_ru" value="Редакция продукта - это набор функций, которые удовлетворяют  потребности конкретной целевой аудитории. &#xA;&#xA;Например, Free edition предназначкена для клиентов с базовыми потребностями, &#xA;&#xA;&#xA;а Professional edition будет включать дополнительные возможности, &#xA;&#xA;удовлетворяющие специфические потребности пользоваателей, более профессионально использующих продукт.&#xA;"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bases" upperBound="-1"
         eType="#//Edition">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Editions which this one is based on, i.e. an edition includes all the features from its base editions plus the features explicitly included in the edition."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Редакция"/>
+        <details key="documentation_ru" value="Редакции, базовые для этой редакции. &#xA;&#xA;Редакция влючает в себя все функци из базовых редакций, а так же дополнительные функции, явно включенные в эту редакцию.&#xA;"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
@@ -331,37 +354,65 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Features included in this edition."/>
       </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Функциональность"/>
+        <details key="documentation_ru" value="Функциональные модули включенные в данную редакцию"/>
+      </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Release" eSuperTypes="#//ModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Release is a version of a product which was made available to the product's target audiences. It is also a unit of delivery of a set of features.   "/>
     </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Релиз"/>
+      <details key="documentation_ru" value="Релиз - это версия продукта, которая была предоставлена целевой аудитории. Это также единица доставки набора функций."/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
         eType="#//Feature" eOpposite="#//Feature/release">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="New features included in the release. "/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Фнукциональный модуль"/>
+        <details key="documentation_ru" value="Новые функции, включенные в релиз"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="released" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="True if the release was made available to the product's target audiences, false otherwise - it it is still in planning/development."/>
       </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Реализован"/>
+        <details key="documentation_ru" value="ИСТИНА, если релиз был сделан доступным для целевой аудитории продукта, иначе ЛОЖЬ - он все еще находится в процессе планирования / разработки."/>
+      </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="releaseDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Planned or actual release date."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Дата релиза"/>
+        <details key="documentation_ru" value="Планируемая или фактическая дата релиза"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="overhead" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Amount of effort to perform release activities (press release, writing release notes, ...) in addition to the size of included features."/>
       </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Накладные расходы"/>
+        <details key="documentation_ru" value="Объем затрат на представление релиза (публикация пресс-релиза, написание заметок о выпуске и т.д.). В дополнение к расходам на разработку функциональности."/>
+      </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="NeedCategory">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Need categories based on the [Kano model](https://en.wikipedia.org/wiki/Kano_model)."/>
+    </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Категории потребностей"/>
+      <details key="documentation_ru" value="Категории потребностей в соответствии с  [Kano model](https://en.wikipedia.org/wiki/Kano_model)."/>
     </eAnnotations>
     <eLiterals name="Basic">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

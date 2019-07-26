@@ -170,6 +170,7 @@ public interface Feature extends HierarchicalModelElement<Feature> {
 	 * @see org.nasdanika.sage.SagePackage#getFeature_Release()
 	 * @see org.nasdanika.sage.Release#getFeatures
 	 * @model opposite="features"
+	 *        annotation="urn:org.nasdanika documentation_ru='Feature release.'"
 	 * @generated
 	 */
 	Release getRelease();
@@ -197,6 +198,7 @@ public interface Feature extends HierarchicalModelElement<Feature> {
 	 * @see org.nasdanika.sage.SagePackage#getFeature_Editions()
 	 * @see org.nasdanika.sage.Edition#getFeatures
 	 * @model opposite="features"
+	 *        annotation="urn:org.nasdanika label_ru='\u0420\u0435\u0434\u0430\u043a\u0446\u0438\u044f' documentation_ru='\u0420\u0435\u0434\u0430\u043a\u0446\u0438\u044f \u0432 \u043a\u043e\u0442\u043e\u0440\u0443\u044e \u0432\u043a\u043b\u044e\u0447\u0435\u043d\u0430 \u044d\u0442\u043e\u0442 \u0444\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u0431\u043b\u043e\u043a'"
 	 * @generated
 	 */
 	EList<Edition> getEditions();

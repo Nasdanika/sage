@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * Need categories based on the [Kano model](https://en.wikipedia.org/wiki/Kano_model).
  * <!-- end-model-doc -->
  * @see org.nasdanika.sage.SagePackage#getNeedCategory()
- * @model
+ * @model annotation="urn:org.nasdanika label_ru='\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438 \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u0435\u0439' documentation_ru='\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438 \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u0435\u0439 \u0432 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0438 \u0441  [Kano model](https://en.wikipedia.org/wiki/Kano_model).'"
  * @generated
  */
 public enum NeedCategory implements Enumerator {
