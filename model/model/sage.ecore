@@ -132,7 +132,7 @@
     </eAnnotations>
     <eAnnotations source="urn:org.nasdanika">
       <details key="label_ru" value="Персона"/>
-      <details key="documentation_ru" value="Персона - заказчик продукта, представитель целевой аудитории, в соответствии с требованиями которой разрабатывается продукт.&#xA;Персонам может быть назначен относительный вес или оценка важности требований. &#xA;Это позволит оценить, на сколько готовый продукт удовлетворяет требованиям персоны, а так же приоретизировать задачи в процессе разработки. "/>
+      <details key="documentation_ru" value="Персона - заказчик продукта, представитель целевой аудитории, в соответствии с требованиями которой разрабатывается продукт.&#xA;&#xA;&#xA;Персонам может быть назначен относительный вес или оценка важности требований. &#xA;&#xA;&#xA;Это позволит оценить, на сколько готовый продукт удовлетворяет требованиям персоны, а так же приоретизировать задачи в процессе разработки. "/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="needs" upperBound="-1"
         eType="#//Need" containment="true">
@@ -149,11 +149,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Need">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="Описание потребности, которая должна быть удовлетворена или  проблемы, которая должна быть решена при помощи разрабатываемого продукта.&#xA;Потребностям присваивается удельный вес, который позволяет выбрать наиболее значимые направления удовлетворения потребностей.&#xA;Удельный вес потребности используется для вычисления степени готовности продукта. &#xA; &#xA; This weight is used to compute effective weight of a need to be used in computing feature and product weights (benefits) and values (benefit/investment|effort|size).&#xA;Needs can be organized into a hierarchy.&#xA;&#xA;"/>
+      <details key="documentation" value="Persona need. Has a weight relative to &quot;peer&quot; needs. &#xA;&#xA;&#xA;This weight is used to compute effective weight of a need to be used in computing feature and product weights (benefits) and values (benefit/investment|effort|size).&#xA;&#xA;&#xA;Needs can be organized into a hierarchy.&#xA;"/>
     </eAnnotations>
     <eAnnotations source="urn:org.nasdanika">
       <details key="label_ru" value="Потребность"/>
-      <details key="documentation_ru" value="Потребность персоны... "/>
+      <details key="documentation_ru" value="Описание потребности, которая должна быть удовлетворена или  проблемы, которая должна быть решена при помощи разрабатываемого продукта.&#xA;&#xA;&#xA;Потребностям присваивается удельный вес, который позволяет выбрать наиболее значимые направления удовлетворения потребностей.&#xA;&#xA;&#xA;Удельный вес потребности используется для вычисления важности продукта или его функционального блока и степени готовности продукта.&#xA;&#xA;&#xA;Потребности могут быть организованы иерархически.&#xA; "/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="#//NeedCategory">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -174,6 +174,10 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Strategies capture the core guiding principles of an organization. They can be associated with products and features to compute strategic algnment which, in addition to the cost/benefit analysis, may help in feature prioritization. Strategies may also be used in identification of new features and decision making processes on how to implement those features."/>
     </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Стратегия"/>
+      <details key="documentation_ru" value="Стратегии отражают основные руководящие принципы организации и учитываются при определении приоритетов разработки продуктов, развития их функциональности на ряду с анализом затрат/выгод.&#xA;Стратегии могут также использоваться при определении направлений и способов расширения функциональности продуктов."/>
+    </eAnnotations>
     <eGenericSuperTypes eClassifier="#//HierarchicalComparableModelElement">
       <eTypeArguments eClassifier="#//Strategy"/>
     </eGenericSuperTypes>
@@ -182,10 +186,18 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Base class for products and portfolios."/>
     </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Абстрактный продукт"/>
+      <details key="documentation_ru" value="Базовый класс для продуктов и портфелей продуктов"/>
+    </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Portfolio">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Portfolio is a container of products and other portfolios. "/>
+    </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Портфель продуктов"/>
+      <details key="documentation_ru" value="Портфель продуктов включает в себя продукты или дочерние портфели продуктов"/>
     </eAnnotations>
     <eGenericSuperTypes eClassifier="#//AbstractProduct"/>
     <eGenericSuperTypes eClassifier="#//HierarchicalModelElement">
@@ -195,6 +207,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Product" eSuperTypes="#//AbstractProduct #//Offering">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Product delivers value to customers (personas) by satisfying their needs via product features. A product may have multiple editions either tailored to different personas  and providing different levels of functionality at a different cost. E.g. there may be a community/free edition, a professional edition and an enterprise edition."/>
+    </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Продукт"/>
+      <details key="documentation_ru" value="Продукт - объем функциональности, удовлетворяющий потребности заказчиков. Продукт может иметь несколько редакций, адаптированных к нуждам разных категорий заказчиков, различающихся объемом функциональности, включаемой в редакцию и стоимостью.  Так, например, может быть редакция продукта для свободного использования, профессиональная редакция, корпоративная редакция.&#xA;"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
         eType="#//Feature" containment="true">
@@ -229,6 +245,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Feature">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Feature is a unit of product functionality which satisfies specific persona needs. Feature's relative importance is computed from the needs satisfied by the feature. "/>
+    </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Функциональный блок"/>
+      <details key="documentation_ru" value="Функциональный блок  - это единица функциональности продукта, которая удовлетворяет определенную потребность заказчика.  &#xA;Относительная важность функционального блока рассчитывается из комплексной оценки важности потребности, удовлетворяемой этим функциональным блоком."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dependencies" upperBound="-1"
         eType="#//Dependency" containment="true">
