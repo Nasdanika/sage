@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * Product lifecycle stage.
  * <!-- end-model-doc -->
  * @see org.nasdanika.sage.SagePackage#getProductStage()
- * @model
+ * @model annotation="urn:org.nasdanika label_ru='\u042d\u0442\u0430\u043f' documentation_ru='\u0421\u0442\u0430\u0434\u0438\u044f \u0436\u0438\u0437\u043d\u0435\u043d\u043d\u043e\u0433\u043e \u0446\u0438\u043a\u043b\u0430'"
  * @generated
  */
 public enum ProductStage implements Enumerator {

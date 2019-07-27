@@ -6,7 +6,7 @@
   </eAnnotations>
   <eAnnotations source="urn:org.nasdanika">
     <details key="label_ru" value="Мудрец-советник? Приниматель решений?"/>
-    <details key="documentation_ru" value="Nasdanika Sage помогает организациям управлять портфелем продуктов. &#xA;&#xA;&#xA;А именно: &#xA;&#xA;&#xA;1. Отслеживать потребности заинтересованных лиц, являющихся целевой аудиторией продукта, то есть всегда иметь ответ на вопрос: что и кому было нужно от конкретного или или функционального блока продукта. &#xA;2. Хранить информацию о взаимосвязях продуктов и прогнозировать последствия вносимых изменений.&#xA;3. Присваивать &quot;вес&quot; представителям целевой аудитории (заказчикам), оценивать потребности по степени их важности и рискованности, устанавливать приоритеты.  &#xA;4. Оценивать затраты на выпуск продукта в различных единицах: деньгах, трудочасах и др.&#xA;&#xA;На основании присвоенных оценок, информации о затратах на разработку и планируемом экономическом эффекте можно планировать рентабельности продукта, определить наиболее ценные продукты в портфеле.&#xA;"/>
+    <details key="documentation_ru" value="Nasdanika Sage помогает организациям управлять портфелем продуктов. &#xA;&#xA;&#xA;А именно: &#xA;&#xA;&#xA;1. Отслеживать потребности заинтересованных лиц, являющихся целевой аудиторией продукта, то есть всегда иметь ответ на вопрос: что и кому было нужно от конкретного или или функционального блока продукта. &#xA;&#xA;&#xA;2. Хранить информацию о взаимосвязях продуктов и прогнозировать последствия вносимых изменений.&#xA;&#xA;&#xA;3. Присваивать &quot;вес&quot; представителям целевой аудитории (заказчикам), оценивать потребности по степени их важности, устанавливать приоритеты.  &#xA;&#xA;&#xA;4. Оценивать затраты на выпуск продукта в различных единицах: деньгах, трудочасах и др.&#xA;&#xA;&#xA;На основании присвоенных оценок, информации о затратах на разработку и планируемом экономическом эффекте можно планировать рентабельность продукта, определять наиболее ценные продукты в портфеле.&#xA;"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="ModelElement" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -535,7 +535,7 @@
       </eAnnotations>
       <eAnnotations source="urn:org.nasdanika">
         <details key="label_ru" value="Увеличение"/>
-        <details key="documentation_кг" value="Amount of effort by which the enabler reduces the size of the feature it enables."/>
+        <details key="documentation_кг" value="Объем усилий, с помощью которого активатор уменьшает размер включаемой функции."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -553,6 +553,10 @@
   <eClassifiers xsi:type="ecore:EEnum" name="ProductStage">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Product lifecycle stage."/>
+    </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Этап"/>
+      <details key="documentation_ru" value="Стадия жизненного цикла"/>
     </eAnnotations>
     <eLiterals name="Planning">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -598,6 +602,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Component">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Product component. Components may be developed independently by different teams, but are released all together as part of a product release."/>
+    </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Компонент"/>
+      <details key="documentation_ru" value="Компонент продукта. Компоненты могут разрабатываться независимо разными командами, но выпускаются вместе как часть выпуска продукта."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dependencies" upperBound="-1"
         eType="#//Component">
