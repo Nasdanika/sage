@@ -5,8 +5,8 @@
     <details key="documentation" value="Nasdanika Sage helps organizations to manage and develop their product portfolios by establishing traceability from their target audiences (personas) needs to product features and their dependencies. &#xA;It also allow to assign weights to personas and their needs and compute weight (impact) of features. Features can be sized in some units of development effort - money, story points, days. &#xA;Using story sizes (including dependencies) and story weight/benefit a cost benefit analysis can be conducted to identify most valuable features, where value is benefit/size. It also allows to identify most valuable products in the portfolio."/>
   </eAnnotations>
   <eAnnotations source="urn:org.nasdanika">
-    <details key="label_ru" value="Мудрец"/>
-    <details key="documentation_ru" value="Nasdanika Sage помогает организациям управлять портфелем используемого или разрабатываемого ПО. &#xA;А именно: &#xA;1. Отслеживать потребности заинтересованных лиц, являющихся целевой аудиторией программного продукта, то есть всегда иметь ответ на вопрос: что и кому было нужно от конкретного ПО или функционального элемента ПО. &#xA;2. Хранить информацию о взаимосвязях программных продуктов и прогнозировать последствия вносимых изменений.&#xA;3. Присваивать &quot;вес&quot; представителям целевой аудитории (заказчикам), оценивать потребности по степени их важности и рискованности, устанавливать приоритеты.  &#xA;4. Оценивать затраты на разработку и поддержание ПО в различных единицах: деньгах, трудочасах и др.&#xA;&#xA;На основании присвоенных оценок, информации о затратах и планируемом эффекте от внедрения разрабатываемого ПО можно планировать рентабельности продукта, определить наиболее ценные продукты в портфеле.&#xA;"/>
+    <details key="label_ru" value="Мудрец-советник? Приниматель решений?"/>
+    <details key="documentation_ru" value="Nasdanika Sage помогает организациям управлять портфелем продуктов. &#xA;&#xA;&#xA;А именно: &#xA;&#xA;&#xA;1. Отслеживать потребности заинтересованных лиц, являющихся целевой аудиторией продукта, то есть всегда иметь ответ на вопрос: что и кому было нужно от конкретного или или функционального блока продукта. &#xA;2. Хранить информацию о взаимосвязях продуктов и прогнозировать последствия вносимых изменений.&#xA;3. Присваивать &quot;вес&quot; представителям целевой аудитории (заказчикам), оценивать потребности по степени их важности и рискованности, устанавливать приоритеты.  &#xA;4. Оценивать затраты на выпуск продукта в различных единицах: деньгах, трудочасах и др.&#xA;&#xA;На основании присвоенных оценок, информации о затратах на разработку и планируемом экономическом эффекте можно планировать рентабельности продукта, определить наиболее ценные продукты в портфеле.&#xA;"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="ModelElement" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -20,20 +20,35 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Element name."/>
       </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Наименование"/>
+        <details key="documentation_ru" value="Наименование элемента"/>
+      </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Element URL if applicable. E.g. organization or product web site."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="documentation_ru" value="URL элемента модели (при наличии). Например. веб-сайт организации или продукта."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Element description in markdown."/>
       </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Описание"/>
+        <details key="documentation_ru" value="Описание элемента модели с использованием синтаксиса *markdown*."/>
+      </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="configuration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Custom element configuration in YAML. It can be used for specialized analysis or reporting. For example features may specify requirements such as skills, organizational capabilities, or third-party services or tools."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Конфигурация"/>
+        <details key="documentation_ru" value="Описание пользовательской конфигурации элемента на YAML. Может быть использована для специализированного анализа или отчетности. Например, функции могут определять требования, такие как навыки, организационные возможности или сторонние сервисы или инструменты."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -51,11 +66,19 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Model element weight which is used to compare the importance of this element with its siblings. It may be any positive value."/>
       </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Вес"/>
+        <details key="documentation_ru" value="Вес элемента модели, который используется для сравнения важности этого элемента с родственными объектами. Может принимать любое положительное значение."/>
+      </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="effectiveWeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
         changeable="false" transient="true" defaultValueLiteral="1.0" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Effective weight is calculated by computing the element's normalized weight and multiplying it by the container's effective weight if the container is also a comparable element. &#xA;The normalized weight is calculated by dividing the element's weight by the sum of weights of all elements in its containing reference. As such the normalized weight is a number &#xA;between zero and one and the sum of normalized weights of elements in a containing references is one. &#xA;The effective weight is also a number between zero and one and the sum of effective weights in a hierarchy of comparables is one.&#xA;"/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Эффективный вес"/>
+        <details key="documentation_ru" value="Эффективный вес рассчитывается путем вычисления нормализованного веса элемента и умножения его на эффективный вес контейнера, если контейнер также является сопоставимым элементом.  &#xA;&#xA;Нормализованный вес рассчитывается путем деления веса элемента на сумму весов всех элементов входящих в контейнер сравнения. &#xA;&#xA;Таким образом, нормализованный вес представляет собой число  n между нулем и единицей, а сумма нормализованных весов элементов входящих в контейнер равна единице. &#xA;&#xA;Эффективный вес также является числом от нуля до единицы, а сумма эффективных весов в иерархии сопоставимых единиц равна единице.  "/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -434,9 +457,17 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Fulfillment is a mapping between a need and a product feature which fulfills it. Multiple features from multiple product may particpate in fulfillment of a need. Fulfillment weight reflects to which extent a particular feature fullfills a particular need comparing to other features participating in the need fulfillment."/>
     </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Полнота удовлетворения потребности"/>
+      <details key="documentation_ru" value="Полнота удовлетворения потребностей - отражает связь между потребностью и продуктом или функциональным блоком продукта удовлетворяющим эту потребность. &#xA;&#xA;Полнота удовлетворения потребностей позволяет судить: в какой степени конкретный функциональный блок удовлетворяет конкретную потребность по сравнению с другими функциональными блоками, участвующими в удовлетворении потребности.&#xA;"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="feature" eType="#//Feature">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Feature fulfilling the need."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Функциональный блок"/>
+        <details key="documentation_ru" value="Функциональный блок, удовлетворяющий определенную потребность"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="weight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
@@ -444,16 +475,28 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Fulfillment weight represents how much this particular feature participates in fulfilling the need comparing to other features fulfilling the same need."/>
       </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Вес"/>
+        <details key="documentation_ru" value="Вес - отражает степень участия оцениваемого функционального блока в удовлетворении потребности по сравнению с другими функциональными блоками, удовлетворяющими эту потребность.&#xA;"/>
+      </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Markdown description of how the feature fulfills the need."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Описание"/>
+        <details key="documentation_ru" value="Описание того, каким образом функциональный блок удовлетворяет потребность. (с использованием синтаксиса Маркдаун)"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Dependency">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Dependency entry. See Feature.dependency documentation for details."/>
+    </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Зависимость"/>
+      <details key="documentation_ru" value="Ввод зависимостей. Подробности смотрите в документации по Feature.dependency."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -482,9 +525,17 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="See Feature.enabler documentation for details."/>
     </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Реализатор/активатор"/>
+      <details key="documentation_ru" value="See Feature.enabler documentation for details."/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="boost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Amount of effort by which the enabler reduces the size of the feature it enables."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Увеличение"/>
+        <details key="documentation_кг" value="Amount of effort by which the enabler reduces the size of the feature it enables."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">

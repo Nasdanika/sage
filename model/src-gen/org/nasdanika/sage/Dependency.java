@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see org.nasdanika.sage.SagePackage#getDependency()
- * @model
+ * @model annotation="urn:org.nasdanika label_ru='\u0417\u0430\u0432\u0438\u0441\u0438\u043c\u043e\u0441\u0442\u044c' documentation_ru='\u0412\u0432\u043e\u0434 \u0437\u0430\u0432\u0438\u0441\u0438\u043c\u043e\u0441\u0442\u0435\u0439. \u041f\u043e\u0434\u0440\u043e\u0431\u043d\u043e\u0441\u0442\u0438 \u0441\u043c\u043e\u0442\u0440\u0438\u0442\u0435 \u0432 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0430\u0446\u0438\u0438 \u043f\u043e Feature.dependency.'"
  * @generated
  */
 public interface Dependency extends EObject {

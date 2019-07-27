@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see org.nasdanika.sage.SagePackage#getEnabler()
- * @model
+ * @model annotation="urn:org.nasdanika label_ru='\u0420\u0435\u0430\u043b\u0438\u0437\u0430\u0442\u043e\u0440/\u0430\u043a\u0442\u0438\u0432\u0430\u0442\u043e\u0440' documentation_ru='See Feature.enabler documentation for details.'"
  * @generated
  */
 public interface Enabler extends EObject {
@@ -37,7 +37,7 @@ public interface Enabler extends EObject {
 	 * @return the value of the '<em>Boost</em>' attribute.
 	 * @see #setBoost(double)
 	 * @see org.nasdanika.sage.SagePackage#getEnabler_Boost()
-	 * @model
+	 * @model annotation="urn:org.nasdanika label_ru='\u0423\u0432\u0435\u043b\u0438\u0447\u0435\u043d\u0438\u0435' documentation_\u043a\u0433='Amount of effort by which the enabler reduces the size of the feature it enables.'"
 	 * @generated
 	 */
 	double getBoost();
