@@ -46,7 +46,7 @@ public interface Need extends HierarchicalComparableModelElement<Need> {
 	 * @see org.nasdanika.sage.NeedCategory
 	 * @see #setCategory(NeedCategory)
 	 * @see org.nasdanika.sage.SagePackage#getNeed_Category()
-	 * @model
+	 * @model annotation="urn:org.nasdanika label_ru='\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u044f \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u0438' documentation_ru='Need category - basic, performance, or delighter.'"
 	 * @generated
 	 */
 	NeedCategory getCategory();

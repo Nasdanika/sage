@@ -114,7 +114,7 @@
       <details key="documentation" value="A model element which is both hierarchical and comparable."/>
     </eAnnotations>
     <eAnnotations source="urn:org.nasdanika">
-      <details key="label_ru" value="СравинимыйИерархический элемент модели"/>
+      <details key="label_ru" value="Сравинимый Иерархический элемент модели"/>
       <details key="documentation_ru" value="Элемент модели, который может являться частью иерархии, то есть иметь родительские и дочерние элементы. И, одновременно,  является сравнимым, то есть ему может быть присвоен вес, оценка, приоритет для сравнения с сопоставимыми объектами."/>
     </eAnnotations>
     <eTypeParameters name="T"/>
@@ -136,15 +136,27 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Personas which represent the organization's target audiences. Typically shall be defined at the root organization, although child organizations may define internal personas."/>
       </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Персона"/>
+        <details key="documentation_ru" value="Заказчик, представитель целевой аудитории организации. Как правило, должны быть определены в корневой организации, хотя дочерние организации могут включать в себя представителей целевой аудитории."/>
+      </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="products" upperBound="-1"
         eType="#//AbstractProduct" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Products manufactured by the organization. Products can be grouped into portfolios."/>
       </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Абстрактный продукт"/>
+        <details key="documentation_ru" value="Продукт производимый организацией. Продукты должны быть объединены в портфели."/>
+      </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="strategies" upperBound="-1"
-        eType="#//Strategy" containment="true"/>
+        eType="#//Strategy" containment="true">
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Стратегия"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eGenericSuperTypes eClassifier="#//HierarchicalModelElement">
       <eTypeArguments eClassifier="#//Organization"/>
     </eGenericSuperTypes>
@@ -162,11 +174,19 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Personas have needs which can be organized into a hierarchy. &#xA;Product features are mapped to the needs they fulfill."/>
       </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Потребность"/>
+        <details key="documentation_ru" value="Персоны имеют потребности, которые должны быть иерархически организованы. &#xA;Функциональные блоки должны быть сопоставлены с потребностями которые они удовлетворяют."/>
+      </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="offerings" upperBound="-1"
         eType="#//Offering" eOpposite="#//Offering/targetAudiences">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A list of products and product editions (for products with editions) which are offered to a particular persona to fulfill their needs."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Решение"/>
+        <details key="documentation_ru" value="Перечень продуктов и редакций продуктов (для продуктов имеющих редакции), которые предлагаются определенной персоне для удовлетворения &#xA;потребностей."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -181,6 +201,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="#//NeedCategory">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Need category - basic, performance, or delighter."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Категория потребности"/>
+        <details key="documentation_ru" value="Need category - basic, performance, or delighter."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fulfillments" upperBound="-1"
@@ -451,7 +475,7 @@
         <details key="documentation" value="Standard desired needs which increase satisfaction when fulfilled."/>
       </eAnnotations>
       <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Ожидаемые"/>
+        <details key="label_ru" value="Стандартно ожидаемая"/>
         <details key="documentation_ru" value="Стандарт ожидаемый потребителем/мользователем. Увеличивают удовлетворенность потребителя."/>
       </eAnnotations>
     </eLiterals>
@@ -460,7 +484,7 @@
         <details key="documentation" value="Unexpected needs - &quot;I didn't know I wanted it, but I like it!&quot;."/>
       </eAnnotations>
       <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Крутые"/>
+        <details key="label_ru" value="Ух ты! Круто!"/>
         <details key="documentation_ru" value="Неожиданные, восхищающие. Источник Wow!-эффекта. «Я не знал, что этого хочу, но мне это нравится!»."/>
       </eAnnotations>
     </eLiterals>
@@ -672,7 +696,7 @@
     </eAnnotations>
     <eAnnotations source="urn:org.nasdanika">
       <details key="label_ru" value="Компонент"/>
-      <details key="documentation_ru" value="Компонент продукта. Компоненты могут разрабатываться независимо разными командами, но выпускаются вместе как часть выпуска продукта."/>
+      <details key="documentation_ru" value="Компонент продукта. Компоненты могут разрабатываться независимо разными командами, но выпускаются вместе как часть определенной редакции продукта."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dependencies" upperBound="-1"
         eType="#//Component">
