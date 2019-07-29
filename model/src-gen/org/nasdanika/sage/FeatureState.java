@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * Feature state reflects level of "donness".
  * <!-- end-model-doc -->
  * @see org.nasdanika.sage.SagePackage#getFeatureState()
- * @model
+ * @model annotation="urn:org.nasdanika label_ru='\u0421\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0444\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u0431\u043b\u043e\u043a\u0430' documentation_ru='\u0421\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0444\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u0431\u043b\u043e\u043a\u0430, \u043e\u0442\u0440\u0430\u0436\u0430\u044e\u0449\u0435\u0435 \u0441\u0442\u0435\u043f\u0435\u043d\u044c \u0435\u0433\u043e \u0433\u043e\u0442\u043e\u0432\u043d\u043e\u0441\u0442\u0438.'"
  * @generated
  */
 public enum FeatureState implements Enumerator {
@@ -69,6 +69,7 @@ public enum FeatureState implements Enumerator {
 	 * <!-- end-model-doc -->
 	 * @see #NEW
 	 * @model name="New"
+	 *        annotation="urn:org.nasdanika label_ru='\u041d\u043e\u0432\u044b\u0439' documentation_ru='\u041d\u0430\u0447\u0430\u043b\u044c\u043d\u043e\u0435 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u0430 \u043e\u0442 \u0441\u043e\u0437\u0434\u0430\u043d\u0438\u044f \u0434\u043e \u043d\u0430\u0447\u0430\u043b\u0430 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0438'"
 	 * @generated
 	 * @ordered
 	 */
@@ -83,6 +84,7 @@ public enum FeatureState implements Enumerator {
 	 * <!-- end-model-doc -->
 	 * @see #IN_PROGRESS
 	 * @model name="InProgress"
+	 *        annotation="urn:org.nasdanika label_ru='\u0412 \u0440\u0430\u0431\u043e\u0442\u0435' documentation_ru='\u0424\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u0431\u043b\u043e\u043a \u0432 \u0441\u0442\u0430\u0434\u0438\u0438 \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0439 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0438'"
 	 * @generated
 	 * @ordered
 	 */
@@ -97,6 +99,7 @@ public enum FeatureState implements Enumerator {
 	 * <!-- end-model-doc -->
 	 * @see #DONE
 	 * @model name="Done"
+	 *        annotation="urn:org.nasdanika label_ru='\u0413\u043e\u0442\u043e\u0432\u043e' documentation_ru='\u0412\u0441\u0435 \u0440\u0430\u0431\u043e\u0442\u044b \u043f\u043e \u0441\u043e\u0437\u0434\u0430\u043d\u0438\u044e \u0444\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u0431\u043b\u043e\u043a\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u044b'"
 	 * @generated
 	 * @ordered
 	 */

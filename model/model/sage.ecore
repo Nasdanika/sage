@@ -6,7 +6,7 @@
   </eAnnotations>
   <eAnnotations source="urn:org.nasdanika">
     <details key="label_ru" value="Мудрец-советник? Приниматель решений?"/>
-    <details key="documentation_ru" value="Nasdanika Sage помогает организациям управлять портфелем продуктов. &#xA;&#xA;&#xA;А именно: &#xA;&#xA;&#xA;1. Отслеживать потребности заинтересованных лиц, являющихся целевой аудиторией продукта, то есть всегда иметь ответ на вопрос: что и кому было нужно от конкретного или или функционального блока продукта. &#xA;&#xA;&#xA;2. Хранить информацию о взаимосвязях продуктов и прогнозировать последствия вносимых изменений.&#xA;&#xA;&#xA;3. Присваивать &quot;вес&quot; представителям целевой аудитории (заказчикам), оценивать потребности по степени их важности, устанавливать приоритеты.  &#xA;&#xA;&#xA;4. Оценивать затраты на выпуск продукта в различных единицах: деньгах, трудочасах и др.&#xA;&#xA;&#xA;На основании присвоенных оценок, информации о затратах на разработку и планируемом экономическом эффекте можно планировать рентабельность продукта, определять наиболее ценные продукты в портфеле.&#xA;"/>
+    <details key="documentation_ru" value="Nasdanika Sage помогает организациям управлять портфелем продуктов. &#xA;&#xA;&#xA;А именно: &#xA;&#xA;&#xA;1. Отслеживать потребности заинтересованных лиц, являющихся целевой аудиторией продукта, то есть всегда иметь ответ на вопрос: что и кому было нужно от каждого конкретного  функционального блока продукта. &#xA;&#xA;&#xA;2. Хранить информацию о взаимосвязях продуктов и прогнозировать последствия вносимых изменений.&#xA;&#xA;&#xA;3. Присваивать &quot;вес&quot; представителям целевой аудитории (заказчикам), оценивать потребности по степени их важности, устанавливать приоритеты.  &#xA;&#xA;&#xA;4. Оценивать затраты на выпуск продукта в различных единицах: деньгах, трудочасах и др.&#xA;&#xA;&#xA;На основании присвоенных оценок, информации о затратах на разработку и планируемом экономическом эффекте можно планировать рентабельность продукта, определять наиболее ценные продукты в портфеле.&#xA;"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="ModelElement" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -406,8 +406,8 @@
         <details key="documentation" value="True if the release was made available to the product's target audiences, false otherwise - it it is still in planning/development."/>
       </eAnnotations>
       <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Реализован"/>
-        <details key="documentation_ru" value="ИСТИНА, если релиз был сделан доступным для целевой аудитории продукта, иначе ЛОЖЬ - он все еще находится в процессе планирования / разработки."/>
+        <details key="label_ru" value="Выпущен"/>
+        <details key="documentation_ru" value="ИСТИНА, если релиз был предоставлен целевой аудитории, иначе ЛОЖЬ - он все еще находится в процессе планирования / разработки."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="releaseDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
@@ -435,21 +435,33 @@
     </eAnnotations>
     <eAnnotations source="urn:org.nasdanika">
       <details key="label_ru" value="Категории потребностей"/>
-      <details key="documentation_ru" value="Категории потребностей в соответствии с  [Kano model](https://en.wikipedia.org/wiki/Kano_model)."/>
+      <details key="documentation_ru" value="Категории потребностей в соответствии с  [моделью Кано](https://en.wikipedia.org/wiki/Kano_model)."/>
     </eAnnotations>
     <eLiterals name="Basic">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Must be need - expected to be fulfilled and leads to dissatisfaction if not.&#xD;&#xA;"/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Базовая"/>
+        <details key="documentation_ru" value="Базовые, без которых продукт в принципе не будет иметь смысла для пользователя. "/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="Performance" value="1">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Standard desired needs which increase satisfaction when fulfilled."/>
       </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Ожидаемые"/>
+        <details key="documentation_ru" value="Стандарт ожидаемый потребителем/мользователем. Увеличивают удовлетворенность потребителя."/>
+      </eAnnotations>
     </eLiterals>
     <eLiterals name="Delighter" value="2">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Unexpected needs - &quot;I didn't know I wanted it, but I like it!&quot;."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Крутые"/>
+        <details key="documentation_ru" value="Неожиданные, восхищающие. Источник Wow!-эффекта. «Я не знал, что этого хочу, но мне это нравится!»."/>
       </eAnnotations>
     </eLiterals>
   </eClassifiers>
@@ -458,8 +470,8 @@
       <details key="documentation" value="Fulfillment is a mapping between a need and a product feature which fulfills it. Multiple features from multiple product may particpate in fulfillment of a need. Fulfillment weight reflects to which extent a particular feature fullfills a particular need comparing to other features participating in the need fulfillment."/>
     </eAnnotations>
     <eAnnotations source="urn:org.nasdanika">
-      <details key="label_ru" value="Полнота удовлетворения потребности"/>
-      <details key="documentation_ru" value="Полнота удовлетворения потребностей - отражает связь между потребностью и продуктом или функциональным блоком продукта удовлетворяющим эту потребность. &#xA;&#xA;Полнота удовлетворения потребностей позволяет судить: в какой степени конкретный функциональный блок удовлетворяет конкретную потребность по сравнению с другими функциональными блоками, участвующими в удовлетворении потребности.&#xA;"/>
+      <details key="label_ru" value="Удовлетворительность"/>
+      <details key="documentation_ru" value="Удовлетворительность отражает полноту/степень удовлетворения потребностей. То есть: связь между потребностью и продуктом или функциональным блоком продукта удовлетворяющим эту потребность. &#xA;&#xA;Полнота удовлетворения потребностей позволяет судить: в какой степени конкретный функциональный блок удовлетворяет конкретную потребность по сравнению с другими функциональными блоками, участвующими в удовлетворении потребности.&#xA;"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="feature" eType="#//Feature">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -502,11 +514,19 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Indicated that the dependency is optional and its effective weight shall be computed using &quot;impact&quot; value."/>
       </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Опциональность"/>
+        <details key="documentation_ru" value="Указывается, что зависимость является не обязательной и ее эффективный вес  рассчитывается исходя из степени влияния на функцию."/>
+      </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dependency" lowerBound="1"
         eType="#//Feature">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Dependency feature."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Функциональный блок"/>
+        <details key="documentation_ru" value="Связанный функциональный блок"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="impact" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
@@ -514,10 +534,18 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Impact indicated how much the benefit delivered by the dependent feature would be affected if the dependency feature is not provided. Impact value 1.0 is equivalent to a mandatory dependency, i.e. if a dependency is not available then the dependent feature provides zero benefit. &#xD;&#xA;Impact is used in calculating the effective weight of dependency features which indirectly fulfil persona needs. Such weights in turn are used to calculate weights of releases of internal products containing dependency features."/>
       </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Влияние "/>
+        <details key="documentation_ru" value="Влияние указывает на уровень работоспособности зависимого функционального блока, если влияющая на него функциональность недоступна. &#xA;&#xA;Если значение влияния = 1, то это значит, что зависимость обязательная.  &#xA;&#xA;То есть, если влияющая функция недоступна, то зависимая функция полностью неработоспособна.&#xA;&#xA;Влияние используется при расчете эффективного веса функциональных блоков, которые косвенно удовлетворяют потребности заказчиков. &#xA;&#xA;Такие веса, в свою очередь, используются для расчета весов выпусков внутренних продуктов, содержащих зависимые или влияющие функциональные блоки.&#xA;&#xA;Impact indicated how much the benefit delivered by the dependent feature would be affected if the dependency feature is not provided. Impact value 1.0 is equivalent to a mandatory dependency, i.e. if a dependency is not available then the dependent feature provides zero benefit. &#xA;Impact is used in calculating the effective weight of dependency features which indirectly fulfil persona needs. Such weights in turn are used to calculate weights of releases of internal products containing dependency features."/>
+      </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Description of the dependency in markdown."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Описание"/>
+        <details key="documentation_ru" value="Описание зависимости. Синтаксис =  Маркдаун"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -526,8 +554,8 @@
       <details key="documentation" value="See Feature.enabler documentation for details."/>
     </eAnnotations>
     <eAnnotations source="urn:org.nasdanika">
-      <details key="label_ru" value="Реализатор/активатор"/>
-      <details key="documentation_ru" value="See Feature.enabler documentation for details."/>
+      <details key="label_ru" value="Оптимизатор"/>
+      <details key="documentation_ru" value="Нечто, используемое для оптимизаци функции и повышения качества удовлетворения потребностей."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="boost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -535,18 +563,25 @@
       </eAnnotations>
       <eAnnotations source="urn:org.nasdanika">
         <details key="label_ru" value="Увеличение"/>
-        <details key="documentation_кг" value="Объем усилий, с помощью которого активатор уменьшает размер включаемой функции."/>
+        <details key="documentation_ru" value="Количество усилий, с помощью которого оптимизатор  уменьшает размер включаемой функции."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Markdown description of the enabler."/>
       </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Описание"/>
+        <details key="documentation_ru" value="Описание оптимизатора. Синтаксис = Маркдаун"/>
+      </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="enabler" lowerBound="1"
         eType="#//Feature">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Enabling feature."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Оптимизируемая функция"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -555,27 +590,43 @@
       <details key="documentation" value="Product lifecycle stage."/>
     </eAnnotations>
     <eAnnotations source="urn:org.nasdanika">
-      <details key="label_ru" value="Этап"/>
-      <details key="documentation_ru" value="Стадия жизненного цикла"/>
+      <details key="label_ru" value="Этап разработки"/>
+      <details key="documentation_ru" value="Стадия жизненного цикла продукта"/>
     </eAnnotations>
     <eLiterals name="Planning">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Initial product stage from the idea to the start of development. This stage includes proofs of concepts and prototyping."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Планирование"/>
+        <details key="documentation_ru" value="Начальная стадия продукта от идеи до начала разработки. Этот этап включает в себя обоснование концепции и создание прототипа."/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="Development" value="1">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A stage at which the organization has committed resources to producing the first release of the product, but the product hasn't been released yet."/>
       </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Разработка"/>
+        <details key="documentation_ru" value="Этап, на котором организация выделила ресурсы для выпуска первой версии продукта, но продукт еще не выпущен."/>
+      </eAnnotations>
     </eLiterals>
     <eLiterals name="Released" value="2">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="At least one release was made availale to the product target audiences."/>
       </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Публикация"/>
+        <details key="documentation_ru" value="По крайней мере один выпуск был сделан доступным для целевой аудитории продукта."/>
+      </eAnnotations>
     </eLiterals>
     <eLiterals name="Retired" value="3">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A product has reached the end of its useful life. There is no investment in new product features anymore. The organization may still spend some resources on product maintenance."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Завершение использования"/>
+        <details key="documentation_ru" value="Продукт достиг конца своего срока полезного использования. &#xA;Инвестиций в новые функции продукта больше нет. Организация по-прежнему может тратить некоторые ресурсы на обслуживание продукта."/>
       </eAnnotations>
     </eLiterals>
   </eClassifiers>
@@ -583,19 +634,35 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Feature state reflects level of &quot;donness&quot;."/>
     </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Состояние функционального блока"/>
+      <details key="documentation_ru" value="Состояние функционального блока, отражающее степень его готовности."/>
+    </eAnnotations>
     <eLiterals name="New">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Initial feature state from creation through grooming."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Новый"/>
+        <details key="documentation_ru" value="Начальное состояние продукта от создания до начала поддержки"/>
       </eAnnotations>
     </eLiterals>
     <eLiterals name="InProgress" value="1">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The feature is actively worked on."/>
       </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="В работе"/>
+        <details key="documentation_ru" value="Функциональный блок в стадии активной разработки"/>
+      </eAnnotations>
     </eLiterals>
     <eLiterals name="Done" value="2">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="All feature work has been completed."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Готово"/>
+        <details key="documentation_ru" value="Все работы по созданию функционального блока завершены"/>
       </eAnnotations>
     </eLiterals>
   </eClassifiers>
@@ -611,6 +678,10 @@
         eType="#//Component">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A component may depend on other components in the same product or other products."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Зависимость"/>
+        <details key="documentation_ru" value="Компонент может зависеть от других компонентов того же самого или иных продуктов."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eGenericSuperTypes eClassifier="#//HierarchicalModelElement">
