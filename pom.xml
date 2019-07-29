@@ -149,6 +149,7 @@
 		<module>model</module>
 		<module>edit</module>
 		<module>editor</module>
+		<module>design</module>
 		
 		<module>tests</module>
 		<module>tests.feature</module>
