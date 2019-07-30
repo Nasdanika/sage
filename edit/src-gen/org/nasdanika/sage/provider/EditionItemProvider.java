@@ -56,15 +56,33 @@ public class EditionItemProvider extends OfferingItemProvider {
 	 * This adds a property descriptor for the Bases feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addBasesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Edition_bases_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Edition_bases_feature",
-								"_UI_Edition_type"),
-						SagePackage.Literals.EDITION__BASES, true, false, true, null, null, null));
+				.add(new ItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getLabel(SagePackage.Literals.EDITION__BASES, getString("_UI_Edition_bases_feature")),
+				 getTooltip(SagePackage.Literals.EDITION__BASES),
+				 SagePackage.Literals.EDITION__BASES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null,
+				 createMultiReferenceDialogCellEditorFactory()) {
+					
+					@Override
+					protected Collection<?> getComboBoxObjects(Object object) {
+						// TODO - avoid circular references?
+						List<Object> bases = new ArrayList<Object>(((Product) ((EObject) object).eContainer()).getEditions());
+						bases.remove(object);
+						return bases;
+					}
+					
+				});
 	}
 
 	/**
@@ -76,9 +94,16 @@ public class EditionItemProvider extends OfferingItemProvider {
 	protected void addFeaturesPropertyDescriptor(Object object) {
 		ItemPropertyDescriptor itemPropertyDescriptor = new ItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_Edition_features_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_Edition_features_feature", "_UI_Edition_type"),
-				SagePackage.Literals.EDITION__FEATURES, true, false, true, null, null, null, null) {
+				getLabel(SagePackage.Literals.EDITION__FEATURES, getString("_UI_Edition_features_feature")),
+				getTooltip(SagePackage.Literals.EDITION__FEATURES),
+				SagePackage.Literals.EDITION__FEATURES, 
+				true, 
+				false, 
+				true, 
+				null, 
+				null, 
+				null, 
+				createMultiReferenceDialogCellEditorFactory()) {
 
 			/**
 			 * Features in the container project. 

@@ -4,6 +4,7 @@ package org.nasdanika.sage.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -151,30 +152,74 @@ public class FeatureItemProvider extends HierarchicalModelElementItemProvider {
 	 * This adds a property descriptor for the Release feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addReleasePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Feature_release_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Feature_release_feature",
-								"_UI_Feature_type"),
-						SagePackage.Literals.FEATURE__RELEASE, true, false, true, null, null, null));
+				.add(new ItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getLabel(SagePackage.Literals.FEATURE__RELEASE, getString("_UI_Feature_release_feature")),
+				 getTooltip(SagePackage.Literals.FEATURE__RELEASE),
+				 SagePackage.Literals.FEATURE__RELEASE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null,
+				 null) {
+					
+					@Override
+					protected Collection<?> getComboBoxObjects(Object object) {
+						EObject container = ((EObject) object).eContainer();
+						while (container instanceof Feature) {
+							container = container.eContainer();
+						}
+						if (container instanceof Product) {
+							return ((Product) container).getReleases();
+						}
+						return Collections.emptyList();
+					}
+					
+				});
 	}
 
 	/**
 	 * This adds a property descriptor for the Editions feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addEditionsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Feature_editions_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Feature_editions_feature",
-								"_UI_Feature_type"),
-						SagePackage.Literals.FEATURE__EDITIONS, true, false, true, null, null, null));
+				.add(new ItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getLabel(SagePackage.Literals.FEATURE__EDITIONS, getString("_UI_Feature_editions_feature")),
+				 getTooltip(SagePackage.Literals.FEATURE__EDITIONS),
+				 SagePackage.Literals.FEATURE__EDITIONS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null,
+				 createMultiReferenceDialogCellEditorFactory()) {
+					
+					@Override
+					protected Collection<?> getComboBoxObjects(Object object) {
+						EObject container = ((EObject) object).eContainer();
+						while (container instanceof Feature) {
+							container = container.eContainer();
+						}
+						if (container instanceof Product) {
+							return ((Product) container).getEditions();
+						}
+						return Collections.emptyList();
+					}
+					
+				});
 	}
 
 	/**
