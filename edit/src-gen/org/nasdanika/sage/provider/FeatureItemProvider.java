@@ -2,19 +2,21 @@
  */
 package org.nasdanika.sage.provider;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.nasdanika.sage.Component;
 import org.nasdanika.sage.Feature;
+import org.nasdanika.sage.Product;
 import org.nasdanika.sage.SageFactory;
 import org.nasdanika.sage.SagePackage;
 
@@ -107,15 +109,42 @@ public class FeatureItemProvider extends HierarchicalModelElementItemProvider {
 	 * This adds a property descriptor for the Components feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addComponentsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Feature_components_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Feature_components_feature",
-								"_UI_Feature_type"),
-						SagePackage.Literals.FEATURE__COMPONENTS, true, false, true, null, null, null));
+				.add(new ItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getLabel(SagePackage.Literals.FEATURE__COMPONENTS, getString("_UI_Feature_components_feature")),
+				 getTooltip(SagePackage.Literals.FEATURE__COMPONENTS),
+				 SagePackage.Literals.FEATURE__COMPONENTS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null,
+				 createMultiReferenceDialogCellEditorFactory()) {
+					
+					@Override
+					protected Collection<?> getComboBoxObjects(Object object) {
+						EObject container = ((EObject) object).eContainer();
+						while (container instanceof Feature) {
+							container = container.eContainer();
+						}
+						Collection<Object> ret = new ArrayList<>();
+						if (container instanceof Product) {
+							container.eAllContents().forEachRemaining(element -> {
+								if (element instanceof Component) {
+									ret.add(element);
+								}
+							});
+						}
+						return ret;
+					}
+					
+				});
 	}
 
 	/**

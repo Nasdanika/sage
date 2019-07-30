@@ -1348,8 +1348,171 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		createResource(eNS_URI);
 
 		// Create annotations
+		// http://www.eclipse.org/emf/2002/GenModel
+		createGenModelAnnotations();
 		// urn:org.nasdanika
 		createUrnorgAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/GenModel</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGenModelAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/GenModel";
+		addAnnotation(this, source, new String[] { "documentation",
+				"Nasdanika Sage helps organizations to manage and develop their product portfolios by establishing traceability from their target audiences (personas) needs to product features and their dependencies. \nIt also allow to assign weights to personas and their needs and compute weight (impact) of features. Features can be sized in some units of development effort - money, story points, days. \nUsing story sizes (including dependencies) and story weight/benefit a cost benefit analysis can be conducted to identify most valuable features, where value is benefit/size. It also allows to identify most valuable products in the portfolio." });
+		addAnnotation(modelElementEClass, source, new String[] { "documentation",
+				"Base class for other model elements which feature name and description." });
+		addAnnotation(getModelElement_Name(), source, new String[] { "documentation", "Element name." });
+		addAnnotation(getModelElement_Url(), source,
+				new String[] { "documentation", "Element URL if applicable. E.g. organization or product web site." });
+		addAnnotation(getModelElement_Description(), source,
+				new String[] { "documentation", "Element description in markdown." });
+		addAnnotation(getModelElement_Configuration(), source, new String[] { "documentation",
+				"Custom element configuration in YAML. It can be used for specialized analysis or reporting. For example features may specify requirements such as skills, organizational capabilities, or third-party services or tools." });
+		addAnnotation(comparableModelElementEClass, source, new String[] { "documentation",
+				"Model element which can be assigned a weight/importance. The weight is used for comparing the element with its siblings in the containing reference." });
+		addAnnotation(getComparableModelElement_Weight(), source, new String[] { "documentation",
+				"Model element weight which is used to compare the importance of this element with its siblings. It may be any positive value." });
+		addAnnotation(getComparableModelElement_EffectiveWeight(), source, new String[] { "documentation",
+				"Effective weight is calculated by computing the element\'s normalized weight and multiplying it by the container\'s effective weight if the container is also a comparable element. \nThe normalized weight is calculated by dividing the element\'s weight by the sum of weights of all elements in its containing reference. As such the normalized weight is a number \nbetween zero and one and the sum of normalized weights of elements in a containing references is one. \nThe effective weight is also a number between zero and one and the sum of effective weights in a hierarchy of comparables is one.\n" });
+		addAnnotation(hierarchicalModelElementEClass, source,
+				new String[] { "documentation", "A model element which can form a hierarchy." });
+		addAnnotation(getHierarchicalModelElement_Children(), source,
+				new String[] { "documentation", "Element\'s children contained by the element.\r\n" });
+		addAnnotation(getHierarchicalModelElement_LinkedChildren(), source, new String[] { "documentation",
+				"Linked children, not contained by the element. Links allow to build logical hierarchies with elements residing in different resources (files). Breaking a model into multiple resources simplifies collaborative work on the model." });
+		addAnnotation(hierarchicalComparableModelElementEClass, source,
+				new String[] { "documentation", "A model element which is both hierarchical and comparable." });
+		addAnnotation(organizationEClass, source, new String[] { "documentation",
+				"Organization it the root of the Sage model. Organizations can be nested. Different products in organization\'s portfolio may be produced by different child organizations." });
+		addAnnotation(getOrganization_Personas(), source, new String[] { "documentation",
+				"Personas which represent the organization\'s target audiences. Typically shall be defined at the root organization, although child organizations may define internal personas." });
+		addAnnotation(getOrganization_Products(), source, new String[] { "documentation",
+				"Products manufactured by the organization. Products can be grouped into portfolios." });
+		addAnnotation(personaEClass, source, new String[] { "documentation",
+				"Personas represent target audiences of products manufactured by the organization. \n\nPersonas can be assigned relative weight/importance which is used to calculate effective weight of persona needs and then product features fulfilling those needs. \n" });
+		addAnnotation(getPersona_Needs(), source, new String[] { "documentation",
+				"Personas have needs which can be organized into a hierarchy. \nProduct features are mapped to the needs they fulfill." });
+		addAnnotation(getPersona_Offerings(), source, new String[] { "documentation",
+				"A list of products and product editions (for products with editions) which are offered to a particular persona to fulfill their needs." });
+		addAnnotation(needEClass, source, new String[] { "documentation",
+				"Persona need. Has a weight relative to \"peer\" needs. \n\n\nThis weight is used to compute effective weight of a need to be used in computing feature and product weights (benefits) and values (benefit/investment|effort|size).\n\n\nNeeds can be organized into a hierarchy.\n" });
+		addAnnotation(getNeed_Category(), source,
+				new String[] { "documentation", "Need category - basic, performance, or delighter." });
+		addAnnotation(getNeed_Fulfillments(), source,
+				new String[] { "documentation", "Mappings to features fulfilling this need." });
+		addAnnotation(strategyEClass, source, new String[] { "documentation",
+				"Strategies capture the core guiding principles of an organization. They can be associated with products and features to compute strategic algnment which, in addition to the cost/benefit analysis, may help in feature prioritization. Strategies may also be used in identification of new features and decision making processes on how to implement those features." });
+		addAnnotation(abstractProductEClass, source,
+				new String[] { "documentation", "Base class for products and portfolios." });
+		addAnnotation(portfolioEClass, source,
+				new String[] { "documentation", "Portfolio is a container of products and other portfolios. " });
+		addAnnotation(productEClass, source, new String[] { "documentation",
+				"Product delivers value to customers (personas) by satisfying their needs via product features. A product may have multiple editions either tailored to different personas  and providing different levels of functionality at a different cost. E.g. there may be a community/free edition, a professional edition and an enterprise edition." });
+		addAnnotation(getProduct_Features(), source, new String[] { "documentation",
+				"A product provides multiple features which can be organized into editons." });
+		addAnnotation(getProduct_Releases(), source, new String[] { "documentation",
+				"Product features are delivered incrementally in a series of releases." });
+		addAnnotation(getProduct_Stage(), source, new String[] { "documentation", "Product lifecycle stage." });
+		addAnnotation(getProduct_Components(), source,
+				new String[] { "documentation", "A product may consist of several interdependent components." });
+		addAnnotation(getProduct_Editions(), source, new String[] { "documentation", "Product editions." });
+		addAnnotation(featureEClass, source, new String[] { "documentation",
+				"Feature is a unit of product functionality which satisfies specific persona needs. Feature\'s relative importance is computed from the needs satisfied by the feature. " });
+		addAnnotation(getFeature_Dependencies(), source, new String[] { "documentation",
+				"Mapping to features which this feature depends on. Dependencies may be mandatory or optional. Mandatory dependencies must be released in order to release the feature. Optional dependencies affect the benefit delivered by the feature. " });
+		addAnnotation(getFeature_Enablers(), source, new String[] { "documentation",
+				"Enablers improve productivity and thus reduce the size of a feature. For example, a code generator may be an enabler for a \"feature\" \"Set up a a new project\"." });
+		addAnnotation(getFeature_Size(), source, new String[] { "documentation",
+				"The amount of effort or expenditure required to implement the feature in some units agreed upon across the organization - money, story points, person hours, ...\r\n" });
+		addAnnotation(getFeature_State(), source,
+				new String[] { "documentation", "Feature state in the development process." });
+		addAnnotation(getFeature_Design(), source, new String[] { "documentation",
+				"Feature design in markdown. While the feature description explains what this feature does, the feature design explains how feature functionality shall be implemented. " });
+		addAnnotation(getFeature_Components(), source, new String[] { "documentation",
+				"Components which need to be create/modified to deliver the feature." });
+		addAnnotation(getFeature_Release(), source, new String[] { "documentation", "Feature release." });
+		addAnnotation(getFeature_Editions(), source,
+				new String[] { "documentation", "Editions this feature is included into." });
+		addAnnotation(offeringEClass, source, new String[] { "documentation",
+				"Offering is a base class for products and editions - something that is offered to personas, which are offering\'s target audiences." });
+		addAnnotation(getOffering_TargetAudiences(), source, new String[] { "documentation",
+				"Personas to which this offering - product or edition - is offered. " });
+		addAnnotation(getOffering_Includes(), source, new String[] { "documentation",
+				"One offering may include (bundle) other offferings. For example, Nasdanika Tool Suite would include community editions of Nasdanika products." });
+		addAnnotation(editionEClass, source, new String[] { "documentation",
+				"Product edition is a grouping of features which fulfill needs of a specific target audience. For example, a community edition may target customer with basic needs, and a professional edition would include additional features fulfilling the needs of customers who use the product extensively." });
+		addAnnotation(getEdition_Bases(), source, new String[] { "documentation",
+				"Editions which this one is based on, i.e. an edition includes all the features from its base editions plus the features explicitly included in the edition." });
+		addAnnotation(getEdition_Features(), source,
+				new String[] { "documentation", "Features included in this edition." });
+		addAnnotation(releaseEClass, source, new String[] { "documentation",
+				"Release is a version of a product which was made available to the product\'s target audiences. It is also a unit of delivery of a set of features.   " });
+		addAnnotation(getRelease_Features(), source,
+				new String[] { "documentation", "New features included in the release. " });
+		addAnnotation(getRelease_Released(), source, new String[] { "documentation",
+				"True if the release was made available to the product\'s target audiences, false otherwise - it it is still in planning/development." });
+		addAnnotation(getRelease_ReleaseDate(), source,
+				new String[] { "documentation", "Planned or actual release date." });
+		addAnnotation(getRelease_Overhead(), source, new String[] { "documentation",
+				"Amount of effort to perform release activities (press release, writing release notes, ...) in addition to the size of included features." });
+		addAnnotation(needCategoryEEnum, source, new String[] { "documentation",
+				"Need categories based on the [Kano model](https://en.wikipedia.org/wiki/Kano_model)." });
+		addAnnotation(needCategoryEEnum.getELiterals().get(0), source, new String[] { "documentation",
+				"Must be need - expected to be fulfilled and leads to dissatisfaction if not.\r\n" });
+		addAnnotation(needCategoryEEnum.getELiterals().get(1), source,
+				new String[] { "documentation", "Standard desired needs which increase satisfaction when fulfilled." });
+		addAnnotation(needCategoryEEnum.getELiterals().get(2), source,
+				new String[] { "documentation", "Unexpected needs - \"I didn\'t know I wanted it, but I like it!\"." });
+		addAnnotation(fulfillmentEClass, source, new String[] { "documentation",
+				"Fulfillment is a mapping between a need and a product feature which fulfills it. Multiple features from multiple product may particpate in fulfillment of a need. Fulfillment weight reflects to which extent a particular feature fullfills a particular need comparing to other features participating in the need fulfillment." });
+		addAnnotation(getFulfillment_Feature(), source,
+				new String[] { "documentation", "Feature fulfilling the need." });
+		addAnnotation(getFulfillment_Weight(), source, new String[] { "documentation",
+				"Fulfillment weight represents how much this particular feature participates in fulfilling the need comparing to other features fulfilling the same need." });
+		addAnnotation(getFulfillment_Description(), source,
+				new String[] { "documentation", "Markdown description of how the feature fulfills the need." });
+		addAnnotation(dependencyEClass, source, new String[] { "documentation",
+				"Dependency entry. See Feature.dependency documentation for details." });
+		addAnnotation(getDependency_Optional(), source, new String[] { "documentation",
+				"Indicated that the dependency is optional and its effective weight shall be computed using \"impact\" value." });
+		addAnnotation(getDependency_Dependency(), source, new String[] { "documentation", "Dependency feature." });
+		addAnnotation(getDependency_Impact(), source, new String[] { "documentation",
+				"Impact indicated how much the benefit delivered by the dependent feature would be affected if the dependency feature is not provided. Impact value 1.0 is equivalent to a mandatory dependency, i.e. if a dependency is not available then the dependent feature provides zero benefit. \r\nImpact is used in calculating the effective weight of dependency features which indirectly fulfil persona needs. Such weights in turn are used to calculate weights of releases of internal products containing dependency features." });
+		addAnnotation(getDependency_Description(), source,
+				new String[] { "documentation", "Description of the dependency in markdown." });
+		addAnnotation(enablerEClass, source,
+				new String[] { "documentation", "See Feature.enabler documentation for details." });
+		addAnnotation(getEnabler_Boost(), source, new String[] { "documentation",
+				"Amount of effort by which the enabler reduces the size of the feature it enables." });
+		addAnnotation(getEnabler_Description(), source,
+				new String[] { "documentation", "Markdown description of the enabler." });
+		addAnnotation(getEnabler_Enabler(), source, new String[] { "documentation", "Enabling feature." });
+		addAnnotation(productStageEEnum, source, new String[] { "documentation", "Product lifecycle stage." });
+		addAnnotation(productStageEEnum.getELiterals().get(0), source, new String[] { "documentation",
+				"Initial product stage from the idea to the start of development. This stage includes proofs of concepts and prototyping." });
+		addAnnotation(productStageEEnum.getELiterals().get(1), source, new String[] { "documentation",
+				"A stage at which the organization has committed resources to producing the first release of the product, but the product hasn\'t been released yet." });
+		addAnnotation(productStageEEnum.getELiterals().get(2), source, new String[] { "documentation",
+				"At least one release was made availale to the product target audiences." });
+		addAnnotation(productStageEEnum.getELiterals().get(3), source, new String[] { "documentation",
+				"A product has reached the end of its useful life. There is no investment in new product features anymore. The organization may still spend some resources on product maintenance." });
+		addAnnotation(featureStateEEnum, source,
+				new String[] { "documentation", "Feature state reflects level of \"donness\"." });
+		addAnnotation(featureStateEEnum.getELiterals().get(0), source,
+				new String[] { "documentation", "Initial feature state from creation through grooming." });
+		addAnnotation(featureStateEEnum.getELiterals().get(1), source,
+				new String[] { "documentation", "The feature is actively worked on." });
+		addAnnotation(featureStateEEnum.getELiterals().get(2), source,
+				new String[] { "documentation", "All feature work has been completed." });
+		addAnnotation(componentEClass, source, new String[] { "documentation",
+				"Product component. Components may be developed independently by different teams, but are released all together as part of a product release." });
+		addAnnotation(getComponent_Dependencies(), source, new String[] { "documentation",
+				"A component may depend on other components in the same product or other products." });
 	}
 
 	/**
