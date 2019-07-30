@@ -12,5 +12,5 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.nasdanika.sage.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.nasdanika.sage;visibility:=reexport,
- org.eclipse.emf.edit;visibility:=reexport
+ org.nasdanika.emf.edit;bundle-version="1.0.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy

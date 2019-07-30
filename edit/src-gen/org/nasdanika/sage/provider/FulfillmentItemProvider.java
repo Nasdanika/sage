@@ -18,8 +18,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.nasdanika.emf.edit.NasdanikaItemProviderAdapter;
 import org.nasdanika.sage.Feature;
 import org.nasdanika.sage.Fulfillment;
 import org.nasdanika.sage.SagePackage;
@@ -30,7 +30,7 @@ import org.nasdanika.sage.SagePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FulfillmentItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class FulfillmentItemProvider extends NasdanikaItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
