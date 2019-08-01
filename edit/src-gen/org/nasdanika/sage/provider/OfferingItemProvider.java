@@ -44,6 +44,7 @@ public class OfferingItemProvider extends ModelElementItemProvider {
 
 			addTargetAudiencesPropertyDescriptor(object);
 			addIncludesPropertyDescriptor(object);
+			addFulfillmentsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -76,6 +77,21 @@ public class OfferingItemProvider extends ModelElementItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Offering_includes_feature",
 								"_UI_Offering_type"),
 						SagePackage.Literals.OFFERING__INCLUDES, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Fulfillments feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFulfillmentsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Offering_fulfillments_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Offering_fulfillments_feature",
+								"_UI_Offering_type"),
+						SagePackage.Literals.OFFERING__FULFILLMENTS, true, false, true, null, null, null));
 	}
 
 	/**

@@ -49,6 +49,9 @@ public class FeatureItemProvider extends HierarchicalModelElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addTargetAudiencesPropertyDescriptor(object);
+			addIncludesPropertyDescriptor(object);
+			addFulfillmentsPropertyDescriptor(object);
 			addSizePropertyDescriptor(object);
 			addStatePropertyDescriptor(object);
 			addDesignPropertyDescriptor(object);
@@ -57,6 +60,51 @@ public class FeatureItemProvider extends HierarchicalModelElementItemProvider {
 			addEditionsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Target Audiences feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTargetAudiencesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Offering_targetAudiences_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Offering_targetAudiences_feature",
+								"_UI_Offering_type"),
+						SagePackage.Literals.OFFERING__TARGET_AUDIENCES, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Includes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIncludesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Offering_includes_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Offering_includes_feature",
+								"_UI_Offering_type"),
+						SagePackage.Literals.OFFERING__INCLUDES, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Fulfillments feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFulfillmentsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Offering_fulfillments_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Offering_fulfillments_feature",
+								"_UI_Offering_type"),
+						SagePackage.Literals.OFFERING__FULFILLMENTS, true, false, true, null, null, null));
 	}
 
 	/**
@@ -113,39 +161,30 @@ public class FeatureItemProvider extends HierarchicalModelElementItemProvider {
 	 * @generated NOT
 	 */
 	protected void addComponentsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(new ItemPropertyDescriptor
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getLabel(SagePackage.Literals.FEATURE__COMPONENTS, getString("_UI_Feature_components_feature")),
-				 getTooltip(SagePackage.Literals.FEATURE__COMPONENTS),
-				 SagePackage.Literals.FEATURE__COMPONENTS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null,
-				 createMultiReferenceDialogCellEditorFactory()) {
-					
-					@Override
-					protected Collection<?> getComboBoxObjects(Object object) {
-						EObject container = ((EObject) object).eContainer();
-						while (container instanceof Feature) {
-							container = container.eContainer();
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getLabel(SagePackage.Literals.FEATURE__COMPONENTS, getString("_UI_Feature_components_feature")),
+				getTooltip(SagePackage.Literals.FEATURE__COMPONENTS), SagePackage.Literals.FEATURE__COMPONENTS, true,
+				false, true, null, null, null, createMultiReferenceDialogCellEditorFactory()) {
+
+			@Override
+			protected Collection<?> getComboBoxObjects(Object object) {
+				EObject container = ((EObject) object).eContainer();
+				while (container instanceof Feature) {
+					container = container.eContainer();
+				}
+				Collection<Object> ret = new ArrayList<>();
+				if (container instanceof Product) {
+					container.eAllContents().forEachRemaining(element -> {
+						if (element instanceof Component) {
+							ret.add(element);
 						}
-						Collection<Object> ret = new ArrayList<>();
-						if (container instanceof Product) {
-							container.eAllContents().forEachRemaining(element -> {
-								if (element instanceof Component) {
-									ret.add(element);
-								}
-							});
-						}
-						return ret;
-					}
-					
-				});
+					});
+				}
+				return ret;
+			}
+
+		});
 	}
 
 	/**
@@ -155,34 +194,25 @@ public class FeatureItemProvider extends HierarchicalModelElementItemProvider {
 	 * @generated NOT
 	 */
 	protected void addReleasePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(new ItemPropertyDescriptor
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getLabel(SagePackage.Literals.FEATURE__RELEASE, getString("_UI_Feature_release_feature")),
-				 getTooltip(SagePackage.Literals.FEATURE__RELEASE),
-				 SagePackage.Literals.FEATURE__RELEASE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null,
-				 null) {
-					
-					@Override
-					protected Collection<?> getComboBoxObjects(Object object) {
-						EObject container = ((EObject) object).eContainer();
-						while (container instanceof Feature) {
-							container = container.eContainer();
-						}
-						if (container instanceof Product) {
-							return ((Product) container).getReleases();
-						}
-						return Collections.emptyList();
-					}
-					
-				});
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getLabel(SagePackage.Literals.FEATURE__RELEASE, getString("_UI_Feature_release_feature")),
+				getTooltip(SagePackage.Literals.FEATURE__RELEASE), SagePackage.Literals.FEATURE__RELEASE, true, false,
+				true, null, null, null, null) {
+
+			@Override
+			protected Collection<?> getComboBoxObjects(Object object) {
+				EObject container = ((EObject) object).eContainer();
+				while (container instanceof Feature) {
+					container = container.eContainer();
+				}
+				if (container instanceof Product) {
+					return ((Product) container).getReleases();
+				}
+				return Collections.emptyList();
+			}
+
+		});
 	}
 
 	/**
@@ -192,34 +222,25 @@ public class FeatureItemProvider extends HierarchicalModelElementItemProvider {
 	 * @generated NOT
 	 */
 	protected void addEditionsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(new ItemPropertyDescriptor
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getLabel(SagePackage.Literals.FEATURE__EDITIONS, getString("_UI_Feature_editions_feature")),
-				 getTooltip(SagePackage.Literals.FEATURE__EDITIONS),
-				 SagePackage.Literals.FEATURE__EDITIONS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null,
-				 createMultiReferenceDialogCellEditorFactory()) {
-					
-					@Override
-					protected Collection<?> getComboBoxObjects(Object object) {
-						EObject container = ((EObject) object).eContainer();
-						while (container instanceof Feature) {
-							container = container.eContainer();
-						}
-						if (container instanceof Product) {
-							return ((Product) container).getEditions();
-						}
-						return Collections.emptyList();
-					}
-					
-				});
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getLabel(SagePackage.Literals.FEATURE__EDITIONS, getString("_UI_Feature_editions_feature")),
+				getTooltip(SagePackage.Literals.FEATURE__EDITIONS), SagePackage.Literals.FEATURE__EDITIONS, true, false,
+				true, null, null, null, createMultiReferenceDialogCellEditorFactory()) {
+
+			@Override
+			protected Collection<?> getComboBoxObjects(Object object) {
+				EObject container = ((EObject) object).eContainer();
+				while (container instanceof Feature) {
+					container = container.eContainer();
+				}
+				if (container instanceof Product) {
+					return ((Product) container).getEditions();
+				}
+				return Collections.emptyList();
+			}
+
+		});
 	}
 
 	/**

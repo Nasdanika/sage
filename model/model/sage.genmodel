@@ -34,6 +34,11 @@
       <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute sage.ecore#//ModelElement/description"/>
       <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute sage.ecore#//ModelElement/configuration"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="sage.ecore#//Offering">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Offering/targetAudiences"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Offering/includes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Offering/fulfillments"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="sage.ecore#//ComparableModelElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//ComparableModelElement/weight"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//ComparableModelElement/effectiveWeight"/>
@@ -79,10 +84,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Feature/release"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Feature/editions"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="sage.ecore#//Offering">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Offering/targetAudiences"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Offering/includes"/>
-    </genClasses>
     <genClasses ecoreClass="sage.ecore#//Edition">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Edition/bases"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Edition/features"/>
@@ -94,7 +95,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Release/overhead"/>
     </genClasses>
     <genClasses ecoreClass="sage.ecore#//Fulfillment">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Fulfillment/feature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Fulfillment/offerings"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Fulfillment/weight"/>
       <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute sage.ecore#//Fulfillment/description"/>
     </genClasses>

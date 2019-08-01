@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.nasdanika.sage.Offering#getTargetAudiences <em>Target Audiences</em>}</li>
  *   <li>{@link org.nasdanika.sage.Offering#getIncludes <em>Includes</em>}</li>
+ *   <li>{@link org.nasdanika.sage.Offering#getFulfillments <em>Fulfillments</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.sage.SagePackage#getOffering()
@@ -59,5 +60,19 @@ public interface Offering extends ModelElement {
 	 * @generated
 	 */
 	EList<Offering> getIncludes();
+
+	/**
+	 * Returns the value of the '<em><b>Fulfillments</b></em>' reference list.
+	 * The list contents are of type {@link org.nasdanika.sage.Fulfillment}.
+	 * It is bidirectional and its opposite is '{@link org.nasdanika.sage.Fulfillment#getOfferings <em>Offerings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Fulfillments</em>' reference list.
+	 * @see org.nasdanika.sage.SagePackage#getOffering_Fulfillments()
+	 * @see org.nasdanika.sage.Fulfillment#getOfferings
+	 * @model opposite="offerings"
+	 * @generated
+	 */
+	EList<Fulfillment> getFulfillments();
 
 } // Offering

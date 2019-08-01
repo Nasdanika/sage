@@ -73,6 +73,15 @@ public class SageSwitch<T1> extends Switch<T1> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case SagePackage.OFFERING: {
+			Offering offering = (Offering) theEObject;
+			T1 result = caseOffering(offering);
+			if (result == null)
+				result = caseModelElement(offering);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case SagePackage.COMPARABLE_MODEL_ELEMENT: {
 			ComparableModelElement comparableModelElement = (ComparableModelElement) theEObject;
 			T1 result = caseComparableModelElement(comparableModelElement);
@@ -197,16 +206,9 @@ public class SageSwitch<T1> extends Switch<T1> {
 			if (result == null)
 				result = caseHierarchicalModelElement(feature);
 			if (result == null)
+				result = caseOffering(feature);
+			if (result == null)
 				result = caseModelElement(feature);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case SagePackage.OFFERING: {
-			Offering offering = (Offering) theEObject;
-			T1 result = caseOffering(offering);
-			if (result == null)
-				result = caseModelElement(offering);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;

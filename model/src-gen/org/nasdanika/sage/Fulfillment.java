@@ -2,6 +2,7 @@
  */
 package org.nasdanika.sage;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -10,14 +11,15 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Fulfillment is a mapping between a need and a product feature which fulfills it. Multiple features from multiple product may particpate in fulfillment of a need. Fulfillment weight reflects to which extent a particular feature fullfills a particular need comparing to other features participating in the need fulfillment.
+ * Fulfillment is a mapping between a need and offerings which fulfill it. Multiple features from multiple product may particpate in fulfillment of a need. Fulfillment weight reflects to which extent a particular feature fullfills a particular need comparing to other features participating in the need fulfillment.
+ * If there is more than one offering in one fulfillment then the weight is distributed evenly between the participating offerings.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.sage.Fulfillment#getFeature <em>Feature</em>}</li>
+ *   <li>{@link org.nasdanika.sage.Fulfillment#getOfferings <em>Offerings</em>}</li>
  *   <li>{@link org.nasdanika.sage.Fulfillment#getWeight <em>Weight</em>}</li>
  *   <li>{@link org.nasdanika.sage.Fulfillment#getDescription <em>Description</em>}</li>
  * </ul>
@@ -28,29 +30,22 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Fulfillment extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Feature</b></em>' reference.
+	 * Returns the value of the '<em><b>Offerings</b></em>' reference list.
+	 * The list contents are of type {@link org.nasdanika.sage.Offering}.
+	 * It is bidirectional and its opposite is '{@link org.nasdanika.sage.Offering#getFulfillments <em>Fulfillments</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Feature fulfilling the need.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Feature</em>' reference.
-	 * @see #setFeature(Feature)
-	 * @see org.nasdanika.sage.SagePackage#getFulfillment_Feature()
-	 * @model annotation="urn:org.nasdanika label_ru='\u0424\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u0431\u043b\u043e\u043a' documentation_ru='\u0424\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u0431\u043b\u043e\u043a, \u0443\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u044f\u044e\u0449\u0438\u0439 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u043d\u0443\u044e \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u044c'"
+	 * @return the value of the '<em>Offerings</em>' reference list.
+	 * @see org.nasdanika.sage.SagePackage#getFulfillment_Offerings()
+	 * @see org.nasdanika.sage.Offering#getFulfillments
+	 * @model opposite="fulfillments"
+	 *        annotation="urn:org.nasdanika label_ru='\u0424\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u0431\u043b\u043e\u043a' documentation_ru='\u0424\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u0431\u043b\u043e\u043a, \u0443\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u044f\u044e\u0449\u0438\u0439 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u043d\u0443\u044e \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u044c'"
 	 * @generated
 	 */
-	Feature getFeature();
-
-	/**
-	 * Sets the value of the '{@link org.nasdanika.sage.Fulfillment#getFeature <em>Feature</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Feature</em>' reference.
-	 * @see #getFeature()
-	 * @generated
-	 */
-	void setFeature(Feature value);
+	EList<Offering> getOfferings();
 
 	/**
 	 * Returns the value of the '<em><b>Weight</b></em>' attribute.

@@ -7,9 +7,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -20,8 +18,8 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.nasdanika.emf.edit.NasdanikaItemProviderAdapter;
-import org.nasdanika.sage.Feature;
 import org.nasdanika.sage.Fulfillment;
+import org.nasdanika.sage.Offering;
 import org.nasdanika.sage.SagePackage;
 
 /**
@@ -53,7 +51,7 @@ public class FulfillmentItemProvider extends NasdanikaItemProviderAdapter implem
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFeaturePropertyDescriptor(object);
+			addOfferingsPropertyDescriptor(object);
 			addWeightPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 		}
@@ -61,18 +59,18 @@ public class FulfillmentItemProvider extends NasdanikaItemProviderAdapter implem
 	}
 
 	/**
-	 * This adds a property descriptor for the Feature feature.
+	 * This adds a property descriptor for the Offerings feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFeaturePropertyDescriptor(Object object) {
+	protected void addOfferingsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Fulfillment_feature_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Fulfillment_feature_feature",
+						getResourceLocator(), getString("_UI_Fulfillment_offerings_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Fulfillment_offerings_feature",
 								"_UI_Fulfillment_type"),
-						SagePackage.Literals.FULFILLMENT__FEATURE, true, false, true, null, null, null));
+						SagePackage.Literals.FULFILLMENT__OFFERINGS, true, false, true, null, null, null));
 	}
 
 	/**
@@ -137,8 +135,14 @@ public class FulfillmentItemProvider extends NasdanikaItemProviderAdapter implem
 	@Override
 	public String getText(Object object) {
 		Fulfillment fulfillment = (Fulfillment) object;
-		Feature ff = fulfillment.getFeature();
-		return (ff == null ? getString("_UI_Fulfillment_type") : ff.getName()) + " (" + fulfillment.getWeight() + ")";
+		StringBuilder labelBuilder = new StringBuilder();
+		for (Offering o : fulfillment.getOfferings()) {
+			if (labelBuilder.length() > 0) {
+				labelBuilder.append(", ");				
+			}
+			labelBuilder.append(o.getName());
+		}
+		return (labelBuilder.length() == 0 ? getLabel(SagePackage.Literals.FULFILLMENT, getString("_UI_Fulfillment_type")) : labelBuilder.toString()) + " (" + fulfillment.getWeight() + ")";
 	}
 
 	/**

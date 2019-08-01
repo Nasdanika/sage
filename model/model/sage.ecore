@@ -52,6 +52,33 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Offering" abstract="true" eSuperTypes="#//ModelElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Offering is a base class for products and editions - something that is offered to personas, which are offering's target audiences."/>
+    </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Решение"/>
+      <details key="documentation_ru" value="Решение - базовый класс для продуктов и редакций - совокупность функциональности, которая предлагается персонам, являющимся целевой аудиторией решения.&#xA;"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetAudiences" upperBound="-1"
+        eType="#//Persona" eOpposite="#//Persona/offerings">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Personas to which this offering - product or edition - is offered. "/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Персона"/>
+        <details key="documentation_ru" value="Персоны которым предлагается этот продукт или редация продукта. "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="includes" upperBound="-1"
+        eType="#//Offering">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="One offering may include (bundle) other offferings. For example, Nasdanika Tool Suite would include community editions of Nasdanika products."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fulfillments" upperBound="-1"
+        eType="#//Fulfillment" eOpposite="#//Fulfillment/offerings"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComparableModelElement" abstract="true"
       eSuperTypes="#//ModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -352,31 +379,7 @@
     <eGenericSuperTypes eClassifier="#//HierarchicalModelElement">
       <eTypeArguments eClassifier="#//Feature"/>
     </eGenericSuperTypes>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Offering" abstract="true" eSuperTypes="#//ModelElement">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="Offering is a base class for products and editions - something that is offered to personas, which are offering's target audiences."/>
-    </eAnnotations>
-    <eAnnotations source="urn:org.nasdanika">
-      <details key="label_ru" value="Решение"/>
-      <details key="documentation_ru" value="Решение - базовый класс для продуктов и редакций - совокупность функциональности, которая предлагается персонам, являющимся целевой аудиторией решения.&#xA;"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targetAudiences" upperBound="-1"
-        eType="#//Persona" eOpposite="#//Persona/offerings">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Personas to which this offering - product or edition - is offered. "/>
-      </eAnnotations>
-      <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Персона"/>
-        <details key="documentation_ru" value="Персоны которым предлагается этот продукт или редация продукта. "/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="includes" upperBound="-1"
-        eType="#//Offering">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="One offering may include (bundle) other offferings. For example, Nasdanika Tool Suite would include community editions of Nasdanika products."/>
-      </eAnnotations>
-    </eStructuralFeatures>
+    <eGenericSuperTypes eClassifier="#//Offering"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Edition" eSuperTypes="#//Offering">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -491,13 +494,14 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Fulfillment">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="Fulfillment is a mapping between a need and a product feature which fulfills it. Multiple features from multiple product may particpate in fulfillment of a need. Fulfillment weight reflects to which extent a particular feature fullfills a particular need comparing to other features participating in the need fulfillment."/>
+      <details key="documentation" value="Fulfillment is a mapping between a need and offerings which fulfill it. Multiple features from multiple product may particpate in fulfillment of a need. Fulfillment weight reflects to which extent a particular feature fullfills a particular need comparing to other features participating in the need fulfillment.&#xA;If there is more than one offering in one fulfillment then the weight is distributed evenly between the participating offerings."/>
     </eAnnotations>
     <eAnnotations source="urn:org.nasdanika">
       <details key="label_ru" value="Удовлетворительность"/>
       <details key="documentation_ru" value="Удовлетворительность отражает полноту/степень удовлетворения потребностей. То есть: связь между потребностью и продуктом или функциональным блоком продукта удовлетворяющим эту потребность. &#xA;&#xA;Полнота удовлетворения потребностей позволяет судить: в какой степени конкретный функциональный блок удовлетворяет конкретную потребность по сравнению с другими функциональными блоками, участвующими в удовлетворении потребности.&#xA;"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" eType="#//Feature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="offerings" upperBound="-1"
+        eType="#//Offering" eOpposite="#//Offering/fulfillments">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Feature fulfilling the need."/>
       </eAnnotations>

@@ -62,39 +62,30 @@ public class ReleaseItemProvider extends ModelElementItemProvider {
 	 * @generated NOT
 	 */
 	protected void addFeaturesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(new ItemPropertyDescriptor
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getLabel(SagePackage.Literals.RELEASE__FEATURES, getString("_UI_Release_features_feature")),
-				 getTooltip(SagePackage.Literals.RELEASE__FEATURES),
-				 SagePackage.Literals.RELEASE__FEATURES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null,
-				 createMultiReferenceDialogCellEditorFactory()) {
-					
-					/**
-					 * Features in the container project. 
-					 */
-					@Override
-					protected Collection<?> getComboBoxObjects(Object object) {
-						Product product = (Product) ((EObject) object).eContainer();
-						List<Feature> ret = new ArrayList<>();
-						TreeIterator<EObject> tit = product.eAllContents();
-						while (tit.hasNext()) {
-							EObject next = tit.next();
-							if (next instanceof Feature) {
-								ret.add((Feature) next);
-							}
-						}
-						return ret;
-					}					
-					
-				});
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getLabel(SagePackage.Literals.RELEASE__FEATURES, getString("_UI_Release_features_feature")),
+				getTooltip(SagePackage.Literals.RELEASE__FEATURES), SagePackage.Literals.RELEASE__FEATURES, true, false,
+				true, null, null, null, createMultiReferenceDialogCellEditorFactory()) {
+
+			/**
+			 * Features in the container project. 
+			 */
+			@Override
+			protected Collection<?> getComboBoxObjects(Object object) {
+				Product product = (Product) ((EObject) object).eContainer();
+				List<Feature> ret = new ArrayList<>();
+				TreeIterator<EObject> tit = product.eAllContents();
+				while (tit.hasNext()) {
+					EObject next = tit.next();
+					if (next instanceof Feature) {
+						ret.add((Feature) next);
+					}
+				}
+				return ret;
+			}
+
+		});
 	}
 
 	/**

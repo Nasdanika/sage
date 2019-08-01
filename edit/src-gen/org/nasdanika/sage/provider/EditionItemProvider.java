@@ -59,30 +59,21 @@ public class EditionItemProvider extends OfferingItemProvider {
 	 * @generated NOT
 	 */
 	protected void addBasesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(new ItemPropertyDescriptor
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getLabel(SagePackage.Literals.EDITION__BASES, getString("_UI_Edition_bases_feature")),
-				 getTooltip(SagePackage.Literals.EDITION__BASES),
-				 SagePackage.Literals.EDITION__BASES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null,
-				 createMultiReferenceDialogCellEditorFactory()) {
-					
-					@Override
-					protected Collection<?> getComboBoxObjects(Object object) {
-						// TODO - avoid circular references?
-						List<Object> bases = new ArrayList<Object>(((Product) ((EObject) object).eContainer()).getEditions());
-						bases.remove(object);
-						return bases;
-					}
-					
-				});
+		itemPropertyDescriptors.add(new ItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getLabel(SagePackage.Literals.EDITION__BASES, getString("_UI_Edition_bases_feature")),
+				getTooltip(SagePackage.Literals.EDITION__BASES), SagePackage.Literals.EDITION__BASES, true, false, true,
+				null, null, null, createMultiReferenceDialogCellEditorFactory()) {
+
+			@Override
+			protected Collection<?> getComboBoxObjects(Object object) {
+				// TODO - avoid circular references?
+				List<Object> bases = new ArrayList<Object>(((Product) ((EObject) object).eContainer()).getEditions());
+				bases.remove(object);
+				return bases;
+			}
+
+		});
 	}
 
 	/**
@@ -95,15 +86,8 @@ public class EditionItemProvider extends OfferingItemProvider {
 		ItemPropertyDescriptor itemPropertyDescriptor = new ItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
 				getLabel(SagePackage.Literals.EDITION__FEATURES, getString("_UI_Edition_features_feature")),
-				getTooltip(SagePackage.Literals.EDITION__FEATURES),
-				SagePackage.Literals.EDITION__FEATURES, 
-				true, 
-				false, 
-				true, 
-				null, 
-				null, 
-				null, 
-				createMultiReferenceDialogCellEditorFactory()) {
+				getTooltip(SagePackage.Literals.EDITION__FEATURES), SagePackage.Literals.EDITION__FEATURES, true, false,
+				true, null, null, null, createMultiReferenceDialogCellEditorFactory()) {
 
 			/**
 			 * Features in the container project. 

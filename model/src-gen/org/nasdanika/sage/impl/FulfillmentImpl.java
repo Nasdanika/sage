@@ -2,12 +2,16 @@
  */
 package org.nasdanika.sage.impl;
 
+import java.util.Collection;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.nasdanika.sage.Feature;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.nasdanika.sage.Fulfillment;
+import org.nasdanika.sage.Offering;
 import org.nasdanika.sage.SagePackage;
 
 /**
@@ -18,7 +22,7 @@ import org.nasdanika.sage.SagePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.sage.impl.FulfillmentImpl#getFeature <em>Feature</em>}</li>
+ *   <li>{@link org.nasdanika.sage.impl.FulfillmentImpl#getOfferings <em>Offerings</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.FulfillmentImpl#getWeight <em>Weight</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.FulfillmentImpl#getDescription <em>Description</em>}</li>
  * </ul>
@@ -80,30 +84,11 @@ public class FulfillmentImpl extends MinimalEObjectImpl.Container implements Ful
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
-	public Feature getFeature() {
-		return (Feature) eDynamicGet(SagePackage.FULFILLMENT__FEATURE, SagePackage.Literals.FULFILLMENT__FEATURE, true,
-				true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Feature basicGetFeature() {
-		return (Feature) eDynamicGet(SagePackage.FULFILLMENT__FEATURE, SagePackage.Literals.FULFILLMENT__FEATURE, false,
-				true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setFeature(Feature newFeature) {
-		eDynamicSet(SagePackage.FULFILLMENT__FEATURE, SagePackage.Literals.FULFILLMENT__FEATURE, newFeature);
+	public EList<Offering> getOfferings() {
+		return (EList<Offering>) eDynamicGet(SagePackage.FULFILLMENT__OFFERINGS,
+				SagePackage.Literals.FULFILLMENT__OFFERINGS, true, true);
 	}
 
 	/**
@@ -154,13 +139,40 @@ public class FulfillmentImpl extends MinimalEObjectImpl.Container implements Ful
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case SagePackage.FULFILLMENT__OFFERINGS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOfferings()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case SagePackage.FULFILLMENT__OFFERINGS:
+			return ((InternalEList<?>) getOfferings()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case SagePackage.FULFILLMENT__FEATURE:
-			if (resolve)
-				return getFeature();
-			return basicGetFeature();
+		case SagePackage.FULFILLMENT__OFFERINGS:
+			return getOfferings();
 		case SagePackage.FULFILLMENT__WEIGHT:
 			return getWeight();
 		case SagePackage.FULFILLMENT__DESCRIPTION:
@@ -174,11 +186,13 @@ public class FulfillmentImpl extends MinimalEObjectImpl.Container implements Ful
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case SagePackage.FULFILLMENT__FEATURE:
-			setFeature((Feature) newValue);
+		case SagePackage.FULFILLMENT__OFFERINGS:
+			getOfferings().clear();
+			getOfferings().addAll((Collection<? extends Offering>) newValue);
 			return;
 		case SagePackage.FULFILLMENT__WEIGHT:
 			setWeight((Double) newValue);
@@ -198,8 +212,8 @@ public class FulfillmentImpl extends MinimalEObjectImpl.Container implements Ful
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case SagePackage.FULFILLMENT__FEATURE:
-			setFeature((Feature) null);
+		case SagePackage.FULFILLMENT__OFFERINGS:
+			getOfferings().clear();
 			return;
 		case SagePackage.FULFILLMENT__WEIGHT:
 			setWeight(WEIGHT_EDEFAULT);
@@ -219,8 +233,8 @@ public class FulfillmentImpl extends MinimalEObjectImpl.Container implements Ful
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case SagePackage.FULFILLMENT__FEATURE:
-			return basicGetFeature() != null;
+		case SagePackage.FULFILLMENT__OFFERINGS:
+			return !getOfferings().isEmpty();
 		case SagePackage.FULFILLMENT__WEIGHT:
 			return getWeight() != WEIGHT_EDEFAULT;
 		case SagePackage.FULFILLMENT__DESCRIPTION:

@@ -72,6 +72,11 @@ public class SageAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseOffering(Offering object) {
+			return createOfferingAdapter();
+		}
+
+		@Override
 		public Adapter caseComparableModelElement(ComparableModelElement object) {
 			return createComparableModelElementAdapter();
 		}
@@ -124,11 +129,6 @@ public class SageAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseFeature(Feature object) {
 			return createFeatureAdapter();
-		}
-
-		@Override
-		public Adapter caseOffering(Offering object) {
-			return createOfferingAdapter();
 		}
 
 		@Override

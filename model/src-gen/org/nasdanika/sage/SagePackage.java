@@ -135,7 +135,198 @@ public interface SagePackage extends EPackage {
 	 * @see org.nasdanika.sage.impl.SagePackageImpl#getComparableModelElement()
 	 * @generated
 	 */
-	int COMPARABLE_MODEL_ELEMENT = 1;
+	int COMPARABLE_MODEL_ELEMENT = 2;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.sage.impl.HierarchicalModelElementImpl <em>Hierarchical Model Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.sage.impl.HierarchicalModelElementImpl
+	 * @see org.nasdanika.sage.impl.SagePackageImpl#getHierarchicalModelElement()
+	 * @generated
+	 */
+	int HIERARCHICAL_MODEL_ELEMENT = 3;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.sage.impl.HierarchicalComparableModelElementImpl <em>Hierarchical Comparable Model Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.sage.impl.HierarchicalComparableModelElementImpl
+	 * @see org.nasdanika.sage.impl.SagePackageImpl#getHierarchicalComparableModelElement()
+	 * @generated
+	 */
+	int HIERARCHICAL_COMPARABLE_MODEL_ELEMENT = 4;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.sage.impl.OrganizationImpl <em>Organization</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.sage.impl.OrganizationImpl
+	 * @see org.nasdanika.sage.impl.SagePackageImpl#getOrganization()
+	 * @generated
+	 */
+	int ORGANIZATION = 5;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.sage.impl.PersonaImpl <em>Persona</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.sage.impl.PersonaImpl
+	 * @see org.nasdanika.sage.impl.SagePackageImpl#getPersona()
+	 * @generated
+	 */
+	int PERSONA = 6;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.sage.impl.NeedImpl <em>Need</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.sage.impl.NeedImpl
+	 * @see org.nasdanika.sage.impl.SagePackageImpl#getNeed()
+	 * @generated
+	 */
+	int NEED = 7;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.sage.impl.StrategyImpl <em>Strategy</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.sage.impl.StrategyImpl
+	 * @see org.nasdanika.sage.impl.SagePackageImpl#getStrategy()
+	 * @generated
+	 */
+	int STRATEGY = 8;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.sage.impl.AbstractProductImpl <em>Abstract Product</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.sage.impl.AbstractProductImpl
+	 * @see org.nasdanika.sage.impl.SagePackageImpl#getAbstractProduct()
+	 * @generated
+	 */
+	int ABSTRACT_PRODUCT = 9;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.sage.impl.PortfolioImpl <em>Portfolio</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.sage.impl.PortfolioImpl
+	 * @see org.nasdanika.sage.impl.SagePackageImpl#getPortfolio()
+	 * @generated
+	 */
+	int PORTFOLIO = 10;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.sage.impl.ProductImpl <em>Product</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.sage.impl.ProductImpl
+	 * @see org.nasdanika.sage.impl.SagePackageImpl#getProduct()
+	 * @generated
+	 */
+	int PRODUCT = 11;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.sage.impl.FeatureImpl <em>Feature</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.sage.impl.FeatureImpl
+	 * @see org.nasdanika.sage.impl.SagePackageImpl#getFeature()
+	 * @generated
+	 */
+	int FEATURE = 12;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.sage.impl.OfferingImpl <em>Offering</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.sage.impl.OfferingImpl
+	 * @see org.nasdanika.sage.impl.SagePackageImpl#getOffering()
+	 * @generated
+	 */
+	int OFFERING = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OFFERING__NAME = MODEL_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OFFERING__URL = MODEL_ELEMENT__URL;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OFFERING__DESCRIPTION = MODEL_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OFFERING__CONFIGURATION = MODEL_ELEMENT__CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Target Audiences</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OFFERING__TARGET_AUDIENCES = MODEL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Includes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OFFERING__INCLUDES = MODEL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Fulfillments</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OFFERING__FULFILLMENTS = MODEL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Offering</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OFFERING_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Offering</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OFFERING_OPERATION_COUNT = MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -210,16 +401,6 @@ public interface SagePackage extends EPackage {
 	int COMPARABLE_MODEL_ELEMENT_OPERATION_COUNT = MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.sage.impl.HierarchicalModelElementImpl <em>Hierarchical Model Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.sage.impl.HierarchicalModelElementImpl
-	 * @see org.nasdanika.sage.impl.SagePackageImpl#getHierarchicalModelElement()
-	 * @generated
-	 */
-	int HIERARCHICAL_MODEL_ELEMENT = 2;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -290,16 +471,6 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int HIERARCHICAL_MODEL_ELEMENT_OPERATION_COUNT = MODEL_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.nasdanika.sage.impl.HierarchicalComparableModelElementImpl <em>Hierarchical Comparable Model Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.sage.impl.HierarchicalComparableModelElementImpl
-	 * @see org.nasdanika.sage.impl.SagePackageImpl#getHierarchicalComparableModelElement()
-	 * @generated
-	 */
-	int HIERARCHICAL_COMPARABLE_MODEL_ELEMENT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -390,16 +561,6 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int HIERARCHICAL_COMPARABLE_MODEL_ELEMENT_OPERATION_COUNT = HIERARCHICAL_MODEL_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.nasdanika.sage.impl.OrganizationImpl <em>Organization</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.sage.impl.OrganizationImpl
-	 * @see org.nasdanika.sage.impl.SagePackageImpl#getOrganization()
-	 * @generated
-	 */
-	int ORGANIZATION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -501,16 +662,6 @@ public interface SagePackage extends EPackage {
 	int ORGANIZATION_OPERATION_COUNT = HIERARCHICAL_MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.sage.impl.PersonaImpl <em>Persona</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.sage.impl.PersonaImpl
-	 * @see org.nasdanika.sage.impl.SagePackageImpl#getPersona()
-	 * @generated
-	 */
-	int PERSONA = 5;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -599,16 +750,6 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int PERSONA_OPERATION_COUNT = COMPARABLE_MODEL_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.nasdanika.sage.impl.NeedImpl <em>Need</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.sage.impl.NeedImpl
-	 * @see org.nasdanika.sage.impl.SagePackageImpl#getNeed()
-	 * @generated
-	 */
-	int NEED = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -719,16 +860,6 @@ public interface SagePackage extends EPackage {
 	int NEED_OPERATION_COUNT = HIERARCHICAL_COMPARABLE_MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.sage.impl.StrategyImpl <em>Strategy</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.sage.impl.StrategyImpl
-	 * @see org.nasdanika.sage.impl.SagePackageImpl#getStrategy()
-	 * @generated
-	 */
-	int STRATEGY = 7;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -819,16 +950,6 @@ public interface SagePackage extends EPackage {
 	int STRATEGY_OPERATION_COUNT = HIERARCHICAL_COMPARABLE_MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.sage.impl.AbstractProductImpl <em>Abstract Product</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.sage.impl.AbstractProductImpl
-	 * @see org.nasdanika.sage.impl.SagePackageImpl#getAbstractProduct()
-	 * @generated
-	 */
-	int ABSTRACT_PRODUCT = 8;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -881,16 +1002,6 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int ABSTRACT_PRODUCT_OPERATION_COUNT = MODEL_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.nasdanika.sage.impl.PortfolioImpl <em>Portfolio</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.sage.impl.PortfolioImpl
-	 * @see org.nasdanika.sage.impl.SagePackageImpl#getPortfolio()
-	 * @generated
-	 */
-	int PORTFOLIO = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -965,16 +1076,6 @@ public interface SagePackage extends EPackage {
 	int PORTFOLIO_OPERATION_COUNT = ABSTRACT_PRODUCT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.sage.impl.ProductImpl <em>Product</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.sage.impl.ProductImpl
-	 * @see org.nasdanika.sage.impl.SagePackageImpl#getProduct()
-	 * @generated
-	 */
-	int PRODUCT = 10;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1029,13 +1130,22 @@ public interface SagePackage extends EPackage {
 	int PRODUCT__INCLUDES = ABSTRACT_PRODUCT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Fulfillments</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT__FULFILLMENTS = ABSTRACT_PRODUCT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Features</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__FEATURES = ABSTRACT_PRODUCT_FEATURE_COUNT + 2;
+	int PRODUCT__FEATURES = ABSTRACT_PRODUCT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Releases</b></em>' containment reference list.
@@ -1044,7 +1154,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__RELEASES = ABSTRACT_PRODUCT_FEATURE_COUNT + 3;
+	int PRODUCT__RELEASES = ABSTRACT_PRODUCT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Stage</b></em>' attribute.
@@ -1053,7 +1163,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__STAGE = ABSTRACT_PRODUCT_FEATURE_COUNT + 4;
+	int PRODUCT__STAGE = ABSTRACT_PRODUCT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Components</b></em>' containment reference list.
@@ -1062,7 +1172,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__COMPONENTS = ABSTRACT_PRODUCT_FEATURE_COUNT + 5;
+	int PRODUCT__COMPONENTS = ABSTRACT_PRODUCT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Editions</b></em>' containment reference list.
@@ -1071,7 +1181,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__EDITIONS = ABSTRACT_PRODUCT_FEATURE_COUNT + 6;
+	int PRODUCT__EDITIONS = ABSTRACT_PRODUCT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Product</em>' class.
@@ -1080,7 +1190,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_FEATURE_COUNT = ABSTRACT_PRODUCT_FEATURE_COUNT + 7;
+	int PRODUCT_FEATURE_COUNT = ABSTRACT_PRODUCT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Product</em>' class.
@@ -1090,16 +1200,6 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int PRODUCT_OPERATION_COUNT = ABSTRACT_PRODUCT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.nasdanika.sage.impl.FeatureImpl <em>Feature</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.sage.impl.FeatureImpl
-	 * @see org.nasdanika.sage.impl.SagePackageImpl#getFeature()
-	 * @generated
-	 */
-	int FEATURE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1156,13 +1256,40 @@ public interface SagePackage extends EPackage {
 	int FEATURE__LINKED_CHILDREN = HIERARCHICAL_MODEL_ELEMENT__LINKED_CHILDREN;
 
 	/**
+	 * The feature id for the '<em><b>Target Audiences</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__TARGET_AUDIENCES = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Includes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__INCLUDES = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Fulfillments</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__FULFILLMENTS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Dependencies</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__DEPENDENCIES = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 0;
+	int FEATURE__DEPENDENCIES = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Enablers</b></em>' containment reference list.
@@ -1171,7 +1298,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__ENABLERS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 1;
+	int FEATURE__ENABLERS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
@@ -1180,7 +1307,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__SIZE = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 2;
+	int FEATURE__SIZE = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>State</b></em>' attribute.
@@ -1189,7 +1316,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__STATE = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 3;
+	int FEATURE__STATE = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Design</b></em>' attribute.
@@ -1198,7 +1325,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__DESIGN = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 4;
+	int FEATURE__DESIGN = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Components</b></em>' reference list.
@@ -1207,7 +1334,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__COMPONENTS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 5;
+	int FEATURE__COMPONENTS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Release</b></em>' reference.
@@ -1216,7 +1343,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__RELEASE = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 6;
+	int FEATURE__RELEASE = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Editions</b></em>' reference list.
@@ -1225,7 +1352,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__EDITIONS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 7;
+	int FEATURE__EDITIONS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of structural features of the '<em>Feature</em>' class.
@@ -1234,7 +1361,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_FEATURE_COUNT = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 8;
+	int FEATURE_FEATURE_COUNT = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of operations of the '<em>Feature</em>' class.
@@ -1244,88 +1371,6 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int FEATURE_OPERATION_COUNT = HIERARCHICAL_MODEL_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.nasdanika.sage.impl.OfferingImpl <em>Offering</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.sage.impl.OfferingImpl
-	 * @see org.nasdanika.sage.impl.SagePackageImpl#getOffering()
-	 * @generated
-	 */
-	int OFFERING = 12;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OFFERING__NAME = MODEL_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Url</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OFFERING__URL = MODEL_ELEMENT__URL;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OFFERING__DESCRIPTION = MODEL_ELEMENT__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OFFERING__CONFIGURATION = MODEL_ELEMENT__CONFIGURATION;
-
-	/**
-	 * The feature id for the '<em><b>Target Audiences</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OFFERING__TARGET_AUDIENCES = MODEL_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Includes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OFFERING__INCLUDES = MODEL_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Offering</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OFFERING_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Offering</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OFFERING_OPERATION_COUNT = MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.sage.impl.EditionImpl <em>Edition</em>}' class.
@@ -1390,6 +1435,15 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int EDITION__INCLUDES = OFFERING__INCLUDES;
+
+	/**
+	 * The feature id for the '<em><b>Fulfillments</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDITION__FULFILLMENTS = OFFERING__FULFILLMENTS;
 
 	/**
 	 * The feature id for the '<em><b>Bases</b></em>' reference list.
@@ -1538,13 +1592,13 @@ public interface SagePackage extends EPackage {
 	int FULFILLMENT = 15;
 
 	/**
-	 * The feature id for the '<em><b>Feature</b></em>' reference.
+	 * The feature id for the '<em><b>Offerings</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FULFILLMENT__FEATURE = 0;
+	int FULFILLMENT__OFFERINGS = 0;
 
 	/**
 	 * The feature id for the '<em><b>Weight</b></em>' attribute.
@@ -2283,6 +2337,17 @@ public interface SagePackage extends EPackage {
 	EReference getOffering_Includes();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.sage.Offering#getFulfillments <em>Fulfillments</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Fulfillments</em>'.
+	 * @see org.nasdanika.sage.Offering#getFulfillments()
+	 * @see #getOffering()
+	 * @generated
+	 */
+	EReference getOffering_Fulfillments();
+
+	/**
 	 * Returns the meta object for class '{@link org.nasdanika.sage.Edition <em>Edition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2379,15 +2444,15 @@ public interface SagePackage extends EPackage {
 	EClass getFulfillment();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.nasdanika.sage.Fulfillment#getFeature <em>Feature</em>}'.
+	 * Returns the meta object for the reference list '{@link org.nasdanika.sage.Fulfillment#getOfferings <em>Offerings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Feature</em>'.
-	 * @see org.nasdanika.sage.Fulfillment#getFeature()
+	 * @return the meta object for the reference list '<em>Offerings</em>'.
+	 * @see org.nasdanika.sage.Fulfillment#getOfferings()
 	 * @see #getFulfillment()
 	 * @generated
 	 */
-	EReference getFulfillment_Feature();
+	EReference getFulfillment_Offerings();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.nasdanika.sage.Fulfillment#getWeight <em>Weight</em>}'.
@@ -2953,6 +3018,14 @@ public interface SagePackage extends EPackage {
 		EReference OFFERING__INCLUDES = eINSTANCE.getOffering_Includes();
 
 		/**
+		 * The meta object literal for the '<em><b>Fulfillments</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OFFERING__FULFILLMENTS = eINSTANCE.getOffering_Fulfillments();
+
+		/**
 		 * The meta object literal for the '{@link org.nasdanika.sage.impl.EditionImpl <em>Edition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3031,12 +3104,12 @@ public interface SagePackage extends EPackage {
 		EClass FULFILLMENT = eINSTANCE.getFulfillment();
 
 		/**
-		 * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Offerings</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FULFILLMENT__FEATURE = eINSTANCE.getFulfillment_Feature();
+		EReference FULFILLMENT__OFFERINGS = eINSTANCE.getFulfillment_Offerings();
 
 		/**
 		 * The meta object literal for the '<em><b>Weight</b></em>' attribute feature.

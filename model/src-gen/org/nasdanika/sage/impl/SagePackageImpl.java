@@ -698,6 +698,16 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getOffering_Fulfillments() {
+		return (EReference) offeringEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getEdition() {
 		return editionEClass;
 	}
@@ -788,7 +798,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getFulfillment_Feature() {
+	public EReference getFulfillment_Offerings() {
 		return (EReference) fulfillmentEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -988,6 +998,11 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		createEAttribute(modelElementEClass, MODEL_ELEMENT__DESCRIPTION);
 		createEAttribute(modelElementEClass, MODEL_ELEMENT__CONFIGURATION);
 
+		offeringEClass = createEClass(OFFERING);
+		createEReference(offeringEClass, OFFERING__TARGET_AUDIENCES);
+		createEReference(offeringEClass, OFFERING__INCLUDES);
+		createEReference(offeringEClass, OFFERING__FULFILLMENTS);
+
 		comparableModelElementEClass = createEClass(COMPARABLE_MODEL_ELEMENT);
 		createEAttribute(comparableModelElementEClass, COMPARABLE_MODEL_ELEMENT__WEIGHT);
 		createEAttribute(comparableModelElementEClass, COMPARABLE_MODEL_ELEMENT__EFFECTIVE_WEIGHT);
@@ -1034,10 +1049,6 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		createEReference(featureEClass, FEATURE__RELEASE);
 		createEReference(featureEClass, FEATURE__EDITIONS);
 
-		offeringEClass = createEClass(OFFERING);
-		createEReference(offeringEClass, OFFERING__TARGET_AUDIENCES);
-		createEReference(offeringEClass, OFFERING__INCLUDES);
-
 		editionEClass = createEClass(EDITION);
 		createEReference(editionEClass, EDITION__BASES);
 		createEReference(editionEClass, EDITION__FEATURES);
@@ -1049,7 +1060,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		createEAttribute(releaseEClass, RELEASE__OVERHEAD);
 
 		fulfillmentEClass = createEClass(FULFILLMENT);
-		createEReference(fulfillmentEClass, FULFILLMENT__FEATURE);
+		createEReference(fulfillmentEClass, FULFILLMENT__OFFERINGS);
 		createEAttribute(fulfillmentEClass, FULFILLMENT__WEIGHT);
 		createEAttribute(fulfillmentEClass, FULFILLMENT__DESCRIPTION);
 
@@ -1105,6 +1116,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		offeringEClass.getESuperTypes().add(this.getModelElement());
 		comparableModelElementEClass.getESuperTypes().add(this.getModelElement());
 		hierarchicalModelElementEClass.getESuperTypes().add(this.getModelElement());
 		EGenericType g1 = createEGenericType(this.getHierarchicalModelElement());
@@ -1139,7 +1151,8 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		g2 = createEGenericType(this.getFeature());
 		g1.getETypeArguments().add(g2);
 		featureEClass.getEGenericSuperTypes().add(g1);
-		offeringEClass.getESuperTypes().add(this.getModelElement());
+		g1 = createEGenericType(this.getOffering());
+		featureEClass.getEGenericSuperTypes().add(g1);
 		editionEClass.getESuperTypes().add(this.getOffering());
 		releaseEClass.getESuperTypes().add(this.getModelElement());
 		g1 = createEGenericType(this.getHierarchicalModelElement());
@@ -1160,6 +1173,17 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		initEAttribute(getModelElement_Configuration(), ecorePackage.getEString(), "configuration", null, 0, 1,
 				ModelElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(offeringEClass, Offering.class, "Offering", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOffering_TargetAudiences(), this.getPersona(), this.getPersona_Offerings(), "targetAudiences",
+				null, 0, -1, Offering.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOffering_Includes(), this.getOffering(), null, "includes", null, 0, -1, Offering.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOffering_Fulfillments(), this.getFulfillment(), this.getFulfillment_Offerings(),
+				"fulfillments", null, 0, -1, Offering.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(comparableModelElementEClass, ComparableModelElement.class, "ComparableModelElement", IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1261,14 +1285,6 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 				Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(offeringEClass, Offering.class, "Offering", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOffering_TargetAudiences(), this.getPersona(), this.getPersona_Offerings(), "targetAudiences",
-				null, 0, -1, Offering.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOffering_Includes(), this.getOffering(), null, "includes", null, 0, -1, Offering.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(editionEClass, Edition.class, "Edition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEdition_Bases(), this.getEdition(), null, "bases", null, 0, -1, Edition.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
@@ -1290,9 +1306,9 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 
 		initEClass(fulfillmentEClass, Fulfillment.class, "Fulfillment", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFulfillment_Feature(), this.getFeature(), null, "feature", null, 0, 1, Fulfillment.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFulfillment_Offerings(), this.getOffering(), this.getOffering_Fulfillments(), "offerings",
+				null, 0, -1, Fulfillment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFulfillment_Weight(), ecorePackage.getEDouble(), "weight", "1.0", 0, 1, Fulfillment.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFulfillment_Description(), ecorePackage.getEString(), "description", null, 0, 1,
@@ -1373,6 +1389,12 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 				new String[] { "documentation", "Element description in markdown." });
 		addAnnotation(getModelElement_Configuration(), source, new String[] { "documentation",
 				"Custom element configuration in YAML. It can be used for specialized analysis or reporting. For example features may specify requirements such as skills, organizational capabilities, or third-party services or tools." });
+		addAnnotation(offeringEClass, source, new String[] { "documentation",
+				"Offering is a base class for products and editions - something that is offered to personas, which are offering\'s target audiences." });
+		addAnnotation(getOffering_TargetAudiences(), source, new String[] { "documentation",
+				"Personas to which this offering - product or edition - is offered. " });
+		addAnnotation(getOffering_Includes(), source, new String[] { "documentation",
+				"One offering may include (bundle) other offferings. For example, Nasdanika Tool Suite would include community editions of Nasdanika products." });
 		addAnnotation(comparableModelElementEClass, source, new String[] { "documentation",
 				"Model element which can be assigned a weight/importance. The weight is used for comparing the element with its siblings in the containing reference." });
 		addAnnotation(getComparableModelElement_Weight(), source, new String[] { "documentation",
@@ -1438,12 +1460,6 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		addAnnotation(getFeature_Release(), source, new String[] { "documentation", "Feature release." });
 		addAnnotation(getFeature_Editions(), source,
 				new String[] { "documentation", "Editions this feature is included into." });
-		addAnnotation(offeringEClass, source, new String[] { "documentation",
-				"Offering is a base class for products and editions - something that is offered to personas, which are offering\'s target audiences." });
-		addAnnotation(getOffering_TargetAudiences(), source, new String[] { "documentation",
-				"Personas to which this offering - product or edition - is offered. " });
-		addAnnotation(getOffering_Includes(), source, new String[] { "documentation",
-				"One offering may include (bundle) other offferings. For example, Nasdanika Tool Suite would include community editions of Nasdanika products." });
 		addAnnotation(editionEClass, source, new String[] { "documentation",
 				"Product edition is a grouping of features which fulfill needs of a specific target audience. For example, a community edition may target customer with basic needs, and a professional edition would include additional features fulfilling the needs of customers who use the product extensively." });
 		addAnnotation(getEdition_Bases(), source, new String[] { "documentation",
@@ -1469,8 +1485,8 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		addAnnotation(needCategoryEEnum.getELiterals().get(2), source,
 				new String[] { "documentation", "Unexpected needs - \"I didn\'t know I wanted it, but I like it!\"." });
 		addAnnotation(fulfillmentEClass, source, new String[] { "documentation",
-				"Fulfillment is a mapping between a need and a product feature which fulfills it. Multiple features from multiple product may particpate in fulfillment of a need. Fulfillment weight reflects to which extent a particular feature fullfills a particular need comparing to other features participating in the need fulfillment." });
-		addAnnotation(getFulfillment_Feature(), source,
+				"Fulfillment is a mapping between a need and offerings which fulfill it. Multiple features from multiple product may particpate in fulfillment of a need. Fulfillment weight reflects to which extent a particular feature fullfills a particular need comparing to other features participating in the need fulfillment.\nIf there is more than one offering in one fulfillment then the weight is distributed evenly between the participating offerings." });
+		addAnnotation(getFulfillment_Offerings(), source,
 				new String[] { "documentation", "Feature fulfilling the need." });
 		addAnnotation(getFulfillment_Weight(), source, new String[] { "documentation",
 				"Fulfillment weight represents how much this particular feature participates in fulfilling the need comparing to other features fulfilling the same need." });
@@ -1542,6 +1558,12 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		addAnnotation(getModelElement_Configuration(), source, new String[] { "label_ru",
 				"\u041a\u043e\u043d\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044f", "documentation_ru",
 				"\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c\u0441\u043a\u043e\u0439 \u043a\u043e\u043d\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u0438 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0430 \u043d\u0430 YAML. \u041c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0430 \u0434\u043b\u044f \u0441\u043f\u0435\u0446\u0438\u0430\u043b\u0438\u0437\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u043e\u0433\u043e \u0430\u043d\u0430\u043b\u0438\u0437\u0430 \u0438\u043b\u0438 \u043e\u0442\u0447\u0435\u0442\u043d\u043e\u0441\u0442\u0438. \u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0444\u0443\u043d\u043a\u0446\u0438\u0438 \u043c\u043e\u0433\u0443\u0442 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u044f\u0442\u044c \u0442\u0440\u0435\u0431\u043e\u0432\u0430\u043d\u0438\u044f, \u0442\u0430\u043a\u0438\u0435 \u043a\u0430\u043a \u043d\u0430\u0432\u044b\u043a\u0438, \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u043e\u043d\u043d\u044b\u0435 \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e\u0441\u0442\u0438 \u0438\u043b\u0438 \u0441\u0442\u043e\u0440\u043e\u043d\u043d\u0438\u0435 \u0441\u0435\u0440\u0432\u0438\u0441\u044b \u0438\u043b\u0438 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b." });
+		addAnnotation(offeringEClass, source, new String[] { "label_ru", "\u0420\u0435\u0448\u0435\u043d\u0438\u0435",
+				"documentation_ru",
+				"\u0420\u0435\u0448\u0435\u043d\u0438\u0435 - \u0431\u0430\u0437\u043e\u0432\u044b\u0439 \u043a\u043b\u0430\u0441\u0441 \u0434\u043b\u044f \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u043e\u0432 \u0438 \u0440\u0435\u0434\u0430\u043a\u0446\u0438\u0439 - \u0441\u043e\u0432\u043e\u043a\u0443\u043f\u043d\u043e\u0441\u0442\u044c \u0444\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u0438, \u043a\u043e\u0442\u043e\u0440\u0430\u044f \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u0435\u0442\u0441\u044f \u043f\u0435\u0440\u0441\u043e\u043d\u0430\u043c, \u044f\u0432\u043b\u044f\u044e\u0449\u0438\u043c\u0441\u044f \u0446\u0435\u043b\u0435\u0432\u043e\u0439 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0435\u0439 \u0440\u0435\u0448\u0435\u043d\u0438\u044f.\n" });
+		addAnnotation(getOffering_TargetAudiences(), source, new String[] { "label_ru",
+				"\u041f\u0435\u0440\u0441\u043e\u043d\u0430", "documentation_ru",
+				"\u041f\u0435\u0440\u0441\u043e\u043d\u044b \u043a\u043e\u0442\u043e\u0440\u044b\u043c \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u0435\u0442\u0441\u044f \u044d\u0442\u043e\u0442 \u043f\u0440\u043e\u0434\u0443\u043a\u0442 \u0438\u043b\u0438 \u0440\u0435\u0434\u0430\u0446\u0438\u044f \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u0430. " });
 		addAnnotation(comparableModelElementEClass, source, new String[] { "label_ru",
 				"\u0421\u0440\u0430\u0432\u043d\u0438\u043c\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442 \u043c\u043e\u0434\u0435\u043b\u0438",
 				"documentation_ru",
@@ -1610,12 +1632,6 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		addAnnotation(getFeature_Editions(), source, new String[] { "label_ru",
 				"\u0420\u0435\u0434\u0430\u043a\u0446\u0438\u044f", "documentation_ru",
 				"\u0420\u0435\u0434\u0430\u043a\u0446\u0438\u044f \u0432 \u043a\u043e\u0442\u043e\u0440\u0443\u044e \u0432\u043a\u043b\u044e\u0447\u0435\u043d\u0430 \u044d\u0442\u043e\u0442 \u0444\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u0431\u043b\u043e\u043a" });
-		addAnnotation(offeringEClass, source, new String[] { "label_ru", "\u0420\u0435\u0448\u0435\u043d\u0438\u0435",
-				"documentation_ru",
-				"\u0420\u0435\u0448\u0435\u043d\u0438\u0435 - \u0431\u0430\u0437\u043e\u0432\u044b\u0439 \u043a\u043b\u0430\u0441\u0441 \u0434\u043b\u044f \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u043e\u0432 \u0438 \u0440\u0435\u0434\u0430\u043a\u0446\u0438\u0439 - \u0441\u043e\u0432\u043e\u043a\u0443\u043f\u043d\u043e\u0441\u0442\u044c \u0444\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u0438, \u043a\u043e\u0442\u043e\u0440\u0430\u044f \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u0435\u0442\u0441\u044f \u043f\u0435\u0440\u0441\u043e\u043d\u0430\u043c, \u044f\u0432\u043b\u044f\u044e\u0449\u0438\u043c\u0441\u044f \u0446\u0435\u043b\u0435\u0432\u043e\u0439 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0435\u0439 \u0440\u0435\u0448\u0435\u043d\u0438\u044f.\n" });
-		addAnnotation(getOffering_TargetAudiences(), source, new String[] { "label_ru",
-				"\u041f\u0435\u0440\u0441\u043e\u043d\u0430", "documentation_ru",
-				"\u041f\u0435\u0440\u0441\u043e\u043d\u044b \u043a\u043e\u0442\u043e\u0440\u044b\u043c \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u0435\u0442\u0441\u044f \u044d\u0442\u043e\u0442 \u043f\u0440\u043e\u0434\u0443\u043a\u0442 \u0438\u043b\u0438 \u0440\u0435\u0434\u0430\u0446\u0438\u044f \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u0430. " });
 		addAnnotation(editionEClass, source, new String[] { "label_ru",
 				"\u0420\u0435\u0434\u0430\u043a\u0446\u0438\u044f", "documentation_ru",
 				"\u0420\u0435\u0434\u0430\u043a\u0446\u0438\u044f \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u0430 - \u044d\u0442\u043e \u043d\u0430\u0431\u043e\u0440 \u0444\u0443\u043d\u043a\u0446\u0438\u0439, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0443\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u044f\u044e\u0442  \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u0438 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u043e\u0439 \u0446\u0435\u043b\u0435\u0432\u043e\u0439 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0438. \n\n\u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, Free edition \u043f\u0440\u0435\u0434\u043d\u0430\u0437\u043d\u0430\u0447\u043a\u0435\u043d\u0430 \u0434\u043b\u044f \u043a\u043b\u0438\u0435\u043d\u0442\u043e\u0432 \u0441 \u0431\u0430\u0437\u043e\u0432\u044b\u043c\u0438 \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u044f\u043c\u0438, \n\n\n\u0430 Professional edition \u0431\u0443\u0434\u0435\u0442 \u0432\u043a\u043b\u044e\u0447\u0430\u0442\u044c \u0434\u043e\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0435 \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e\u0441\u0442\u0438, \n\n\u0443\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u044f\u044e\u0449\u0438\u0435 \u0441\u043f\u0435\u0446\u0438\u0444\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u0438 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0430\u0442\u0435\u043b\u0435\u0439, \u0431\u043e\u043b\u0435\u0435 \u043f\u0440\u043e\u0444\u0435\u0441\u0441\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u043e \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u044e\u0449\u0438\u0445 \u043f\u0440\u043e\u0434\u0443\u043a\u0442.\n" });
@@ -1661,7 +1677,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 				"\u0423\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c",
 				"documentation_ru",
 				"\u0423\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c \u043e\u0442\u0440\u0430\u0436\u0430\u0435\u0442 \u043f\u043e\u043b\u043d\u043e\u0442\u0443/\u0441\u0442\u0435\u043f\u0435\u043d\u044c \u0443\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u0435\u043d\u0438\u044f \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u0435\u0439. \u0422\u043e \u0435\u0441\u0442\u044c: \u0441\u0432\u044f\u0437\u044c \u043c\u0435\u0436\u0434\u0443 \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u044c\u044e \u0438 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u043e\u043c \u0438\u043b\u0438 \u0444\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u043c \u0431\u043b\u043e\u043a\u043e\u043c \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u0430 \u0443\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u044f\u044e\u0449\u0438\u043c \u044d\u0442\u0443 \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u044c. \n\n\u041f\u043e\u043b\u043d\u043e\u0442\u0430 \u0443\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u0435\u043d\u0438\u044f \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u0435\u0439 \u043f\u043e\u0437\u0432\u043e\u043b\u044f\u0435\u0442 \u0441\u0443\u0434\u0438\u0442\u044c: \u0432 \u043a\u0430\u043a\u043e\u0439 \u0441\u0442\u0435\u043f\u0435\u043d\u0438 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u044b\u0439 \u0444\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u0431\u043b\u043e\u043a \u0443\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u044f\u0435\u0442 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u0443\u044e \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u044c \u043f\u043e \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044e \u0441 \u0434\u0440\u0443\u0433\u0438\u043c\u0438 \u0444\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u043c\u0438 \u0431\u043b\u043e\u043a\u0430\u043c\u0438, \u0443\u0447\u0430\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u043c\u0438 \u0432 \u0443\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u0435\u043d\u0438\u0438 \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u0438.\n" });
-		addAnnotation(getFulfillment_Feature(), source, new String[] { "label_ru",
+		addAnnotation(getFulfillment_Offerings(), source, new String[] { "label_ru",
 				"\u0424\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u0431\u043b\u043e\u043a",
 				"documentation_ru",
 				"\u0424\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u0431\u043b\u043e\u043a, \u0443\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u044f\u044e\u0449\u0438\u0439 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u043d\u0443\u044e \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u044c" });
