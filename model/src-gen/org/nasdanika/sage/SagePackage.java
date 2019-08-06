@@ -302,13 +302,13 @@ public interface SagePackage extends EPackage {
 	int OFFERING__INCLUDES = MODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Fulfillments</b></em>' reference list.
+	 * The feature id for the '<em><b>Scenarios</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OFFERING__FULFILLMENTS = MODEL_ELEMENT_FEATURE_COUNT + 2;
+	int OFFERING__SCENARIOS = MODEL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Offering</em>' class.
@@ -833,13 +833,13 @@ public interface SagePackage extends EPackage {
 	int NEED__CATEGORY = HIERARCHICAL_COMPARABLE_MODEL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Fulfillments</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Scenarios</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NEED__FULFILLMENTS = HIERARCHICAL_COMPARABLE_MODEL_ELEMENT_FEATURE_COUNT + 1;
+	int NEED__SCENARIOS = HIERARCHICAL_COMPARABLE_MODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Need</em>' class.
@@ -1130,13 +1130,13 @@ public interface SagePackage extends EPackage {
 	int PRODUCT__INCLUDES = ABSTRACT_PRODUCT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Fulfillments</b></em>' reference list.
+	 * The feature id for the '<em><b>Scenarios</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__FULFILLMENTS = ABSTRACT_PRODUCT_FEATURE_COUNT + 2;
+	int PRODUCT__SCENARIOS = ABSTRACT_PRODUCT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Features</b></em>' containment reference list.
@@ -1274,13 +1274,13 @@ public interface SagePackage extends EPackage {
 	int FEATURE__INCLUDES = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Fulfillments</b></em>' reference list.
+	 * The feature id for the '<em><b>Scenarios</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__FULFILLMENTS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 2;
+	int FEATURE__SCENARIOS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Dependencies</b></em>' containment reference list.
@@ -1437,13 +1437,13 @@ public interface SagePackage extends EPackage {
 	int EDITION__INCLUDES = OFFERING__INCLUDES;
 
 	/**
-	 * The feature id for the '<em><b>Fulfillments</b></em>' reference list.
+	 * The feature id for the '<em><b>Scenarios</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDITION__FULFILLMENTS = OFFERING__FULFILLMENTS;
+	int EDITION__SCENARIOS = OFFERING__SCENARIOS;
 
 	/**
 	 * The feature id for the '<em><b>Bases</b></em>' reference list.
@@ -1582,32 +1582,14 @@ public interface SagePackage extends EPackage {
 	int RELEASE_OPERATION_COUNT = MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.sage.impl.FulfillmentImpl <em>Fulfillment</em>}' class.
+	 * The meta object id for the '{@link org.nasdanika.sage.impl.ScenarioImpl <em>Scenario</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.sage.impl.FulfillmentImpl
-	 * @see org.nasdanika.sage.impl.SagePackageImpl#getFulfillment()
+	 * @see org.nasdanika.sage.impl.ScenarioImpl
+	 * @see org.nasdanika.sage.impl.SagePackageImpl#getScenario()
 	 * @generated
 	 */
-	int FULFILLMENT = 15;
-
-	/**
-	 * The feature id for the '<em><b>Offerings</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FULFILLMENT__OFFERINGS = 0;
-
-	/**
-	 * The feature id for the '<em><b>Weight</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FULFILLMENT__WEIGHT = 1;
+	int SCENARIO = 15;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1616,25 +1598,43 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FULFILLMENT__DESCRIPTION = 2;
+	int SCENARIO__DESCRIPTION = 0;
 
 	/**
-	 * The number of structural features of the '<em>Fulfillment</em>' class.
+	 * The feature id for the '<em><b>Weight</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FULFILLMENT_FEATURE_COUNT = 3;
+	int SCENARIO__WEIGHT = 1;
 
 	/**
-	 * The number of operations of the '<em>Fulfillment</em>' class.
+	 * The feature id for the '<em><b>Offerings</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FULFILLMENT_OPERATION_COUNT = 0;
+	int SCENARIO__OFFERINGS = 2;
+
+	/**
+	 * The number of structural features of the '<em>Scenario</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Scenario</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.sage.impl.DependencyImpl <em>Dependency</em>}' class.
@@ -2101,15 +2101,15 @@ public interface SagePackage extends EPackage {
 	EAttribute getNeed_Category();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.nasdanika.sage.Need#getFulfillments <em>Fulfillments</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.nasdanika.sage.Need#getScenarios <em>Scenarios</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Fulfillments</em>'.
-	 * @see org.nasdanika.sage.Need#getFulfillments()
+	 * @return the meta object for the containment reference list '<em>Scenarios</em>'.
+	 * @see org.nasdanika.sage.Need#getScenarios()
 	 * @see #getNeed()
 	 * @generated
 	 */
-	EReference getNeed_Fulfillments();
+	EReference getNeed_Scenarios();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.sage.Strategy <em>Strategy</em>}'.
@@ -2337,15 +2337,15 @@ public interface SagePackage extends EPackage {
 	EReference getOffering_Includes();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.nasdanika.sage.Offering#getFulfillments <em>Fulfillments</em>}'.
+	 * Returns the meta object for the reference list '{@link org.nasdanika.sage.Offering#getScenarios <em>Scenarios</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Fulfillments</em>'.
-	 * @see org.nasdanika.sage.Offering#getFulfillments()
+	 * @return the meta object for the reference list '<em>Scenarios</em>'.
+	 * @see org.nasdanika.sage.Offering#getScenarios()
 	 * @see #getOffering()
 	 * @generated
 	 */
-	EReference getOffering_Fulfillments();
+	EReference getOffering_Scenarios();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.sage.Edition <em>Edition</em>}'.
@@ -2434,47 +2434,47 @@ public interface SagePackage extends EPackage {
 	EAttribute getRelease_Overhead();
 
 	/**
-	 * Returns the meta object for class '{@link org.nasdanika.sage.Fulfillment <em>Fulfillment</em>}'.
+	 * Returns the meta object for class '{@link org.nasdanika.sage.Scenario <em>Scenario</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fulfillment</em>'.
-	 * @see org.nasdanika.sage.Fulfillment
+	 * @return the meta object for class '<em>Scenario</em>'.
+	 * @see org.nasdanika.sage.Scenario
 	 * @generated
 	 */
-	EClass getFulfillment();
+	EClass getScenario();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.nasdanika.sage.Fulfillment#getOfferings <em>Offerings</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Offerings</em>'.
-	 * @see org.nasdanika.sage.Fulfillment#getOfferings()
-	 * @see #getFulfillment()
-	 * @generated
-	 */
-	EReference getFulfillment_Offerings();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.nasdanika.sage.Fulfillment#getWeight <em>Weight</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Weight</em>'.
-	 * @see org.nasdanika.sage.Fulfillment#getWeight()
-	 * @see #getFulfillment()
-	 * @generated
-	 */
-	EAttribute getFulfillment_Weight();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.nasdanika.sage.Fulfillment#getDescription <em>Description</em>}'.
+	 * Returns the meta object for the attribute '{@link org.nasdanika.sage.Scenario#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Description</em>'.
-	 * @see org.nasdanika.sage.Fulfillment#getDescription()
-	 * @see #getFulfillment()
+	 * @see org.nasdanika.sage.Scenario#getDescription()
+	 * @see #getScenario()
 	 * @generated
 	 */
-	EAttribute getFulfillment_Description();
+	EAttribute getScenario_Description();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.sage.Scenario#getWeight <em>Weight</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Weight</em>'.
+	 * @see org.nasdanika.sage.Scenario#getWeight()
+	 * @see #getScenario()
+	 * @generated
+	 */
+	EAttribute getScenario_Weight();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.sage.Scenario#getOfferings <em>Offerings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Offerings</em>'.
+	 * @see org.nasdanika.sage.Scenario#getOfferings()
+	 * @see #getScenario()
+	 * @generated
+	 */
+	EReference getScenario_Offerings();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.sage.Dependency <em>Dependency</em>}'.
@@ -2830,12 +2830,12 @@ public interface SagePackage extends EPackage {
 		EAttribute NEED__CATEGORY = eINSTANCE.getNeed_Category();
 
 		/**
-		 * The meta object literal for the '<em><b>Fulfillments</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Scenarios</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference NEED__FULFILLMENTS = eINSTANCE.getNeed_Fulfillments();
+		EReference NEED__SCENARIOS = eINSTANCE.getNeed_Scenarios();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.sage.impl.StrategyImpl <em>Strategy</em>}' class.
@@ -3018,12 +3018,12 @@ public interface SagePackage extends EPackage {
 		EReference OFFERING__INCLUDES = eINSTANCE.getOffering_Includes();
 
 		/**
-		 * The meta object literal for the '<em><b>Fulfillments</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Scenarios</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OFFERING__FULFILLMENTS = eINSTANCE.getOffering_Fulfillments();
+		EReference OFFERING__SCENARIOS = eINSTANCE.getOffering_Scenarios();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.sage.impl.EditionImpl <em>Edition</em>}' class.
@@ -3094,30 +3094,14 @@ public interface SagePackage extends EPackage {
 		EAttribute RELEASE__OVERHEAD = eINSTANCE.getRelease_Overhead();
 
 		/**
-		 * The meta object literal for the '{@link org.nasdanika.sage.impl.FulfillmentImpl <em>Fulfillment</em>}' class.
+		 * The meta object literal for the '{@link org.nasdanika.sage.impl.ScenarioImpl <em>Scenario</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.nasdanika.sage.impl.FulfillmentImpl
-		 * @see org.nasdanika.sage.impl.SagePackageImpl#getFulfillment()
+		 * @see org.nasdanika.sage.impl.ScenarioImpl
+		 * @see org.nasdanika.sage.impl.SagePackageImpl#getScenario()
 		 * @generated
 		 */
-		EClass FULFILLMENT = eINSTANCE.getFulfillment();
-
-		/**
-		 * The meta object literal for the '<em><b>Offerings</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FULFILLMENT__OFFERINGS = eINSTANCE.getFulfillment_Offerings();
-
-		/**
-		 * The meta object literal for the '<em><b>Weight</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FULFILLMENT__WEIGHT = eINSTANCE.getFulfillment_Weight();
+		EClass SCENARIO = eINSTANCE.getScenario();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -3125,7 +3109,23 @@ public interface SagePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FULFILLMENT__DESCRIPTION = eINSTANCE.getFulfillment_Description();
+		EAttribute SCENARIO__DESCRIPTION = eINSTANCE.getScenario_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Weight</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCENARIO__WEIGHT = eINSTANCE.getScenario_Weight();
+
+		/**
+		 * The meta object literal for the '<em><b>Offerings</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCENARIO__OFFERINGS = eINSTANCE.getScenario_Offerings();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.sage.impl.DependencyImpl <em>Dependency</em>}' class.

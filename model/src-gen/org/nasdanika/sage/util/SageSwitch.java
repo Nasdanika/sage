@@ -233,9 +233,9 @@ public class SageSwitch<T1> extends Switch<T1> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case SagePackage.FULFILLMENT: {
-			Fulfillment fulfillment = (Fulfillment) theEObject;
-			T1 result = caseFulfillment(fulfillment);
+		case SagePackage.SCENARIO: {
+			Scenario scenario = (Scenario) theEObject;
+			T1 result = caseScenario(scenario);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -496,17 +496,17 @@ public class SageSwitch<T1> extends Switch<T1> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fulfillment</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Scenario</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fulfillment</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Scenario</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseFulfillment(Fulfillment object) {
+	public T1 caseScenario(Scenario object) {
 		return null;
 	}
 

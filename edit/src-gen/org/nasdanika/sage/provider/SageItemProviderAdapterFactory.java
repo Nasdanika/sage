@@ -280,26 +280,26 @@ public class SageItemProviderAdapterFactory extends SageAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.nasdanika.sage.Fulfillment} instances.
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.sage.Scenario} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FulfillmentItemProvider fulfillmentItemProvider;
+	protected ScenarioItemProvider scenarioItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.nasdanika.sage.Fulfillment}.
+	 * This creates an adapter for a {@link org.nasdanika.sage.Scenario}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createFulfillmentAdapter() {
-		if (fulfillmentItemProvider == null) {
-			fulfillmentItemProvider = new FulfillmentItemProvider(this);
+	public Adapter createScenarioAdapter() {
+		if (scenarioItemProvider == null) {
+			scenarioItemProvider = new ScenarioItemProvider(this);
 		}
 
-		return fulfillmentItemProvider;
+		return scenarioItemProvider;
 	}
 
 	/**
@@ -494,8 +494,8 @@ public class SageItemProviderAdapterFactory extends SageAdapterFactory
 			editionItemProvider.dispose();
 		if (releaseItemProvider != null)
 			releaseItemProvider.dispose();
-		if (fulfillmentItemProvider != null)
-			fulfillmentItemProvider.dispose();
+		if (scenarioItemProvider != null)
+			scenarioItemProvider.dispose();
 		if (dependencyItemProvider != null)
 			dependencyItemProvider.dispose();
 		if (enablerItemProvider != null)

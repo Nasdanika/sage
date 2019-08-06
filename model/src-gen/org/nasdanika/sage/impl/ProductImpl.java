@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.nasdanika.sage.Component;
 import org.nasdanika.sage.Edition;
 import org.nasdanika.sage.Feature;
-import org.nasdanika.sage.Fulfillment;
+import org.nasdanika.sage.Scenario;
 import org.nasdanika.sage.Offering;
 import org.nasdanika.sage.Persona;
 import org.nasdanika.sage.Product;
@@ -34,7 +34,7 @@ import org.nasdanika.sage.SagePackage;
  * <ul>
  *   <li>{@link org.nasdanika.sage.impl.ProductImpl#getTargetAudiences <em>Target Audiences</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ProductImpl#getIncludes <em>Includes</em>}</li>
- *   <li>{@link org.nasdanika.sage.impl.ProductImpl#getFulfillments <em>Fulfillments</em>}</li>
+ *   <li>{@link org.nasdanika.sage.impl.ProductImpl#getScenarios <em>Scenarios</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ProductImpl#getFeatures <em>Features</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ProductImpl#getReleases <em>Releases</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ProductImpl#getStage <em>Stage</em>}</li>
@@ -105,9 +105,9 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<Fulfillment> getFulfillments() {
-		return (EList<Fulfillment>) eDynamicGet(SagePackage.PRODUCT__FULFILLMENTS,
-				SagePackage.Literals.OFFERING__FULFILLMENTS, true, true);
+	public EList<Scenario> getScenarios() {
+		return (EList<Scenario>) eDynamicGet(SagePackage.PRODUCT__SCENARIOS, SagePackage.Literals.OFFERING__SCENARIOS,
+				true, true);
 	}
 
 	/**
@@ -189,8 +189,8 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 		switch (featureID) {
 		case SagePackage.PRODUCT__TARGET_AUDIENCES:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTargetAudiences()).basicAdd(otherEnd, msgs);
-		case SagePackage.PRODUCT__FULFILLMENTS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFulfillments()).basicAdd(otherEnd, msgs);
+		case SagePackage.PRODUCT__SCENARIOS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getScenarios()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -205,8 +205,8 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 		switch (featureID) {
 		case SagePackage.PRODUCT__TARGET_AUDIENCES:
 			return ((InternalEList<?>) getTargetAudiences()).basicRemove(otherEnd, msgs);
-		case SagePackage.PRODUCT__FULFILLMENTS:
-			return ((InternalEList<?>) getFulfillments()).basicRemove(otherEnd, msgs);
+		case SagePackage.PRODUCT__SCENARIOS:
+			return ((InternalEList<?>) getScenarios()).basicRemove(otherEnd, msgs);
 		case SagePackage.PRODUCT__FEATURES:
 			return ((InternalEList<?>) getFeatures()).basicRemove(otherEnd, msgs);
 		case SagePackage.PRODUCT__RELEASES:
@@ -231,8 +231,8 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 			return getTargetAudiences();
 		case SagePackage.PRODUCT__INCLUDES:
 			return getIncludes();
-		case SagePackage.PRODUCT__FULFILLMENTS:
-			return getFulfillments();
+		case SagePackage.PRODUCT__SCENARIOS:
+			return getScenarios();
 		case SagePackage.PRODUCT__FEATURES:
 			return getFeatures();
 		case SagePackage.PRODUCT__RELEASES:
@@ -264,9 +264,9 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 			getIncludes().clear();
 			getIncludes().addAll((Collection<? extends Offering>) newValue);
 			return;
-		case SagePackage.PRODUCT__FULFILLMENTS:
-			getFulfillments().clear();
-			getFulfillments().addAll((Collection<? extends Fulfillment>) newValue);
+		case SagePackage.PRODUCT__SCENARIOS:
+			getScenarios().clear();
+			getScenarios().addAll((Collection<? extends Scenario>) newValue);
 			return;
 		case SagePackage.PRODUCT__FEATURES:
 			getFeatures().clear();
@@ -305,8 +305,8 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 		case SagePackage.PRODUCT__INCLUDES:
 			getIncludes().clear();
 			return;
-		case SagePackage.PRODUCT__FULFILLMENTS:
-			getFulfillments().clear();
+		case SagePackage.PRODUCT__SCENARIOS:
+			getScenarios().clear();
 			return;
 		case SagePackage.PRODUCT__FEATURES:
 			getFeatures().clear();
@@ -339,8 +339,8 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 			return !getTargetAudiences().isEmpty();
 		case SagePackage.PRODUCT__INCLUDES:
 			return !getIncludes().isEmpty();
-		case SagePackage.PRODUCT__FULFILLMENTS:
-			return !getFulfillments().isEmpty();
+		case SagePackage.PRODUCT__SCENARIOS:
+			return !getScenarios().isEmpty();
 		case SagePackage.PRODUCT__FEATURES:
 			return !getFeatures().isEmpty();
 		case SagePackage.PRODUCT__RELEASES:
@@ -368,8 +368,8 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 				return SagePackage.OFFERING__TARGET_AUDIENCES;
 			case SagePackage.PRODUCT__INCLUDES:
 				return SagePackage.OFFERING__INCLUDES;
-			case SagePackage.PRODUCT__FULFILLMENTS:
-				return SagePackage.OFFERING__FULFILLMENTS;
+			case SagePackage.PRODUCT__SCENARIOS:
+				return SagePackage.OFFERING__SCENARIOS;
 			default:
 				return -1;
 			}
@@ -390,8 +390,8 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 				return SagePackage.PRODUCT__TARGET_AUDIENCES;
 			case SagePackage.OFFERING__INCLUDES:
 				return SagePackage.PRODUCT__INCLUDES;
-			case SagePackage.OFFERING__FULFILLMENTS:
-				return SagePackage.PRODUCT__FULFILLMENTS;
+			case SagePackage.OFFERING__SCENARIOS:
+				return SagePackage.PRODUCT__SCENARIOS;
 			default:
 				return -1;
 			}

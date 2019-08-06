@@ -177,7 +177,7 @@ public class HierarchicalModelElementItemProvider extends ModelElementItemProvid
 				SageFactory.eINSTANCE.createRelease()));
 
 		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
-				SageFactory.eINSTANCE.createFulfillment()));
+				SageFactory.eINSTANCE.createScenario()));
 
 		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
 				SageFactory.eINSTANCE.createDependency()));

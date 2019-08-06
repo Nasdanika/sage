@@ -74,8 +74,8 @@ public class SageFactoryImpl extends EFactoryImpl implements SageFactory {
 			return createEdition();
 		case SagePackage.RELEASE:
 			return createRelease();
-		case SagePackage.FULFILLMENT:
-			return createFulfillment();
+		case SagePackage.SCENARIO:
+			return createScenario();
 		case SagePackage.DEPENDENCY:
 			return createDependency();
 		case SagePackage.ENABLER:
@@ -230,9 +230,9 @@ public class SageFactoryImpl extends EFactoryImpl implements SageFactory {
 	 * @generated
 	 */
 	@Override
-	public Fulfillment createFulfillment() {
-		FulfillmentImpl fulfillment = new FulfillmentImpl();
-		return fulfillment;
+	public Scenario createScenario() {
+		ScenarioImpl scenario = new ScenarioImpl();
+		return scenario;
 	}
 
 	/**

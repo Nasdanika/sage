@@ -78,7 +78,7 @@ public class NeedItemProvider extends HierarchicalComparableModelElementItemProv
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(SagePackage.Literals.NEED__FULFILLMENTS);
+			childrenFeatures.add(SagePackage.Literals.NEED__SCENARIOS);
 		}
 		return childrenFeatures;
 	}
@@ -144,7 +144,7 @@ public class NeedItemProvider extends HierarchicalComparableModelElementItemProv
 		case SagePackage.NEED__CATEGORY:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case SagePackage.NEED__FULFILLMENTS:
+		case SagePackage.NEED__SCENARIOS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -162,8 +162,8 @@ public class NeedItemProvider extends HierarchicalComparableModelElementItemProv
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(SagePackage.Literals.NEED__FULFILLMENTS,
-				SageFactory.eINSTANCE.createFulfillment()));
+		newChildDescriptors.add(
+				createChildParameter(SagePackage.Literals.NEED__SCENARIOS, SageFactory.eINSTANCE.createScenario()));
 	}
 
 	/**
@@ -178,7 +178,7 @@ public class NeedItemProvider extends HierarchicalComparableModelElementItemProv
 		Object childObject = child;
 
 		boolean qualify = childFeature == SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN
-				|| childFeature == SagePackage.Literals.NEED__FULFILLMENTS;
+				|| childFeature == SagePackage.Literals.NEED__SCENARIOS;
 
 		if (qualify) {
 			return getString("_UI_CreateChild_text2",

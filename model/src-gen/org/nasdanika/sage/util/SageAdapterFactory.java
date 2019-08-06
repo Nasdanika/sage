@@ -142,8 +142,8 @@ public class SageAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseFulfillment(Fulfillment object) {
-			return createFulfillmentAdapter();
+		public Adapter caseScenario(Scenario object) {
+			return createScenarioAdapter();
 		}
 
 		@Override
@@ -391,16 +391,16 @@ public class SageAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.sage.Fulfillment <em>Fulfillment</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.sage.Scenario <em>Scenario</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.nasdanika.sage.Fulfillment
+	 * @see org.nasdanika.sage.Scenario
 	 * @generated
 	 */
-	public Adapter createFulfillmentAdapter() {
+	public Adapter createScenarioAdapter() {
 		return null;
 	}
 

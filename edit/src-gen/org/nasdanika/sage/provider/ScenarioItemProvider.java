@@ -18,17 +18,17 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.nasdanika.emf.edit.NasdanikaItemProviderAdapter;
-import org.nasdanika.sage.Fulfillment;
+import org.nasdanika.sage.Scenario;
 import org.nasdanika.sage.Offering;
 import org.nasdanika.sage.SagePackage;
 
 /**
- * This is the item provider adapter for a {@link org.nasdanika.sage.Fulfillment} object.
+ * This is the item provider adapter for a {@link org.nasdanika.sage.Scenario} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class FulfillmentItemProvider extends NasdanikaItemProviderAdapter implements IEditingDomainItemProvider,
+public class ScenarioItemProvider extends NasdanikaItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -36,7 +36,7 @@ public class FulfillmentItemProvider extends NasdanikaItemProviderAdapter implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FulfillmentItemProvider(AdapterFactory adapterFactory) {
+	public ScenarioItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -51,9 +51,9 @@ public class FulfillmentItemProvider extends NasdanikaItemProviderAdapter implem
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addOfferingsPropertyDescriptor(object);
-			addWeightPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
+			addWeightPropertyDescriptor(object);
+			addOfferingsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -67,10 +67,10 @@ public class FulfillmentItemProvider extends NasdanikaItemProviderAdapter implem
 	protected void addOfferingsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Fulfillment_offerings_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Fulfillment_offerings_feature",
-								"_UI_Fulfillment_type"),
-						SagePackage.Literals.FULFILLMENT__OFFERINGS, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Scenario_offerings_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Scenario_offerings_feature",
+								"_UI_Scenario_type"),
+						SagePackage.Literals.SCENARIO__OFFERINGS, true, false, true, null, null, null));
 	}
 
 	/**
@@ -82,10 +82,10 @@ public class FulfillmentItemProvider extends NasdanikaItemProviderAdapter implem
 	protected void addWeightPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Fulfillment_weight_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Fulfillment_weight_feature",
-								"_UI_Fulfillment_type"),
-						SagePackage.Literals.FULFILLMENT__WEIGHT, true, false, false,
+						getResourceLocator(), getString("_UI_Scenario_weight_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Scenario_weight_feature",
+								"_UI_Scenario_type"),
+						SagePackage.Literals.SCENARIO__WEIGHT, true, false, false,
 						ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
 	}
 
@@ -98,10 +98,10 @@ public class FulfillmentItemProvider extends NasdanikaItemProviderAdapter implem
 	protected void addDescriptionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Fulfillment_description_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Fulfillment_description_feature",
-								"_UI_Fulfillment_type"),
-						SagePackage.Literals.FULFILLMENT__DESCRIPTION, true, true, false,
+						getResourceLocator(), getString("_UI_Scenario_description_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Scenario_description_feature",
+								"_UI_Scenario_type"),
+						SagePackage.Literals.SCENARIO__DESCRIPTION, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -113,7 +113,7 @@ public class FulfillmentItemProvider extends NasdanikaItemProviderAdapter implem
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Fulfillment.png"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Scenario.png"));
 	}
 
 	/**
@@ -134,15 +134,16 @@ public class FulfillmentItemProvider extends NasdanikaItemProviderAdapter implem
 	 */
 	@Override
 	public String getText(Object object) {
-		Fulfillment fulfillment = (Fulfillment) object;
+		Scenario fulfillment = (Scenario) object;
 		StringBuilder labelBuilder = new StringBuilder();
 		for (Offering o : fulfillment.getOfferings()) {
 			if (labelBuilder.length() > 0) {
-				labelBuilder.append(", ");				
+				labelBuilder.append(", ");
 			}
 			labelBuilder.append(o.getName());
 		}
-		return (labelBuilder.length() == 0 ? getLabel(SagePackage.Literals.FULFILLMENT, getString("_UI_Fulfillment_type")) : labelBuilder.toString()) + " (" + fulfillment.getWeight() + ")";
+		return (labelBuilder.length() == 0 ? getLabel(SagePackage.Literals.SCENARIO, getString("_UI_Scenario_type"))
+				: labelBuilder.toString()) + " (" + fulfillment.getWeight() + ")";
 	}
 
 	/**
@@ -156,9 +157,9 @@ public class FulfillmentItemProvider extends NasdanikaItemProviderAdapter implem
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Fulfillment.class)) {
-		case SagePackage.FULFILLMENT__WEIGHT:
-		case SagePackage.FULFILLMENT__DESCRIPTION:
+		switch (notification.getFeatureID(Scenario.class)) {
+		case SagePackage.SCENARIO__DESCRIPTION:
+		case SagePackage.SCENARIO__WEIGHT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

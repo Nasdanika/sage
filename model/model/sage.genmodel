@@ -37,7 +37,7 @@
     <genClasses image="false" ecoreClass="sage.ecore#//Offering">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Offering/targetAudiences"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Offering/includes"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Offering/fulfillments"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Offering/scenarios"/>
     </genClasses>
     <genClasses image="false" ecoreClass="sage.ecore#//ComparableModelElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//ComparableModelElement/weight"/>
@@ -62,7 +62,7 @@
     </genClasses>
     <genClasses ecoreClass="sage.ecore#//Need">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Need/category"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sage.ecore#//Need/fulfillments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sage.ecore#//Need/scenarios"/>
     </genClasses>
     <genClasses ecoreClass="sage.ecore#//Strategy"/>
     <genClasses image="false" ecoreClass="sage.ecore#//AbstractProduct"/>
@@ -94,10 +94,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Release/releaseDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Release/overhead"/>
     </genClasses>
-    <genClasses ecoreClass="sage.ecore#//Fulfillment">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Fulfillment/offerings"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Fulfillment/weight"/>
-      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute sage.ecore#//Fulfillment/description"/>
+    <genClasses ecoreClass="sage.ecore#//Scenario">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Scenario/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Scenario/weight"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Scenario/offerings"/>
     </genClasses>
     <genClasses ecoreClass="sage.ecore#//Dependency">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Dependency/optional"/>

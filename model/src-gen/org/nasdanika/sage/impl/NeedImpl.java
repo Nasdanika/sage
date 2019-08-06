@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.nasdanika.sage.Fulfillment;
+import org.nasdanika.sage.Scenario;
 import org.nasdanika.sage.Need;
 import org.nasdanika.sage.NeedCategory;
 import org.nasdanika.sage.SagePackage;
@@ -23,7 +23,7 @@ import org.nasdanika.sage.SagePackage;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.sage.impl.NeedImpl#getCategory <em>Category</em>}</li>
- *   <li>{@link org.nasdanika.sage.impl.NeedImpl#getFulfillments <em>Fulfillments</em>}</li>
+ *   <li>{@link org.nasdanika.sage.impl.NeedImpl#getScenarios <em>Scenarios</em>}</li>
  * </ul>
  *
  * @generated
@@ -85,9 +85,9 @@ public class NeedImpl extends HierarchicalComparableModelElementImpl<Need> imple
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<Fulfillment> getFulfillments() {
-		return (EList<Fulfillment>) eDynamicGet(SagePackage.NEED__FULFILLMENTS, SagePackage.Literals.NEED__FULFILLMENTS,
-				true, true);
+	public EList<Scenario> getScenarios() {
+		return (EList<Scenario>) eDynamicGet(SagePackage.NEED__SCENARIOS, SagePackage.Literals.NEED__SCENARIOS, true,
+				true);
 	}
 
 	/**
@@ -98,8 +98,8 @@ public class NeedImpl extends HierarchicalComparableModelElementImpl<Need> imple
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case SagePackage.NEED__FULFILLMENTS:
-			return ((InternalEList<?>) getFulfillments()).basicRemove(otherEnd, msgs);
+		case SagePackage.NEED__SCENARIOS:
+			return ((InternalEList<?>) getScenarios()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -114,8 +114,8 @@ public class NeedImpl extends HierarchicalComparableModelElementImpl<Need> imple
 		switch (featureID) {
 		case SagePackage.NEED__CATEGORY:
 			return getCategory();
-		case SagePackage.NEED__FULFILLMENTS:
-			return getFulfillments();
+		case SagePackage.NEED__SCENARIOS:
+			return getScenarios();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -132,9 +132,9 @@ public class NeedImpl extends HierarchicalComparableModelElementImpl<Need> imple
 		case SagePackage.NEED__CATEGORY:
 			setCategory((NeedCategory) newValue);
 			return;
-		case SagePackage.NEED__FULFILLMENTS:
-			getFulfillments().clear();
-			getFulfillments().addAll((Collection<? extends Fulfillment>) newValue);
+		case SagePackage.NEED__SCENARIOS:
+			getScenarios().clear();
+			getScenarios().addAll((Collection<? extends Scenario>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -151,8 +151,8 @@ public class NeedImpl extends HierarchicalComparableModelElementImpl<Need> imple
 		case SagePackage.NEED__CATEGORY:
 			setCategory(CATEGORY_EDEFAULT);
 			return;
-		case SagePackage.NEED__FULFILLMENTS:
-			getFulfillments().clear();
+		case SagePackage.NEED__SCENARIOS:
+			getScenarios().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -168,8 +168,8 @@ public class NeedImpl extends HierarchicalComparableModelElementImpl<Need> imple
 		switch (featureID) {
 		case SagePackage.NEED__CATEGORY:
 			return getCategory() != CATEGORY_EDEFAULT;
-		case SagePackage.NEED__FULFILLMENTS:
-			return !getFulfillments().isEmpty();
+		case SagePackage.NEED__SCENARIOS:
+			return !getScenarios().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

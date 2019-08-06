@@ -103,13 +103,13 @@ public interface SageFactory extends EFactory {
 	Release createRelease();
 
 	/**
-	 * Returns a new object of class '<em>Fulfillment</em>'.
+	 * Returns a new object of class '<em>Scenario</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fulfillment</em>'.
+	 * @return a new object of class '<em>Scenario</em>'.
 	 * @generated
 	 */
-	Fulfillment createFulfillment();
+	Scenario createScenario();
 
 	/**
 	 * Returns a new object of class '<em>Dependency</em>'.

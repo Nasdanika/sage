@@ -15,7 +15,7 @@ import org.nasdanika.sage.Edition;
 import org.nasdanika.sage.Enabler;
 import org.nasdanika.sage.Feature;
 import org.nasdanika.sage.FeatureState;
-import org.nasdanika.sage.Fulfillment;
+import org.nasdanika.sage.Scenario;
 import org.nasdanika.sage.Offering;
 import org.nasdanika.sage.Persona;
 import org.nasdanika.sage.Release;
@@ -31,7 +31,7 @@ import org.nasdanika.sage.SagePackage;
  * <ul>
  *   <li>{@link org.nasdanika.sage.impl.FeatureImpl#getTargetAudiences <em>Target Audiences</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.FeatureImpl#getIncludes <em>Includes</em>}</li>
- *   <li>{@link org.nasdanika.sage.impl.FeatureImpl#getFulfillments <em>Fulfillments</em>}</li>
+ *   <li>{@link org.nasdanika.sage.impl.FeatureImpl#getScenarios <em>Scenarios</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.FeatureImpl#getDependencies <em>Dependencies</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.FeatureImpl#getEnablers <em>Enablers</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.FeatureImpl#getSize <em>Size</em>}</li>
@@ -123,9 +123,9 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<Fulfillment> getFulfillments() {
-		return (EList<Fulfillment>) eDynamicGet(SagePackage.FEATURE__FULFILLMENTS,
-				SagePackage.Literals.OFFERING__FULFILLMENTS, true, true);
+	public EList<Scenario> getScenarios() {
+		return (EList<Scenario>) eDynamicGet(SagePackage.FEATURE__SCENARIOS, SagePackage.Literals.OFFERING__SCENARIOS,
+				true, true);
 	}
 
 	/**
@@ -286,8 +286,8 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 		switch (featureID) {
 		case SagePackage.FEATURE__TARGET_AUDIENCES:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTargetAudiences()).basicAdd(otherEnd, msgs);
-		case SagePackage.FEATURE__FULFILLMENTS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFulfillments()).basicAdd(otherEnd, msgs);
+		case SagePackage.FEATURE__SCENARIOS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getScenarios()).basicAdd(otherEnd, msgs);
 		case SagePackage.FEATURE__RELEASE:
 			Release release = basicGetRelease();
 			if (release != null)
@@ -310,8 +310,8 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 		switch (featureID) {
 		case SagePackage.FEATURE__TARGET_AUDIENCES:
 			return ((InternalEList<?>) getTargetAudiences()).basicRemove(otherEnd, msgs);
-		case SagePackage.FEATURE__FULFILLMENTS:
-			return ((InternalEList<?>) getFulfillments()).basicRemove(otherEnd, msgs);
+		case SagePackage.FEATURE__SCENARIOS:
+			return ((InternalEList<?>) getScenarios()).basicRemove(otherEnd, msgs);
 		case SagePackage.FEATURE__DEPENDENCIES:
 			return ((InternalEList<?>) getDependencies()).basicRemove(otherEnd, msgs);
 		case SagePackage.FEATURE__ENABLERS:
@@ -336,8 +336,8 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 			return getTargetAudiences();
 		case SagePackage.FEATURE__INCLUDES:
 			return getIncludes();
-		case SagePackage.FEATURE__FULFILLMENTS:
-			return getFulfillments();
+		case SagePackage.FEATURE__SCENARIOS:
+			return getScenarios();
 		case SagePackage.FEATURE__DEPENDENCIES:
 			return getDependencies();
 		case SagePackage.FEATURE__ENABLERS:
@@ -377,9 +377,9 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 			getIncludes().clear();
 			getIncludes().addAll((Collection<? extends Offering>) newValue);
 			return;
-		case SagePackage.FEATURE__FULFILLMENTS:
-			getFulfillments().clear();
-			getFulfillments().addAll((Collection<? extends Fulfillment>) newValue);
+		case SagePackage.FEATURE__SCENARIOS:
+			getScenarios().clear();
+			getScenarios().addAll((Collection<? extends Scenario>) newValue);
 			return;
 		case SagePackage.FEATURE__DEPENDENCIES:
 			getDependencies().clear();
@@ -427,8 +427,8 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 		case SagePackage.FEATURE__INCLUDES:
 			getIncludes().clear();
 			return;
-		case SagePackage.FEATURE__FULFILLMENTS:
-			getFulfillments().clear();
+		case SagePackage.FEATURE__SCENARIOS:
+			getScenarios().clear();
 			return;
 		case SagePackage.FEATURE__DEPENDENCIES:
 			getDependencies().clear();
@@ -470,8 +470,8 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 			return !getTargetAudiences().isEmpty();
 		case SagePackage.FEATURE__INCLUDES:
 			return !getIncludes().isEmpty();
-		case SagePackage.FEATURE__FULFILLMENTS:
-			return !getFulfillments().isEmpty();
+		case SagePackage.FEATURE__SCENARIOS:
+			return !getScenarios().isEmpty();
 		case SagePackage.FEATURE__DEPENDENCIES:
 			return !getDependencies().isEmpty();
 		case SagePackage.FEATURE__ENABLERS:
@@ -505,8 +505,8 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 				return SagePackage.OFFERING__TARGET_AUDIENCES;
 			case SagePackage.FEATURE__INCLUDES:
 				return SagePackage.OFFERING__INCLUDES;
-			case SagePackage.FEATURE__FULFILLMENTS:
-				return SagePackage.OFFERING__FULFILLMENTS;
+			case SagePackage.FEATURE__SCENARIOS:
+				return SagePackage.OFFERING__SCENARIOS;
 			default:
 				return -1;
 			}
@@ -527,8 +527,8 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 				return SagePackage.FEATURE__TARGET_AUDIENCES;
 			case SagePackage.OFFERING__INCLUDES:
 				return SagePackage.FEATURE__INCLUDES;
-			case SagePackage.OFFERING__FULFILLMENTS:
-				return SagePackage.FEATURE__FULFILLMENTS;
+			case SagePackage.OFFERING__SCENARIOS:
+				return SagePackage.FEATURE__SCENARIOS;
 			default:
 				return -1;
 			}

@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.sage.Need#getCategory <em>Category</em>}</li>
- *   <li>{@link org.nasdanika.sage.Need#getFulfillments <em>Fulfillments</em>}</li>
+ *   <li>{@link org.nasdanika.sage.Need#getScenarios <em>Scenarios</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.sage.SagePackage#getNeed()
@@ -63,17 +63,17 @@ public interface Need extends HierarchicalComparableModelElement<Need> {
 	void setCategory(NeedCategory value);
 
 	/**
-	 * Returns the value of the '<em><b>Fulfillments</b></em>' containment reference list.
-	 * The list contents are of type {@link org.nasdanika.sage.Fulfillment}.
+	 * Returns the value of the '<em><b>Scenarios</b></em>' containment reference list.
+	 * The list contents are of type {@link org.nasdanika.sage.Scenario}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Mappings to features fulfilling this need.
+	 * Scenarios demonstrating how this need is fulfilled by offerings.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Fulfillments</em>' containment reference list.
-	 * @see org.nasdanika.sage.SagePackage#getNeed_Fulfillments()
+	 * @return the value of the '<em>Scenarios</em>' containment reference list.
+	 * @see org.nasdanika.sage.SagePackage#getNeed_Scenarios()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Fulfillment> getFulfillments();
+	EList<Scenario> getScenarios();
 } // Need

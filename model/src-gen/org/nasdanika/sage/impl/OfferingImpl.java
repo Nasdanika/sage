@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.nasdanika.sage.Fulfillment;
+import org.nasdanika.sage.Scenario;
 import org.nasdanika.sage.Offering;
 import org.nasdanika.sage.Persona;
 import org.nasdanika.sage.SagePackage;
@@ -28,7 +28,7 @@ import org.nasdanika.sage.SagePackage;
  * <ul>
  *   <li>{@link org.nasdanika.sage.impl.OfferingImpl#getTargetAudiences <em>Target Audiences</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.OfferingImpl#getIncludes <em>Includes</em>}</li>
- *   <li>{@link org.nasdanika.sage.impl.OfferingImpl#getFulfillments <em>Fulfillments</em>}</li>
+ *   <li>{@link org.nasdanika.sage.impl.OfferingImpl#getScenarios <em>Scenarios</em>}</li>
  * </ul>
  *
  * @generated
@@ -84,9 +84,9 @@ public abstract class OfferingImpl extends ModelElementImpl implements Offering 
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<Fulfillment> getFulfillments() {
-		return (EList<Fulfillment>) eDynamicGet(SagePackage.OFFERING__FULFILLMENTS,
-				SagePackage.Literals.OFFERING__FULFILLMENTS, true, true);
+	public EList<Scenario> getScenarios() {
+		return (EList<Scenario>) eDynamicGet(SagePackage.OFFERING__SCENARIOS, SagePackage.Literals.OFFERING__SCENARIOS,
+				true, true);
 	}
 
 	/**
@@ -100,8 +100,8 @@ public abstract class OfferingImpl extends ModelElementImpl implements Offering 
 		switch (featureID) {
 		case SagePackage.OFFERING__TARGET_AUDIENCES:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTargetAudiences()).basicAdd(otherEnd, msgs);
-		case SagePackage.OFFERING__FULFILLMENTS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFulfillments()).basicAdd(otherEnd, msgs);
+		case SagePackage.OFFERING__SCENARIOS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getScenarios()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -116,8 +116,8 @@ public abstract class OfferingImpl extends ModelElementImpl implements Offering 
 		switch (featureID) {
 		case SagePackage.OFFERING__TARGET_AUDIENCES:
 			return ((InternalEList<?>) getTargetAudiences()).basicRemove(otherEnd, msgs);
-		case SagePackage.OFFERING__FULFILLMENTS:
-			return ((InternalEList<?>) getFulfillments()).basicRemove(otherEnd, msgs);
+		case SagePackage.OFFERING__SCENARIOS:
+			return ((InternalEList<?>) getScenarios()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -134,8 +134,8 @@ public abstract class OfferingImpl extends ModelElementImpl implements Offering 
 			return getTargetAudiences();
 		case SagePackage.OFFERING__INCLUDES:
 			return getIncludes();
-		case SagePackage.OFFERING__FULFILLMENTS:
-			return getFulfillments();
+		case SagePackage.OFFERING__SCENARIOS:
+			return getScenarios();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,9 +157,9 @@ public abstract class OfferingImpl extends ModelElementImpl implements Offering 
 			getIncludes().clear();
 			getIncludes().addAll((Collection<? extends Offering>) newValue);
 			return;
-		case SagePackage.OFFERING__FULFILLMENTS:
-			getFulfillments().clear();
-			getFulfillments().addAll((Collection<? extends Fulfillment>) newValue);
+		case SagePackage.OFFERING__SCENARIOS:
+			getScenarios().clear();
+			getScenarios().addAll((Collection<? extends Scenario>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -179,8 +179,8 @@ public abstract class OfferingImpl extends ModelElementImpl implements Offering 
 		case SagePackage.OFFERING__INCLUDES:
 			getIncludes().clear();
 			return;
-		case SagePackage.OFFERING__FULFILLMENTS:
-			getFulfillments().clear();
+		case SagePackage.OFFERING__SCENARIOS:
+			getScenarios().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -198,8 +198,8 @@ public abstract class OfferingImpl extends ModelElementImpl implements Offering 
 			return !getTargetAudiences().isEmpty();
 		case SagePackage.OFFERING__INCLUDES:
 			return !getIncludes().isEmpty();
-		case SagePackage.OFFERING__FULFILLMENTS:
-			return !getFulfillments().isEmpty();
+		case SagePackage.OFFERING__SCENARIOS:
+			return !getScenarios().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
