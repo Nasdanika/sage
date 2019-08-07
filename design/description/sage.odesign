@@ -1,5 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" name="sage" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" name="sage" version="12.0.0.2017041100">
+  <ownedViewpoints name="SageViewpoint" label="Sage" modelFileExtension="sage">
+    <ownedRepresentations xsi:type="description_1:TreeDescription" name="OrgTree" label="Organization Tree" domainClass="sage::Organization">
+      <subItemMappings name="RootOrg" label="Root Organization" domainClass="sage::Organization" semanticCandidatesExpression="var:self">
+        <defaultStyle>
+          <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+        </defaultStyle>
+        <subItemMappings name="OrgTreeNode" label="Organization" domainClass="sage::Organization" semanticCandidatesExpression="feature:eContents" reusedTreeItemMappings="//@ownedViewpoints[name='SageViewpoint']/@ownedRepresentations[name='OrgTree']/@subItemMappings[name='RootOrg']/@subItemMappings[name='OrgTreeNode'] //@ownedViewpoints[name='SageViewpoint']/@ownedRepresentations[name='OrgTree']/@subItemMappings[name='RootOrg']/@subItemMappings[name='PersonaTreeNode'] //@ownedViewpoints[name='SageViewpoint']/@ownedRepresentations[name='OrgTree']/@subItemMappings[name='RootOrg']/@subItemMappings[name='PortfolioTreeNode'] //@ownedViewpoints[name='SageViewpoint']/@ownedRepresentations[name='OrgTree']/@subItemMappings[name='RootOrg']/@subItemMappings[name='ProductTreeNode'] //@ownedViewpoints[name='SageViewpoint']/@ownedRepresentations[name='OrgTree']/@subItemMappings[name='RootOrg']/@subItemMappings[name='StrategyTreeNode']">
+          <defaultStyle>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </defaultStyle>
+          <create name="CreateOrganizationTool" label="Create Organization" mapping="//@ownedViewpoints[name='SageViewpoint']/@ownedRepresentations[name='OrgTree']/@subItemMappings[name='RootOrg']/@subItemMappings[name='OrgTreeNode']">
+            <firstModelOperation xsi:type="tool:CreateInstance" typeName="sage::Organization" referenceName="children"/>
+            <variables name="root" documentation="The semantic element of the tree."/>
+            <variables name="element" documentation="The currently edited element."/>
+            <variables name="container" documentation="The semantic element corresponding to the view container."/>
+          </create>
+          <create name="CreatePersonaTool" label="Create Persona" mapping="//@ownedViewpoints[name='SageViewpoint']/@ownedRepresentations[name='OrgTree']/@subItemMappings[name='RootOrg']/@subItemMappings[name='PersonaTreeNode']">
+            <firstModelOperation xsi:type="tool:CreateInstance" typeName="sage::Persona" referenceName="personas"/>
+            <variables name="root" documentation="The semantic element of the tree."/>
+            <variables name="element" documentation="The currently edited element."/>
+            <variables name="container" documentation="The semantic element corresponding to the view container."/>
+          </create>
+          <create name="CreatePortfolioTool" label="Create Portfolio" mapping="//@ownedViewpoints[name='SageViewpoint']/@ownedRepresentations[name='OrgTree']/@subItemMappings[name='RootOrg']/@subItemMappings[name='PortfolioTreeNode']">
+            <firstModelOperation xsi:type="tool:CreateInstance" typeName="sage::Portfolio" referenceName="products"/>
+            <variables name="root" documentation="The semantic element of the tree."/>
+            <variables name="element" documentation="The currently edited element."/>
+            <variables name="container" documentation="The semantic element corresponding to the view container."/>
+          </create>
+          <create name="CreateProductTool" label="Create Product" mapping="//@ownedViewpoints[name='SageViewpoint']/@ownedRepresentations[name='OrgTree']/@subItemMappings[name='RootOrg']/@subItemMappings[name='ProductTreeNode']">
+            <firstModelOperation xsi:type="tool:CreateInstance" typeName="sage::Product" referenceName="products"/>
+            <variables name="root" documentation="The semantic element of the tree."/>
+            <variables name="element" documentation="The currently edited element."/>
+            <variables name="container" documentation="The semantic element corresponding to the view container."/>
+          </create>
+          <create name="CreateStrategyTool" label="Create Strategy" mapping="//@ownedViewpoints[name='SageViewpoint']/@ownedRepresentations[name='OrgTree']/@subItemMappings[name='RootOrg']/@subItemMappings[name='StrategyTreeNode']">
+            <firstModelOperation xsi:type="tool:CreateInstance" typeName="sage::Strategy" referenceName="strategies"/>
+            <variables name="root" documentation="The semantic element of the tree."/>
+            <variables name="element" documentation="The currently edited element."/>
+            <variables name="container" documentation="The semantic element corresponding to the view container."/>
+          </create>
+        </subItemMappings>
+        <subItemMappings name="PortfolioTreeNode" label="Portfolio" domainClass="sage::Portfolio" semanticCandidatesExpression="feature:eContents" reusedTreeItemMappings="//@ownedViewpoints[name='SageViewpoint']/@ownedRepresentations[name='OrgTree']/@subItemMappings[name='RootOrg']/@subItemMappings[name='PortfolioTreeNode'] //@ownedViewpoints[name='SageViewpoint']/@ownedRepresentations[name='OrgTree']/@subItemMappings[name='RootOrg']/@subItemMappings[name='ProductTreeNode']">
+          <defaultStyle>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </defaultStyle>
+          <create name="CreatePortfolioTool" label="Create Portfolio" mapping="//@ownedViewpoints[name='SageViewpoint']/@ownedRepresentations[name='OrgTree']/@subItemMappings[name='RootOrg']/@subItemMappings[name='PortfolioTreeNode']">
+            <firstModelOperation xsi:type="tool:CreateInstance" typeName="sage::Porfolio" referenceName="children"/>
+            <variables name="root" documentation="The semantic element of the tree."/>
+            <variables name="element" documentation="The currently edited element."/>
+            <variables name="container" documentation="The semantic element corresponding to the view container."/>
+          </create>
+          <create name="CreateProductTool" label="Create Product" mapping="//@ownedViewpoints[name='SageViewpoint']/@ownedRepresentations[name='OrgTree']/@subItemMappings[name='RootOrg']/@subItemMappings[name='ProductTreeNode']">
+            <firstModelOperation xsi:type="tool:CreateInstance" typeName="sage::Product" referenceName="children"/>
+            <variables name="root" documentation="The semantic element of the tree."/>
+            <variables name="element" documentation="The currently edited element."/>
+            <variables name="container" documentation="The semantic element corresponding to the view container."/>
+          </create>
+        </subItemMappings>
+        <subItemMappings name="ProductTreeNode" label="Product" domainClass="sage::Product" semanticCandidatesExpression="feature:eContents">
+          <defaultStyle>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </defaultStyle>
+          <subItemMappings name="ComponentTreeNode" label="Component" domainClass="sage::Component" semanticCandidatesExpression="feature:eContents" reusedTreeItemMappings="//@ownedViewpoints[name='SageViewpoint']/@ownedRepresentations[name='OrgTree']/@subItemMappings[name='RootOrg']/@subItemMappings[name='ProductTreeNode']/@subItemMappings[name='ComponentTreeNode']">
+            <defaultStyle>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </defaultStyle>
+          </subItemMappings>
+          <subItemMappings name="EditionTreeNode" label="Edition" domainClass="sage::Edition" semanticCandidatesExpression="feature:eContents">
+            <defaultStyle>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </defaultStyle>
+          </subItemMappings>
+          <subItemMappings name="FeatureTreeNode" label="Feature" domainClass="sage::Feature" semanticCandidatesExpression="feature:eContents" reusedTreeItemMappings="//@ownedViewpoints[name='SageViewpoint']/@ownedRepresentations[name='OrgTree']/@subItemMappings[name='RootOrg']/@subItemMappings[name='ProductTreeNode']/@subItemMappings[name='FeatureTreeNode']">
+            <defaultStyle>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </defaultStyle>
+            <subItemMappings name="EnablerTreeNode" label="Enabler" domainClass="sage::Enabler" semanticCandidatesExpression="feature:eContents">
+              <defaultStyle>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </defaultStyle>
+            </subItemMappings>
+            <subItemMappings name="DependencyTreeNode" label="Dependency" domainClass="sage::Dependency" semanticCandidatesExpression="feature:eContents">
+              <defaultStyle>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </defaultStyle>
+            </subItemMappings>
+          </subItemMappings>
+          <subItemMappings name="ReleaseTreeNode" label="Release" domainClass="sage::Release" semanticCandidatesExpression="feature:eContents">
+            <defaultStyle>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </defaultStyle>
+          </subItemMappings>
+        </subItemMappings>
+        <subItemMappings name="PersonaTreeNode" label="Persona" domainClass="sage::Persona" semanticCandidatesExpression="feature:eContents">
+          <defaultStyle>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </defaultStyle>
+          <subItemMappings name="NeedTreeNode" label="Need" domainClass="sage::Need" semanticCandidatesExpression="feature:eContents">
+            <defaultStyle>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </defaultStyle>
+            <subItemMappings name="ScenarioTreeNode" label="Scenario" domainClass="sage::Scenario" semanticCandidatesExpression="feature:eContents">
+              <defaultStyle>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </defaultStyle>
+            </subItemMappings>
+          </subItemMappings>
+        </subItemMappings>
+        <subItemMappings name="StrategyTreeNode" label="Strategy" domainClass="sage::Strategy" semanticCandidatesExpression="feature:eContents">
+          <defaultStyle>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </defaultStyle>
+        </subItemMappings>
+        <create name="CreateOrganizationTool" label="Create Organization" mapping="//@ownedViewpoints[name='SageViewpoint']/@ownedRepresentations[name='OrgTree']/@subItemMappings[name='RootOrg']/@subItemMappings[name='OrgTreeNode']">
+          <firstModelOperation xsi:type="tool:CreateInstance" typeName="sage::Organization" referenceName="children"/>
+          <variables name="root" documentation="The semantic element of the tree."/>
+          <variables name="element" documentation="The currently edited element."/>
+          <variables name="container" documentation="The semantic element corresponding to the view container."/>
+        </create>
+        <create name="CreatePersonaTool" label="Create Persona" mapping="//@ownedViewpoints[name='SageViewpoint']/@ownedRepresentations[name='OrgTree']/@subItemMappings[name='RootOrg']/@subItemMappings[name='PersonaTreeNode']">
+          <firstModelOperation xsi:type="tool:CreateInstance" typeName="sage::Persona" referenceName="personas"/>
+          <variables name="root" documentation="The semantic element of the tree."/>
+          <variables name="element" documentation="The currently edited element."/>
+          <variables name="container" documentation="The semantic element corresponding to the view container."/>
+        </create>
+        <create name="CreatePortfolioTool" label="Create Portfolio" mapping="//@ownedViewpoints[name='SageViewpoint']/@ownedRepresentations[name='OrgTree']/@subItemMappings[name='RootOrg']/@subItemMappings[name='PortfolioTreeNode']">
+          <firstModelOperation xsi:type="tool:CreateInstance" typeName="sage::Portfolio" referenceName="products"/>
+          <variables name="root" documentation="The semantic element of the tree."/>
+          <variables name="element" documentation="The currently edited element."/>
+          <variables name="container" documentation="The semantic element corresponding to the view container."/>
+        </create>
+        <create name="CreateProductTool" label="Create Product" mapping="//@ownedViewpoints[name='SageViewpoint']/@ownedRepresentations[name='OrgTree']/@subItemMappings[name='RootOrg']/@subItemMappings[name='ProductTreeNode']">
+          <firstModelOperation xsi:type="tool:CreateInstance" typeName="sage::Product" referenceName="products"/>
+          <variables name="root" documentation="The semantic element of the tree."/>
+          <variables name="element" documentation="The currently edited element."/>
+          <variables name="container" documentation="The semantic element corresponding to the view container."/>
+        </create>
+        <create name="CreateStrategyTool" label="Create Strategy" mapping="//@ownedViewpoints[name='SageViewpoint']/@ownedRepresentations[name='OrgTree']/@subItemMappings[name='RootOrg']/@subItemMappings[name='StrategyTreeNode']">
+          <firstModelOperation xsi:type="tool:CreateInstance" typeName="sage::Strategy" referenceName="strategies"/>
+          <variables name="root" documentation="The semantic element of the tree."/>
+          <variables name="element" documentation="The currently edited element."/>
+          <variables name="container" documentation="The semantic element corresponding to the view container."/>
+        </create>
+      </subItemMappings>
+    </ownedRepresentations>
+  </ownedViewpoints>
   <extensions xsi:type="properties:ViewExtensionDescription" name="sage_rules_properties">
     <metamodels href="urn:org.nasdanika.sage#/"/>
     <categories name="Default">

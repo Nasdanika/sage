@@ -17,6 +17,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.nasdanika.sage.Component;
 import org.nasdanika.sage.Feature;
+import org.nasdanika.sage.FeatureState;
 import org.nasdanika.sage.Product;
 import org.nasdanika.sage.SageFactory;
 import org.nasdanika.sage.SagePackage;
@@ -282,7 +283,7 @@ public class FeatureItemProvider extends HierarchicalModelElementItemProvider {
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Feature.png"));
+		return overlayImage(object, getResourceLocator().getImage(((Feature) object).getState() == FeatureState.DONE ? "full/obj16/Feature.png" : "full/obj16/Feature_not_done.png"));
 	}
 
 	/**
