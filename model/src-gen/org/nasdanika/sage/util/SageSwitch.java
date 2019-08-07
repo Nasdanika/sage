@@ -237,6 +237,10 @@ public class SageSwitch<T1> extends Switch<T1> {
 			Scenario scenario = (Scenario) theEObject;
 			T1 result = caseScenario(scenario);
 			if (result == null)
+				result = caseComparableModelElement(scenario);
+			if (result == null)
+				result = caseModelElement(scenario);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}

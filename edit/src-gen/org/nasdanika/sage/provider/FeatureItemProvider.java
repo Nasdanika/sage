@@ -283,7 +283,10 @@ public class FeatureItemProvider extends HierarchicalModelElementItemProvider {
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage(((Feature) object).getState() == FeatureState.DONE ? "full/obj16/Feature.png" : "full/obj16/Feature_not_done.png"));
+		return overlayImage(object,
+				getResourceLocator()
+						.getImage(((Feature) object).getState() == FeatureState.DONE ? "full/obj16/Feature.png"
+								: "full/obj16/Feature_not_done.png"));
 	}
 
 	/**

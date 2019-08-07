@@ -144,7 +144,8 @@ public class ReleaseItemProvider extends ModelElementItemProvider {
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage(((Release) object).isReleased() ? "full/obj16/Released.png" : "full/obj16/Release.png"));
+		return overlayImage(object, getResourceLocator()
+				.getImage(((Release) object).isReleased() ? "full/obj16/Released.png" : "full/obj16/Release.png"));
 	}
 
 	/**

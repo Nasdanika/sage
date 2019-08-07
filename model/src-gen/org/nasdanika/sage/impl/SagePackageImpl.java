@@ -798,28 +798,8 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getScenario_Description() {
-		return (EAttribute) scenarioEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getScenario_Weight() {
-		return (EAttribute) scenarioEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getScenario_Offerings() {
-		return (EReference) scenarioEClass.getEStructuralFeatures().get(2);
+		return (EReference) scenarioEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1060,8 +1040,6 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		createEAttribute(releaseEClass, RELEASE__OVERHEAD);
 
 		scenarioEClass = createEClass(SCENARIO);
-		createEAttribute(scenarioEClass, SCENARIO__DESCRIPTION);
-		createEAttribute(scenarioEClass, SCENARIO__WEIGHT);
 		createEReference(scenarioEClass, SCENARIO__OFFERINGS);
 
 		dependencyEClass = createEClass(DEPENDENCY);
@@ -1155,6 +1133,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		featureEClass.getEGenericSuperTypes().add(g1);
 		editionEClass.getESuperTypes().add(this.getOffering());
 		releaseEClass.getESuperTypes().add(this.getModelElement());
+		scenarioEClass.getESuperTypes().add(this.getComparableModelElement());
 		g1 = createEGenericType(this.getHierarchicalModelElement());
 		g2 = createEGenericType(this.getComponent());
 		g1.getETypeArguments().add(g2);
@@ -1306,10 +1285,6 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 
 		initEClass(scenarioEClass, Scenario.class, "Scenario", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getScenario_Description(), ecorePackage.getEString(), "description", null, 0, 1, Scenario.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getScenario_Weight(), ecorePackage.getEDouble(), "weight", "1.0", 0, 1, Scenario.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScenario_Offerings(), this.getOffering(), this.getOffering_Scenarios(), "offerings", null, 0,
 				-1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1485,10 +1460,6 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 				new String[] { "documentation", "Unexpected needs - \"I didn\'t know I wanted it, but I like it!\"." });
 		addAnnotation(scenarioEClass, source, new String[] { "documentation",
 				"Scenario demonstrates how offerings fulfill a need. Multiple offerings may particpate in need fulfillment scenario. \nScenario weight reflects importance of a particular scenario in fulfilling the need comparing to the other scenarios.\nIf there is more than one offering in a scenario, then the weight is distributed evenly between the participating offerings." });
-		addAnnotation(getScenario_Description(), source,
-				new String[] { "documentation", "Scenario description in markdown." });
-		addAnnotation(getScenario_Weight(), source, new String[] { "documentation",
-				"Scenario weight represents importance of a given scenario comparing to the other \"sibling\" scenarios." });
 		addAnnotation(getScenario_Offerings(), source,
 				new String[] { "documentation", "Feature fulfilling the need." });
 		addAnnotation(dependencyEClass, source, new String[] { "documentation",
@@ -1675,11 +1646,6 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		addAnnotation(scenarioEClass, source, new String[] { "label_ru",
 				"\u0421\u0446\u0435\u043d\u0430\u0440\u0438\u0439", "documentation_ru",
 				"TODO - \u043e\u0431\u043d\u043e\u0432\u0438\u0442\u044c \u043f\u0435\u0440\u0435\u0432\u043e\u0434.\n\n\u0423\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c \u043e\u0442\u0440\u0430\u0436\u0430\u0435\u0442 \u043f\u043e\u043b\u043d\u043e\u0442\u0443/\u0441\u0442\u0435\u043f\u0435\u043d\u044c \u0443\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u0435\u043d\u0438\u044f \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u0435\u0439. \u0422\u043e \u0435\u0441\u0442\u044c: \u0441\u0432\u044f\u0437\u044c \u043c\u0435\u0436\u0434\u0443 \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u044c\u044e \u0438 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u043e\u043c \u0438\u043b\u0438 \u0444\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u043c \u0431\u043b\u043e\u043a\u043e\u043c \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u0430 \u0443\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u044f\u044e\u0449\u0438\u043c \u044d\u0442\u0443 \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u044c. \n\n\u041f\u043e\u043b\u043d\u043e\u0442\u0430 \u0443\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u0435\u043d\u0438\u044f \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u0435\u0439 \u043f\u043e\u0437\u0432\u043e\u043b\u044f\u0435\u0442 \u0441\u0443\u0434\u0438\u0442\u044c: \u0432 \u043a\u0430\u043a\u043e\u0439 \u0441\u0442\u0435\u043f\u0435\u043d\u0438 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u044b\u0439 \u0444\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u0431\u043b\u043e\u043a \u0443\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u044f\u0435\u0442 \u043a\u043e\u043d\u043a\u0440\u0435\u0442\u043d\u0443\u044e \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u044c \u043f\u043e \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044e \u0441 \u0434\u0440\u0443\u0433\u0438\u043c\u0438 \u0444\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u043c\u0438 \u0431\u043b\u043e\u043a\u0430\u043c\u0438, \u0443\u0447\u0430\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u043c\u0438 \u0432 \u0443\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u0435\u043d\u0438\u0438 \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u0438.\n" });
-		addAnnotation(getScenario_Description(), source, new String[] { "label_ru",
-				"\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435", "documentation_ru",
-				"\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435 \u0442\u043e\u0433\u043e, \u043a\u0430\u043a\u0438\u043c \u043e\u0431\u0440\u0430\u0437\u043e\u043c \u0444\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u0431\u043b\u043e\u043a \u0443\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u044f\u0435\u0442 \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u044c. (\u0441 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435\u043c \u0441\u0438\u043d\u0442\u0430\u043a\u0441\u0438\u0441\u0430 \u041c\u0430\u0440\u043a\u0434\u0430\u0443\u043d)" });
-		addAnnotation(getScenario_Weight(), source, new String[] { "label_ru", "\u0412\u0435\u0441", "documentation_ru",
-				"\u0412\u0435\u0441 - \u043e\u0442\u0440\u0430\u0436\u0430\u0435\u0442 \u0441\u0442\u0435\u043f\u0435\u043d\u044c \u0443\u0447\u0430\u0441\u0442\u0438\u044f \u043e\u0446\u0435\u043d\u0438\u0432\u0430\u0435\u043c\u043e\u0433\u043e \u0444\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u0431\u043b\u043e\u043a\u0430 \u0432 \u0443\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u0435\u043d\u0438\u0438 \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u0438 \u043f\u043e \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044e \u0441 \u0434\u0440\u0443\u0433\u0438\u043c\u0438 \u0444\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u043c\u0438 \u0431\u043b\u043e\u043a\u0430\u043c\u0438, \u0443\u0434\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u044f\u044e\u0449\u0438\u043c\u0438 \u044d\u0442\u0443 \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u044c.\n" });
 		addAnnotation(getScenario_Offerings(), source, new String[] { "label_ru",
 				"\u041f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u044f", "documentation_ru",
 				"\u041f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u0438\u044f \u0443\u0447\u0430\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u0435 \u0432 \u0441\u0446\u0435\u043d\u0430\u0440\u0438\u0438 \u0443\u0432\u043e\u0432\u043b\u0435\u0442\u0432\u043e\u0440\u0435\u043d\u0438\u044f \u043f\u043e\u0442\u0440\u0435\u0431\u043d\u043e\u0441\u0442\u0438. " });

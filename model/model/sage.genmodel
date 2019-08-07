@@ -95,8 +95,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Release/overhead"/>
     </genClasses>
     <genClasses ecoreClass="sage.ecore#//Scenario">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Scenario/description"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sage.ecore#//Scenario/weight"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sage.ecore#//Scenario/offerings"/>
     </genClasses>
     <genClasses ecoreClass="sage.ecore#//Dependency">

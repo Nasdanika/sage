@@ -1592,13 +1592,40 @@ public interface SagePackage extends EPackage {
 	int SCENARIO = 15;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__NAME = COMPARABLE_MODEL_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__URL = COMPARABLE_MODEL_ELEMENT__URL;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__DESCRIPTION = 0;
+	int SCENARIO__DESCRIPTION = COMPARABLE_MODEL_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__CONFIGURATION = COMPARABLE_MODEL_ELEMENT__CONFIGURATION;
 
 	/**
 	 * The feature id for the '<em><b>Weight</b></em>' attribute.
@@ -1607,7 +1634,16 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__WEIGHT = 1;
+	int SCENARIO__WEIGHT = COMPARABLE_MODEL_ELEMENT__WEIGHT;
+
+	/**
+	 * The feature id for the '<em><b>Effective Weight</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__EFFECTIVE_WEIGHT = COMPARABLE_MODEL_ELEMENT__EFFECTIVE_WEIGHT;
 
 	/**
 	 * The feature id for the '<em><b>Offerings</b></em>' reference list.
@@ -1616,7 +1652,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__OFFERINGS = 2;
+	int SCENARIO__OFFERINGS = COMPARABLE_MODEL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Scenario</em>' class.
@@ -1625,7 +1661,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO_FEATURE_COUNT = 3;
+	int SCENARIO_FEATURE_COUNT = COMPARABLE_MODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Scenario</em>' class.
@@ -1634,7 +1670,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO_OPERATION_COUNT = 0;
+	int SCENARIO_OPERATION_COUNT = COMPARABLE_MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.sage.impl.DependencyImpl <em>Dependency</em>}' class.
@@ -2444,28 +2480,6 @@ public interface SagePackage extends EPackage {
 	EClass getScenario();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.nasdanika.sage.Scenario#getDescription <em>Description</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Description</em>'.
-	 * @see org.nasdanika.sage.Scenario#getDescription()
-	 * @see #getScenario()
-	 * @generated
-	 */
-	EAttribute getScenario_Description();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.nasdanika.sage.Scenario#getWeight <em>Weight</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Weight</em>'.
-	 * @see org.nasdanika.sage.Scenario#getWeight()
-	 * @see #getScenario()
-	 * @generated
-	 */
-	EAttribute getScenario_Weight();
-
-	/**
 	 * Returns the meta object for the reference list '{@link org.nasdanika.sage.Scenario#getOfferings <em>Offerings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3102,22 +3116,6 @@ public interface SagePackage extends EPackage {
 		 * @generated
 		 */
 		EClass SCENARIO = eINSTANCE.getScenario();
-
-		/**
-		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SCENARIO__DESCRIPTION = eINSTANCE.getScenario_Description();
-
-		/**
-		 * The meta object literal for the '<em><b>Weight</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SCENARIO__WEIGHT = eINSTANCE.getScenario_Weight();
 
 		/**
 		 * The meta object literal for the '<em><b>Offerings</b></em>' reference list feature.

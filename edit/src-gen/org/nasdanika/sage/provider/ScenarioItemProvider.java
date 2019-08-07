@@ -7,17 +7,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.nasdanika.emf.edit.NasdanikaItemProviderAdapter;
 import org.nasdanika.sage.Scenario;
 import org.nasdanika.sage.Offering;
 import org.nasdanika.sage.SagePackage;
@@ -28,8 +19,7 @@ import org.nasdanika.sage.SagePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ScenarioItemProvider extends NasdanikaItemProviderAdapter implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ScenarioItemProvider extends ComparableModelElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -51,8 +41,6 @@ public class ScenarioItemProvider extends NasdanikaItemProviderAdapter implement
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDescriptionPropertyDescriptor(object);
-			addWeightPropertyDescriptor(object);
 			addOfferingsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -71,38 +59,6 @@ public class ScenarioItemProvider extends NasdanikaItemProviderAdapter implement
 						getString("_UI_PropertyDescriptor_description", "_UI_Scenario_offerings_feature",
 								"_UI_Scenario_type"),
 						SagePackage.Literals.SCENARIO__OFFERINGS, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Weight feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addWeightPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Scenario_weight_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Scenario_weight_feature",
-								"_UI_Scenario_type"),
-						SagePackage.Literals.SCENARIO__WEIGHT, true, false, false,
-						ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Description feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDescriptionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Scenario_description_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Scenario_description_feature",
-								"_UI_Scenario_type"),
-						SagePackage.Literals.SCENARIO__DESCRIPTION, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -134,16 +90,10 @@ public class ScenarioItemProvider extends NasdanikaItemProviderAdapter implement
 	 */
 	@Override
 	public String getText(Object object) {
-		Scenario fulfillment = (Scenario) object;
-		StringBuilder labelBuilder = new StringBuilder();
-		for (Offering o : fulfillment.getOfferings()) {
-			if (labelBuilder.length() > 0) {
-				labelBuilder.append(", ");
-			}
-			labelBuilder.append(o.getName());
-		}
+		Scenario scenario = (Scenario) object;
+		StringBuilder labelBuilder = new StringBuilder(scenario.getName());
 		return (labelBuilder.length() == 0 ? getLabel(SagePackage.Literals.SCENARIO, getString("_UI_Scenario_type"))
-				: labelBuilder.toString()) + " (" + fulfillment.getWeight() + ")";
+				: labelBuilder.toString()) + " (" + scenario.getWeight() + ")";
 	}
 
 	/**
@@ -156,14 +106,6 @@ public class ScenarioItemProvider extends NasdanikaItemProviderAdapter implement
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Scenario.class)) {
-		case SagePackage.SCENARIO__DESCRIPTION:
-		case SagePackage.SCENARIO__WEIGHT:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		}
-		super.notifyChanged(notification);
 	}
 
 	/**
@@ -176,17 +118,6 @@ public class ScenarioItemProvider extends NasdanikaItemProviderAdapter implement
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return SageEditPlugin.INSTANCE;
 	}
 
 }
