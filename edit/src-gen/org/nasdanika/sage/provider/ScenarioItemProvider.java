@@ -9,9 +9,8 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.nasdanika.sage.Scenario;
-import org.nasdanika.sage.Offering;
 import org.nasdanika.sage.SagePackage;
+import org.nasdanika.sage.Scenario;
 
 /**
  * This is the item provider adapter for a {@link org.nasdanika.sage.Scenario} object.
