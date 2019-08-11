@@ -37,8 +37,8 @@ public class GenerateModelDocumentation {
 	 * @throws Exception
 	 */
 	@Test
-	public void testEcoreDocumentation() {		
-		EcoreDocumentationGenerator generator = new EcoreDocumentationGenerator("Nasdanika Sage Model", null, null);
+	public void testEcoreDocumentation() throws Exception {		
+		EcoreDocumentationGenerator generator = new EcoreDocumentationGenerator("Nasdanika Sage Model", null, null, false);
 		generator.loadGenModel(MODEL_URI);
 		Container<InputStream> fsc = new FileSystemContainer(new File("target/model-doc"));
 		ProgressMonitor progressMonitor = new PrintStreamProgressMonitor();
@@ -50,11 +50,12 @@ public class GenerateModelDocumentation {
 	 * @throws Exception
 	 */
 	@Test
-	public void testRussianEcoreDocumentation() {		
+	public void testRussianEcoreDocumentation() throws Exception {		
 		EcoreDocumentationGenerator generator = new EcoreDocumentationGenerator(
 				"Модель Дальновидности Насданики", 
 				"",
-				UI.RU) {
+				UI.RU,
+				false) {
 						
 			@Override
 			protected EcoreViewActionAdapterFactory createAdapterFactory() {
