@@ -36,6 +36,11 @@
 			<layout>p2</layout>
 		</repository>
 		<repository>
+			<id>rigel</id>
+			<url>https://www.nasdanika.org/home/products/rigel/repository</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
 			<id>core</id>
 			<url>https://www.nasdanika.org/home/products/core/repository</url>
 			<layout>p2</layout>
