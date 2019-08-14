@@ -5,6 +5,7 @@ package org.nasdanika.sage.provider;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.nasdanika.rigel.provider.RigelEditPlugin;
 
 /**
  * This is the central singleton for the Sage edit plugin.
@@ -36,7 +37,7 @@ public final class SageEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public SageEditPlugin() {
-		super(new ResourceLocator[] {});
+		super(new ResourceLocator[] { RigelEditPlugin.INSTANCE, });
 	}
 
 	/**

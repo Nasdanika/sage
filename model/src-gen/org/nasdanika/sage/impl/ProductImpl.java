@@ -362,6 +362,12 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == org.nasdanika.rigel.Capability.class) {
+			switch (derivedFeatureID) {
+			default:
+				return -1;
+			}
+		}
 		if (baseClass == Offering.class) {
 			switch (derivedFeatureID) {
 			case SagePackage.PRODUCT__TARGET_AUDIENCES:
@@ -384,6 +390,12 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == org.nasdanika.rigel.Capability.class) {
+			switch (baseFeatureID) {
+			default:
+				return -1;
+			}
+		}
 		if (baseClass == Offering.class) {
 			switch (baseFeatureID) {
 			case SagePackage.OFFERING__TARGET_AUDIENCES:

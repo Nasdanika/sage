@@ -12,5 +12,6 @@ Export-Package: org.nasdanika.sage,
  org.nasdanika.sage.impl,
  org.nasdanika.sage.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.core.runtime
+ org.eclipse.core.runtime,
+ org.nasdanika.rigel;bundle-version="0.1.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy

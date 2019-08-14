@@ -248,6 +248,9 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		org.nasdanika.rigel.RigelPackage.eINSTANCE.eClass();
+
 		// Create package meta-data objects
 		theSagePackage.createPackageContents();
 
@@ -1086,6 +1089,10 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		org.nasdanika.rigel.RigelPackage theRigelPackage = (org.nasdanika.rigel.RigelPackage) EPackage.Registry.INSTANCE
+				.getEPackage(org.nasdanika.rigel.RigelPackage.eNS_URI);
+
 		// Create type parameters
 		ETypeParameter hierarchicalModelElementEClass_T = addETypeParameter(hierarchicalModelElementEClass, "T");
 		ETypeParameter hierarchicalComparableModelElementEClass_T = addETypeParameter(
@@ -1095,6 +1102,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 
 		// Add supertypes to classes
 		offeringEClass.getESuperTypes().add(this.getModelElement());
+		offeringEClass.getESuperTypes().add(theRigelPackage.getCapability());
 		comparableModelElementEClass.getESuperTypes().add(this.getModelElement());
 		hierarchicalModelElementEClass.getESuperTypes().add(this.getModelElement());
 		EGenericType g1 = createEGenericType(this.getHierarchicalModelElement());
@@ -1134,6 +1142,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		editionEClass.getESuperTypes().add(this.getOffering());
 		releaseEClass.getESuperTypes().add(this.getModelElement());
 		scenarioEClass.getESuperTypes().add(this.getComparableModelElement());
+		scenarioEClass.getESuperTypes().add(theRigelPackage.getIPackage());
 		g1 = createEGenericType(this.getHierarchicalModelElement());
 		g2 = createEGenericType(this.getComponent());
 		g1.getETypeArguments().add(g2);

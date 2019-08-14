@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" name="sage" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:description_2="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" name="sage" version="12.0.0.2017041100">
   <ownedViewpoints name="SageViewpoint" label="Sage" modelFileExtension="sage">
     <ownedRepresentations xsi:type="description_1:TreeDescription" name="OrgTree" label="Organization Tree" domainClass="sage::Organization">
       <metamodel href="urn:org.nasdanika.sage#/"/>
@@ -225,6 +225,30 @@
           <variables name="container" documentation="The semantic element corresponding to the view container."/>
         </create>
       </subItemMappings>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:DiagramDescription" name="ScenarioDiagram" label="Scenario Diagram" domainClass="sage::Scenario" enablePopupBars="true">
+      <metamodel href="urn:org.nasdanika.sage#/"/>
+      <metamodel href="urn:org.nasdanika.rigel#/"/>
+      <defaultLayer name="Default">
+        <reusedMappings xsi:type="description_2:NodeMapping" href="../../org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='ActivityNode']"/>
+        <reusedMappings xsi:type="description_2:NodeMapping" href="../../org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='ActivityReference']"/>
+        <reusedMappings xsi:type="description_2:ContainerMapping" href="../../org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@containerMappings[name='Partition']"/>
+        <reusedMappings xsi:type="description_2:EdgeMapping" href="../../org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@edgeMappings[name='TransitionEdge']"/>
+        <toolSections name="ScenarioTools" label="Scenario Tools">
+          <reusedTools xsi:type="tool_1:NodeCreationDescription" href="../../org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ActivityCreation']"/>
+          <reusedTools xsi:type="tool_1:NodeCreationDescription" href="../../org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ActivityReferenceCreation']"/>
+          <reusedTools xsi:type="tool_1:ContainerCreationDescription" href="../../org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='PartitionCreation']"/>
+          <reusedTools xsi:type="tool_1:EdgeCreationDescription" href="../../org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='TransitionCreation']"/>
+        </toolSections>
+        <reusedTools xsi:type="tool_1:NodeCreationDescription" href="../../org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ActivityCreation']"/>
+        <reusedTools xsi:type="tool_1:NodeCreationDescription" href="../../org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ActivityReferenceCreation']"/>
+        <reusedTools xsi:type="tool_1:DirectEditLabel" href="../../org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='editName']"/>
+        <reusedTools xsi:type="tool_1:DoubleClickDescription" href="../../org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NavigateToActivityDiagram']"/>
+        <reusedTools xsi:type="tool_1:ContainerCreationDescription" href="../../org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='PartitionCreation']"/>
+        <reusedTools xsi:type="tool_1:ReconnectEdgeDescription" href="../../org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Reconnect%20Transition%20Source']"/>
+        <reusedTools xsi:type="tool_1:ReconnectEdgeDescription" href="../../org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ReconnectTransitionTarget']"/>
+        <reusedTools xsi:type="tool_1:EdgeCreationDescription" href="../../org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='TransitionCreation']"/>
+      </defaultLayer>
     </ownedRepresentations>
   </ownedViewpoints>
   <extensions xsi:type="properties:ViewExtensionDescription" name="sage_rules_properties">

@@ -10,7 +10,7 @@
    </description>
 
    <copyright url="http://www.example.com/copyright">
-     (c) 2019 Nasdanika LLC, All rights reserved.
+      (c) 2019 Nasdanika LLC, All rights reserved.
    </copyright>
 
    <license url="">
@@ -105,6 +105,10 @@ This Agreement is governed by the laws of the State of New York and the intellec
    <url>
       <update label="Nasdanika Sage" url="https://www.nasdanika.org/home/products/sage/repository"/>
    </url>
+
+   <includes
+         id="org.nasdanika.rigel.feature"
+         version="0.0.0"/>
 
    <requires>
       <import feature="org.eclipse.sirius.runtime" version="6.2.1.201906121145"/>

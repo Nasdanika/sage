@@ -121,25 +121,13 @@ public class OfferingItemProvider extends ModelElementItemProvider {
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- end-user-doc -->
+	 * @generated NOT
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
-		updateChildren(notification);
+		super.notifyChanged(notification);
 	}
-
-	//	/**
-	//	 * This handles model notifications by calling {@link #updateChildren} to update any cached
-	//	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	//	 * <!-- begin-user-doc -->
-	//	 * <!-- end-user-doc -->
-	//	 * @generated NOT
-	//	 */
-	//	@Override
-	//	public void notifyChanged(Notification notification) {
-	//		super.notifyChanged(notification);
-	//	}
 
 	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children

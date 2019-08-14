@@ -13,6 +13,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.nasdanika.rigel.RigelFactory;
 import org.nasdanika.sage.Portfolio;
 import org.nasdanika.sage.SageFactory;
 import org.nasdanika.sage.SagePackage;
@@ -196,6 +197,45 @@ public class PortfolioItemProvider extends AbstractProductItemProvider {
 
 		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
 				SageFactory.eINSTANCE.createComponent()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
+				RigelFactory.eINSTANCE.createPackage()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
+				RigelFactory.eINSTANCE.createActor()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
+				RigelFactory.eINSTANCE.createStart()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
+				RigelFactory.eINSTANCE.createEnd()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
+				RigelFactory.eINSTANCE.createPartition()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
+				RigelFactory.eINSTANCE.createActivity()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
+				RigelFactory.eINSTANCE.createActivityReference()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
+				RigelFactory.eINSTANCE.createArtifact()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
+				RigelFactory.eINSTANCE.createResource()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
+				RigelFactory.eINSTANCE.createTransition()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
+				RigelFactory.eINSTANCE.createAssociation()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
+				RigelFactory.eINSTANCE.createEngineer()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
+				RigelFactory.eINSTANCE.createIssue()));
 	}
 
 }

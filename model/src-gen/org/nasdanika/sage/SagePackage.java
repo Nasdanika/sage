@@ -1646,13 +1646,22 @@ public interface SagePackage extends EPackage {
 	int SCENARIO__EFFECTIVE_WEIGHT = COMPARABLE_MODEL_ELEMENT__EFFECTIVE_WEIGHT;
 
 	/**
+	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__ELEMENTS = COMPARABLE_MODEL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Offerings</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__OFFERINGS = COMPARABLE_MODEL_ELEMENT_FEATURE_COUNT + 0;
+	int SCENARIO__OFFERINGS = COMPARABLE_MODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Scenario</em>' class.
@@ -1661,7 +1670,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO_FEATURE_COUNT = COMPARABLE_MODEL_ELEMENT_FEATURE_COUNT + 1;
+	int SCENARIO_FEATURE_COUNT = COMPARABLE_MODEL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Scenario</em>' class.

@@ -162,6 +162,16 @@ public class SageAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseCapability(org.nasdanika.rigel.Capability object) {
+			return createCapabilityAdapter();
+		}
+
+		@Override
+		public Adapter caseIPackage(org.nasdanika.rigel.IPackage object) {
+			return createIPackageAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -443,6 +453,34 @@ public class SageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createComponentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.Capability <em>Capability</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.rigel.Capability
+	 * @generated
+	 */
+	public Adapter createCapabilityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.IPackage <em>IPackage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.rigel.IPackage
+	 * @generated
+	 */
+	public Adapter createIPackageAdapter() {
 		return null;
 	}
 

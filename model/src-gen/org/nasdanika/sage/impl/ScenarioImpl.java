@@ -21,6 +21,7 @@ import org.nasdanika.sage.SagePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.sage.impl.ScenarioImpl#getElements <em>Elements</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ScenarioImpl#getOfferings <em>Offerings</em>}</li>
  * </ul>
  *
@@ -44,6 +45,18 @@ public class ScenarioImpl extends ComparableModelElementImpl implements Scenario
 	@Override
 	protected EClass eStaticClass() {
 		return SagePackage.Literals.SCENARIO;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<org.nasdanika.rigel.PackageElement> getElements() {
+		return (EList<org.nasdanika.rigel.PackageElement>) eDynamicGet(SagePackage.SCENARIO__ELEMENTS,
+				org.nasdanika.rigel.RigelPackage.Literals.IPACKAGE__ELEMENTS, true, true);
 	}
 
 	/**
@@ -81,6 +94,8 @@ public class ScenarioImpl extends ComparableModelElementImpl implements Scenario
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case SagePackage.SCENARIO__ELEMENTS:
+			return ((InternalEList<?>) getElements()).basicRemove(otherEnd, msgs);
 		case SagePackage.SCENARIO__OFFERINGS:
 			return ((InternalEList<?>) getOfferings()).basicRemove(otherEnd, msgs);
 		}
@@ -95,6 +110,8 @@ public class ScenarioImpl extends ComparableModelElementImpl implements Scenario
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case SagePackage.SCENARIO__ELEMENTS:
+			return getElements();
 		case SagePackage.SCENARIO__OFFERINGS:
 			return getOfferings();
 		}
@@ -110,6 +127,10 @@ public class ScenarioImpl extends ComparableModelElementImpl implements Scenario
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case SagePackage.SCENARIO__ELEMENTS:
+			getElements().clear();
+			getElements().addAll((Collection<? extends org.nasdanika.rigel.PackageElement>) newValue);
+			return;
 		case SagePackage.SCENARIO__OFFERINGS:
 			getOfferings().clear();
 			getOfferings().addAll((Collection<? extends Offering>) newValue);
@@ -126,6 +147,9 @@ public class ScenarioImpl extends ComparableModelElementImpl implements Scenario
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case SagePackage.SCENARIO__ELEMENTS:
+			getElements().clear();
+			return;
 		case SagePackage.SCENARIO__OFFERINGS:
 			getOfferings().clear();
 			return;
@@ -141,10 +165,48 @@ public class ScenarioImpl extends ComparableModelElementImpl implements Scenario
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case SagePackage.SCENARIO__ELEMENTS:
+			return !getElements().isEmpty();
 		case SagePackage.SCENARIO__OFFERINGS:
 			return !getOfferings().isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == org.nasdanika.rigel.IPackage.class) {
+			switch (derivedFeatureID) {
+			case SagePackage.SCENARIO__ELEMENTS:
+				return org.nasdanika.rigel.RigelPackage.IPACKAGE__ELEMENTS;
+			default:
+				return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == org.nasdanika.rigel.IPackage.class) {
+			switch (baseFeatureID) {
+			case org.nasdanika.rigel.RigelPackage.IPACKAGE__ELEMENTS:
+				return SagePackage.SCENARIO__ELEMENTS;
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //FulfillmentImpl

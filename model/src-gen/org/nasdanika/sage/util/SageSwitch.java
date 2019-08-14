@@ -79,6 +79,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 			if (result == null)
 				result = caseModelElement(offering);
 			if (result == null)
+				result = caseCapability(offering);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -197,6 +199,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 			if (result == null)
 				result = caseModelElement(product);
 			if (result == null)
+				result = caseCapability(product);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -210,6 +214,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 			if (result == null)
 				result = caseModelElement(feature);
 			if (result == null)
+				result = caseCapability(feature);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -220,6 +226,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 				result = caseOffering(edition);
 			if (result == null)
 				result = caseModelElement(edition);
+			if (result == null)
+				result = caseCapability(edition);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -238,6 +246,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 			T1 result = caseScenario(scenario);
 			if (result == null)
 				result = caseComparableModelElement(scenario);
+			if (result == null)
+				result = caseIPackage(scenario);
 			if (result == null)
 				result = caseModelElement(scenario);
 			if (result == null)
@@ -556,6 +566,36 @@ public class SageSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	public T1 caseComponent(Component object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Capability</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Capability</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseCapability(org.nasdanika.rigel.Capability object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IPackage</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IPackage</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseIPackage(org.nasdanika.rigel.IPackage object) {
 		return null;
 	}
 
