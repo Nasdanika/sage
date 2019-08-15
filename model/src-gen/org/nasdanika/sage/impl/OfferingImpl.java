@@ -13,6 +13,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.nasdanika.rigel.Capability;
+import org.nasdanika.rigel.Requirement;
+import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.sage.Scenario;
 import org.nasdanika.sage.Offering;
 import org.nasdanika.sage.Persona;
@@ -26,6 +29,7 @@ import org.nasdanika.sage.SagePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.sage.impl.OfferingImpl#getRequiredBy <em>Required By</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.OfferingImpl#getTargetAudiences <em>Target Audiences</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.OfferingImpl#getIncludes <em>Includes</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.OfferingImpl#getScenarios <em>Scenarios</em>}</li>
@@ -51,6 +55,18 @@ public abstract class OfferingImpl extends ModelElementImpl implements Offering 
 	@Override
 	protected EClass eStaticClass() {
 		return SagePackage.Literals.OFFERING;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Requirement> getRequiredBy() {
+		return (EList<Requirement>) eDynamicGet(SagePackage.OFFERING__REQUIRED_BY,
+				RigelPackage.Literals.CAPABILITY__REQUIRED_BY, true, true);
 	}
 
 	/**
@@ -98,6 +114,8 @@ public abstract class OfferingImpl extends ModelElementImpl implements Offering 
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case SagePackage.OFFERING__REQUIRED_BY:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getRequiredBy()).basicAdd(otherEnd, msgs);
 		case SagePackage.OFFERING__TARGET_AUDIENCES:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTargetAudiences()).basicAdd(otherEnd, msgs);
 		case SagePackage.OFFERING__SCENARIOS:
@@ -114,6 +132,8 @@ public abstract class OfferingImpl extends ModelElementImpl implements Offering 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case SagePackage.OFFERING__REQUIRED_BY:
+			return ((InternalEList<?>) getRequiredBy()).basicRemove(otherEnd, msgs);
 		case SagePackage.OFFERING__TARGET_AUDIENCES:
 			return ((InternalEList<?>) getTargetAudiences()).basicRemove(otherEnd, msgs);
 		case SagePackage.OFFERING__SCENARIOS:
@@ -130,6 +150,8 @@ public abstract class OfferingImpl extends ModelElementImpl implements Offering 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case SagePackage.OFFERING__REQUIRED_BY:
+			return getRequiredBy();
 		case SagePackage.OFFERING__TARGET_AUDIENCES:
 			return getTargetAudiences();
 		case SagePackage.OFFERING__INCLUDES:
@@ -149,6 +171,10 @@ public abstract class OfferingImpl extends ModelElementImpl implements Offering 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case SagePackage.OFFERING__REQUIRED_BY:
+			getRequiredBy().clear();
+			getRequiredBy().addAll((Collection<? extends Requirement>) newValue);
+			return;
 		case SagePackage.OFFERING__TARGET_AUDIENCES:
 			getTargetAudiences().clear();
 			getTargetAudiences().addAll((Collection<? extends Persona>) newValue);
@@ -173,6 +199,9 @@ public abstract class OfferingImpl extends ModelElementImpl implements Offering 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case SagePackage.OFFERING__REQUIRED_BY:
+			getRequiredBy().clear();
+			return;
 		case SagePackage.OFFERING__TARGET_AUDIENCES:
 			getTargetAudiences().clear();
 			return;
@@ -194,6 +223,8 @@ public abstract class OfferingImpl extends ModelElementImpl implements Offering 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case SagePackage.OFFERING__REQUIRED_BY:
+			return !getRequiredBy().isEmpty();
 		case SagePackage.OFFERING__TARGET_AUDIENCES:
 			return !getTargetAudiences().isEmpty();
 		case SagePackage.OFFERING__INCLUDES:
@@ -202,6 +233,42 @@ public abstract class OfferingImpl extends ModelElementImpl implements Offering 
 			return !getScenarios().isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == Capability.class) {
+			switch (derivedFeatureID) {
+			case SagePackage.OFFERING__REQUIRED_BY:
+				return RigelPackage.CAPABILITY__REQUIRED_BY;
+			default:
+				return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == Capability.class) {
+			switch (baseFeatureID) {
+			case RigelPackage.CAPABILITY__REQUIRED_BY:
+				return SagePackage.OFFERING__REQUIRED_BY;
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //OfferingImpl

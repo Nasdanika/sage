@@ -9,6 +9,9 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.nasdanika.rigel.Capability;
+import org.nasdanika.rigel.Requirement;
+import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.sage.Component;
 import org.nasdanika.sage.Dependency;
 import org.nasdanika.sage.Edition;
@@ -29,6 +32,7 @@ import org.nasdanika.sage.SagePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.sage.impl.FeatureImpl#getRequiredBy <em>Required By</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.FeatureImpl#getTargetAudiences <em>Target Audiences</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.FeatureImpl#getIncludes <em>Includes</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.FeatureImpl#getScenarios <em>Scenarios</em>}</li>
@@ -90,6 +94,18 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	@Override
 	protected EClass eStaticClass() {
 		return SagePackage.Literals.FEATURE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Requirement> getRequiredBy() {
+		return (EList<Requirement>) eDynamicGet(SagePackage.FEATURE__REQUIRED_BY,
+				RigelPackage.Literals.CAPABILITY__REQUIRED_BY, true, true);
 	}
 
 	/**
@@ -284,6 +300,8 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case SagePackage.FEATURE__REQUIRED_BY:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getRequiredBy()).basicAdd(otherEnd, msgs);
 		case SagePackage.FEATURE__TARGET_AUDIENCES:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTargetAudiences()).basicAdd(otherEnd, msgs);
 		case SagePackage.FEATURE__SCENARIOS:
@@ -308,6 +326,8 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case SagePackage.FEATURE__REQUIRED_BY:
+			return ((InternalEList<?>) getRequiredBy()).basicRemove(otherEnd, msgs);
 		case SagePackage.FEATURE__TARGET_AUDIENCES:
 			return ((InternalEList<?>) getTargetAudiences()).basicRemove(otherEnd, msgs);
 		case SagePackage.FEATURE__SCENARIOS:
@@ -332,6 +352,8 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case SagePackage.FEATURE__REQUIRED_BY:
+			return getRequiredBy();
 		case SagePackage.FEATURE__TARGET_AUDIENCES:
 			return getTargetAudiences();
 		case SagePackage.FEATURE__INCLUDES:
@@ -369,6 +391,10 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case SagePackage.FEATURE__REQUIRED_BY:
+			getRequiredBy().clear();
+			getRequiredBy().addAll((Collection<? extends Requirement>) newValue);
+			return;
 		case SagePackage.FEATURE__TARGET_AUDIENCES:
 			getTargetAudiences().clear();
 			getTargetAudiences().addAll((Collection<? extends Persona>) newValue);
@@ -421,6 +447,9 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case SagePackage.FEATURE__REQUIRED_BY:
+			getRequiredBy().clear();
+			return;
 		case SagePackage.FEATURE__TARGET_AUDIENCES:
 			getTargetAudiences().clear();
 			return;
@@ -466,6 +495,8 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case SagePackage.FEATURE__REQUIRED_BY:
+			return !getRequiredBy().isEmpty();
 		case SagePackage.FEATURE__TARGET_AUDIENCES:
 			return !getTargetAudiences().isEmpty();
 		case SagePackage.FEATURE__INCLUDES:
@@ -499,8 +530,10 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == org.nasdanika.rigel.Capability.class) {
+		if (baseClass == Capability.class) {
 			switch (derivedFeatureID) {
+			case SagePackage.FEATURE__REQUIRED_BY:
+				return RigelPackage.CAPABILITY__REQUIRED_BY;
 			default:
 				return -1;
 			}
@@ -527,8 +560,10 @@ public class FeatureImpl extends HierarchicalModelElementImpl<Feature> implement
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == org.nasdanika.rigel.Capability.class) {
+		if (baseClass == Capability.class) {
 			switch (baseFeatureID) {
+			case RigelPackage.CAPABILITY__REQUIRED_BY:
+				return SagePackage.FEATURE__REQUIRED_BY;
 			default:
 				return -1;
 			}

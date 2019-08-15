@@ -15,6 +15,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.sage.Component;
 import org.nasdanika.sage.Feature;
 import org.nasdanika.sage.FeatureState;
@@ -50,6 +51,7 @@ public class FeatureItemProvider extends HierarchicalModelElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRequiredByPropertyDescriptor(object);
 			addTargetAudiencesPropertyDescriptor(object);
 			addIncludesPropertyDescriptor(object);
 			addScenariosPropertyDescriptor(object);
@@ -61,6 +63,21 @@ public class FeatureItemProvider extends HierarchicalModelElementItemProvider {
 			addEditionsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Required By feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiredByPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Capability_requiredBy_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Capability_requiredBy_feature",
+								"_UI_Capability_type"),
+						RigelPackage.Literals.CAPABILITY__REQUIRED_BY, true, false, true, null, null, null));
 	}
 
 	/**

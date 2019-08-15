@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.sage.Offering;
 import org.nasdanika.sage.SagePackage;
 
@@ -42,11 +43,27 @@ public class OfferingItemProvider extends ModelElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRequiredByPropertyDescriptor(object);
 			addTargetAudiencesPropertyDescriptor(object);
 			addIncludesPropertyDescriptor(object);
 			addScenariosPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Required By feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiredByPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Capability_requiredBy_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Capability_requiredBy_feature",
+								"_UI_Capability_type"),
+						RigelPackage.Literals.CAPABILITY__REQUIRED_BY, true, false, true, null, null, null));
 	}
 
 	/**

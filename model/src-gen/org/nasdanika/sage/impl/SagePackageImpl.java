@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.ETypeParameter;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.sage.AbstractProduct;
 import org.nasdanika.sage.ComparableModelElement;
 import org.nasdanika.sage.Component;
@@ -249,7 +250,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		org.nasdanika.rigel.RigelPackage.eINSTANCE.eClass();
+		RigelPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theSagePackage.createPackageContents();
@@ -1090,8 +1091,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		org.nasdanika.rigel.RigelPackage theRigelPackage = (org.nasdanika.rigel.RigelPackage) EPackage.Registry.INSTANCE
-				.getEPackage(org.nasdanika.rigel.RigelPackage.eNS_URI);
+		RigelPackage theRigelPackage = (RigelPackage) EPackage.Registry.INSTANCE.getEPackage(RigelPackage.eNS_URI);
 
 		// Create type parameters
 		ETypeParameter hierarchicalModelElementEClass_T = addETypeParameter(hierarchicalModelElementEClass, "T");

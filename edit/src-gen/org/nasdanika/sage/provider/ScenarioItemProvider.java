@@ -121,7 +121,8 @@ public class ScenarioItemProvider extends ComparableModelElementItemProvider {
 	public String getText(Object object) {
 		Scenario scenario = (Scenario) object;
 		String label = scenario.getName();
-		return (isBlank(label) ? getLabel(SagePackage.Literals.SCENARIO, getString("_UI_Scenario_type")) : label) + " (" + scenario.getWeight() + ")";
+		return (isBlank(label) ? getLabel(SagePackage.Literals.SCENARIO, getString("_UI_Scenario_type")) : label) + " ("
+				+ scenario.getWeight() + ")";
 	}
 
 	/**

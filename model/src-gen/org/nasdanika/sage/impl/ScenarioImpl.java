@@ -9,6 +9,9 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.nasdanika.rigel.IPackage;
+import org.nasdanika.rigel.PackageElement;
+import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.sage.Scenario;
 import org.nasdanika.sage.Offering;
 import org.nasdanika.sage.SagePackage;
@@ -54,9 +57,9 @@ public class ScenarioImpl extends ComparableModelElementImpl implements Scenario
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<org.nasdanika.rigel.PackageElement> getElements() {
-		return (EList<org.nasdanika.rigel.PackageElement>) eDynamicGet(SagePackage.SCENARIO__ELEMENTS,
-				org.nasdanika.rigel.RigelPackage.Literals.IPACKAGE__ELEMENTS, true, true);
+	public EList<PackageElement> getElements() {
+		return (EList<PackageElement>) eDynamicGet(SagePackage.SCENARIO__ELEMENTS,
+				RigelPackage.Literals.IPACKAGE__ELEMENTS, true, true);
 	}
 
 	/**
@@ -129,7 +132,7 @@ public class ScenarioImpl extends ComparableModelElementImpl implements Scenario
 		switch (featureID) {
 		case SagePackage.SCENARIO__ELEMENTS:
 			getElements().clear();
-			getElements().addAll((Collection<? extends org.nasdanika.rigel.PackageElement>) newValue);
+			getElements().addAll((Collection<? extends PackageElement>) newValue);
 			return;
 		case SagePackage.SCENARIO__OFFERINGS:
 			getOfferings().clear();
@@ -180,10 +183,10 @@ public class ScenarioImpl extends ComparableModelElementImpl implements Scenario
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == org.nasdanika.rigel.IPackage.class) {
+		if (baseClass == IPackage.class) {
 			switch (derivedFeatureID) {
 			case SagePackage.SCENARIO__ELEMENTS:
-				return org.nasdanika.rigel.RigelPackage.IPACKAGE__ELEMENTS;
+				return RigelPackage.IPACKAGE__ELEMENTS;
 			default:
 				return -1;
 			}
@@ -198,9 +201,9 @@ public class ScenarioImpl extends ComparableModelElementImpl implements Scenario
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == org.nasdanika.rigel.IPackage.class) {
+		if (baseClass == IPackage.class) {
 			switch (baseFeatureID) {
-			case org.nasdanika.rigel.RigelPackage.IPACKAGE__ELEMENTS:
+			case RigelPackage.IPACKAGE__ELEMENTS:
 				return SagePackage.SCENARIO__ELEMENTS;
 			default:
 				return -1;

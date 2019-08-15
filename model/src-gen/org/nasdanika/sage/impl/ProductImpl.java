@@ -13,6 +13,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.nasdanika.rigel.Capability;
+import org.nasdanika.rigel.Requirement;
+import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.sage.Component;
 import org.nasdanika.sage.Edition;
 import org.nasdanika.sage.Feature;
@@ -32,6 +35,7 @@ import org.nasdanika.sage.SagePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.sage.impl.ProductImpl#getRequiredBy <em>Required By</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ProductImpl#getTargetAudiences <em>Target Audiences</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ProductImpl#getIncludes <em>Includes</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ProductImpl#getScenarios <em>Scenarios</em>}</li>
@@ -72,6 +76,18 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 	@Override
 	protected EClass eStaticClass() {
 		return SagePackage.Literals.PRODUCT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Requirement> getRequiredBy() {
+		return (EList<Requirement>) eDynamicGet(SagePackage.PRODUCT__REQUIRED_BY,
+				RigelPackage.Literals.CAPABILITY__REQUIRED_BY, true, true);
 	}
 
 	/**
@@ -187,6 +203,8 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case SagePackage.PRODUCT__REQUIRED_BY:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getRequiredBy()).basicAdd(otherEnd, msgs);
 		case SagePackage.PRODUCT__TARGET_AUDIENCES:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTargetAudiences()).basicAdd(otherEnd, msgs);
 		case SagePackage.PRODUCT__SCENARIOS:
@@ -203,6 +221,8 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case SagePackage.PRODUCT__REQUIRED_BY:
+			return ((InternalEList<?>) getRequiredBy()).basicRemove(otherEnd, msgs);
 		case SagePackage.PRODUCT__TARGET_AUDIENCES:
 			return ((InternalEList<?>) getTargetAudiences()).basicRemove(otherEnd, msgs);
 		case SagePackage.PRODUCT__SCENARIOS:
@@ -227,6 +247,8 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case SagePackage.PRODUCT__REQUIRED_BY:
+			return getRequiredBy();
 		case SagePackage.PRODUCT__TARGET_AUDIENCES:
 			return getTargetAudiences();
 		case SagePackage.PRODUCT__INCLUDES:
@@ -256,6 +278,10 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case SagePackage.PRODUCT__REQUIRED_BY:
+			getRequiredBy().clear();
+			getRequiredBy().addAll((Collection<? extends Requirement>) newValue);
+			return;
 		case SagePackage.PRODUCT__TARGET_AUDIENCES:
 			getTargetAudiences().clear();
 			getTargetAudiences().addAll((Collection<? extends Persona>) newValue);
@@ -299,6 +325,9 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case SagePackage.PRODUCT__REQUIRED_BY:
+			getRequiredBy().clear();
+			return;
 		case SagePackage.PRODUCT__TARGET_AUDIENCES:
 			getTargetAudiences().clear();
 			return;
@@ -335,6 +364,8 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case SagePackage.PRODUCT__REQUIRED_BY:
+			return !getRequiredBy().isEmpty();
 		case SagePackage.PRODUCT__TARGET_AUDIENCES:
 			return !getTargetAudiences().isEmpty();
 		case SagePackage.PRODUCT__INCLUDES:
@@ -362,8 +393,10 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == org.nasdanika.rigel.Capability.class) {
+		if (baseClass == Capability.class) {
 			switch (derivedFeatureID) {
+			case SagePackage.PRODUCT__REQUIRED_BY:
+				return RigelPackage.CAPABILITY__REQUIRED_BY;
 			default:
 				return -1;
 			}
@@ -390,8 +423,10 @@ public class ProductImpl extends AbstractProductImpl implements Product {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == org.nasdanika.rigel.Capability.class) {
+		if (baseClass == Capability.class) {
 			switch (baseFeatureID) {
+			case RigelPackage.CAPABILITY__REQUIRED_BY:
+				return SagePackage.PRODUCT__REQUIRED_BY;
 			default:
 				return -1;
 			}

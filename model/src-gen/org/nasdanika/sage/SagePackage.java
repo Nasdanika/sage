@@ -284,13 +284,22 @@ public interface SagePackage extends EPackage {
 	int OFFERING__CONFIGURATION = MODEL_ELEMENT__CONFIGURATION;
 
 	/**
+	 * The feature id for the '<em><b>Required By</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OFFERING__REQUIRED_BY = MODEL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Target Audiences</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OFFERING__TARGET_AUDIENCES = MODEL_ELEMENT_FEATURE_COUNT + 0;
+	int OFFERING__TARGET_AUDIENCES = MODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Includes</b></em>' reference list.
@@ -299,7 +308,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OFFERING__INCLUDES = MODEL_ELEMENT_FEATURE_COUNT + 1;
+	int OFFERING__INCLUDES = MODEL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Scenarios</b></em>' reference list.
@@ -308,7 +317,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OFFERING__SCENARIOS = MODEL_ELEMENT_FEATURE_COUNT + 2;
+	int OFFERING__SCENARIOS = MODEL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Offering</em>' class.
@@ -317,7 +326,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OFFERING_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 3;
+	int OFFERING_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Offering</em>' class.
@@ -1112,13 +1121,22 @@ public interface SagePackage extends EPackage {
 	int PRODUCT__CONFIGURATION = ABSTRACT_PRODUCT__CONFIGURATION;
 
 	/**
+	 * The feature id for the '<em><b>Required By</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT__REQUIRED_BY = ABSTRACT_PRODUCT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Target Audiences</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__TARGET_AUDIENCES = ABSTRACT_PRODUCT_FEATURE_COUNT + 0;
+	int PRODUCT__TARGET_AUDIENCES = ABSTRACT_PRODUCT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Includes</b></em>' reference list.
@@ -1127,7 +1145,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__INCLUDES = ABSTRACT_PRODUCT_FEATURE_COUNT + 1;
+	int PRODUCT__INCLUDES = ABSTRACT_PRODUCT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Scenarios</b></em>' reference list.
@@ -1136,7 +1154,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__SCENARIOS = ABSTRACT_PRODUCT_FEATURE_COUNT + 2;
+	int PRODUCT__SCENARIOS = ABSTRACT_PRODUCT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Features</b></em>' containment reference list.
@@ -1145,7 +1163,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__FEATURES = ABSTRACT_PRODUCT_FEATURE_COUNT + 3;
+	int PRODUCT__FEATURES = ABSTRACT_PRODUCT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Releases</b></em>' containment reference list.
@@ -1154,7 +1172,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__RELEASES = ABSTRACT_PRODUCT_FEATURE_COUNT + 4;
+	int PRODUCT__RELEASES = ABSTRACT_PRODUCT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Stage</b></em>' attribute.
@@ -1163,7 +1181,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__STAGE = ABSTRACT_PRODUCT_FEATURE_COUNT + 5;
+	int PRODUCT__STAGE = ABSTRACT_PRODUCT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Components</b></em>' containment reference list.
@@ -1172,7 +1190,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__COMPONENTS = ABSTRACT_PRODUCT_FEATURE_COUNT + 6;
+	int PRODUCT__COMPONENTS = ABSTRACT_PRODUCT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Editions</b></em>' containment reference list.
@@ -1181,7 +1199,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT__EDITIONS = ABSTRACT_PRODUCT_FEATURE_COUNT + 7;
+	int PRODUCT__EDITIONS = ABSTRACT_PRODUCT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Product</em>' class.
@@ -1190,7 +1208,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_FEATURE_COUNT = ABSTRACT_PRODUCT_FEATURE_COUNT + 8;
+	int PRODUCT_FEATURE_COUNT = ABSTRACT_PRODUCT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of operations of the '<em>Product</em>' class.
@@ -1256,13 +1274,22 @@ public interface SagePackage extends EPackage {
 	int FEATURE__LINKED_CHILDREN = HIERARCHICAL_MODEL_ELEMENT__LINKED_CHILDREN;
 
 	/**
+	 * The feature id for the '<em><b>Required By</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__REQUIRED_BY = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Target Audiences</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__TARGET_AUDIENCES = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 0;
+	int FEATURE__TARGET_AUDIENCES = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Includes</b></em>' reference list.
@@ -1271,7 +1298,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__INCLUDES = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 1;
+	int FEATURE__INCLUDES = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Scenarios</b></em>' reference list.
@@ -1280,7 +1307,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__SCENARIOS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 2;
+	int FEATURE__SCENARIOS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Dependencies</b></em>' containment reference list.
@@ -1289,7 +1316,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__DEPENDENCIES = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 3;
+	int FEATURE__DEPENDENCIES = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Enablers</b></em>' containment reference list.
@@ -1298,7 +1325,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__ENABLERS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 4;
+	int FEATURE__ENABLERS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
@@ -1307,7 +1334,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__SIZE = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 5;
+	int FEATURE__SIZE = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>State</b></em>' attribute.
@@ -1316,7 +1343,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__STATE = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 6;
+	int FEATURE__STATE = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Design</b></em>' attribute.
@@ -1325,7 +1352,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__DESIGN = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 7;
+	int FEATURE__DESIGN = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Components</b></em>' reference list.
@@ -1334,7 +1361,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__COMPONENTS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 8;
+	int FEATURE__COMPONENTS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Release</b></em>' reference.
@@ -1343,7 +1370,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__RELEASE = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 9;
+	int FEATURE__RELEASE = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Editions</b></em>' reference list.
@@ -1352,7 +1379,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE__EDITIONS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 10;
+	int FEATURE__EDITIONS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Feature</em>' class.
@@ -1361,7 +1388,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FEATURE_FEATURE_COUNT = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 11;
+	int FEATURE_FEATURE_COUNT = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of operations of the '<em>Feature</em>' class.
@@ -1417,6 +1444,15 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int EDITION__CONFIGURATION = OFFERING__CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Required By</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDITION__REQUIRED_BY = OFFERING__REQUIRED_BY;
 
 	/**
 	 * The feature id for the '<em><b>Target Audiences</b></em>' reference list.

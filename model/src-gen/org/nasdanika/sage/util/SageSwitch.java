@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import org.nasdanika.rigel.Capability;
+import org.nasdanika.rigel.IPackage;
 import org.nasdanika.sage.*;
 
 /**
@@ -580,7 +582,7 @@ public class SageSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseCapability(org.nasdanika.rigel.Capability object) {
+	public T1 caseCapability(Capability object) {
 		return null;
 	}
 
@@ -595,7 +597,7 @@ public class SageSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseIPackage(org.nasdanika.rigel.IPackage object) {
+	public T1 caseIPackage(IPackage object) {
 		return null;
 	}
 

@@ -9,6 +9,8 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.nasdanika.rigel.Capability;
+import org.nasdanika.rigel.IPackage;
 import org.nasdanika.sage.*;
 
 /**
@@ -162,12 +164,12 @@ public class SageAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseCapability(org.nasdanika.rigel.Capability object) {
+		public Adapter caseCapability(Capability object) {
 			return createCapabilityAdapter();
 		}
 
 		@Override
-		public Adapter caseIPackage(org.nasdanika.rigel.IPackage object) {
+		public Adapter caseIPackage(IPackage object) {
 			return createIPackageAdapter();
 		}
 
