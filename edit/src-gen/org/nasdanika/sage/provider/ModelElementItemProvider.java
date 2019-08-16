@@ -57,6 +57,7 @@ public class ModelElementItemProvider extends NasdanikaItemProviderAdapter imple
 			addUrlPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addConfigurationPropertyDescriptor(object);
+			addOwnersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -123,6 +124,19 @@ public class ModelElementItemProvider extends NasdanikaItemProviderAdapter imple
 								"_UI_ModelElement_type"),
 						SagePackage.Literals.MODEL_ELEMENT__CONFIGURATION, true, true, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Owners feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addOwnersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						getResourceLocator(), getString("_UI_ModelElement_owners_feature"),
+						SagePackage.Literals.MODEL_ELEMENT__OWNERS, true, false, true, null, null, null, null));
 	}
 
 	/**

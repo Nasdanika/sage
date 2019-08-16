@@ -2,10 +2,13 @@
  */
 package org.nasdanika.sage.impl;
 
+import java.util.Collection;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.nasdanika.rigel.Engineer;
 import org.nasdanika.sage.ModelElement;
 import org.nasdanika.sage.SagePackage;
 
@@ -21,6 +24,7 @@ import org.nasdanika.sage.SagePackage;
  *   <li>{@link org.nasdanika.sage.impl.ModelElementImpl#getUrl <em>Url</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ModelElementImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ModelElementImpl#getConfiguration <em>Configuration</em>}</li>
+ *   <li>{@link org.nasdanika.sage.impl.ModelElementImpl#getOwners <em>Owners</em>}</li>
  * </ul>
  *
  * @generated
@@ -186,6 +190,18 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Engineer> getOwners() {
+		return (EList<Engineer>) eDynamicGet(SagePackage.MODEL_ELEMENT__OWNERS,
+				SagePackage.Literals.MODEL_ELEMENT__OWNERS, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -197,6 +213,8 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 			return getDescription();
 		case SagePackage.MODEL_ELEMENT__CONFIGURATION:
 			return getConfiguration();
+		case SagePackage.MODEL_ELEMENT__OWNERS:
+			return getOwners();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -206,6 +224,7 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -220,6 +239,10 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 			return;
 		case SagePackage.MODEL_ELEMENT__CONFIGURATION:
 			setConfiguration((String) newValue);
+			return;
+		case SagePackage.MODEL_ELEMENT__OWNERS:
+			getOwners().clear();
+			getOwners().addAll((Collection<? extends Engineer>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -245,6 +268,9 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 		case SagePackage.MODEL_ELEMENT__CONFIGURATION:
 			setConfiguration(CONFIGURATION_EDEFAULT);
 			return;
+		case SagePackage.MODEL_ELEMENT__OWNERS:
+			getOwners().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -267,6 +293,8 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 		case SagePackage.MODEL_ELEMENT__CONFIGURATION:
 			return CONFIGURATION_EDEFAULT == null ? getConfiguration() != null
 					: !CONFIGURATION_EDEFAULT.equals(getConfiguration());
+		case SagePackage.MODEL_ELEMENT__OWNERS:
+			return !getOwners().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

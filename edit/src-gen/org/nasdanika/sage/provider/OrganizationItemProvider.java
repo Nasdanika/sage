@@ -12,6 +12,8 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.nasdanika.rigel.RigelFactory;
+import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.sage.Organization;
 import org.nasdanika.sage.SageFactory;
 import org.nasdanika.sage.SagePackage;
@@ -60,6 +62,7 @@ public class OrganizationItemProvider extends HierarchicalModelElementItemProvid
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(RigelPackage.Literals.IPACKAGE__ELEMENTS);
 			childrenFeatures.add(SagePackage.Literals.ORGANIZATION__PERSONAS);
 			childrenFeatures.add(SagePackage.Literals.ORGANIZATION__PRODUCTS);
 			childrenFeatures.add(SagePackage.Literals.ORGANIZATION__STRATEGIES);
@@ -125,6 +128,7 @@ public class OrganizationItemProvider extends HierarchicalModelElementItemProvid
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Organization.class)) {
+		case SagePackage.ORGANIZATION__ELEMENTS:
 		case SagePackage.ORGANIZATION__PERSONAS:
 		case SagePackage.ORGANIZATION__PRODUCTS:
 		case SagePackage.ORGANIZATION__STRATEGIES:
@@ -144,6 +148,30 @@ public class OrganizationItemProvider extends HierarchicalModelElementItemProvid
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(
+				createChildParameter(RigelPackage.Literals.IPACKAGE__ELEMENTS, RigelFactory.eINSTANCE.createPackage()));
+
+		newChildDescriptors.add(
+				createChildParameter(RigelPackage.Literals.IPACKAGE__ELEMENTS, RigelFactory.eINSTANCE.createActor()));
+
+		newChildDescriptors.add(createChildParameter(RigelPackage.Literals.IPACKAGE__ELEMENTS,
+				RigelFactory.eINSTANCE.createPartition()));
+
+		newChildDescriptors.add(createChildParameter(RigelPackage.Literals.IPACKAGE__ELEMENTS,
+				RigelFactory.eINSTANCE.createActivity()));
+
+		newChildDescriptors.add(createChildParameter(RigelPackage.Literals.IPACKAGE__ELEMENTS,
+				RigelFactory.eINSTANCE.createActivityReference()));
+
+		newChildDescriptors.add(createChildParameter(RigelPackage.Literals.IPACKAGE__ELEMENTS,
+				RigelFactory.eINSTANCE.createArtifact()));
+
+		newChildDescriptors.add(createChildParameter(RigelPackage.Literals.IPACKAGE__ELEMENTS,
+				RigelFactory.eINSTANCE.createResource()));
+
+		newChildDescriptors.add(createChildParameter(RigelPackage.Literals.IPACKAGE__ELEMENTS,
+				RigelFactory.eINSTANCE.createEngineer()));
 
 		newChildDescriptors.add(createChildParameter(SagePackage.Literals.ORGANIZATION__PERSONAS,
 				SageFactory.eINSTANCE.createPersona()));
@@ -172,7 +200,8 @@ public class OrganizationItemProvider extends HierarchicalModelElementItemProvid
 		boolean qualify = childFeature == SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN
 				|| childFeature == SagePackage.Literals.ORGANIZATION__PERSONAS
 				|| childFeature == SagePackage.Literals.ORGANIZATION__STRATEGIES
-				|| childFeature == SagePackage.Literals.ORGANIZATION__PRODUCTS;
+				|| childFeature == SagePackage.Literals.ORGANIZATION__PRODUCTS
+				|| childFeature == RigelPackage.Literals.IPACKAGE__ELEMENTS;
 
 		if (qualify) {
 			return getString("_UI_CreateChild_text2",

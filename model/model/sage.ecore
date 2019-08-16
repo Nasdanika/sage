@@ -51,6 +51,8 @@
         <details key="documentation_ru" value="Описание пользовательской конфигурации элемента на YAML. Может быть использована для специализированного анализа или отчетности. Например, функции могут определять требования, такие как навыки, организационные возможности или сторонние сервисы или инструменты."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owners" upperBound="-1"
+        eType="ecore:EClass ../../org.nasdanika.rigel/model/rigel.ecore#//Engineer"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Offering" abstract="true" eSuperTypes="#//ModelElement ../../org.nasdanika.rigel/model/rigel.ecore#//Capability">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -187,6 +189,7 @@
     <eGenericSuperTypes eClassifier="#//HierarchicalModelElement">
       <eTypeArguments eClassifier="#//Organization"/>
     </eGenericSuperTypes>
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../org.nasdanika.rigel/model/rigel.ecore#//IPackage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Persona" eSuperTypes="#//ComparableModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

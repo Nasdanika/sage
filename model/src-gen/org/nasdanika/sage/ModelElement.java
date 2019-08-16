@@ -2,7 +2,9 @@
  */
 package org.nasdanika.sage;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.nasdanika.rigel.Engineer;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.nasdanika.sage.ModelElement#getUrl <em>Url</em>}</li>
  *   <li>{@link org.nasdanika.sage.ModelElement#getDescription <em>Description</em>}</li>
  *   <li>{@link org.nasdanika.sage.ModelElement#getConfiguration <em>Configuration</em>}</li>
+ *   <li>{@link org.nasdanika.sage.ModelElement#getOwners <em>Owners</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.sage.SagePackage#getModelElement()
@@ -128,5 +131,17 @@ public interface ModelElement extends EObject {
 	 * @generated
 	 */
 	void setConfiguration(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Owners</b></em>' reference list.
+	 * The list contents are of type {@link org.nasdanika.rigel.Engineer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Owners</em>' reference list.
+	 * @see org.nasdanika.sage.SagePackage#getModelElement_Owners()
+	 * @model
+	 * @generated
+	 */
+	EList<Engineer> getOwners();
 
 } // ModelElement

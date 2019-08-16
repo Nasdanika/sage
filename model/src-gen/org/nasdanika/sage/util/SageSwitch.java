@@ -123,6 +123,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 			if (result == null)
 				result = caseHierarchicalModelElement(organization);
 			if (result == null)
+				result = caseIPackage(organization);
+			if (result == null)
 				result = caseModelElement(organization);
 			if (result == null)
 				result = defaultCase(theEObject);

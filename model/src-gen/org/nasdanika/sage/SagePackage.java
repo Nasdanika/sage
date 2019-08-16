@@ -110,13 +110,22 @@ public interface SagePackage extends EPackage {
 	int MODEL_ELEMENT__CONFIGURATION = 3;
 
 	/**
+	 * The feature id for the '<em><b>Owners</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_ELEMENT__OWNERS = 4;
+
+	/**
 	 * The number of structural features of the '<em>Model Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ELEMENT_FEATURE_COUNT = 4;
+	int MODEL_ELEMENT_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Model Element</em>' class.
@@ -284,6 +293,15 @@ public interface SagePackage extends EPackage {
 	int OFFERING__CONFIGURATION = MODEL_ELEMENT__CONFIGURATION;
 
 	/**
+	 * The feature id for the '<em><b>Owners</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OFFERING__OWNERS = MODEL_ELEMENT__OWNERS;
+
+	/**
 	 * The feature id for the '<em><b>Required By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -374,6 +392,15 @@ public interface SagePackage extends EPackage {
 	int COMPARABLE_MODEL_ELEMENT__CONFIGURATION = MODEL_ELEMENT__CONFIGURATION;
 
 	/**
+	 * The feature id for the '<em><b>Owners</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPARABLE_MODEL_ELEMENT__OWNERS = MODEL_ELEMENT__OWNERS;
+
+	/**
 	 * The feature id for the '<em><b>Weight</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -446,6 +473,15 @@ public interface SagePackage extends EPackage {
 	int HIERARCHICAL_MODEL_ELEMENT__CONFIGURATION = MODEL_ELEMENT__CONFIGURATION;
 
 	/**
+	 * The feature id for the '<em><b>Owners</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HIERARCHICAL_MODEL_ELEMENT__OWNERS = MODEL_ELEMENT__OWNERS;
+
+	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -516,6 +552,15 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__CONFIGURATION = HIERARCHICAL_MODEL_ELEMENT__CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Owners</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__OWNERS = HIERARCHICAL_MODEL_ELEMENT__OWNERS;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -608,6 +653,15 @@ public interface SagePackage extends EPackage {
 	int ORGANIZATION__CONFIGURATION = HIERARCHICAL_MODEL_ELEMENT__CONFIGURATION;
 
 	/**
+	 * The feature id for the '<em><b>Owners</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORGANIZATION__OWNERS = HIERARCHICAL_MODEL_ELEMENT__OWNERS;
+
+	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -626,13 +680,22 @@ public interface SagePackage extends EPackage {
 	int ORGANIZATION__LINKED_CHILDREN = HIERARCHICAL_MODEL_ELEMENT__LINKED_CHILDREN;
 
 	/**
+	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORGANIZATION__ELEMENTS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Personas</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION__PERSONAS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 0;
+	int ORGANIZATION__PERSONAS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Products</b></em>' containment reference list.
@@ -641,7 +704,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION__PRODUCTS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 1;
+	int ORGANIZATION__PRODUCTS = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Strategies</b></em>' containment reference list.
@@ -650,7 +713,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION__STRATEGIES = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 2;
+	int ORGANIZATION__STRATEGIES = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Organization</em>' class.
@@ -659,7 +722,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ORGANIZATION_FEATURE_COUNT = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 3;
+	int ORGANIZATION_FEATURE_COUNT = HIERARCHICAL_MODEL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Organization</em>' class.
@@ -705,6 +768,15 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int PERSONA__CONFIGURATION = COMPARABLE_MODEL_ELEMENT__CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Owners</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSONA__OWNERS = COMPARABLE_MODEL_ELEMENT__OWNERS;
 
 	/**
 	 * The feature id for the '<em><b>Weight</b></em>' attribute.
@@ -795,6 +867,15 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int NEED__CONFIGURATION = HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Owners</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NEED__OWNERS = HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__OWNERS;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -905,6 +986,15 @@ public interface SagePackage extends EPackage {
 	int STRATEGY__CONFIGURATION = HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__CONFIGURATION;
 
 	/**
+	 * The feature id for the '<em><b>Owners</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRATEGY__OWNERS = HIERARCHICAL_COMPARABLE_MODEL_ELEMENT__OWNERS;
+
+	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -995,6 +1085,15 @@ public interface SagePackage extends EPackage {
 	int ABSTRACT_PRODUCT__CONFIGURATION = MODEL_ELEMENT__CONFIGURATION;
 
 	/**
+	 * The feature id for the '<em><b>Owners</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_PRODUCT__OWNERS = MODEL_ELEMENT__OWNERS;
+
+	/**
 	 * The number of structural features of the '<em>Abstract Product</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1047,6 +1146,15 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int PORTFOLIO__CONFIGURATION = ABSTRACT_PRODUCT__CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Owners</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORTFOLIO__OWNERS = ABSTRACT_PRODUCT__OWNERS;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -1119,6 +1227,15 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int PRODUCT__CONFIGURATION = ABSTRACT_PRODUCT__CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Owners</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT__OWNERS = ABSTRACT_PRODUCT__OWNERS;
 
 	/**
 	 * The feature id for the '<em><b>Required By</b></em>' reference list.
@@ -1254,6 +1371,15 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int FEATURE__CONFIGURATION = HIERARCHICAL_MODEL_ELEMENT__CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Owners</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE__OWNERS = HIERARCHICAL_MODEL_ELEMENT__OWNERS;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -1446,6 +1572,15 @@ public interface SagePackage extends EPackage {
 	int EDITION__CONFIGURATION = OFFERING__CONFIGURATION;
 
 	/**
+	 * The feature id for the '<em><b>Owners</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDITION__OWNERS = OFFERING__OWNERS;
+
+	/**
 	 * The feature id for the '<em><b>Required By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1564,6 +1699,15 @@ public interface SagePackage extends EPackage {
 	int RELEASE__CONFIGURATION = MODEL_ELEMENT__CONFIGURATION;
 
 	/**
+	 * The feature id for the '<em><b>Owners</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELEASE__OWNERS = MODEL_ELEMENT__OWNERS;
+
+	/**
 	 * The feature id for the '<em><b>Features</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1662,6 +1806,15 @@ public interface SagePackage extends EPackage {
 	 * @ordered
 	 */
 	int SCENARIO__CONFIGURATION = COMPARABLE_MODEL_ELEMENT__CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Owners</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__OWNERS = COMPARABLE_MODEL_ELEMENT__OWNERS;
 
 	/**
 	 * The feature id for the '<em><b>Weight</b></em>' attribute.
@@ -1883,6 +2036,15 @@ public interface SagePackage extends EPackage {
 	int COMPONENT__CONFIGURATION = HIERARCHICAL_MODEL_ELEMENT__CONFIGURATION;
 
 	/**
+	 * The feature id for the '<em><b>Owners</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__OWNERS = HIERARCHICAL_MODEL_ELEMENT__OWNERS;
+
+	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2010,6 +2172,17 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getModelElement_Configuration();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.sage.ModelElement#getOwners <em>Owners</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Owners</em>'.
+	 * @see org.nasdanika.sage.ModelElement#getOwners()
+	 * @see #getModelElement()
+	 * @generated
+	 */
+	EReference getModelElement_Owners();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.sage.ComparableModelElement <em>Comparable Model Element</em>}'.
@@ -2747,6 +2920,14 @@ public interface SagePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MODEL_ELEMENT__CONFIGURATION = eINSTANCE.getModelElement_Configuration();
+
+		/**
+		 * The meta object literal for the '<em><b>Owners</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MODEL_ELEMENT__OWNERS = eINSTANCE.getModelElement_Owners();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.sage.impl.ComparableModelElementImpl <em>Comparable Model Element</em>}' class.
