@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.nasdanika.rigel.Capability;
 import org.nasdanika.rigel.IPackage;
+import org.nasdanika.rigel.Participant;
 import org.nasdanika.sage.*;
 
 /**
@@ -171,6 +172,11 @@ public class SageAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseIPackage(IPackage object) {
 			return createIPackageAdapter();
+		}
+
+		@Override
+		public Adapter caseParticipant(Participant object) {
+			return createParticipantAdapter();
 		}
 
 		@Override
@@ -483,6 +489,20 @@ public class SageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createIPackageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.Participant <em>Participant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.rigel.Participant
+	 * @generated
+	 */
+	public Adapter createParticipantAdapter() {
 		return null;
 	}
 

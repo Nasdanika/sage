@@ -1129,6 +1129,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		g1 = createEGenericType(theRigelPackage.getIPackage());
 		organizationEClass.getEGenericSuperTypes().add(g1);
 		personaEClass.getESuperTypes().add(this.getComparableModelElement());
+		personaEClass.getESuperTypes().add(theRigelPackage.getParticipant());
 		g1 = createEGenericType(this.getHierarchicalComparableModelElement());
 		g2 = createEGenericType(this.getNeed());
 		g1.getETypeArguments().add(g2);

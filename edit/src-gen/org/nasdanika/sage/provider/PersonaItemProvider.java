@@ -14,6 +14,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.sage.Persona;
 import org.nasdanika.sage.SageFactory;
 import org.nasdanika.sage.SagePackage;
@@ -46,9 +47,25 @@ public class PersonaItemProvider extends ComparableModelElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addFlowsPropertyDescriptor(object);
 			addOfferingsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Flows feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFlowsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Participant_flows_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Participant_flows_feature",
+								"_UI_Participant_type"),
+						RigelPackage.Literals.PARTICIPANT__FLOWS, true, false, true, null, null, null));
 	}
 
 	/**

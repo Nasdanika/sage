@@ -191,7 +191,7 @@
     </eGenericSuperTypes>
     <eGenericSuperTypes eClassifier="ecore:EClass ../../org.nasdanika.rigel/model/rigel.ecore#//IPackage"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Persona" eSuperTypes="#//ComparableModelElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Persona" eSuperTypes="#//ComparableModelElement ../../org.nasdanika.rigel/model/rigel.ecore#//Participant">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Personas represent target audiences of products manufactured by the organization. &#xA;&#xA;Personas can be assigned relative weight/importance which is used to calculate effective weight of persona needs and then product features fulfilling those needs. &#xA;"/>
     </eAnnotations>

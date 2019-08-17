@@ -134,8 +134,7 @@ public class ModelElementItemProvider extends NasdanikaItemProviderAdapter imple
 	 */
 	protected void addOwnersPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						getResourceLocator(), getString("_UI_ModelElement_owners_feature"),
+				.add(createItemPropertyDescriptor(getResourceLocator(), getString("_UI_ModelElement_owners_feature"),
 						SagePackage.Literals.MODEL_ELEMENT__OWNERS, true, false, true, null, null, null, null));
 	}
 

@@ -797,13 +797,22 @@ public interface SagePackage extends EPackage {
 	int PERSONA__EFFECTIVE_WEIGHT = COMPARABLE_MODEL_ELEMENT__EFFECTIVE_WEIGHT;
 
 	/**
+	 * The feature id for the '<em><b>Flows</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSONA__FLOWS = COMPARABLE_MODEL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Needs</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONA__NEEDS = COMPARABLE_MODEL_ELEMENT_FEATURE_COUNT + 0;
+	int PERSONA__NEEDS = COMPARABLE_MODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Offerings</b></em>' reference list.
@@ -812,7 +821,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONA__OFFERINGS = COMPARABLE_MODEL_ELEMENT_FEATURE_COUNT + 1;
+	int PERSONA__OFFERINGS = COMPARABLE_MODEL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Persona</em>' class.
@@ -821,7 +830,7 @@ public interface SagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONA_FEATURE_COUNT = COMPARABLE_MODEL_ELEMENT_FEATURE_COUNT + 2;
+	int PERSONA_FEATURE_COUNT = COMPARABLE_MODEL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Persona</em>' class.

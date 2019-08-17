@@ -13,6 +13,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.nasdanika.rigel.Flow;
+import org.nasdanika.rigel.Participant;
+import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.sage.Need;
 import org.nasdanika.sage.Offering;
 import org.nasdanika.sage.Persona;
@@ -26,6 +29,7 @@ import org.nasdanika.sage.SagePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.sage.impl.PersonaImpl#getFlows <em>Flows</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.PersonaImpl#getNeeds <em>Needs</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.PersonaImpl#getOfferings <em>Offerings</em>}</li>
  * </ul>
@@ -50,6 +54,18 @@ public class PersonaImpl extends ComparableModelElementImpl implements Persona {
 	@Override
 	protected EClass eStaticClass() {
 		return SagePackage.Literals.PERSONA;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Flow> getFlows() {
+		return (EList<Flow>) eDynamicGet(SagePackage.PERSONA__FLOWS, RigelPackage.Literals.PARTICIPANT__FLOWS, true,
+				true);
 	}
 
 	/**
@@ -84,6 +100,8 @@ public class PersonaImpl extends ComparableModelElementImpl implements Persona {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case SagePackage.PERSONA__FLOWS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFlows()).basicAdd(otherEnd, msgs);
 		case SagePackage.PERSONA__OFFERINGS:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOfferings()).basicAdd(otherEnd, msgs);
 		}
@@ -98,6 +116,8 @@ public class PersonaImpl extends ComparableModelElementImpl implements Persona {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case SagePackage.PERSONA__FLOWS:
+			return ((InternalEList<?>) getFlows()).basicRemove(otherEnd, msgs);
 		case SagePackage.PERSONA__NEEDS:
 			return ((InternalEList<?>) getNeeds()).basicRemove(otherEnd, msgs);
 		case SagePackage.PERSONA__OFFERINGS:
@@ -114,6 +134,8 @@ public class PersonaImpl extends ComparableModelElementImpl implements Persona {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case SagePackage.PERSONA__FLOWS:
+			return getFlows();
 		case SagePackage.PERSONA__NEEDS:
 			return getNeeds();
 		case SagePackage.PERSONA__OFFERINGS:
@@ -131,6 +153,10 @@ public class PersonaImpl extends ComparableModelElementImpl implements Persona {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case SagePackage.PERSONA__FLOWS:
+			getFlows().clear();
+			getFlows().addAll((Collection<? extends Flow>) newValue);
+			return;
 		case SagePackage.PERSONA__NEEDS:
 			getNeeds().clear();
 			getNeeds().addAll((Collection<? extends Need>) newValue);
@@ -151,6 +177,9 @@ public class PersonaImpl extends ComparableModelElementImpl implements Persona {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case SagePackage.PERSONA__FLOWS:
+			getFlows().clear();
+			return;
 		case SagePackage.PERSONA__NEEDS:
 			getNeeds().clear();
 			return;
@@ -169,12 +198,50 @@ public class PersonaImpl extends ComparableModelElementImpl implements Persona {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case SagePackage.PERSONA__FLOWS:
+			return !getFlows().isEmpty();
 		case SagePackage.PERSONA__NEEDS:
 			return !getNeeds().isEmpty();
 		case SagePackage.PERSONA__OFFERINGS:
 			return !getOfferings().isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == Participant.class) {
+			switch (derivedFeatureID) {
+			case SagePackage.PERSONA__FLOWS:
+				return RigelPackage.PARTICIPANT__FLOWS;
+			default:
+				return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == Participant.class) {
+			switch (baseFeatureID) {
+			case RigelPackage.PARTICIPANT__FLOWS:
+				return SagePackage.PERSONA__FLOWS;
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //PersonaImpl
