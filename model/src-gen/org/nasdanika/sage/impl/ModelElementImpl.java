@@ -25,7 +25,7 @@ import org.nasdanika.sage.SagePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.sage.impl.ModelElementImpl#getOwner <em>Owner</em>}</li>
+ *   <li>{@link org.nasdanika.sage.impl.ModelElementImpl#getOwners <em>Owners</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ModelElementImpl#getIssues <em>Issues</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ModelElementImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ModelElementImpl#getUrl <em>Url</em>}</li>
@@ -110,40 +110,11 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
-	public Engineer getOwner() {
-		return (Engineer) eDynamicGet(SagePackage.MODEL_ELEMENT__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER,
-				true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Engineer basicGetOwner() {
-		return (Engineer) eDynamicGet(SagePackage.MODEL_ELEMENT__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER,
-				false, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetOwner(Engineer newOwner, NotificationChain msgs) {
-		msgs = eDynamicInverseAdd((InternalEObject) newOwner, SagePackage.MODEL_ELEMENT__OWNER, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setOwner(Engineer newOwner) {
-		eDynamicSet(SagePackage.MODEL_ELEMENT__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, newOwner);
+	public EList<Engineer> getOwners() {
+		return (EList<Engineer>) eDynamicGet(SagePackage.MODEL_ELEMENT__OWNERS,
+				RigelPackage.Literals.ENGINEERED_ELEMENT__OWNERS, true, true);
 	}
 
 	/**
@@ -249,15 +220,12 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case SagePackage.MODEL_ELEMENT__OWNER:
-			Engineer owner = basicGetOwner();
-			if (owner != null)
-				msgs = ((InternalEObject) owner).eInverseRemove(this, RigelPackage.ENGINEER__OWNS, Engineer.class,
-						msgs);
-			return basicSetOwner((Engineer) otherEnd, msgs);
+		case SagePackage.MODEL_ELEMENT__OWNERS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwners()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -270,8 +238,8 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case SagePackage.MODEL_ELEMENT__OWNER:
-			return basicSetOwner(null, msgs);
+		case SagePackage.MODEL_ELEMENT__OWNERS:
+			return ((InternalEList<?>) getOwners()).basicRemove(otherEnd, msgs);
 		case SagePackage.MODEL_ELEMENT__ISSUES:
 			return ((InternalEList<?>) getIssues()).basicRemove(otherEnd, msgs);
 		}
@@ -286,10 +254,8 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case SagePackage.MODEL_ELEMENT__OWNER:
-			if (resolve)
-				return getOwner();
-			return basicGetOwner();
+		case SagePackage.MODEL_ELEMENT__OWNERS:
+			return getOwners();
 		case SagePackage.MODEL_ELEMENT__ISSUES:
 			return getIssues();
 		case SagePackage.MODEL_ELEMENT__NAME:
@@ -313,8 +279,9 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case SagePackage.MODEL_ELEMENT__OWNER:
-			setOwner((Engineer) newValue);
+		case SagePackage.MODEL_ELEMENT__OWNERS:
+			getOwners().clear();
+			getOwners().addAll((Collection<? extends Engineer>) newValue);
 			return;
 		case SagePackage.MODEL_ELEMENT__ISSUES:
 			getIssues().clear();
@@ -344,8 +311,8 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case SagePackage.MODEL_ELEMENT__OWNER:
-			setOwner((Engineer) null);
+		case SagePackage.MODEL_ELEMENT__OWNERS:
+			getOwners().clear();
 			return;
 		case SagePackage.MODEL_ELEMENT__ISSUES:
 			getIssues().clear();
@@ -374,8 +341,8 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case SagePackage.MODEL_ELEMENT__OWNER:
-			return basicGetOwner() != null;
+		case SagePackage.MODEL_ELEMENT__OWNERS:
+			return !getOwners().isEmpty();
 		case SagePackage.MODEL_ELEMENT__ISSUES:
 			return !getIssues().isEmpty();
 		case SagePackage.MODEL_ELEMENT__NAME:

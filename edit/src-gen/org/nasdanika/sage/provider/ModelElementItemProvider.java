@@ -56,7 +56,7 @@ public class ModelElementItemProvider extends NasdanikaItemProviderAdapter imple
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addOwnerPropertyDescriptor(object);
+			addOwnersPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addUrlPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
@@ -66,18 +66,18 @@ public class ModelElementItemProvider extends NasdanikaItemProviderAdapter imple
 	}
 
 	/**
-	 * This adds a property descriptor for the Owner feature.
+	 * This adds a property descriptor for the Owners feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOwnerPropertyDescriptor(Object object) {
+	protected void addOwnersPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_EngineeredElement_owner_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_EngineeredElement_owner_feature",
+						getResourceLocator(), getString("_UI_EngineeredElement_owners_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_EngineeredElement_owners_feature",
 								"_UI_EngineeredElement_type"),
-						RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, true, false, true, null, null, null));
+						RigelPackage.Literals.ENGINEERED_ELEMENT__OWNERS, true, false, true, null, null, null));
 	}
 
 	/**
