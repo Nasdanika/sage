@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import org.nasdanika.rigel.Capability;
+import org.nasdanika.rigel.EngineeredElement;
 import org.nasdanika.rigel.IPackage;
 import org.nasdanika.rigel.Participant;
 import org.nasdanika.sage.*;
@@ -73,6 +74,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 			ModelElement modelElement = (ModelElement) theEObject;
 			T1 result = caseModelElement(modelElement);
 			if (result == null)
+				result = caseEngineeredElement(modelElement);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -84,6 +87,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 			if (result == null)
 				result = caseCapability(offering);
 			if (result == null)
+				result = caseEngineeredElement(offering);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -93,6 +98,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 			if (result == null)
 				result = caseModelElement(comparableModelElement);
 			if (result == null)
+				result = caseEngineeredElement(comparableModelElement);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -101,6 +108,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 			T1 result = caseHierarchicalModelElement(hierarchicalModelElement);
 			if (result == null)
 				result = caseModelElement(hierarchicalModelElement);
+			if (result == null)
+				result = caseEngineeredElement(hierarchicalModelElement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -115,6 +124,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 			if (result == null)
 				result = caseModelElement(hierarchicalComparableModelElement);
 			if (result == null)
+				result = caseEngineeredElement(hierarchicalComparableModelElement);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -128,6 +139,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 			if (result == null)
 				result = caseModelElement(organization);
 			if (result == null)
+				result = caseEngineeredElement(organization);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -140,6 +153,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 				result = caseParticipant(persona);
 			if (result == null)
 				result = caseModelElement(persona);
+			if (result == null)
+				result = caseEngineeredElement(persona);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -156,6 +171,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 			if (result == null)
 				result = caseModelElement(need);
 			if (result == null)
+				result = caseEngineeredElement(need);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -171,6 +188,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 			if (result == null)
 				result = caseModelElement(strategy);
 			if (result == null)
+				result = caseEngineeredElement(strategy);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -179,6 +198,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 			T1 result = caseAbstractProduct(abstractProduct);
 			if (result == null)
 				result = caseModelElement(abstractProduct);
+			if (result == null)
+				result = caseEngineeredElement(abstractProduct);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -192,6 +213,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 				result = caseHierarchicalModelElement(portfolio);
 			if (result == null)
 				result = caseModelElement(portfolio);
+			if (result == null)
+				result = caseEngineeredElement(portfolio);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -208,6 +231,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 			if (result == null)
 				result = caseCapability(product);
 			if (result == null)
+				result = caseEngineeredElement(product);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -223,6 +248,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 			if (result == null)
 				result = caseCapability(feature);
 			if (result == null)
+				result = caseEngineeredElement(feature);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -236,6 +263,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 			if (result == null)
 				result = caseCapability(edition);
 			if (result == null)
+				result = caseEngineeredElement(edition);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -244,6 +273,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 			T1 result = caseRelease(release);
 			if (result == null)
 				result = caseModelElement(release);
+			if (result == null)
+				result = caseEngineeredElement(release);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -257,6 +288,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 				result = caseIPackage(scenario);
 			if (result == null)
 				result = caseModelElement(scenario);
+			if (result == null)
+				result = caseEngineeredElement(scenario);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -282,6 +315,8 @@ public class SageSwitch<T1> extends Switch<T1> {
 				result = caseHierarchicalModelElement(component);
 			if (result == null)
 				result = caseModelElement(component);
+			if (result == null)
+				result = caseEngineeredElement(component);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -573,6 +608,21 @@ public class SageSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	public T1 caseComponent(Component object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Engineered Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Engineered Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseEngineeredElement(EngineeredElement object) {
 		return null;
 	}
 

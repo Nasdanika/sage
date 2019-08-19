@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import org.nasdanika.rigel.Capability;
+import org.nasdanika.rigel.EngineeredElement;
 import org.nasdanika.rigel.IPackage;
 import org.nasdanika.rigel.Participant;
 import org.nasdanika.sage.*;
@@ -162,6 +163,11 @@ public class SageAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseComponent(Component object) {
 			return createComponentAdapter();
+		}
+
+		@Override
+		public Adapter caseEngineeredElement(EngineeredElement object) {
+			return createEngineeredElementAdapter();
 		}
 
 		@Override
@@ -461,6 +467,20 @@ public class SageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createComponentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.EngineeredElement <em>Engineered Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.rigel.EngineeredElement
+	 * @generated
+	 */
+	public Adapter createEngineeredElementAdapter() {
 		return null;
 	}
 

@@ -382,7 +382,8 @@ public class FeatureItemProvider extends HierarchicalModelElementItemProvider {
 		Object childFeature = feature;
 		Object childObject = child;
 
-		boolean qualify = childFeature == SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN
+		boolean qualify = childFeature == RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES
+				|| childFeature == SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN
 				|| childFeature == SagePackage.Literals.FEATURE__DEPENDENCIES
 				|| childFeature == SagePackage.Literals.FEATURE__ENABLERS;
 

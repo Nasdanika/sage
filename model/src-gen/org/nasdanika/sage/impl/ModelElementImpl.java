@@ -3,12 +3,17 @@
 package org.nasdanika.sage.impl;
 
 import java.util.Collection;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.nasdanika.rigel.Engineer;
+import org.nasdanika.rigel.Issue;
+import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.sage.ModelElement;
 import org.nasdanika.sage.SagePackage;
 
@@ -20,11 +25,12 @@ import org.nasdanika.sage.SagePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.sage.impl.ModelElementImpl#getOwner <em>Owner</em>}</li>
+ *   <li>{@link org.nasdanika.sage.impl.ModelElementImpl#getIssues <em>Issues</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ModelElementImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ModelElementImpl#getUrl <em>Url</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ModelElementImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.nasdanika.sage.impl.ModelElementImpl#getConfiguration <em>Configuration</em>}</li>
- *   <li>{@link org.nasdanika.sage.impl.ModelElementImpl#getOwners <em>Owners</em>}</li>
  * </ul>
  *
  * @generated
@@ -97,6 +103,59 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	protected int eStaticFeatureCount() {
 		return 0;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Engineer getOwner() {
+		return (Engineer) eDynamicGet(SagePackage.MODEL_ELEMENT__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER,
+				true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Engineer basicGetOwner() {
+		return (Engineer) eDynamicGet(SagePackage.MODEL_ELEMENT__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER,
+				false, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetOwner(Engineer newOwner, NotificationChain msgs) {
+		msgs = eDynamicInverseAdd((InternalEObject) newOwner, SagePackage.MODEL_ELEMENT__OWNER, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setOwner(Engineer newOwner) {
+		eDynamicSet(SagePackage.MODEL_ELEMENT__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, newOwner);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Issue> getIssues() {
+		return (EList<Issue>) eDynamicGet(SagePackage.MODEL_ELEMENT__ISSUES,
+				RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES, true, true);
 	}
 
 	/**
@@ -190,11 +249,33 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
-	public EList<Engineer> getOwners() {
-		return (EList<Engineer>) eDynamicGet(SagePackage.MODEL_ELEMENT__OWNERS,
-				SagePackage.Literals.MODEL_ELEMENT__OWNERS, true, true);
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case SagePackage.MODEL_ELEMENT__OWNER:
+			Engineer owner = basicGetOwner();
+			if (owner != null)
+				msgs = ((InternalEObject) owner).eInverseRemove(this, RigelPackage.ENGINEER__OWNS, Engineer.class,
+						msgs);
+			return basicSetOwner((Engineer) otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case SagePackage.MODEL_ELEMENT__OWNER:
+			return basicSetOwner(null, msgs);
+		case SagePackage.MODEL_ELEMENT__ISSUES:
+			return ((InternalEList<?>) getIssues()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -205,6 +286,12 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case SagePackage.MODEL_ELEMENT__OWNER:
+			if (resolve)
+				return getOwner();
+			return basicGetOwner();
+		case SagePackage.MODEL_ELEMENT__ISSUES:
+			return getIssues();
 		case SagePackage.MODEL_ELEMENT__NAME:
 			return getName();
 		case SagePackage.MODEL_ELEMENT__URL:
@@ -213,8 +300,6 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 			return getDescription();
 		case SagePackage.MODEL_ELEMENT__CONFIGURATION:
 			return getConfiguration();
-		case SagePackage.MODEL_ELEMENT__OWNERS:
-			return getOwners();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -228,6 +313,13 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case SagePackage.MODEL_ELEMENT__OWNER:
+			setOwner((Engineer) newValue);
+			return;
+		case SagePackage.MODEL_ELEMENT__ISSUES:
+			getIssues().clear();
+			getIssues().addAll((Collection<? extends Issue>) newValue);
+			return;
 		case SagePackage.MODEL_ELEMENT__NAME:
 			setName((String) newValue);
 			return;
@@ -239,10 +331,6 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 			return;
 		case SagePackage.MODEL_ELEMENT__CONFIGURATION:
 			setConfiguration((String) newValue);
-			return;
-		case SagePackage.MODEL_ELEMENT__OWNERS:
-			getOwners().clear();
-			getOwners().addAll((Collection<? extends Engineer>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -256,6 +344,12 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case SagePackage.MODEL_ELEMENT__OWNER:
+			setOwner((Engineer) null);
+			return;
+		case SagePackage.MODEL_ELEMENT__ISSUES:
+			getIssues().clear();
+			return;
 		case SagePackage.MODEL_ELEMENT__NAME:
 			setName(NAME_EDEFAULT);
 			return;
@@ -267,9 +361,6 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 			return;
 		case SagePackage.MODEL_ELEMENT__CONFIGURATION:
 			setConfiguration(CONFIGURATION_EDEFAULT);
-			return;
-		case SagePackage.MODEL_ELEMENT__OWNERS:
-			getOwners().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -283,6 +374,10 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case SagePackage.MODEL_ELEMENT__OWNER:
+			return basicGetOwner() != null;
+		case SagePackage.MODEL_ELEMENT__ISSUES:
+			return !getIssues().isEmpty();
 		case SagePackage.MODEL_ELEMENT__NAME:
 			return NAME_EDEFAULT == null ? getName() != null : !NAME_EDEFAULT.equals(getName());
 		case SagePackage.MODEL_ELEMENT__URL:
@@ -293,8 +388,6 @@ public abstract class ModelElementImpl extends MinimalEObjectImpl.Container impl
 		case SagePackage.MODEL_ELEMENT__CONFIGURATION:
 			return CONFIGURATION_EDEFAULT == null ? getConfiguration() != null
 					: !CONFIGURATION_EDEFAULT.equals(getConfiguration());
-		case SagePackage.MODEL_ELEMENT__OWNERS:
-			return !getOwners().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

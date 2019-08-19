@@ -322,16 +322,6 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getModelElement_Owners() {
-		return (EReference) modelElementEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getComparableModelElement() {
 		return comparableModelElementEClass;
 	}
@@ -991,7 +981,6 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		createEAttribute(modelElementEClass, MODEL_ELEMENT__URL);
 		createEAttribute(modelElementEClass, MODEL_ELEMENT__DESCRIPTION);
 		createEAttribute(modelElementEClass, MODEL_ELEMENT__CONFIGURATION);
-		createEReference(modelElementEClass, MODEL_ELEMENT__OWNERS);
 
 		offeringEClass = createEClass(OFFERING);
 		createEReference(offeringEClass, OFFERING__TARGET_AUDIENCES);
@@ -1112,6 +1101,7 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		modelElementEClass.getESuperTypes().add(theRigelPackage.getEngineeredElement());
 		offeringEClass.getESuperTypes().add(this.getModelElement());
 		offeringEClass.getESuperTypes().add(theRigelPackage.getCapability());
 		comparableModelElementEClass.getESuperTypes().add(this.getModelElement());
@@ -1175,9 +1165,6 @@ public class SagePackageImpl extends EPackageImpl implements SagePackage {
 		initEAttribute(getModelElement_Configuration(), ecorePackage.getEString(), "configuration", null, 0, 1,
 				ModelElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getModelElement_Owners(), theRigelPackage.getEngineer(), null, "owners", null, 0, -1,
-				ModelElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(offeringEClass, Offering.class, "Offering", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOffering_TargetAudiences(), this.getPersona(), this.getPersona_Offerings(), "targetAudiences",

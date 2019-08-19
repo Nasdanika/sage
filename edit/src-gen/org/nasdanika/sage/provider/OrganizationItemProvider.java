@@ -197,7 +197,8 @@ public class OrganizationItemProvider extends HierarchicalModelElementItemProvid
 		Object childFeature = feature;
 		Object childObject = child;
 
-		boolean qualify = childFeature == SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN
+		boolean qualify = childFeature == RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES
+				|| childFeature == SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN
 				|| childFeature == SagePackage.Literals.ORGANIZATION__PERSONAS
 				|| childFeature == SagePackage.Literals.ORGANIZATION__STRATEGIES
 				|| childFeature == SagePackage.Literals.ORGANIZATION__PRODUCTS

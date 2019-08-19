@@ -15,6 +15,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.nasdanika.rigel.RigelFactory;
+import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.sage.HierarchicalModelElement;
 import org.nasdanika.sage.SageFactory;
 import org.nasdanika.sage.SagePackage;
@@ -227,6 +228,27 @@ public class HierarchicalModelElementItemProvider extends ModelElementItemProvid
 
 		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
 				RigelFactory.eINSTANCE.createIssue()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify = childFeature == RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES
+				|| childFeature == SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN;
+
+		if (qualify) {
+			return getString("_UI_CreateChild_text2",
+					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

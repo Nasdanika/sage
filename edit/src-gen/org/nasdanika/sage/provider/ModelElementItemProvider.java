@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -21,6 +22,8 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.nasdanika.emf.edit.NasdanikaItemProviderAdapter;
+import org.nasdanika.rigel.RigelFactory;
+import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.sage.ModelElement;
 import org.nasdanika.sage.SagePackage;
 
@@ -53,13 +56,28 @@ public class ModelElementItemProvider extends NasdanikaItemProviderAdapter imple
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addOwnerPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addUrlPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addConfigurationPropertyDescriptor(object);
-			addOwnersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Owner feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOwnerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_EngineeredElement_owner_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_EngineeredElement_owner_feature",
+								"_UI_EngineeredElement_type"),
+						RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, true, false, true, null, null, null));
 	}
 
 	/**
@@ -127,15 +145,33 @@ public class ModelElementItemProvider extends NasdanikaItemProviderAdapter imple
 	}
 
 	/**
-	 * This adds a property descriptor for the Owners feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
-	protected void addOwnersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(getResourceLocator(), getString("_UI_ModelElement_owners_feature"),
-						SagePackage.Literals.MODEL_ELEMENT__OWNERS, true, false, true, null, null, null, null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -179,6 +215,9 @@ public class ModelElementItemProvider extends NasdanikaItemProviderAdapter imple
 		case SagePackage.MODEL_ELEMENT__CONFIGURATION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
+		case SagePackage.MODEL_ELEMENT__ISSUES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -193,6 +232,9 @@ public class ModelElementItemProvider extends NasdanikaItemProviderAdapter imple
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(createChildParameter(RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES,
+				RigelFactory.eINSTANCE.createIssue()));
 	}
 
 	/**

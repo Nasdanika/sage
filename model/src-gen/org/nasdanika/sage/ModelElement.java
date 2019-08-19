@@ -2,9 +2,7 @@
  */
 package org.nasdanika.sage;
 
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
-import org.nasdanika.rigel.Engineer;
+import org.nasdanika.rigel.EngineeredElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +21,6 @@ import org.nasdanika.rigel.Engineer;
  *   <li>{@link org.nasdanika.sage.ModelElement#getUrl <em>Url</em>}</li>
  *   <li>{@link org.nasdanika.sage.ModelElement#getDescription <em>Description</em>}</li>
  *   <li>{@link org.nasdanika.sage.ModelElement#getConfiguration <em>Configuration</em>}</li>
- *   <li>{@link org.nasdanika.sage.ModelElement#getOwners <em>Owners</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.sage.SagePackage#getModelElement()
@@ -31,7 +28,7 @@ import org.nasdanika.rigel.Engineer;
  *        annotation="urn:org.nasdanika label_ru='\u0411\u0430\u0437\u043e\u0432\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442 \u043c\u043e\u0434\u0435\u043b\u0438' documentation_ru='\u0411\u0430\u0437\u043e\u0432\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442 \u043c\u043e\u0434\u0435\u043b\u0438, \u0438\u043c\u0435\u044e\u0449\u0438\u0439 \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0438 \u043e\u043f\u0438\u0441\u0430\u043d\u0438\u0435.'"
  * @generated
  */
-public interface ModelElement extends EObject {
+public interface ModelElement extends EngineeredElement {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -131,17 +128,5 @@ public interface ModelElement extends EObject {
 	 * @generated
 	 */
 	void setConfiguration(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Owners</b></em>' reference list.
-	 * The list contents are of type {@link org.nasdanika.rigel.Engineer}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Owners</em>' reference list.
-	 * @see org.nasdanika.sage.SagePackage#getModelElement_Owners()
-	 * @model
-	 * @generated
-	 */
-	EList<Engineer> getOwners();
 
 } // ModelElement

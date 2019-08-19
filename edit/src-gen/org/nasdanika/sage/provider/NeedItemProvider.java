@@ -14,6 +14,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.sage.Need;
 import org.nasdanika.sage.SageFactory;
 import org.nasdanika.sage.SagePackage;
@@ -177,7 +178,8 @@ public class NeedItemProvider extends HierarchicalComparableModelElementItemProv
 		Object childFeature = feature;
 		Object childObject = child;
 
-		boolean qualify = childFeature == SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN
+		boolean qualify = childFeature == RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES
+				|| childFeature == SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN
 				|| childFeature == SagePackage.Literals.NEED__SCENARIOS;
 
 		if (qualify) {
