@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
    <feature url="features/org.nasdanika.sage.feature_0.1.0.qualifier.jar" id="org.nasdanika.sage.feature" version="0.1.0.qualifier">
-      <category name="org.nasdanika.sage.category"/>
+      <category name="org.nasdanika.tools"/>
    </feature>
-   <category-def name="org.nasdanika.sage.category" label="Nasdanika Sage">
+   <category-def name="org.nasdanika" label="Nasdanika">
       <description>
-         Nasdanika Sage model and editor.
+         Products of Nasdanika
+      </description>
+   </category-def>
+   <category-def name="org.nasdanika.tools" label="Tools">
+      <category name="org.nasdanika"/>
+      <description>
+         Eclipse plug-ins.
       </description>
    </category-def>
    <repository-reference location="http://download.eclipse.org/releases/2019-06" enabled="true" />
