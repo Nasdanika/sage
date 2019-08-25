@@ -23,7 +23,7 @@ import org.nasdanika.html.ecore.EcoreViewActionAdapterFactory;
 public class GenerateModelDocumentation {
 
 	private static final String MODEL_URI = "urn:org.nasdanika.sage";
-	private static BiFunction<org.nasdanika.common.resources.File<InputStream>, Object, InputStream> encoder = (file, contents) -> {
+	private static BiFunction<org.nasdanika.common.resources.Entity<InputStream>, Object, InputStream> encoder = (file, contents) -> {
 		InputStream ret = DefaultConverter.INSTANCE.convert(contents, InputStream.class);
 		if (ret == null) {
 			// toString() conversion
