@@ -155,11 +155,20 @@ public class OrganizationItemProvider extends HierarchicalModelElementItemProvid
 		newChildDescriptors.add(
 				createChildParameter(RigelPackage.Literals.IPACKAGE__ELEMENTS, RigelFactory.eINSTANCE.createActor()));
 
+		newChildDescriptors.add(
+				createChildParameter(RigelPackage.Literals.IPACKAGE__ELEMENTS, RigelFactory.eINSTANCE.createStart()));
+
+		newChildDescriptors.add(
+				createChildParameter(RigelPackage.Literals.IPACKAGE__ELEMENTS, RigelFactory.eINSTANCE.createEnd()));
+
 		newChildDescriptors.add(createChildParameter(RigelPackage.Literals.IPACKAGE__ELEMENTS,
 				RigelFactory.eINSTANCE.createPartition()));
 
 		newChildDescriptors.add(createChildParameter(RigelPackage.Literals.IPACKAGE__ELEMENTS,
 				RigelFactory.eINSTANCE.createActivity()));
+
+		newChildDescriptors.add(createChildParameter(RigelPackage.Literals.IPACKAGE__ELEMENTS,
+				RigelFactory.eINSTANCE.createMilestone()));
 
 		newChildDescriptors.add(createChildParameter(RigelPackage.Literals.IPACKAGE__ELEMENTS,
 				RigelFactory.eINSTANCE.createActivityReference()));

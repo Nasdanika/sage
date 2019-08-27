@@ -218,6 +218,9 @@ public class PortfolioItemProvider extends AbstractProductItemProvider {
 				RigelFactory.eINSTANCE.createActivity()));
 
 		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
+				RigelFactory.eINSTANCE.createMilestone()));
+
+		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
 				RigelFactory.eINSTANCE.createActivityReference()));
 
 		newChildDescriptors.add(createChildParameter(SagePackage.Literals.HIERARCHICAL_MODEL_ELEMENT__CHILDREN,
