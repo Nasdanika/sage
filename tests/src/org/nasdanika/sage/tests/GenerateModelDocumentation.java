@@ -11,7 +11,7 @@ import org.nasdanika.common.DefaultConverter;
 import org.nasdanika.common.PrintStreamProgressMonitor;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.common.ResourceLocator;
-import org.nasdanika.common.resources.Container;
+import org.nasdanika.common.resources.BinaryEntityContainer;
 import org.nasdanika.common.resources.FileSystemContainer;
 import org.nasdanika.emf.EModelElementAnnotationResourceLocator;
 import org.nasdanika.emf.FunctionAdapterFactory;
@@ -23,7 +23,7 @@ import org.nasdanika.html.ecore.EcoreViewActionAdapterFactory;
 public class GenerateModelDocumentation {
 
 	private static final String MODEL_URI = "urn:org.nasdanika.sage";
-	private static BiFunction<org.nasdanika.common.resources.Entity<InputStream>, Object, InputStream> encoder = (file, contents) -> {
+	private static BiFunction<String, Object, InputStream> encoder = (path, contents) -> {
 		InputStream ret = DefaultConverter.INSTANCE.convert(contents, InputStream.class);
 		if (ret == null) {
 			// toString() conversion
@@ -40,9 +40,9 @@ public class GenerateModelDocumentation {
 	public void testEcoreDocumentation() throws Exception {		
 		EcoreDocumentationGenerator generator = new EcoreDocumentationGenerator("Nasdanika Sage Model", null, null, false);
 		generator.loadGenModel(MODEL_URI);
-		Container<InputStream> fsc = new FileSystemContainer(new File("target/model-doc"));
+		BinaryEntityContainer fsc = new FileSystemContainer(new File("target/model-doc"));
 		ProgressMonitor progressMonitor = new PrintStreamProgressMonitor();
-		generator.generate(fsc.adapt(null, encoder, null), progressMonitor);		
+		generator.generate(fsc.stateAdapter().adapt(null, encoder), progressMonitor);		
 	}
 
 	/**
@@ -73,9 +73,9 @@ public class GenerateModelDocumentation {
 			
 		};
 		generator.loadGenModel(MODEL_URI);
-		Container<InputStream> fsc = new FileSystemContainer(new File("target/ru/model-doc"));
+		BinaryEntityContainer fsc = new FileSystemContainer(new File("target/ru/model-doc"));
 		ProgressMonitor progressMonitor = new PrintStreamProgressMonitor();
-		generator.generate(fsc.adapt(null, encoder, null), progressMonitor);		
+		generator.generate(fsc.stateAdapter().adapt(null, encoder), progressMonitor);		
 	}	
 	
 }
