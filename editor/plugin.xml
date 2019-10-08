@@ -23,14 +23,21 @@
    </extension>
 
    <extension point="org.eclipse.ui.editors">
-       <!-- @generated sage -->
       <editor
             id="org.nasdanika.sage.presentation.SageEditorID"
             name="%_UI_SageEditor_label"
             icon="icons/full/obj16/SageModelFile.png"
             extensions="sage"
             class="org.nasdanika.sage.presentation.SageEditor"
-            contributorClass="org.nasdanika.sage.presentation.SageActionBarContributor">
+            contributorClass="org.nasdanika.emf.presentation.NasdanikaActionBarContributor">
+      </editor>
+      <editor
+            id="org.nasdanika.sage.presentation.SageSiriusEditorID"
+            name="%_UI_SageSiriusEditor_label"
+            icon="icons/full/obj16/SageModelFile.png"
+            extensions="sage"
+            class="org.nasdanika.emf.presentation.NasdanikaSiriusEditor"
+            contributorClass="org.nasdanika.emf.presentation.NasdanikaActionBarContributor">
       </editor>
    </extension>
 
