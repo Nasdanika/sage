@@ -642,11 +642,11 @@ public class SageEditor extends MultiPageEditorPart
 		adapterFactory.addAdapterFactory(new RigelItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
-		// Create the command stack that will notify this editor as commands are executed.
+		// Create the _LegacyCommandToRemove stack that will notify this editor as commands are executed.
 		//
 		BasicCommandStack commandStack = new BasicCommandStack();
 
-		// Add a listener to set the most recent command's affected objects to be the selection of the viewer with focus.
+		// Add a listener to set the most recent _LegacyCommandToRemove's affected objects to be the selection of the viewer with focus.
 		//
 		commandStack.addCommandStackListener(new CommandStackListener() {
 			public void commandStackChanged(final EventObject event) {
@@ -673,7 +673,7 @@ public class SageEditor extends MultiPageEditorPart
 			}
 		});
 
-		// Create the editing domain with a special command stack.
+		// Create the editing domain with a special _LegacyCommandToRemove stack.
 		//
 		editingDomain = new AdapterFactoryEditingDomain(adapterFactory, commandStack, new HashMap<Resource, Boolean>());
 	}
@@ -1377,7 +1377,7 @@ public class SageEditor extends MultiPageEditorPart
 	}
 
 	/**
-	 * This is for implementing {@link IEditorPart} and simply tests the command stack.
+	 * This is for implementing {@link IEditorPart} and simply tests the _LegacyCommandToRemove stack.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
